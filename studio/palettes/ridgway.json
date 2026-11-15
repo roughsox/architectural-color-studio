@@ -1,0 +1,5599 @@
+{
+ "order": 4,
+ "id": "ridgway",
+ "kind": "colours",
+ "name": "Ridgway",
+ "label": "Ridgway",
+ "title": "Ridgway's Color Standards and Color Nomenclature",
+ "description": "1117 named colours published in 1912 by the American ornithologist Robert Ridgway, arranged on 53 plates from pure hues to greyed and darkened tones. Sanzo Wada took his colour names from this book, so it is the wider vocabulary behind the Wada family. Use it when a combination needs a shade Wada does not have.",
+ "source": "Robert Ridgway, Color Standards and Color Nomenclature, Washington DC, 1912",
+ "data": "color-standards-and-color-nomenclature 1.1.0 by Davo Galavotti, MIT licence; the book is in the public domain in the USA",
+ "note": "Values were sampled from scans of the printed plates, which have aged.",
+ "colours": [
+  {
+   "name": "Hermosa Pink",
+   "hex": "#F9C4CB",
+   "group": "Plate I"
+  },
+  {
+   "name": "La France Pink",
+   "hex": "#FDBDC5",
+   "group": "Plate I"
+  },
+  {
+   "name": "Shrimp Pink",
+   "hex": "#FDCABC",
+   "group": "Plate I"
+  },
+  {
+   "name": "Eosine Pink",
+   "hex": "#FD8790",
+   "group": "Plate I"
+  },
+  {
+   "name": "Geranium Pink",
+   "hex": "#FC838A",
+   "group": "Plate I"
+  },
+  {
+   "name": "Strawberry Pink",
+   "hex": "#FD8A73",
+   "group": "Plate I"
+  },
+  {
+   "name": "Begonia Rose",
+   "hex": "#F76470",
+   "group": "Plate I"
+  },
+  {
+   "name": "Rose Doree",
+   "hex": "#E9696B",
+   "group": "Plate I"
+  },
+  {
+   "name": "Peach Red",
+   "hex": "#F9725C",
+   "group": "Plate I"
+  },
+  {
+   "name": "Spectrum Red",
+   "hex": "#A43530",
+   "group": "Plate I"
+  },
+  {
+   "name": "Scarlet-Red",
+   "hex": "#E12A32",
+   "group": "Plate I"
+  },
+  {
+   "name": "Scarlet",
+   "hex": "#E94527",
+   "group": "Plate I"
+  },
+  {
+   "name": "Carmine",
+   "hex": "#932F31",
+   "group": "Plate I"
+  },
+  {
+   "name": "Nopal Red",
+   "hex": "#C33837",
+   "group": "Plate I"
+  },
+  {
+   "name": "Brazil Red",
+   "hex": "#B5402D",
+   "group": "Plate I"
+  },
+  {
+   "name": "Ox-blood Red",
+   "hex": "#7A3633",
+   "group": "Plate I"
+  },
+  {
+   "name": "Garnet Brown",
+   "hex": "#813932",
+   "group": "Plate I"
+  },
+  {
+   "name": "Morocco Red",
+   "hex": "#823E30",
+   "group": "Plate I"
+  },
+  {
+   "name": "Victoria Lake",
+   "hex": "#623C38",
+   "group": "Plate I"
+  },
+  {
+   "name": "Maroon",
+   "hex": "#5B3B34",
+   "group": "Plate I"
+  },
+  {
+   "name": "Claret Brown",
+   "hex": "#693C33",
+   "group": "Plate I"
+  },
+  {
+   "name": "Safrano Pink",
+   "hex": "#FECCBE",
+   "group": "Plate II"
+  },
+  {
+   "name": "Orient Pink",
+   "hex": "#FEC5AF",
+   "group": "Plate II"
+  },
+  {
+   "name": "Orange-Pink",
+   "hex": "#FECBA7",
+   "group": "Plate II"
+  },
+  {
+   "name": "Grenadine Pink",
+   "hex": "#FE9F86",
+   "group": "Plate II"
+  },
+  {
+   "name": "Bittersweet Pink",
+   "hex": "#FD9F7F",
+   "group": "Plate II"
+  },
+  {
+   "name": "Light Salmon-Orange",
+   "hex": "#FEAD82",
+   "group": "Plate II"
+  },
+  {
+   "name": "Grenadine",
+   "hex": "#FE815E",
+   "group": "Plate II"
+  },
+  {
+   "name": "Bittersweet Orange",
+   "hex": "#FE8250",
+   "group": "Plate II"
+  },
+  {
+   "name": "Salmon-Orange",
+   "hex": "#FE9149",
+   "group": "Plate II"
+  },
+  {
+   "name": "Grenadine Red",
+   "hex": "#F4511F",
+   "group": "Plate II"
+  },
+  {
+   "name": "Flame Scarlet",
+   "hex": "#FD6B2F",
+   "group": "Plate II"
+  },
+  {
+   "name": "Orange Chrome",
+   "hex": "#FD7D1F",
+   "group": "Plate II"
+  },
+  {
+   "name": "English Red",
+   "hex": "#BD512B",
+   "group": "Plate II"
+  },
+  {
+   "name": "Mars Orange",
+   "hex": "#C05528",
+   "group": "Plate II"
+  },
+  {
+   "name": "Orange-Rufous",
+   "hex": "#CB6325",
+   "group": "Plate II"
+  },
+  {
+   "name": "Mahogany Red",
+   "hex": "#814831",
+   "group": "Plate II"
+  },
+  {
+   "name": "Burnt Sienna",
+   "hex": "#964A2D",
+   "group": "Plate II"
+  },
+  {
+   "name": "Sanford's Brown",
+   "hex": "#A1562F",
+   "group": "Plate II"
+  },
+  {
+   "name": "Bay",
+   "hex": "#744B39",
+   "group": "Plate II"
+  },
+  {
+   "name": "Chestnut",
+   "hex": "#7D4831",
+   "group": "Plate II"
+  },
+  {
+   "name": "Auburn",
+   "hex": "#80543C",
+   "group": "Plate II"
+  },
+  {
+   "name": "Capucine Buff",
+   "hex": "#FDCC98",
+   "group": "Plate III"
+  },
+  {
+   "name": "Pale Yellow-Orange",
+   "hex": "#FED39C",
+   "group": "Plate III"
+  },
+  {
+   "name": "Pale Orange-Yellow",
+   "hex": "#FED590",
+   "group": "Plate III"
+  },
+  {
+   "name": "Capucine Orange",
+   "hex": "#FEB159",
+   "group": "Plate III"
+  },
+  {
+   "name": "Orange-Buff",
+   "hex": "#FED39C",
+   "group": "Plate III"
+  },
+  {
+   "name": "Light Orange-Yellow",
+   "hex": "#FECF55",
+   "group": "Plate III"
+  },
+  {
+   "name": "Mikado Orange",
+   "hex": "#FE9443",
+   "group": "Plate III"
+  },
+  {
+   "name": "Capucine Yellow",
+   "hex": "#FEAB3A",
+   "group": "Plate III"
+  },
+  {
+   "name": "Deep Chrome",
+   "hex": "#FEB239",
+   "group": "Plate III"
+  },
+  {
+   "name": "Cadmium Orange",
+   "hex": "#FE7F17",
+   "group": "Plate III"
+  },
+  {
+   "name": "Orange",
+   "hex": "#FE8E07",
+   "group": "Plate III"
+  },
+  {
+   "name": "Cadmium Yellow",
+   "hex": "#FDAE00",
+   "group": "Plate III"
+  },
+  {
+   "name": "Xanthine Orange",
+   "hex": "#D06D1D",
+   "group": "Plate III"
+  },
+  {
+   "name": "Mars Yellow",
+   "hex": "#C3761A",
+   "group": "Plate III"
+  },
+  {
+   "name": "Raw Sienna",
+   "hex": "#C38213",
+   "group": "Plate III"
+  },
+  {
+   "name": "Amber Brown",
+   "hex": "#985B2C",
+   "group": "Plate III"
+  },
+  {
+   "name": "Sudan Brown",
+   "hex": "#97622D",
+   "group": "Plate III"
+  },
+  {
+   "name": "Antique Brown",
+   "hex": "#96662A",
+   "group": "Plate III"
+  },
+  {
+   "name": "Argus Brown",
+   "hex": "#795331",
+   "group": "Plate III"
+  },
+  {
+   "name": "Brussels Brown",
+   "hex": "#805B36",
+   "group": "Plate III"
+  },
+  {
+   "name": "Raw Umber",
+   "hex": "#695332",
+   "group": "Plate III"
+  },
+  {
+   "name": "Maize Yellow",
+   "hex": "#FCE09A",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Baryta Yellow",
+   "hex": "#E2CF8F",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Martius Yellow",
+   "hex": "#FCEB9F",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Buff-Yellow",
+   "hex": "#FBCD77",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Pinard Yellow",
+   "hex": "#FEE97F",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Picnic Yellow",
+   "hex": "#FEE769",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Apricot Yellow",
+   "hex": "#ECBE57",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Empire Yellow",
+   "hex": "#C1AD57",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Pale Lemon Yellow",
+   "hex": "#FEE562",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Light Cadmium",
+   "hex": "#CDAA47",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Lemon Chrome",
+   "hex": "#FED01D",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Lemon Yellow",
+   "hex": "#D4BD4E",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Aniline Yellow",
+   "hex": "#D5A414",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Sulphine Yellow",
+   "hex": "#C6A641",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Pyrite Yellow",
+   "hex": "#BDA33F",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Orange-Citrine",
+   "hex": "#947629",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Citrine",
+   "hex": "#957F3A",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Warbler Green",
+   "hex": "#908538",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Medal Bronze",
+   "hex": "#756033",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Dark Citrine",
+   "hex": "#776B39",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Olive-Green",
+   "hex": "#6D6D3F",
+   "group": "Plate IV"
+  },
+  {
+   "name": "Sulphur Yellow",
+   "hex": "#FAEDAD",
+   "group": "Plate V"
+  },
+  {
+   "name": "Pale Green-Yellow",
+   "hex": "#F8EEA3",
+   "group": "Plate V"
+  },
+  {
+   "name": "Pale Viridine Yellow",
+   "hex": "#F4F0AC",
+   "group": "Plate V"
+  },
+  {
+   "name": "Pale Greenish Yellow",
+   "hex": "#C2B373",
+   "group": "Plate V"
+  },
+  {
+   "name": "Light Green-Yellow",
+   "hex": "#F0ED91",
+   "group": "Plate V"
+  },
+  {
+   "name": "Light Viridine Yellow",
+   "hex": "#C2B870",
+   "group": "Plate V"
+  },
+  {
+   "name": "Light Greenish Yellow",
+   "hex": "#C3B360",
+   "group": "Plate V"
+  },
+  {
+   "name": "Green-Yellow",
+   "hex": "#E5E26D",
+   "group": "Plate V"
+  },
+  {
+   "name": "Viridine Yellow",
+   "hex": "#B1C060",
+   "group": "Plate V"
+  },
+  {
+   "name": "Greenish Yellow",
+   "hex": "#C1B34D",
+   "group": "Plate V"
+  },
+  {
+   "name": "Bright Green-Yellow",
+   "hex": "#C6C34C",
+   "group": "Plate V"
+  },
+  {
+   "name": "Neva Green",
+   "hex": "#A3B65C",
+   "group": "Plate V"
+  },
+  {
+   "name": "Oil Yellow",
+   "hex": "#B7AB46",
+   "group": "Plate V"
+  },
+  {
+   "name": "Javel Green",
+   "hex": "#B7B042",
+   "group": "Plate V"
+  },
+  {
+   "name": "Cosse Green",
+   "hex": "#AAAE46",
+   "group": "Plate V"
+  },
+  {
+   "name": "Yellowish Oil Green",
+   "hex": "#8D8745",
+   "group": "Plate V"
+  },
+  {
+   "name": "Oil Green",
+   "hex": "#848944",
+   "group": "Plate V"
+  },
+  {
+   "name": "Lettuce Green",
+   "hex": "#92984F",
+   "group": "Plate V"
+  },
+  {
+   "name": "Calla Green",
+   "hex": "#6E7644",
+   "group": "Plate V"
+  },
+  {
+   "name": "Cerro Green",
+   "hex": "#6B7544",
+   "group": "Plate V"
+  },
+  {
+   "name": "Spinach Green",
+   "hex": "#687B4F",
+   "group": "Plate V"
+  },
+  {
+   "name": "Pale Yellow-Green",
+   "hex": "#DAE7AD",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Light Viridine Green",
+   "hex": "#EFECB0",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Pale Cendre Green",
+   "hex": "#ECECBC",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Light Yellow-Green",
+   "hex": "#EEE072",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Viridine Green",
+   "hex": "#DDE490",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Light Cendre Green",
+   "hex": "#A6D89C",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Clear Yellow-Green",
+   "hex": "#E7DD63",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Vanderpoel's Green",
+   "hex": "#81A872",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Cendre Green",
+   "hex": "#7DC18B",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Yellow-Green",
+   "hex": "#DAD23F",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Night Green",
+   "hex": "#C6D857",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Emerald Green",
+   "hex": "#9ACF7E",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Calliste Green",
+   "hex": "#B6B14B",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Scheele's Green",
+   "hex": "#A4AB59",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Peacock Green",
+   "hex": "#548B67",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Parrot Green",
+   "hex": "#888C4D",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Grass Green",
+   "hex": "#737F52",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Meadow Green",
+   "hex": "#4C785F",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Cedar Green",
+   "hex": "#636F4C",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Cossack Green",
+   "hex": "#486D4D",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Antique Green",
+   "hex": "#3F6352",
+   "group": "Plate VI"
+  },
+  {
+   "name": "Opaline Green",
+   "hex": "#DCE9C2",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Pale Blue-Green",
+   "hex": "#D5EFD1",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Pale Turquoise Green",
+   "hex": "#C1DED1",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Neuvider Green",
+   "hex": "#B9DFA8",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Light Blue-Green",
+   "hex": "#84D0BA",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Turquoise Green",
+   "hex": "#8DD8C8",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Chrysoprase Green",
+   "hex": "#8ACA8D",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Tyrolite Green",
+   "hex": "#56AEA1",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Venice Green",
+   "hex": "#5CC8B9",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Vivid Green",
+   "hex": "#36A57B",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Skobeloff Green",
+   "hex": "#038C84",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Benzol Green",
+   "hex": "#0194A5",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Viridian Green",
+   "hex": "#0C8970",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Guinea Green",
+   "hex": "#0D7672",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Ethyl Green",
+   "hex": "#087A83",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Dark Viridian Green",
+   "hex": "#107F6D",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Wall Green",
+   "hex": "#047571",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Sorrento Green",
+   "hex": "#116F75",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Diamine Green",
+   "hex": "#396F5E",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Anthracene Green",
+   "hex": "#297069",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Myrtle Green",
+   "hex": "#196164",
+   "group": "Plate VII"
+  },
+  {
+   "name": "Beryl Blue",
+   "hex": "#B6E4EB",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Pale Blue (Ethyl Blue)",
+   "hex": "#BDE2EC",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Pallid Methyl Blue",
+   "hex": "#BFE0F3",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Calamine Blue",
+   "hex": "#81CCDC",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Pale Cerulean Blue",
+   "hex": "#94CCED",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Pale Methyl Blue",
+   "hex": "#91C4E4",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Cendre Blue",
+   "hex": "#57B0CA",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Light Cerulean Blue",
+   "hex": "#66AFE2",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Light Methyl Blue",
+   "hex": "#5AA2DF",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Italian Blue",
+   "hex": "#0493BA",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Cerulean Blue",
+   "hex": "#0D88CD",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Methyl Blue",
+   "hex": "#2378CA",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Peacock Blue",
+   "hex": "#026998",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Oxide Blue",
+   "hex": "#036AAD",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Leitch's Blue",
+   "hex": "#0E61A8",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Patent Blue",
+   "hex": "#145A72",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Antwerp Blue",
+   "hex": "#085D93",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Paris Blue",
+   "hex": "#285F93",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Blackish Green-Blue",
+   "hex": "#0C5A71",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Marine Blue",
+   "hex": "#1F5B7E",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Berlin Blue",
+   "hex": "#285675",
+   "group": "Plate VIII"
+  },
+  {
+   "name": "Pale Mazarine Blue",
+   "hex": "#C4DAF6",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Pale Amparo Blue",
+   "hex": "#C3D5F7",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Pallid Violet-Blue",
+   "hex": "#C1CEEF",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Mazarine Blue",
+   "hex": "#8EB5F2",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Light Amparo Blue",
+   "hex": "#8FB0F3",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Pale Violet-Blue",
+   "hex": "#A3B5EC",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Salvia Blue",
+   "hex": "#6190EB",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Amparo Blue",
+   "hex": "#7292EC",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Light Violet-Blue",
+   "hex": "#8297DF",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Spectrum Blue",
+   "hex": "#196CD6",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Bradley's Blue",
+   "hex": "#3267D5",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Phenyl Blue",
+   "hex": "#3E5CCD",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Ultramarine Blue",
+   "hex": "#195DC6",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Lyons Blue",
+   "hex": "#2554C2",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Smalt Blue",
+   "hex": "#4A57B3",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Rood's Blue",
+   "hex": "#2B57A8",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Helvetia Blue",
+   "hex": "#3851A1",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Hay's Blue",
+   "hex": "#3B4C94",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Prussian Blue",
+   "hex": "#335084",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Cyanine Blue",
+   "hex": "#354B86",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Azurite Blue",
+   "hex": "#434D7B",
+   "group": "Plate IX"
+  },
+  {
+   "name": "Pallid Blue-Violet",
+   "hex": "#CED2F4",
+   "group": "Plate X"
+  },
+  {
+   "name": "Pallid Bluish Violet",
+   "hex": "#CDCEF5",
+   "group": "Plate X"
+  },
+  {
+   "name": "Pallid Violet",
+   "hex": "#CECAF1",
+   "group": "Plate X"
+  },
+  {
+   "name": "Pale Blue-Violet",
+   "hex": "#ADBAF3",
+   "group": "Plate X"
+  },
+  {
+   "name": "Pale Bluish Violet",
+   "hex": "#B2B6EF",
+   "group": "Plate X"
+  },
+  {
+   "name": "Pale Violet",
+   "hex": "#B3AFE7",
+   "group": "Plate X"
+  },
+  {
+   "name": "Light Blue-Violet",
+   "hex": "#8993E1",
+   "group": "Plate X"
+  },
+  {
+   "name": "Light Bluish Violet",
+   "hex": "#8D8EDD",
+   "group": "Plate X"
+  },
+  {
+   "name": "Light Violet",
+   "hex": "#958DD6",
+   "group": "Plate X"
+  },
+  {
+   "name": "Blue-Violet",
+   "hex": "#5E4EC4",
+   "group": "Plate X"
+  },
+  {
+   "name": "Bluish Violet",
+   "hex": "#6245C0",
+   "group": "Plate X"
+  },
+  {
+   "name": "Spectrum Violet",
+   "hex": "#6740A6",
+   "group": "Plate X"
+  },
+  {
+   "name": "Deep Blue-Violet",
+   "hex": "#514E9F",
+   "group": "Plate X"
+  },
+  {
+   "name": "Violet Ultramarine",
+   "hex": "#5E47AB",
+   "group": "Plate X"
+  },
+  {
+   "name": "Royal Purple",
+   "hex": "#69519A",
+   "group": "Plate X"
+  },
+  {
+   "name": "Hyacinth Blue",
+   "hex": "#504988",
+   "group": "Plate X"
+  },
+  {
+   "name": "Roslyn Blue",
+   "hex": "#50457E",
+   "group": "Plate X"
+  },
+  {
+   "name": "Dark Violet",
+   "hex": "#534C7C",
+   "group": "Plate X"
+  },
+  {
+   "name": "Dark Aniline Blue",
+   "hex": "#364261",
+   "group": "Plate X"
+  },
+  {
+   "name": "Dark Bluish Violet",
+   "hex": "#454360",
+   "group": "Plate X"
+  },
+  {
+   "name": "Blackish Violet",
+   "hex": "#473B63",
+   "group": "Plate X"
+  },
+  {
+   "name": "Pale Hortense Violet",
+   "hex": "#E0B7F2",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Pale Amparo Purple",
+   "hex": "#EBB3F1",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Phlox Pink",
+   "hex": "#F0BEEA",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Light Hortense Violet",
+   "hex": "#C17CD3",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Light Amparo Purple",
+   "hex": "#CF91DA",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Light Phlox Purple",
+   "hex": "#DA89DA",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Hortense Violet",
+   "hex": "#AA6FCA",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Amparo Purple",
+   "hex": "#B775CA",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Phlox Purple",
+   "hex": "#C961B5",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Amethyst Violet",
+   "hex": "#823BAC",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Violet-Purple",
+   "hex": "#A13CA8",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Purple (True)",
+   "hex": "#BE27A0",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Hyacinth Violet",
+   "hex": "#7D368B",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Pansy Violet",
+   "hex": "#843D75",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Rood's Violet",
+   "hex": "#894067",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Mulberry Purple",
+   "hex": "#65416F",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Cotinga Purple",
+   "hex": "#683B67",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Raisin Purple",
+   "hex": "#7E4165",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Fluorite Violet",
+   "hex": "#503B59",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Prune Purple",
+   "hex": "#543556",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Blackish Purple",
+   "hex": "#59364B",
+   "group": "Plate XI"
+  },
+  {
+   "name": "Mallow Pink",
+   "hex": "#F7AFEB",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Pale Amaranth Pink",
+   "hex": "#FCC0EE",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Rose Pink",
+   "hex": "#FEC2E4",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Light Mallow Purple",
+   "hex": "#E989CE",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Amaranth Pink",
+   "hex": "#F190CE",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Deep Rose-Pink",
+   "hex": "#F892BD",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Mallow Purple",
+   "hex": "#DD68B3",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Tyrian Pink",
+   "hex": "#E661A0",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Rose Color",
+   "hex": "#EA598F",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Rhodamine Purple",
+   "hex": "#D02395",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Tyrian Rose",
+   "hex": "#DA2068",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Rose Red",
+   "hex": "#D1294E",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Aster Purple",
+   "hex": "#A13967",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Amaranth Purple",
+   "hex": "#A73058",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Pomegranate Purple",
+   "hex": "#B83250",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Dahlia Purple",
+   "hex": "#6F314F",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Pansy Purple",
+   "hex": "#843751",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Bordeaux",
+   "hex": "#75343D",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Blackish Red-Purple",
+   "hex": "#5B3644",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Violet Carmine",
+   "hex": "#61373D",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Burnt Lake",
+   "hex": "#653B3B",
+   "group": "Plate XII"
+  },
+  {
+   "name": "Venetian Pink",
+   "hex": "#F2BFBF",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Chatenay Pink",
+   "hex": "#EEC0BD",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Flesh Pink",
+   "hex": "#F0C2B8",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Alizarine Pink",
+   "hex": "#E4979F",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Jasper Pink",
+   "hex": "#E99193",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Coral Pink",
+   "hex": "#E49489",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Old Rose",
+   "hex": "#D9696F",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Light Jasper Red",
+   "hex": "#E36D6D",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Light Coral Red",
+   "hex": "#EE7767",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Eugenia Red",
+   "hex": "#C9565B",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Jasper Red",
+   "hex": "#D9544F",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Coral Red",
+   "hex": "#DC5C4B",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Acajou Red",
+   "hex": "#A15252",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Pompeian Red",
+   "hex": "#AC524C",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Dragon's-blood Red",
+   "hex": "#B95142",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Vandyke Red",
+   "hex": "#814042",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Madder Brown",
+   "hex": "#854841",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Brick Red",
+   "hex": "#915248",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Hay's Maroon",
+   "hex": "#654543",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Diamine Brown",
+   "hex": "#634644",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Hessian Brown",
+   "hex": "#67433E",
+   "group": "Plate XIII"
+  },
+  {
+   "name": "Pale Flesh Color",
+   "hex": "#F5CEC0",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Pale Salmon Color",
+   "hex": "#F8D6C1",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Seashell Pink",
+   "hex": "#F6D6BC",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Flesh Color",
+   "hex": "#F1A58D",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Salmon Color",
+   "hex": "#F3AB89",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Salmon-Buff",
+   "hex": "#FDC39C",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Carrot Red",
+   "hex": "#E18674",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Flesh Ocher",
+   "hex": "#F09470",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Apricot Buff",
+   "hex": "#E99A6C",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Carnelian Red",
+   "hex": "#EB7455",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Rufous",
+   "hex": "#E97C55",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Apricot Orange",
+   "hex": "#F08455",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Vinaceous-Rufous",
+   "hex": "#B55A40",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Ferruginous",
+   "hex": "#B36149",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Cinnamon-Rufous",
+   "hex": "#BA6A4B",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Hay's Russet",
+   "hex": "#92513E",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Kaiser Brown",
+   "hex": "#935641",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Hazel",
+   "hex": "#A36442",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Liver Brown",
+   "hex": "#65473E",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Carob Brown",
+   "hex": "#6C564A",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Chestnut-Brown",
+   "hex": "#6F574C",
+   "group": "Plate XIV"
+  },
+  {
+   "name": "Pale Ochraceous-Salmon",
+   "hex": "#FED9BB",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Pale Ochraceous-Buff",
+   "hex": "#FCD9B6",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Light Buff",
+   "hex": "#FDE0B6",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Light Ochraceous-Salmon",
+   "hex": "#EEBA92",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Light Ochraceous-Buff",
+   "hex": "#FBC490",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Warm Buff",
+   "hex": "#F9C78E",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Ochraceous-Salmon",
+   "hex": "#FAA66E",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Ochraceous-Buff",
+   "hex": "#EEAA69",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Antimony Yellow",
+   "hex": "#F9B867",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Zinc Orange",
+   "hex": "#ED8D4B",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Ochraceous-Orange",
+   "hex": "#F0953B",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Yellow Ocher",
+   "hex": "#DF9A44",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Tawny",
+   "hex": "#C27946",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Ochraceous-Tawny",
+   "hex": "#C68545",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Buckthorn Brown",
+   "hex": "#BC8745",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Russet",
+   "hex": "#966443",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Cinnamon-Brown",
+   "hex": "#916744",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Dresden Brown",
+   "hex": "#8C6B40",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Mars Brown",
+   "hex": "#775742",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Prout's Brown",
+   "hex": "#78593E",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Mummy Brown",
+   "hex": "#68553D",
+   "group": "Plate XV"
+  },
+  {
+   "name": "Cream Color",
+   "hex": "#FBE1A8",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Massicot Yellow",
+   "hex": "#F6E4A6",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Naphthalene Yellow",
+   "hex": "#F9E9A7",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Naples Yellow",
+   "hex": "#ECCE88",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Straw Yellow",
+   "hex": "#FCE499",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Barium Yellow",
+   "hex": "#F9E38C",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Mustard Yellow",
+   "hex": "#F4C863",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Amber Yellow",
+   "hex": "#F4D362",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Citron Yellow",
+   "hex": "#F4DD6E",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Primuline Yellow",
+   "hex": "#EFB83E",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Wax Yellow",
+   "hex": "#F0C441",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Strontian Yellow",
+   "hex": "#F6D14B",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Old Gold",
+   "hex": "#BB9949",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Olive Lake",
+   "hex": "#9E894C",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Yellowish Citrine",
+   "hex": "#AD9E4B",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Buffy Citrine",
+   "hex": "#98834A",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Dull Citrine",
+   "hex": "#8D8552",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Serpentine Green",
+   "hex": "#8B8647",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Saccardo's Olive",
+   "hex": "#81744C",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Olive-Citrine",
+   "hex": "#6F6D44",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Roman Green",
+   "hex": "#6F7044",
+   "group": "Plate XVI"
+  },
+  {
+   "name": "Pale Chalcedony Yellow",
+   "hex": "#F0E8B5",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Pale Dull Green-Yellow",
+   "hex": "#EFE9B0",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Pale Lumiere Green",
+   "hex": "#E5E7B2",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Light Chalcedony Yellow",
+   "hex": "#F1E595",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Light Dull Green-Yellow",
+   "hex": "#E4E197",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Light Lumiere Green",
+   "hex": "#D9DF9A",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Chalcedony Yellow",
+   "hex": "#E3D57D",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Clear Dull Green Yellow",
+   "hex": "#E2DC7C",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Lumiere Green",
+   "hex": "#CBD47E",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Bright Chalcedony Yellow",
+   "hex": "#DFD26A",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Dull Green-Yellow",
+   "hex": "#C7C76A",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Apple Green",
+   "hex": "#B0BC69",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Courge Green",
+   "hex": "#A19F63",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Biscay Green",
+   "hex": "#979E65",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Light Bice Green",
+   "hex": "#879767",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Light Hellebore Green",
+   "hex": "#7E825E",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Light Elm Green",
+   "hex": "#7F8960",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Bice Green",
+   "hex": "#7F9269",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Hellebore Green",
+   "hex": "#646E46",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Elm Green",
+   "hex": "#606D4B",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Forest Green",
+   "hex": "#62754B",
+   "group": "Plate XVII"
+  },
+  {
+   "name": "Pale Veronese Green",
+   "hex": "#DFE7B9",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Pale Tiber Green",
+   "hex": "#DAE5B4",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Oural Green",
+   "hex": "#D0E0BA",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Veronese Green",
+   "hex": "#CADA96",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Tiber Green",
+   "hex": "#BDD99F",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Light Paris Green",
+   "hex": "#B4D2A5",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Rivage Green",
+   "hex": "#B2CC81",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Light Oriental Green",
+   "hex": "#8ABB8A",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Paris Green",
+   "hex": "#84B289",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Mineral Green",
+   "hex": "#ADBE60",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Oriental Green",
+   "hex": "#75AC79",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Motmot Green",
+   "hex": "#669D7A",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Rinnemann's Green",
+   "hex": "#779064",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Winter Green",
+   "hex": "#6A8F69",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Killarney Green",
+   "hex": "#63926F",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Civette Green",
+   "hex": "#688462",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Hay's Green",
+   "hex": "#5C825D",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Ackermann's Green",
+   "hex": "#528565",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Varley's Green",
+   "hex": "#55694C",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Dark Yellowish Green",
+   "hex": "#516B54",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Dark Green",
+   "hex": "#4B6A56",
+   "group": "Plate XVIII"
+  },
+  {
+   "name": "Dull Opaline Green",
+   "hex": "#C9E3CC",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Microcline Green",
+   "hex": "#C1E4D4",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Pale Nile Blue",
+   "hex": "#B9DED7",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Variscite Green",
+   "hex": "#A2D4B5",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Pale Sulphate Green",
+   "hex": "#9DD6C3",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Nile Blue",
+   "hex": "#8CCAC4",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Cobalt Green",
+   "hex": "#7BC6A0",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Light Sulphate Green",
+   "hex": "#6EC5B2",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Beryl Green",
+   "hex": "#64BCBA",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Verdigris Green",
+   "hex": "#469C7E",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Sulphate Green",
+   "hex": "#419F90",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Methyl Green",
+   "hex": "#409A9B",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Zinc Green",
+   "hex": "#5A8E74",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Dark Sulphate Green",
+   "hex": "#498D7A",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Sea Green",
+   "hex": "#388783",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Dark Zinc Green",
+   "hex": "#4C7866",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Dark Cinnabar Green",
+   "hex": "#3E776A",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Prussian Green",
+   "hex": "#2D7A72",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Bottle Green",
+   "hex": "#375F57",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Duck Green",
+   "hex": "#295C5C",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Invisible Green",
+   "hex": "#39615C",
+   "group": "Plate XIX"
+  },
+  {
+   "name": "Etain Blue",
+   "hex": "#BACCC8",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Persian Blue",
+   "hex": "#BED8EC",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Light Sky Blue",
+   "hex": "#BDD6ED",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Lumiere Blue",
+   "hex": "#99C1BC",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Light Squill Blue",
+   "hex": "#98C6E3",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Sky Blue",
+   "hex": "#95C1E7",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Bremen Blue",
+   "hex": "#68BECB",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Squill Blue",
+   "hex": "#72AFD7",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Yale Blue",
+   "hex": "#84ABDD",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Motmot Blue",
+   "hex": "#3999AB",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Mathews' Blue",
+   "hex": "#4894C4",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Olympic Blue",
+   "hex": "#5A93D1",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Capri Blue",
+   "hex": "#278794",
+   "group": "Plate XX"
+  },
+  {
+   "name": "China Blue",
+   "hex": "#538BA9",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Vanderpoel's Blue",
+   "hex": "#5B88BA",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Jouvence Blue",
+   "hex": "#1B717A",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Chessylite Blue",
+   "hex": "#417B96",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Blanc's Blue",
+   "hex": "#376E9D",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Dusky Green-Blue 1",
+   "hex": "#285C60",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Dark Chessylite Blue",
+   "hex": "#32606D",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Dusky Greenish Blue",
+   "hex": "#2B5F7C",
+   "group": "Plate XX"
+  },
+  {
+   "name": "Pale Grayish Blue",
+   "hex": "#C5D8F6",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Wedgewood Blue",
+   "hex": "#C0CBF4",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Light Lavender-Blue",
+   "hex": "#C1C7F2",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Pale Cadet Blue",
+   "hex": "#A5BCED",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Deep Wedgewood Blue",
+   "hex": "#ABB8F0",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Lavender-Blue",
+   "hex": "#A8B2EA",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Light Cadet Blue",
+   "hex": "#8AA7E4",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Flax-flower Blue",
+   "hex": "#8A9FE4",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Deep Lavender-Blue",
+   "hex": "#929AE0",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Clear Cadet Blue",
+   "hex": "#698ACE",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Commelina Blue",
+   "hex": "#6980D5",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Cornflower Blue",
+   "hex": "#7078CE",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Cadet Blue",
+   "hex": "#5E7BB3",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Diva Blue",
+   "hex": "#5A70B5",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Gentian Blue",
+   "hex": "#616AB3",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Deep Cadet Blue",
+   "hex": "#4E6B9B",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Dark Diva Blue",
+   "hex": "#51649F",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Sailor Blue",
+   "hex": "#565F96",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Dark Cadet Blue",
+   "hex": "#476181",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Alizarine Blue",
+   "hex": "#42577D",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Navy Blue",
+   "hex": "#51597B",
+   "group": "Plate XXI"
+  },
+  {
+   "name": "Pale King's Blue",
+   "hex": "#C1CCD4",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Pale Neropalin Blue",
+   "hex": "#B8C5D6",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Pale Forget-me-not Blue",
+   "hex": "#BAC4D4",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Light King's Blue",
+   "hex": "#9EB4CC",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Light Neropalin Blue",
+   "hex": "#A2B6D2",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Light Forget-me-not Blue",
+   "hex": "#A4B4D1",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "King's Blue",
+   "hex": "#7896C1",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Neropalin Blue",
+   "hex": "#7E97C0",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Forget-me-not Blue",
+   "hex": "#8AA0CB",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Indulin Blue",
+   "hex": "#6984BA",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Venetian Blue",
+   "hex": "#6984BA",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Ultramarine Ash",
+   "hex": "#6178B3",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Dull Violaceous Blue",
+   "hex": "#5E72B1",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Jay Blue",
+   "hex": "#566D93",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Chapman's Blue",
+   "hex": "#5C729E",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Grayish Violaceous Blue",
+   "hex": "#566693",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Gendarme Blue",
+   "hex": "#455D83",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Eton Blue",
+   "hex": "#495E8B",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Deep Dull Violaceous Blue",
+   "hex": "#47547D",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Hortense Blue",
+   "hex": "#2F425F",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Dusky Blue",
+   "hex": "#35405E",
+   "group": "Plate XXII"
+  },
+  {
+   "name": "Pallid Soft Blue-Violet",
+   "hex": "#C3C7F3",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Pale Wistaria Blue",
+   "hex": "#C1BFEE",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Pale Wistaria Violet",
+   "hex": "#CAC4F1",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Pale Soft Blue-Violet",
+   "hex": "#ABAFEA",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Light Wistaria Blue",
+   "hex": "#AFAEE9",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Light Wistaria Violet",
+   "hex": "#B5ADEC",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Light Soft Blue-Violet",
+   "hex": "#8F95E3",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Wistaria Blue",
+   "hex": "#9592DC",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Wistaria Violet",
+   "hex": "#A092DD",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Soft Blue-Violet",
+   "hex": "#786FBA",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Soft Bluish Violet",
+   "hex": "#7F6CB5",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Bradley's Violet",
+   "hex": "#8060A2",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Deep Soft Blue-Violet",
+   "hex": "#6766A1",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Deep Soft Bluish Violet",
+   "hex": "#6E629A",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Dauphin's Violet",
+   "hex": "#725C92",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Dark Soft Blue-Violet",
+   "hex": "#59588F",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Dark Soft Bluish Violet",
+   "hex": "#66588D",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Blanc's Violet",
+   "hex": "#665888",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Dusky Violet-Blue 1",
+   "hex": "#454E66",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Dusky Blue-Violet 1",
+   "hex": "#4C4D6B",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Dusky Violet",
+   "hex": "#4F4C67",
+   "group": "Plate XXIII"
+  },
+  {
+   "name": "Pallid Grayish Violet-Blue",
+   "hex": "#B6BDD5",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Pale Campanula Blue",
+   "hex": "#C7CCE3",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Light Chicory Blue",
+   "hex": "#BABCDB",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Pale Grayish Violet-Blue",
+   "hex": "#9FACD9",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Light Campanula Blue",
+   "hex": "#A7B2DE",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Chicory Blue",
+   "hex": "#99A1D6",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Light Grayish Violet-Blue",
+   "hex": "#7E91CD",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Campanula Blue",
+   "hex": "#8A99D7",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Deep Chicory Blue",
+   "hex": "#808BCE",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dull Violet-Blue",
+   "hex": "#5969A8",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dull Blue-Violet 1",
+   "hex": "#5A64AA",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dull Bluish Violet 1",
+   "hex": "#5C5A9C",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Grayish Violet-Blue",
+   "hex": "#5D6594",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Grayish Blue-Violet 1",
+   "hex": "#5D6194",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Deep Dull Bluish Violet 1",
+   "hex": "#5C5A88",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dark Dull Violet-Blue",
+   "hex": "#485071",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dark Grayish Blue-Violet",
+   "hex": "#4D4E75",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dark Dull Bluish Violet 1",
+   "hex": "#4C4B6F",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Urania Blue",
+   "hex": "#32364C",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Dusky Blue-Violet 2",
+   "hex": "#333550",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Plum Purple",
+   "hex": "#35384E",
+   "group": "Plate XXIV"
+  },
+  {
+   "name": "Pale Lavender-Violet",
+   "hex": "#D7C5E1",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Pale Mauve",
+   "hex": "#D9C8EF",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Mauvette",
+   "hex": "#E0CAE2",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Light Lavender-Violet",
+   "hex": "#B9A1E4",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Light Mauve",
+   "hex": "#CFABDD",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Lilac",
+   "hex": "#CEACDA",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Lavender-Violet",
+   "hex": "#A788D6",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Mauve",
+   "hex": "#A787CE",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Chinese Violet",
+   "hex": "#B382C6",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Pleroma Violet",
+   "hex": "#8759A2",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Manganese Violet",
+   "hex": "#895C9B",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Mathews' Purple",
+   "hex": "#9F5E9C",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Haematoxylin Violet",
+   "hex": "#705089",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Litho Purple",
+   "hex": "#78588D",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Petunia Violet",
+   "hex": "#8D6196",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Anthracene Violet",
+   "hex": "#5D4973",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Madder Violet",
+   "hex": "#5F476A",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Nigrosin Violet",
+   "hex": "#65476A",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Dark Anthracene Violet",
+   "hex": "#434759",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Dark Madder Violet",
+   "hex": "#4A4559",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Dark Nigrosin Violet",
+   "hex": "#494251",
+   "group": "Plate XXV"
+  },
+  {
+   "name": "Pale Rose-Purple",
+   "hex": "#E6C4D7",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Rosolane Pink",
+   "hex": "#F1C4D8",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Cameo Pink",
+   "hex": "#EEC8CD",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Rose-Purple",
+   "hex": "#E09DDF",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Pale Rosolane Purple",
+   "hex": "#E9A0C9",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Thulite Pink",
+   "hex": "#EA98B5",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Liseran Purple",
+   "hex": "#D081BE",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Light Rosolane Purple",
+   "hex": "#DD75AD",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Spinel Pink",
+   "hex": "#D86C85",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Magenta",
+   "hex": "#AE5287",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Rosolane Purple",
+   "hex": "#BF507E",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Spinel Red",
+   "hex": "#CC526B",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Dull Magenta Purple",
+   "hex": "#944B76",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Schoenfeld's Purple",
+   "hex": "#9D4673",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Indian Lake",
+   "hex": "#8A4955",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Dull Dark Purple",
+   "hex": "#7B4A6C",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Auricula Purple",
+   "hex": "#7A4660",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Dahlia Carmine",
+   "hex": "#76404D",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Dull Dusky Purple",
+   "hex": "#5B4558",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Dusky Auricula Purple",
+   "hex": "#5E4556",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Dark Maroon Purple",
+   "hex": "#64434D",
+   "group": "Plate XXVI"
+  },
+  {
+   "name": "Pale Vinaceous",
+   "hex": "#D7B8BA",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Livid Pink",
+   "hex": "#EEC8C7",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Hydrangea Pink",
+   "hex": "#E1C1BA",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Vinaceous",
+   "hex": "#C6959C",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Corinthian Pink",
+   "hex": "#CB9C9D",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Pinkish Vinaceous",
+   "hex": "#CDA19E",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Deep Vinaceous",
+   "hex": "#AF7678",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Light Corinthian Red",
+   "hex": "#B3AD9B",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Orange-Vinaceous",
+   "hex": "#C7887F",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Dark Vinaceous",
+   "hex": "#A46464",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Corinthian Red",
+   "hex": "#9C6763",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Etruscan Red",
+   "hex": "#AD6B60",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Hydrangea Red",
+   "hex": "#9C6159",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Deep Corinthian Red",
+   "hex": "#9F605A",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Ocher Red",
+   "hex": "#A66558",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Mineral Red",
+   "hex": "#895351",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Indian Red",
+   "hex": "#885853",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Prussian Red",
+   "hex": "#895B51",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Dark Mineral Red",
+   "hex": "#6B514E",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Dark Indian Red",
+   "hex": "#6E4E4B",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Haematite Red",
+   "hex": "#70524C",
+   "group": "Plate XXVII"
+  },
+  {
+   "name": "Pale Congo Pink",
+   "hex": "#E5C4B7",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Pale Vinaceous-Pink",
+   "hex": "#F1CFC2",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Shell Pink",
+   "hex": "#F3D1BF",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Light Congo Pink",
+   "hex": "#E3B09F",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Vinaceous-Pink",
+   "hex": "#EBB69F",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Buff-Pink",
+   "hex": "#E7B295",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Congo Pink",
+   "hex": "#D48F7A",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Japan Rose",
+   "hex": "#DC9176",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Onion-skin Pink",
+   "hex": "#DA9678",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Terra Cotta",
+   "hex": "#C4775D",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Testaceous",
+   "hex": "#CB8062",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Vinaceous-Tawny",
+   "hex": "#CB7F5A",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Vinaceous-Russet",
+   "hex": "#A16F5B",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Cacao Brown",
+   "hex": "#AF755E",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Pecan Brown",
+   "hex": "#AE7257",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Cameo Brown",
+   "hex": "#886153",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Walnut Brown",
+   "hex": "#8F6450",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Rood's Brown",
+   "hex": "#8F6852",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Chocolate",
+   "hex": "#6D4E43",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Burnt Umber",
+   "hex": "#6C5043",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Vandyke Brown",
+   "hex": "#6A5040",
+   "group": "Plate XXVIII"
+  },
+  {
+   "name": "Pale Cinnamon-Pink",
+   "hex": "#F5D3C3",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Pale Pinkish Cinnamon",
+   "hex": "#F3D4C2",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Pale Pinkish Buff",
+   "hex": "#F2D6BC",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Light Vinaceous-Cinnamon",
+   "hex": "#E7B395",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Light Pinkish Cinnamon",
+   "hex": "#E8BA96",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Pinkish Buff",
+   "hex": "#E8C098",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Vinaceous-Cinnamon",
+   "hex": "#D49772",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Pinkish Cinnamon",
+   "hex": "#E0A074",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Cinnamon-Buff",
+   "hex": "#D9A874",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Orange-Cinnamon",
+   "hex": "#C48256",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Cinnamon",
+   "hex": "#CC925F",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Clay Color",
+   "hex": "#C49253",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Mikado Brown",
+   "hex": "#AA7553",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Sayal Brown",
+   "hex": "#AC7E56",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Tawny-Olive",
+   "hex": "#AD8557",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Verona Brown",
+   "hex": "#8D6A4E",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Snuff Brown",
+   "hex": "#8F6C4C",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Saccardo's Umber",
+   "hex": "#896F4C",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Warm Sepia",
+   "hex": "#6E5644",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Bister",
+   "hex": "#6C5640",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Sepia",
+   "hex": "#665841",
+   "group": "Plate XXIX"
+  },
+  {
+   "name": "Cartridge Buff",
+   "hex": "#F3DDBF",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Ivory Yellow",
+   "hex": "#F6E4C2",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Marguerite Yellow",
+   "hex": "#F4E5BD",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Cream-Buff",
+   "hex": "#E5C18D",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Colonial Buff",
+   "hex": "#EBCE91",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Primrose Yellow",
+   "hex": "#ECD596",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Chamois",
+   "hex": "#D4AC71",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Deep Colonial Buff",
+   "hex": "#D4AC71",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Reed Yellow",
+   "hex": "#DEC67F",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Honey Yellow",
+   "hex": "#BC995A",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Olive-Ocher",
+   "hex": "#C6A34C",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Olive-Yellow",
+   "hex": "#C5B554",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Isabella Color",
+   "hex": "#A98856",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Ecru-Olive",
+   "hex": "#AA9760",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Light Yellowish Olive",
+   "hex": "#A6955D",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Light Brownish Olive",
+   "hex": "#8B7653",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Buffy Olive",
+   "hex": "#8C7C56",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Yellowish Olive",
+   "hex": "#7C764D",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Brownish Olive",
+   "hex": "#685C40",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Olive",
+   "hex": "#645F46",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Dark Greenish Olive",
+   "hex": "#5D5F44",
+   "group": "Plate XXX"
+  },
+  {
+   "name": "Seafoam Yellow",
+   "hex": "#EADFBB",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Seafoam Green",
+   "hex": "#E9E0B7",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Pale Glass Green",
+   "hex": "#E4DCB1",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Chartreuse Yellow",
+   "hex": "#E4D394",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Deep Seafoam Green",
+   "hex": "#DACE8F",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Glass Green",
+   "hex": "#D9D296",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Citron Green",
+   "hex": "#C7B96F",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Chrysolite Green",
+   "hex": "#C8C67F",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Kildare Green",
+   "hex": "#B9C085",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Lime Green",
+   "hex": "#BDB661",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Deep Chrysolite Green",
+   "hex": "#AFB565",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Absinthe Green",
+   "hex": "#A6B46C",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Mignonette Green",
+   "hex": "#A89E62",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Rainette Green",
+   "hex": "#9C995F",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Light Cress Green",
+   "hex": "#949760",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Kronberg's Green",
+   "hex": "#7C7D52",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Jade Green",
+   "hex": "#767B4F",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Cress Green",
+   "hex": "#6E7E4F",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Ivy Green",
+   "hex": "#5D6346",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Yew Green",
+   "hex": "#556147",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Dark Cress Green",
+   "hex": "#576347",
+   "group": "Plate XXXI"
+  },
+  {
+   "name": "Pale Turtle Green",
+   "hex": "#D9D6AE",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Pale Fluorite Green",
+   "hex": "#DADDBC",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Pale Olivine",
+   "hex": "#D1D9BC",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Light Turtle Green",
+   "hex": "#C3C08C",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Light Fluorite Green",
+   "hex": "#CAD3A4",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Olivine",
+   "hex": "#BCC99A",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Turtle Green",
+   "hex": "#AFC181",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Clear Fluorite Green",
+   "hex": "#A7C18B",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Malachite Green",
+   "hex": "#9CBA89",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Deep Turtle Green",
+   "hex": "#89AB74",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Fluorite Green",
+   "hex": "#7CA97E",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Deep Malachite Green",
+   "hex": "#73A182",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Chromium Green",
+   "hex": "#839261",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Shamrock Green",
+   "hex": "#78976A",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "French Green",
+   "hex": "#5B8E71",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Deep Dull Yellow-Green 1",
+   "hex": "#6D7F5A",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Deep Dull Yellow-Green 2",
+   "hex": "#637F61",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Light Danube Green",
+   "hex": "#457462",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Dark Dull Yellow-Green",
+   "hex": "#4F6044",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Empire Green",
+   "hex": "#4E644D",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Danube Green",
+   "hex": "#47654F",
+   "group": "Plate XXXII"
+  },
+  {
+   "name": "Lichen Green",
+   "hex": "#C2D8C9",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Pale Glaucous-Green",
+   "hex": "#D6DDCC",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Pale Niagara Green",
+   "hex": "#C8D6C6",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Deep Lichen Green",
+   "hex": "#B7C3A6",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Glaucous-Green",
+   "hex": "#BCCBB7",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Light Niagara Green",
+   "hex": "#ACC5B7",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Rejane Green",
+   "hex": "#A0B893",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Deep Glaucous-Green",
+   "hex": "#9AB69B",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Niagara Green",
+   "hex": "#93B6A6",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Montpellier Green",
+   "hex": "#649688",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Light Porcelain Green",
+   "hex": "#5F9288",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Light Terre Verte",
+   "hex": "#5C928D",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Jasper Green",
+   "hex": "#4E8075",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Porcelain Green",
+   "hex": "#4F8582",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Terre Verte",
+   "hex": "#548478",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Nickel Green",
+   "hex": "#506A59",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Dark Porcelain Green",
+   "hex": "#4D6F62",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Dark Terre Verte",
+   "hex": "#486C62",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Dusky Green",
+   "hex": "#43594E",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Dusky Blue-Green",
+   "hex": "#455E57",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Dusky Bluish Green",
+   "hex": "#3D5A57",
+   "group": "Plate XXXIII"
+  },
+  {
+   "name": "Pale Glaucous-Blue",
+   "hex": "#BCCCCC",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Sky Gray",
+   "hex": "#B9C4CF",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Burn Blue",
+   "hex": "#B0BACB",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Light Glaucous-Blue",
+   "hex": "#A2BDBD",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Light Alice Blue",
+   "hex": "#A2B5C1",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Light Columbia Blue",
+   "hex": "#97ABC0",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Glaucous-Blue",
+   "hex": "#81A6AA",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Alice Blue",
+   "hex": "#83A1B2",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Columbia Blue",
+   "hex": "#839CB4",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Porcelain Blue",
+   "hex": "#6A949C",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Orient Blue",
+   "hex": "#6489A5",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Light Tyrian Blue",
+   "hex": "#6B8199",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Gobelin Blue",
+   "hex": "#5C8186",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Deep Orient Blue",
+   "hex": "#638195",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Tyrian Blue",
+   "hex": "#647B96",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Dark Gobelin Blue",
+   "hex": "#466C6B",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Dark Orient Blue",
+   "hex": "#436677",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Dark Tyrian Blue",
+   "hex": "#4A647F",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Dusky Green-Blue 2",
+   "hex": "#28575C",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Dusky Orient Blue",
+   "hex": "#2E5967",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Indigo Blue",
+   "hex": "#3E586C",
+   "group": "Plate XXXIV"
+  },
+  {
+   "name": "Pearl Blue",
+   "hex": "#BFC1CD",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Pale Grayish Blue-Violet",
+   "hex": "#C2C0CF",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Pale Aniline Lilac",
+   "hex": "#C9C2CE",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Pale Windsor Blue",
+   "hex": "#9FADC4",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Light Grayish Blue-Violet",
+   "hex": "#A9B4CC",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Aniline Lilac",
+   "hex": "#AFB0C8",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Light Windsor Blue",
+   "hex": "#798EB1",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Grayish Blue-Violet 2",
+   "hex": "#8797BA",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Deep Aniline Lilac",
+   "hex": "#919DC3",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Clear Windsor Blue",
+   "hex": "#63779E",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Dull Bluish Violet 2",
+   "hex": "#6E739D",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Dull Violet-Blue",
+   "hex": "#77749E",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Windsor Blue",
+   "hex": "#667399",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Deep Dull Bluish Violet 2",
+   "hex": "#676D90",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Deep Dull Violet-Blue",
+   "hex": "#6D6B8D",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Acetin Blue",
+   "hex": "#4E5D7B",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Dark Dull Bluish Violet 2",
+   "hex": "#555C75",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Dark Dull Violet-Blue",
+   "hex": "#5B5870",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Nigrosin Blue",
+   "hex": "#445067",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Diamin-Azo Blue",
+   "hex": "#484D62",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Dusky Dull Violet-Blue",
+   "hex": "#4C4B5E",
+   "group": "Plate XXXV"
+  },
+  {
+   "name": "Pale Verbena Violet",
+   "hex": "#CEC9D8",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Pale Bluish Lavender",
+   "hex": "#D4CBD7",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Lavender",
+   "hex": "#D7CAD4",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Verbena Violet",
+   "hex": "#A9A7C4",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Bluish Lavender",
+   "hex": "#ABA2C5",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Deep Lavender",
+   "hex": "#BAA9C4",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Ontario Violet",
+   "hex": "#9199C1",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Light Dull Bluish Violet",
+   "hex": "#9D9BBD",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Light Hyssop Violet",
+   "hex": "#9E91B6",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Vanderpoel's Violet",
+   "hex": "#7A719A",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dull Bluish Violet 3",
+   "hex": "#83749B",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Hyssop Violet",
+   "hex": "#867093",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dull Blue-Violet 2",
+   "hex": "#6A617F",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Deep Dull Bluish Violet 3",
+   "hex": "#6D6080",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Deep Hyssop Violet",
+   "hex": "#796583",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Yvette Violet",
+   "hex": "#59516A",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dark Dull Bluish Violet 3",
+   "hex": "#62536F",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dark Hyssop Violet",
+   "hex": "#69556C",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dark Yvette Violet",
+   "hex": "#474754",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dusky Dull Violet 1",
+   "hex": "#4C4659",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Dusky Dull Violet 2",
+   "hex": "#504651",
+   "group": "Plate XXXVI"
+  },
+  {
+   "name": "Pale Lobelia Violet",
+   "hex": "#D2C3CC",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Pale Lilac",
+   "hex": "#D8C5D0",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Light Pinkish Lilac",
+   "hex": "#E1C8CC",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Light Lobelia Violet",
+   "hex": "#B29DBA",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Hay's Lilac",
+   "hex": "#B398B7",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Purplish Lilac",
+   "hex": "#C3A1B3",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Lobelia Violet",
+   "hex": "#9F8DA9",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Ageratum Violet",
+   "hex": "#A188A2",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Argyle Purple",
+   "hex": "#AF859D",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Saccardo's Violet",
+   "hex": "#8C739A",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Aconite Violet",
+   "hex": "#8B678F",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Bishop's Purple",
+   "hex": "#9B688B",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Livid Violet",
+   "hex": "#7B5E79",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Livid Purple",
+   "hex": "#86617B",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Light Perilla Purple",
+   "hex": "#95657B",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Naphthalene Violet",
+   "hex": "#6E5260",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Deep Livid Purple",
+   "hex": "#7A5261",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Perilla Purple",
+   "hex": "#794D58",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Dark Naphthalene Violet",
+   "hex": "#554149",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Dark Livid Purple",
+   "hex": "#5D424A",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Dark Perilla Purple",
+   "hex": "#654044",
+   "group": "Plate XXXVII"
+  },
+  {
+   "name": "Pale Laelia Pink",
+   "hex": "#DBBDC4",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Pale Persian Lilac",
+   "hex": "#E4C0C9",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Pale Rhodonite Pink",
+   "hex": "#EEC6CA",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Laelia Pink",
+   "hex": "#D09AAA",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Persian Lilac",
+   "hex": "#D99AA9",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Rhodonite Pink",
+   "hex": "#DF9FA8",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Tourmaline Pink",
+   "hex": "#C18095",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Daphne Pink",
+   "hex": "#CE8697",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Rocellin Purple",
+   "hex": "#D2838F",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Eupatorium Purple",
+   "hex": "#A87797",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Daphne Red",
+   "hex": "#A6677F",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Hellebore Red",
+   "hex": "#B37988",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Vinaceous-Purple 1",
+   "hex": "#93606E",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Vernonia Purple",
+   "hex": "#9A606B",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Deep Hellebore Red",
+   "hex": "#9F5C66",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Dark Vinaceous-Purple",
+   "hex": "#7B4B51",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Corinthian Purple",
+   "hex": "#844F55",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Neutral Red",
+   "hex": "#83484C",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Indian Purple",
+   "hex": "#644342",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Dark Corinthian Purple",
+   "hex": "#694747",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Mars Violet",
+   "hex": "#664A48",
+   "group": "Plate XXXVIII"
+  },
+  {
+   "name": "Pale Purplish Vinaceous",
+   "hex": "#D0BAB5",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Pale Brownish Vinaceous",
+   "hex": "#DDC3BB",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Pale Grayish Vinaceous",
+   "hex": "#DCC5B8",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Light Purplish Vinaceous",
+   "hex": "#C4A3A6",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Light Brownish Vinaceous",
+   "hex": "#CEB0AB",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Light Grayish Vinaceous",
+   "hex": "#CDB1A8",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Purplish Vinaceous",
+   "hex": "#BE8D8E",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Brownish Vinaceous",
+   "hex": "#C28E88",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Light Russet-Vinaceous",
+   "hex": "#C4988B",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Livid Brown",
+   "hex": "#A47875",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Deep Brownish Vinaceous",
+   "hex": "#B07C71",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Russet-Vinaceous",
+   "hex": "#B77E6C",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Deep Livid Brown",
+   "hex": "#86615E",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Vinaceous-Brown",
+   "hex": "#916A61",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Sorghum Brown",
+   "hex": "#936E5F",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Dark Livid Brown",
+   "hex": "#6F5450",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Dark Vinaceous-Brown",
+   "hex": "#735750",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Hay's Brown",
+   "hex": "#755B4E",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Warm Blackish Brown",
+   "hex": "#554A45",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Seal Brown",
+   "hex": "#574C46",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Light Seal Brown",
+   "hex": "#554A42",
+   "group": "Plate XXXIX"
+  },
+  {
+   "name": "Pale Vinaceous-Fawn",
+   "hex": "#D1C2B3",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Tilleul Buff",
+   "hex": "#E4D1BD",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Pale Olive-Buff",
+   "hex": "#DCD0B6",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Light Vinaceous-Fawn",
+   "hex": "#D0B2A4",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Vinaceous-Buff",
+   "hex": "#CEB29A",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Olive-Buff",
+   "hex": "#CFC2A1",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Vinaceous-Fawn",
+   "hex": "#C09580",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Avellaneous",
+   "hex": "#C29E82",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Deep Olive-Buff",
+   "hex": "#C6B18A",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Fawn Color",
+   "hex": "#B08669",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Wood Brown",
+   "hex": "#B2906E",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Dark Olive-Buff",
+   "hex": "#B69F67",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Army Brown",
+   "hex": "#96705E",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Buffy Brown",
+   "hex": "#977D5D",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Citrine-Drab",
+   "hex": "#908260",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Natal Brown",
+   "hex": "#775E4B",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Olive-Brown",
+   "hex": "#715F4A",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Deep Olive",
+   "hex": "#726A51",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Bone Brown",
+   "hex": "#594E45",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Clove Brown",
+   "hex": "#5A5347",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Dark Olive",
+   "hex": "#565544",
+   "group": "Plate XL"
+  },
+  {
+   "name": "Yellowish Glaucous",
+   "hex": "#C7C8AF",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Glaucous",
+   "hex": "#C7D8BC",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Greenish Glaucous",
+   "hex": "#BECCB5",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Water Green",
+   "hex": "#C1C6A0",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Corydalis Green",
+   "hex": "#BAC4A6",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Deep Greenish Glaucous",
+   "hex": "#A8C7AE",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Light Grape Green",
+   "hex": "#A4A67D",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Mytho Green",
+   "hex": "#9CAD8B",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Dark Greenish Glaucous",
+   "hex": "#9AB191",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Grape Green",
+   "hex": "#A2A161",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Asphodel Green",
+   "hex": "#90A16F",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Pistachio Green",
+   "hex": "#7A9B7C",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Deep Grape Green",
+   "hex": "#888C65",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Pois Green",
+   "hex": "#828B68",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "American Green",
+   "hex": "#6F8D72",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Lincoln Green",
+   "hex": "#656D4F",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Leaf Green",
+   "hex": "#607059",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Dark American Green",
+   "hex": "#4E6D5A",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Dusky Olive-Green",
+   "hex": "#4C5846",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Dusky Yellowish Green",
+   "hex": "#435948",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Dull Blackish Green",
+   "hex": "#3B5549",
+   "group": "Plate XLI"
+  },
+  {
+   "name": "Bluish Glaucous",
+   "hex": "#B1CAC2",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Pale Dull Glaucous-Blue",
+   "hex": "#B6CCCA",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Pale Russian Blue",
+   "hex": "#B5C6CA",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Deep Bluish Glaucous",
+   "hex": "#A4C4BB",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Light Dull Glaucous-Blue",
+   "hex": "#93B9BB",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Russian Blue",
+   "hex": "#97B0B9",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Dark Bluish Glaucous",
+   "hex": "#90AC9A",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Greenish Glaucous-Blue",
+   "hex": "#93ADA6",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Cadet Gray",
+   "hex": "#8CA0AB",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Stone Green",
+   "hex": "#689176",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Bluish Gray-Green",
+   "hex": "#779A93",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Parula Blue",
+   "hex": "#6E90A1",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Russian Green",
+   "hex": "#69806C",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Deep Bluish Gray-Green",
+   "hex": "#64807C",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Delft Blue",
+   "hex": "#5E7A8A",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Dark Russian Green",
+   "hex": "#41685E",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Dark Bluish Gray-Green",
+   "hex": "#3D6769",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Deep Delft Blue",
+   "hex": "#345C6A",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Dusky Dull Green",
+   "hex": "#2F504B",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Dusky Dull Bluish Green",
+   "hex": "#2A5256",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Dark Delft Blue",
+   "hex": "#315159",
+   "group": "Plate XLII"
+  },
+  {
+   "name": "Lavender-Gray",
+   "hex": "#B3B8C1",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Plumbago Blue",
+   "hex": "#BBBBC6",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Grayish Lavender",
+   "hex": "#BCB6BE",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Endive Blue",
+   "hex": "#A4AAB6",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Deep Plumbago Blue",
+   "hex": "#A7A7BB",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Deep Grayish Lavender",
+   "hex": "#ABA3B4",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dutch Blue",
+   "hex": "#8D99AB",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dark Plumbago Blue",
+   "hex": "#9194AE",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dark Grayish Lavender",
+   "hex": "#9694AE",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Deep Dutch Blue",
+   "hex": "#77879C",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Madder Blue",
+   "hex": "#787D95",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Ramier Blue",
+   "hex": "#7A7C8E",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Slate-Blue",
+   "hex": "#637284",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Deep Madder Blue",
+   "hex": "#646D80",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Slate-Violet 1",
+   "hex": "#616173",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Deep Slate-Blue",
+   "hex": "#485B6C",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dark Madder Blue",
+   "hex": "#525C6A",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dark Slate-Violet 1",
+   "hex": "#575763",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dusky Slate-Blue",
+   "hex": "#334953",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dusky Violet-Blue 2",
+   "hex": "#384450",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dusky Slate-Violet",
+   "hex": "#43484C",
+   "group": "Plate XLIII"
+  },
+  {
+   "name": "Dull Lavender",
+   "hex": "#C5B3BD",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Vinaceous-Lavender",
+   "hex": "#CCBAC1",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Pale Vinaceous-Lilac",
+   "hex": "#DBC5C8",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Deep Dull Lavender",
+   "hex": "#AC9CAD",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Deep Vinaceous-Lavender",
+   "hex": "#B5A1B0",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Light Vinaceous-Lilac",
+   "hex": "#C3A2A8",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Dark Lavender",
+   "hex": "#9A89A0",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Light Vinaceous-Purple",
+   "hex": "#A28497",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Vinaceous-Lilac",
+   "hex": "#B58A96",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Slate-Violet 2",
+   "hex": "#7D7183",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Vinaceous-Purple 2",
+   "hex": "#887082",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Deep Purplish Vinaceous",
+   "hex": "#8F676E",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Deep Slate-Violet",
+   "hex": "#685D6F",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Slate-Purple",
+   "hex": "#786070",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Dull Indian Purple",
+   "hex": "#7F616A",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Dark Slate-Violet 2",
+   "hex": "#56515D",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Dark Slate-Purple",
+   "hex": "#63565E",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Anthracene Purple",
+   "hex": "#604D51",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Dull Violet-Black 1",
+   "hex": "#44454C",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Raisin Black",
+   "hex": "#484447",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Taupe Brown",
+   "hex": "#4E4242",
+   "group": "Plate XLIV"
+  },
+  {
+   "name": "Pallid Purple-Drab",
+   "hex": "#C5BDB8",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Pallid Vinaceous-Drab",
+   "hex": "#CDC2BA",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Pallid Brownish Drab",
+   "hex": "#CCC2B7",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Pale Purple-Drab",
+   "hex": "#B3A29E",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Pale Vinaceous-Drab",
+   "hex": "#BAA8A0",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Pale Brownish Drab",
+   "hex": "#BAABA3",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Light Purple-Drab",
+   "hex": "#9D8A88",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Light Vinaceous-Drab",
+   "hex": "#A18E86",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Light Brownish Drab",
+   "hex": "#A28E85",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Purple-Drab",
+   "hex": "#927A79",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Vinaceous-Drab",
+   "hex": "#957B74",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Brownish Drab",
+   "hex": "#947D71",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Dark Purple-Drab",
+   "hex": "#6E5E59",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Dark Vinaceous-Drab",
+   "hex": "#76665E",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Deep Brownish Drab",
+   "hex": "#7C6B5F",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Dusky Brown",
+   "hex": "#58514C",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Dark Grayish Brown",
+   "hex": "#625E57",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Dusky Drab",
+   "hex": "#625B51",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Blackish Brown 1",
+   "hex": "#434641",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Blackish Brown 2",
+   "hex": "#464943",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Blackish Brown 3",
+   "hex": "#4A4E47",
+   "group": "Plate XLV"
+  },
+  {
+   "name": "Pale Ecru-Drab",
+   "hex": "#C2B7AD",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Pale Drab-Gray",
+   "hex": "#C3BCB2",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Pale Smoke Gray",
+   "hex": "#BFB9AC",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Ecru-Drab",
+   "hex": "#B8A89D",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Drab-Gray",
+   "hex": "#BBAC99",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Smoke Gray",
+   "hex": "#B0A896",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Light Cinnamon-Drab",
+   "hex": "#AF9685",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Light Drab",
+   "hex": "#AC9880",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Light Grayish Olive",
+   "hex": "#9B9682",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Cinnamon-Drab",
+   "hex": "#A38875",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Drab",
+   "hex": "#9B8872",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Grayish Olive",
+   "hex": "#8D866C",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Benzo Brown",
+   "hex": "#817164",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Hair Brown",
+   "hex": "#7E7565",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Deep Grayish Olive",
+   "hex": "#7C7965",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Fuscous",
+   "hex": "#5C584A",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Chaetura Drab",
+   "hex": "#58584B",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Dark Grayish Olive",
+   "hex": "#585D4F",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Fuscous-Black",
+   "hex": "#464A42",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Chaetura Black",
+   "hex": "#454A42",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Olivaceous Black 1",
+   "hex": "#474D40",
+   "group": "Plate XLVI"
+  },
+  {
+   "name": "Light Mineral Gray",
+   "hex": "#B9BCB0",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Court Gray",
+   "hex": "#B1BBB0",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Puritan Gray",
+   "hex": "#ABB6AF",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Mineral Gray",
+   "hex": "#AEB1A3",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Gnaphalium Green",
+   "hex": "#9DAC9C",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Light Celandine Green",
+   "hex": "#97AAA3",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Tea Green",
+   "hex": "#9EA185",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Pea Green",
+   "hex": "#92A287",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Celandine Green",
+   "hex": "#8AA18C",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Vetiver Green",
+   "hex": "#989973",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Sage Green",
+   "hex": "#80967B",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Artemisia Green",
+   "hex": "#778F83",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Andover Green",
+   "hex": "#717960",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Slate-Olive",
+   "hex": "#657465",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Lily Green",
+   "hex": "#5A736C",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Dark Ivy Green",
+   "hex": "#545D47",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Deep Slate-Olive",
+   "hex": "#515F52",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Deep Slate-Green",
+   "hex": "#475A51",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Olivaceous Black 2",
+   "hex": "#424D41",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Dull Greenish Black 1",
+   "hex": "#3D4E46",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Dull Greenish Black 2",
+   "hex": "#3A4C45",
+   "group": "Plate XLVII"
+  },
+  {
+   "name": "Glaucous-Gray",
+   "hex": "#AAB5B2",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Pale Medici Blue",
+   "hex": "#A5B0B0",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Pale Green-Blue Gray",
+   "hex": "#A8B2B4",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Deep Glaucous-Gray",
+   "hex": "#8BA09F",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Light Medici Blue",
+   "hex": "#8BA1A4",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Clear Green-Blue Gray",
+   "hex": "#8DA0A3",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Dark Glaucous-Gray",
+   "hex": "#7B968E",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Medici Blue",
+   "hex": "#74908F",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Deep Green-Blue Gray",
+   "hex": "#748C90",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Grayish Blue-Green",
+   "hex": "#6E8A87",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Deep Medici Blue",
+   "hex": "#6C8484",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Dark Green-Blue Gray",
+   "hex": "#697E84",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Deep Grayish Blue-Green",
+   "hex": "#5F7672",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Dark Medici Blue",
+   "hex": "#5A7677",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Green-Blue Slate",
+   "hex": "#5B7079",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Dark Grayish Blue-Green",
+   "hex": "#5B7079",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Saccardo's Slate",
+   "hex": "#3D585D",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Dark Green-Blue Slate",
+   "hex": "#2F4F57",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Greenish Slate-Black",
+   "hex": "#324947",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Dull Blue-Green Black",
+   "hex": "#2C474A",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Bluish Slate-Black",
+   "hex": "#2F4649",
+   "group": "Plate XLVIII"
+  },
+  {
+   "name": "Pale Payne's Gray",
+   "hex": "#9FA8AE",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Pale Violet-Plumbeous",
+   "hex": "#B3B5B9",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Rood's Lavender",
+   "hex": "#A8A8AC",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Light Payne's Gray",
+   "hex": "#909BA1",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Light Violet-Plumbeous",
+   "hex": "#979EA4",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Pale Varley's Gray",
+   "hex": "#98999F",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Clear Payne's Gray",
+   "hex": "#778890",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Violet-Plumbeous",
+   "hex": "#838A98",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Light Varley's Gray",
+   "hex": "#81848B",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Payne's Gray",
+   "hex": "#707D88",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Deep Violet-Plumbeous",
+   "hex": "#777F8B",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Varley's Gray",
+   "hex": "#747985",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Deep Payne's Gray",
+   "hex": "#5C6D73",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Violet-Slate",
+   "hex": "#5F686F",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Deep Varley's Gray",
+   "hex": "#63696F",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Dark Payne's Gray",
+   "hex": "#3D525B",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Dark Violet-Slate",
+   "hex": "#47545D",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Dark Varley's Gray",
+   "hex": "#485159",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Bluish Black",
+   "hex": "#31474C",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Dull Violet-Black 2",
+   "hex": "#36454C",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Blue-Violet Black",
+   "hex": "#3D484B",
+   "group": "Plate XLIX"
+  },
+  {
+   "name": "Light Plumbago Gray",
+   "hex": "#ACA8AE",
+   "group": "Plate L"
+  },
+  {
+   "name": "Light Heliotrope-Gray",
+   "hex": "#B3A9AE",
+   "group": "Plate L"
+  },
+  {
+   "name": "Light Vinaceous-Gray",
+   "hex": "#C6B6B9",
+   "group": "Plate L"
+  },
+  {
+   "name": "Plumbago Gray",
+   "hex": "#98959D",
+   "group": "Plate L"
+  },
+  {
+   "name": "Heliotrope-Gray",
+   "hex": "#9F99A1",
+   "group": "Plate L"
+  },
+  {
+   "name": "Vinaceous-Gray",
+   "hex": "#A89BA0",
+   "group": "Plate L"
+  },
+  {
+   "name": "Deep Plumbago Gray",
+   "hex": "#86868E",
+   "group": "Plate L"
+  },
+  {
+   "name": "Deep Heliotrope Gray",
+   "hex": "#8D8791",
+   "group": "Plate L"
+  },
+  {
+   "name": "Deep Vinaceous-Gray",
+   "hex": "#968A8E",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dark Plumbago Gray",
+   "hex": "#787A87",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dark Heliotrope Gray",
+   "hex": "#7F777D",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dark Vinaceous-Gray",
+   "hex": "#83787A",
+   "group": "Plate L"
+  },
+  {
+   "name": "Plumbago Slate",
+   "hex": "#63656D",
+   "group": "Plate L"
+  },
+  {
+   "name": "Heliotrope-Slate",
+   "hex": "#625F67",
+   "group": "Plate L"
+  },
+  {
+   "name": "Vinaceous-Slate",
+   "hex": "#655E60",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dark Plumbago Slate",
+   "hex": "#494E54",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dark Heliotrope Slate",
+   "hex": "#505255",
+   "group": "Plate L"
+  },
+  {
+   "name": "Deep Slaty Brown",
+   "hex": "#525152",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dull Violet-Black 3",
+   "hex": "#3E4545",
+   "group": "Plate L"
+  },
+  {
+   "name": "Dull Purplish Black",
+   "hex": "#3F4241",
+   "group": "Plate L"
+  },
+  {
+   "name": "Aniline Black",
+   "hex": "#42403D",
+   "group": "Plate L"
+  },
+  {
+   "name": "Pallid Quaker Drab",
+   "hex": "#AFA89D",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Pallid Mouse Gray",
+   "hex": "#B9B4A7",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Pale Olive-Gray",
+   "hex": "#B8B4A4",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Pale Quaker Drab",
+   "hex": "#9E9A95",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Pale Mouse Gray",
+   "hex": "#A9A49A",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Light Olive-Gray",
+   "hex": "#A5A495",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Light Quaker Drab",
+   "hex": "#898784",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Light Mouse Gray",
+   "hex": "#96928A",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Olive-Gray",
+   "hex": "#939485",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Quaker Drab",
+   "hex": "#858078",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Mouse Gray",
+   "hex": "#837E70",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Deep Olive-Gray",
+   "hex": "#8A8B79",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Deep Quaker Drab",
+   "hex": "#6F7068",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Deep Mouse Gray",
+   "hex": "#686B61",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Dark Olive-Gray",
+   "hex": "#676C5C",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Dark Quaker Drab",
+   "hex": "#505550",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Dark Mouse Gray",
+   "hex": "#505550",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Iron Gray",
+   "hex": "#505550",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Sooty Black",
+   "hex": "#505550",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Blackish Mouse Gray",
+   "hex": "#505550",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Olivaceous Black 3",
+   "hex": "#505550",
+   "group": "Plate LI"
+  },
+  {
+   "name": "Pearl Gray",
+   "hex": "#B1B0A3",
+   "group": "Plate LII"
+  },
+  {
+   "name": "French Gray",
+   "hex": "#B6B5B0",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Lilac-Gray",
+   "hex": "#BEBBB7",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Dawn Gray",
+   "hex": "#9FA49B",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Cinereous",
+   "hex": "#AAACAB",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Pale Violet-Gray",
+   "hex": "#A5A4A4",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Hathi Gray",
+   "hex": "#8F9891",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Plumbeous",
+   "hex": "#8B9298",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Light Violet-Gray",
+   "hex": "#8B8E8F",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Storm Gray",
+   "hex": "#838D7F",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Deep Plumbeous",
+   "hex": "#80868B",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Violet-Gray",
+   "hex": "#7A7D80",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Castor Gray",
+   "hex": "#5F6E66",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Dark Plumbeous",
+   "hex": "#5E6A6C",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Deep Violet-Gray",
+   "hex": "#60676A",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Dusky Green-Gray",
+   "hex": "#475650",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Blackish Plumbeous",
+   "hex": "#455254",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Dark Violet-Gray",
+   "hex": "#4C5357",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Blackish Green-Gray",
+   "hex": "#354541",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Plumbeous-Black",
+   "hex": "#394647",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Blackish Violet-Gray",
+   "hex": "#3E4746",
+   "group": "Plate LII"
+  },
+  {
+   "name": "Neutral Gray",
+   "hex": "#FAF5EA",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "White",
+   "hex": "#FAF5EA",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Pale Gull Gray",
+   "hex": "#C4BFB1",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Pallid Purplish Gray",
+   "hex": "#BBB6AD",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Pallid Neutral Gray",
+   "hex": "#BBB8AE",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Light Gull Gray",
+   "hex": "#B0AFA6",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Pale Purplish Gray",
+   "hex": "#9D9A95",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Pale Neutral Gray",
+   "hex": "#A2A29A",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Gull Gray",
+   "hex": "#A5A59E",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Light Purplish Gray",
+   "hex": "#86837F",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Light Neutral Gray",
+   "hex": "#939691",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Deep Gull Gray",
+   "hex": "#8B8F8B",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Purplish Gray",
+   "hex": "#797674",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Dark Gull Gray",
+   "hex": "#808582",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Deep Purplish Gray",
+   "hex": "#676B68",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Deep Neutral Gray",
+   "hex": "#626863",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Slate-Gray",
+   "hex": "#687372",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Dark Purplish Gray",
+   "hex": "#525A59",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Dark Neutral Gray",
+   "hex": "#4C5751",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Slate Color",
+   "hex": "#4F5B5D",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Dusky Purplish Gray",
+   "hex": "#3D4543",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Dusky Neutral Gray",
+   "hex": "#3C4945",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Blackish Slate",
+   "hex": "#404C49",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Black",
+   "hex": "#323F39",
+   "group": "Plate LIII"
+  },
+  {
+   "name": "Slate-Black",
+   "hex": "#333F3A",
+   "group": "Plate LIII"
+  }
+ ]
+}

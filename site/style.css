@@ -68,3 +68,13 @@ main.wide{max-width:1180px}
 .family.more{grid-template-columns:1fr;background:none;border-style:dashed}.family.more .about{padding:26px 36px}.family.more h2{font-size:21px;color:var(--muted)}.family.more p{color:var(--muted);font-family:system-ui,sans-serif;font-size:15px}
 .eyebrow a{color:inherit}a.sub{text-decoration:none}a.sub:hover{text-decoration:underline}
 @media (max-width:760px){.family{grid-template-columns:1fr}.mosaic{min-height:200px;grid-template-columns:repeat(4,1fr)}.about{padding:24px 22px}}
+.mosaic.dots{grid-template-columns:repeat(8,1fr);gap:0;padding:0}.mosaic.dots span{min-height:50px}
+.mosaic.blank{display:grid;place-items:center;grid-template-columns:1fr;background:repeating-linear-gradient(135deg,#ebe8df 0 14px,#f0ede5 14px 28px)}
+.mosaic.blank span{font:600 11px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:14px 0 8px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:5px;overflow:hidden;display:grid;font:13px/1.35 system-ui,sans-serif}
+.tile span{height:74px}.tile b{padding:9px 10px 0;font-weight:600}.tile code{padding:0 10px 9px;background:none;color:var(--muted);font-size:11.5px}
+.tile small{padding:0 10px 10px;margin-top:-4px;color:var(--muted);font-size:11.5px;line-height:1.4}.tile{align-content:start}
+h2.group{font:600 12px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:0;padding:0;margin:34px 0 0}
+.intent{font:14px/1.5 system-ui,sans-serif;color:var(--muted);margin:0;padding:2px 16px 6px}.pal li small{color:var(--muted);font-size:11px}
+@media (max-width:760px){.mosaic.dots{grid-template-columns:repeat(8,1fr)}.mosaic.dots span{min-height:34px}}

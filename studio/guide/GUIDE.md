@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.2
+version: 0.3
 updated: 2026-11-15
 status: draft, awaiting owner approval
 ---
@@ -41,11 +41,28 @@ A revision sends a piece back from Reviewed to Requested. Three rounds at most; 
 | **Studio lead** (Claude) | Runs the process, keeps the site, writes direction, measures, reviews. |
 | **Image maker** (ChatGPT) | Makes the room image from the written direction. |
 
-## 4. The room is decided per palette
+## 4. Palette families and new combinations
+
+Colour comes from **palette families**. There are two kinds:
+
+- **Combinations**: ready-made sets of two to four colours, such as the Wada family. A project can start from one directly.
+- **Colour collections**: single named colours, such as Werner, Ridgway and the traditional colours of Japan. These are raw material.
+
+The studio may also **make a new combination on purpose**. The rules:
+
+1. Every colour comes from a family and keeps that family's name and exact value. No invented colours.
+2. Two to four colours.
+3. It states in one sentence what the combination is for.
+4. It is recorded in the Studio combinations family with its date, who made it, and where each colour came from.
+5. Existing combinations are never altered. A variation is a new entry.
+
+A colour is always cited with its family, because the same name can carry different values in different families.
+
+## 5. The room is decided per palette
 
 There is no catalogue of rooms. For each palette the architect desk decides what kind of room and what architecture suit that combination, and writes down the reasoning. The architecture stays calm so the colour carries the image.
 
-## 5. The desks
+## 6. The desks
 
 Each discipline has a desk on the project page. A desk opens at the stage where it has something real to judge, works without seeing the other desks' opinions, and reports findings rather than scores.
 
@@ -63,7 +80,7 @@ Each discipline has a desk on the project page. A desk opens at the stage where 
 
 Every finding says whether it was **measured** or is a reviewer's **judgment**. Building advice is advisory and is never a claim about any building code.
 
-## 6. Standards every image must meet
+## 7. Standards every image must meet
 
 1. Vertical room image, with no text, people or logos in it.
 2. Neutral daylight, so the palette colours are not shifted by warm light.
@@ -73,10 +90,10 @@ Every finding says whether it was **measured** or is a reviewer's **judgment**. 
 6. A home, not a showroom: ordinary scale, usable layout, nothing blocking doors or windows.
 7. Not symmetrical, not cloned, and with signs that someone lives there.
 
-## 7. The swatch
+## 8. The swatch
 
 The swatch panel is drawn from the palette's exact values, not generated as an image, so it is the one part of the piece that is exactly right.
 
-## 8. The record
+## 9. The record
 
 Nothing is overwritten. Every version of every image, every desk's findings and every decision is kept, so any piece in the library can be traced back to how it was made.

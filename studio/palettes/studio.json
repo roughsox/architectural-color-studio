@@ -1,0 +1,13 @@
+{
+ "order": 2,
+ "id": "studio",
+ "kind": "combinations",
+ "name": "Studio",
+ "label": "Studio No.",
+ "title": "Studio combinations",
+ "description": "New combinations made on purpose by the studio. Each one draws its colours from the other families, keeps their names and exact values, and records in a sentence what it is for. This is where the studio's own colour thinking accumulates.",
+ "source": "Architectural Color Studio",
+ "data": "Made in the studio; each combination names the families its colours came from",
+ "note": "",
+ "combinations": []
+}

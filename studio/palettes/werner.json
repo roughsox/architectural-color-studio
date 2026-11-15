@@ -1,0 +1,674 @@
+{
+ "order": 3,
+ "id": "werner",
+ "kind": "colours",
+ "name": "Werner",
+ "label": "Werner",
+ "title": "Werner's Nomenclature of Colours",
+ "description": "110 colours from the 1814 naturalists' guide by Abraham Gottlob Werner and Patrick Syme, the book Darwin took on the Beagle. Every colour is tied to an animal, a plant and a mineral: Skimmed-milk White, Arterial Blood Red, Verdigris Green. Muted, earthy and oddly domestic. A family of single colours, to be combined in the studio.",
+ "source": "Werner's Nomenclature of Colours, second edition, 1821",
+ "data": "Digitised by Nicholas Rougeux (c82.net/werner), via color-name-lists 3.34.0; CC0 public domain dedication",
+ "note": "Values are a modern digital reading of hand-painted swatches in a 200-year-old book.",
+ "colours": [
+  {
+   "name": "Snow White",
+   "hex": "#F1E9CD",
+   "group": "Whites",
+   "note": "Animal: Breast of the black-headed Gull; Vegetable: Snow-Drop; Mineral: Carara Marble and Calc Sinter"
+  },
+  {
+   "name": "Reddish White",
+   "hex": "#F2E7CF",
+   "group": "Whites",
+   "note": "Animal: Egg of Grey Linnet; Vegetable: Back of the Christmas Rose; Mineral: Porcelain Earth"
+  },
+  {
+   "name": "Purplish White",
+   "hex": "#ECE6D0",
+   "group": "Whites",
+   "note": "Animal: Junction of the Neck and Back of the Kittiwake Gull; Vegetable: White Geranium or Storks Bill; Mineral: Arragonite"
+  },
+  {
+   "name": "Yellowish White",
+   "hex": "#F2EACC",
+   "group": "Whites",
+   "note": "Animal: Egret; Vegetable: Hawthorn Blossom; Mineral: Chalk and Tripoli"
+  },
+  {
+   "name": "Orange coloured White",
+   "hex": "#F3E9CA",
+   "group": "Whites",
+   "note": "Animal: Breast of White or Screech Owl; Vegetable: Large Wild Convolvulus; Mineral: French Porcelain Clay"
+  },
+  {
+   "name": "Greenish White",
+   "hex": "#F2EBCD",
+   "group": "Whites",
+   "note": "Animal: Vent Coverts of Golden crested Wren; Vegetable: Polyanthus Narcissus; Mineral: Calc sinter"
+  },
+  {
+   "name": "Skimmed milk White",
+   "hex": "#E6E1C9",
+   "group": "Whites",
+   "note": "Animal: White of the Human Eyeballs; Vegetable: Back of the Petals of Blue Hepatica; Mineral: Common Opal"
+  },
+  {
+   "name": "Greyish White",
+   "hex": "#E2DDC6",
+   "group": "Whites",
+   "note": "Animal: Inside Quill-feathers of the Kittiwake; Vegetable: White Hamburgh Grapes; Mineral: Granular Limestone"
+  },
+  {
+   "name": "Ash Grey",
+   "hex": "#CBC8B7",
+   "group": "Greys",
+   "note": "Animal: Breast of long tailed Hen Titmouse; Vegetable: Fresh Wood ashes; Mineral: Flint"
+  },
+  {
+   "name": "Smoke Grey",
+   "hex": "#BFBBB0",
+   "group": "Greys",
+   "note": "Animal: Breast of the Robin round the Red; Mineral: Flint"
+  },
+  {
+   "name": "French Grey",
+   "hex": "#BEBEB3",
+   "group": "Greys",
+   "note": "Animal: Breast of Pied Wag tail"
+  },
+  {
+   "name": "Pearl Grey",
+   "hex": "#B7B5AC",
+   "group": "Greys",
+   "note": "Animal: Backs of black headed and Kittiwake Gulls; Vegetable: Back of Petals of Purple Hepatica; Mineral: Porcelain Jasper"
+  },
+  {
+   "name": "Yellowish Grey",
+   "hex": "#BAB191",
+   "group": "Greys",
+   "note": "Animal: Vent coverts of White Rump; Vegetable: Stems of the Barberry; Mineral: Common Calcedony"
+  },
+  {
+   "name": "Bluish Grey",
+   "hex": "#9C9D9A",
+   "group": "Greys",
+   "note": "Animal: Back and tail Coverts Wood Pigeon; Mineral: Limestone"
+  },
+  {
+   "name": "Greenish Grey",
+   "hex": "#8A8D84",
+   "group": "Greys",
+   "note": "Animal: Quill feathers of the Robin; Vegetable: Bark of Ash Tree; Mineral: Clay Slate Wacke"
+  },
+  {
+   "name": "Blackish Grey",
+   "hex": "#5B5C61",
+   "group": "Greys",
+   "note": "Animal: Back of Nut-hatch; Vegetable: Old Stems of Hawthorn; Mineral: Flint"
+  },
+  {
+   "name": "Greyish Black",
+   "hex": "#555152",
+   "group": "Blacks",
+   "note": "Animal: Water Ousel. Breast and upper Part of Back of Water Hen; Mineral: Basalt"
+  },
+  {
+   "name": "Bluish Black",
+   "hex": "#413F44",
+   "group": "Blacks",
+   "note": "Animal: Largest Black Slug; Vegetable: Crowberry; Mineral: Black Cobalt Ochre"
+  },
+  {
+   "name": "Greenish Black",
+   "hex": "#454445",
+   "group": "Blacks",
+   "note": "Animal: Breast of Lapwing; Mineral: Hornblende"
+  },
+  {
+   "name": "Pitch or Brownish Black",
+   "hex": "#423937",
+   "group": "Blacks",
+   "note": "Animal: Guillemot Wing Coverts of Black Cock; Mineral: Yenite mica"
+  },
+  {
+   "name": "Reddish Black",
+   "hex": "#433635",
+   "group": "Blacks",
+   "note": "Animal: Spots on Large Wings of Tyger Moth. Breast of Pochard Duck; Vegetable: Berry of Fuchsia Coccinea; Mineral: Oliven ore"
+  },
+  {
+   "name": "Ink Black",
+   "hex": "#252024",
+   "group": "Blacks",
+   "note": "Vegetable: Berry of Deadly Night Shade; Mineral: Oliven ore"
+  },
+  {
+   "name": "Velvet Black",
+   "hex": "#241F20",
+   "group": "Blacks",
+   "note": "Animal: Mole. Tail Feathers of Black Cock; Vegetable: Black of Red and Black West-Indian peas; Mineral: Obsidian"
+  },
+  {
+   "name": "Scotch Blue",
+   "hex": "#281F3F",
+   "group": "Blues",
+   "note": "Animal: Throat of Blue Titmouse; Vegetable: Stamina of Single Purple Anemone; Mineral: Blue Copper Ore"
+  },
+  {
+   "name": "Prussian Blue",
+   "hex": "#1C1949",
+   "group": "Blues",
+   "note": "Animal: Beauty Spot on Wing of Mallard Drake; Vegetable: Stamina of Bluish Purple Anemone; Mineral: Blue Copper Ore"
+  },
+  {
+   "name": "Indigo Blue",
+   "hex": "#4F638D",
+   "group": "Blues",
+   "note": "Mineral: Blue Copper Ore"
+  },
+  {
+   "name": "China Blue",
+   "hex": "#383867",
+   "group": "Blues",
+   "note": "Animal: Rhynchites Nitens; Vegetable: Back Parts of Gentian Flower; Mineral: Blue Copper Ore from Chessy"
+  },
+  {
+   "name": "Azure Blue",
+   "hex": "#5C6B8F",
+   "group": "Blues",
+   "note": "Animal: Breast of Emerald-crested Manakin; Vegetable: Grape Hyacinth. Gentian; Mineral: Blue Copper Ore"
+  },
+  {
+   "name": "Ultramarine Blue",
+   "hex": "#657ABB",
+   "group": "Blues",
+   "note": "Animal: Upper Side of the Wings of small blue Heath Butterfly; Vegetable: Borrage; Mineral: Azure Stone or Lapis Lazuli"
+  },
+  {
+   "name": "Flax-Flower Blue",
+   "hex": "#6F88AF",
+   "group": "Blues",
+   "note": "Animal: Light Parts of the Margin of the Wings of Devil's Butterfly; Vegetable: Flax flower; Mineral: Blue Copper Ore"
+  },
+  {
+   "name": "Berlin Blue",
+   "hex": "#7994B5",
+   "group": "Blues",
+   "note": "Animal: Wing Feathers of Jay; Vegetable: Hepatica; Mineral: Blue Sapphire"
+  },
+  {
+   "name": "Verditter Blue",
+   "hex": "#6FB5A8",
+   "group": "Blues",
+   "note": "Mineral: Lenticular Ore"
+  },
+  {
+   "name": "Greenish Blue",
+   "hex": "#719BA2",
+   "group": "Blues",
+   "note": "Vegetable: Great Fennel Flower; Mineral: Turquoise or Flour Spar"
+  },
+  {
+   "name": "Greyish Blue",
+   "hex": "#8AA1A6",
+   "group": "Blues",
+   "note": "Animal: Back of blue Titmouse; Vegetable: Small Fennel Flower; Mineral: Iron Earth"
+  },
+  {
+   "name": "Bluish Lilac Purple",
+   "hex": "#D0D5D3",
+   "group": "Purples",
+   "note": "Animal: Male of the Lebellula Depressa; Vegetable: Blue Lilac; Mineral: Lepidolite"
+  },
+  {
+   "name": "Bluish Purple",
+   "hex": "#8590AE",
+   "group": "Purples",
+   "note": "Animal: Papilio Argeotus. Azure Blue Butterfly; Vegetable: Parts of White and Purple Crocus"
+  },
+  {
+   "name": "Violet Purple",
+   "hex": "#3A2F52",
+   "group": "Purples",
+   "note": "Vegetable: Purple Aster; Mineral: Amethyst"
+  },
+  {
+   "name": "Pansy Purple",
+   "hex": "#39334A",
+   "group": "Purples",
+   "note": "Animal: Chrysomela Goettingensis; Vegetable: Sweet-scented Violet; Mineral: Derbyshire Spar"
+  },
+  {
+   "name": "Campanula Purple",
+   "hex": "#6C6D94",
+   "group": "Purples",
+   "note": "Vegetable: Canterbury Bell. Campanula Persicifolia; Mineral: Fluor Spar"
+  },
+  {
+   "name": "Imperial Purple",
+   "hex": "#584C77",
+   "group": "Purples",
+   "note": "Vegetable: Deep Parts of Flower of Saffron Crocus; Mineral: Fluor Spar"
+  },
+  {
+   "name": "Auricula Purple",
+   "hex": "#533552",
+   "group": "Purples",
+   "note": "Animal: Egg of largest Bluebottle. or Flesh Fly; Vegetable: Largest Purple Auricula; Mineral: Fluor Spar"
+  },
+  {
+   "name": "Plum Purple",
+   "hex": "#463759",
+   "group": "Purples",
+   "note": "Vegetable: Plum; Mineral: Fluor Spar"
+  },
+  {
+   "name": "Red Lilac Purple",
+   "hex": "#BFBAC0",
+   "group": "Purples",
+   "note": "Animal: Light Spots of the upper Wings of Peacock Butterfly; Vegetable: Red Lilac. Pale Purple Primrose; Mineral: Lepidolite"
+  },
+  {
+   "name": "Lavender Purple",
+   "hex": "#77747F",
+   "group": "Purples",
+   "note": "Animal: Light Parts of Spots on the under Wings of Peakcock Butterfly; Vegetable: Dried Lavender Flowers; Mineral: Porcelain Jasper"
+  },
+  {
+   "name": "Pale Blackish Purple",
+   "hex": "#4A475C",
+   "group": "Purples",
+   "note": "Mineral: Porcelain Jasper"
+  },
+  {
+   "name": "Celadine Green",
+   "hex": "#B8BFAF",
+   "group": "Greens",
+   "note": "Animal: Phalœna. Margaritaria; Vegetable: Back of Tussilage Leaves; Mineral: Beryl"
+  },
+  {
+   "name": "Mountain Green",
+   "hex": "#B2B599",
+   "group": "Greens",
+   "note": "Animal: Phalœna Viridaria; Vegetable: Thick leaved Cudweed. Silver-leaved Almond; Mineral: Actynolite Beryl"
+  },
+  {
+   "name": "Leek Green",
+   "hex": "#979C84",
+   "group": "Greens",
+   "note": "Vegetable: Sea Kale. Leaves of Leeks in Winter; Mineral: Actynolite Prase"
+  },
+  {
+   "name": "Blackish Green",
+   "hex": "#5D6161",
+   "group": "Greens",
+   "note": "Animal: Elytra of Meloe Violaceus; Vegetable: Dark Streaks on Leaves of Cayenne Pepper; Mineral: Serpentine"
+  },
+  {
+   "name": "Verdigris Green",
+   "hex": "#61AC86",
+   "group": "Greens",
+   "note": "Animal: Tail of small Long-tailed Green Parrot; Mineral: Copper Green"
+  },
+  {
+   "name": "Bluish Green",
+   "hex": "#A4B6A7",
+   "group": "Greens",
+   "note": "Animal: Egg of Thrush; Vegetable: Under Disk of Wild Rose Leaves; Mineral: Beryl"
+  },
+  {
+   "name": "Apple Green",
+   "hex": "#ADBA98",
+   "group": "Greens",
+   "note": "Animal: Under Side of Wings of Green Broom Moth; Mineral: Crysoprase"
+  },
+  {
+   "name": "Emerald Green",
+   "hex": "#93B778",
+   "group": "Greens",
+   "note": "Animal: Beauty Spot on Wing of Teal Drake; Mineral: Emerald"
+  },
+  {
+   "name": "Grass Green",
+   "hex": "#7D8C55",
+   "group": "Greens",
+   "note": "Animal: Scarabœus Nobilis; Vegetable: General Appearance of Grass Fields. Sweet Sugar Pear; Mineral: Uran Mica"
+  },
+  {
+   "name": "Duck Green",
+   "hex": "#33431E",
+   "group": "Greens",
+   "note": "Animal: Neck of Mallard; Vegetable: Upper Disk of Yew Leaves; Mineral: Ceylanite"
+  },
+  {
+   "name": "Sap Green",
+   "hex": "#7C8635",
+   "group": "Greens",
+   "note": "Animal: Under Side of lower Wings of Orange tip Butterfly; Vegetable: Upper Disk of Leaves of woody Night Shade"
+  },
+  {
+   "name": "Pistachio Green",
+   "hex": "#8E9849",
+   "group": "Greens",
+   "note": "Animal: Neck of Eider Drake; Vegetable: Ripe Pound Pear. Hypman like Saxifrage; Mineral: Crysolite"
+  },
+  {
+   "name": "Asparagus Green",
+   "hex": "#C2C190",
+   "group": "Greens",
+   "note": "Animal: Brimstone Butterfly; Vegetable: Veriegated Horse-Shoe Geranium; Mineral: Beryl"
+  },
+  {
+   "name": "Olive Green",
+   "hex": "#67765B",
+   "group": "Greens",
+   "note": "Vegetable: Foliage of Lignum vitœ; Mineral: Epidote Olvene Ore"
+  },
+  {
+   "name": "Oil Green",
+   "hex": "#AB924B",
+   "group": "Greens",
+   "note": "Animal: Animal and Shell of common Water Snail; Vegetable: Nonpareil Apple from the Wall; Mineral: Beryl"
+  },
+  {
+   "name": "Siskin Green",
+   "hex": "#C8C76F",
+   "group": "Greens",
+   "note": "Animal: Siskin; Vegetable: Ripe Coalmar Pear. Irish Pitcher Apple; Mineral: Uran Mica"
+  },
+  {
+   "name": "Sulphur Yellow",
+   "hex": "#CCC050",
+   "group": "Yellows",
+   "note": "Animal: Yellow Parts of large Dragon Fly; Vegetable: Various Coloured Snap dragon; Mineral: Sulphur"
+  },
+  {
+   "name": "Primrose Yellow",
+   "hex": "#EBDD99",
+   "group": "Yellows",
+   "note": "Animal: Pale Canary Bird; Vegetable: Wild Primrose; Mineral: Pale coloured Sulphur"
+  },
+  {
+   "name": "Wax Yellow",
+   "hex": "#AB9649",
+   "group": "Yellows",
+   "note": "Animal: Larva of large Water Beetle; Vegetable: Greenish Parts of Nonpareil Apple; Mineral: Semi Opal"
+  },
+  {
+   "name": "Lemon Yellow",
+   "hex": "#DBC364",
+   "group": "Yellows",
+   "note": "Animal: Large Wasp or Hornet; Vegetable: Shrubby Goldylocks; Mineral: Yellow Orpiment"
+  },
+  {
+   "name": "Gamboge Yellow",
+   "hex": "#E6D058",
+   "group": "Yellows",
+   "note": "Animal: Wings of Goldfinch. Canary Bird; Vegetable: Yellow Jasmine; Mineral: High coloured Sulphur"
+  },
+  {
+   "name": "Kings Yellow",
+   "hex": "#EAD665",
+   "group": "Yellows",
+   "note": "Animal: Head of Golden Pheasant; Vegetable: Yellow tulip. Cinque foil"
+  },
+  {
+   "name": "Saffron Yellow",
+   "hex": "#D09B2C",
+   "group": "Yellows",
+   "note": "Animal: Tail Coverts of Golden Pheasant; Vegetable: Anhers of Saffron Grocus"
+  },
+  {
+   "name": "Gallstone Yellow",
+   "hex": "#A36629",
+   "group": "Yellows",
+   "note": "Animal: Gallstones; Vegetable: Marigold Apple"
+  },
+  {
+   "name": "Honey Yellow",
+   "hex": "#A77D35",
+   "group": "Yellows",
+   "note": "Animal: Lower Parts of Neck of Bird of Paradise; Mineral: Fluor Spar"
+  },
+  {
+   "name": "Straw Yellow",
+   "hex": "#F0D696",
+   "group": "Yellows",
+   "note": "Animal: Polar Bear; Vegetable: Oat Straw; Mineral: Schorlite. Calamine"
+  },
+  {
+   "name": "Wine Yellow",
+   "hex": "#D7C485",
+   "group": "Yellows",
+   "note": "Animal: Body of Silk Moth; Vegetable: White Currants; Mineral: Saxon Topaz"
+  },
+  {
+   "name": "Sienna Yellow",
+   "hex": "#F1D28C",
+   "group": "Yellows",
+   "note": "Animal: Vent Parts of Tail of Bird of Paradise; Vegetable: Stamina of Honey-suckle; Mineral: Pale Brazilian Topaz"
+  },
+  {
+   "name": "Ochre Yellow",
+   "hex": "#EFCC83",
+   "group": "Yellows",
+   "note": "Animal: Vent Coverts of Red Start; Mineral: Porcelain Jasper"
+  },
+  {
+   "name": "Cream Yellow",
+   "hex": "#F3DAA7",
+   "group": "Yellows",
+   "note": "Animal: Breast of Teal Drake; Mineral: Porcelain Jasper"
+  },
+  {
+   "name": "Dutch Orange",
+   "hex": "#DFA837",
+   "group": "Oranges",
+   "note": "Animal: Crest of Golden crested Wren; Vegetable: Common Marigold. Seedpod of Spindle-tree; Mineral: Streak of Red Orpiment"
+  },
+  {
+   "name": "Buff Orange",
+   "hex": "#EBBC71",
+   "group": "Oranges",
+   "note": "Animal: Streak from the Eye of the King Fisher; Vegetable: Stamina of the large White Cistus; Mineral: Natrolite"
+  },
+  {
+   "name": "Orpiment Orange",
+   "hex": "#D17C3F",
+   "group": "Oranges",
+   "note": "Animal: The Neck Ruff of the Golden Pheasant. Belly of the Warty Newt; Vegetable: Indian Cress"
+  },
+  {
+   "name": "Brownish Orange",
+   "hex": "#92462F",
+   "group": "Oranges",
+   "note": "Animal: Eyes of the largest Flesh Fly; Vegetable: Style of the Orange Lily; Mineral: Dark Brazilian Topaz"
+  },
+  {
+   "name": "Reddish Orange",
+   "hex": "#BE7249",
+   "group": "Oranges",
+   "note": "Animal: Lower Wings of Tyger Moth; Vegetable: Hemimeris. Buff Hibiscus"
+  },
+  {
+   "name": "Deep Reddish Orange",
+   "hex": "#BB603C",
+   "group": "Oranges",
+   "note": "Animal: Gold Fish lustre abstracted; Vegetable: Scarlet Leadington Apple"
+  },
+  {
+   "name": "Tile Red",
+   "hex": "#C76B4A",
+   "group": "Reds",
+   "note": "Animal: Breast of the Cock Bullfinch; Vegetable: Shrubby Pimpernel; Mineral: Porcelain Jasper"
+  },
+  {
+   "name": "Hyacinth Red",
+   "hex": "#A75536",
+   "group": "Reds",
+   "note": "Animal: Red Spots of the Lygœns Apterus Fly; Vegetable: Red on the golden Rennette Apple; Mineral: Hyacinth"
+  },
+  {
+   "name": "Scarlet Red",
+   "hex": "#B63E36",
+   "group": "Reds",
+   "note": "Animal: Scarlet Ibis or Curlew. Mark on the Head of Red Grouse; Vegetable: Large red Oriental Poppy. Red Parts of red and black Indian Peas; Mineral: Light red Cinnaber"
+  },
+  {
+   "name": "Vermilion Red",
+   "hex": "#B5493A",
+   "group": "Reds",
+   "note": "Animal: Red Coral; Vegetable: Love Apple; Mineral: Cinnaber"
+  },
+  {
+   "name": "Aurora Red",
+   "hex": "#CD6D57",
+   "group": "Reds",
+   "note": "Animal: Vent converts of Pied Wood-Pecker; Vegetable: Red on the Naked Apple; Mineral: Red Orpiment"
+  },
+  {
+   "name": "Arterial Blood Red",
+   "hex": "#711518",
+   "group": "Reds",
+   "note": "Animal: Head of the Cock Gold-finch; Vegetable: Corn Poppy Cherry"
+  },
+  {
+   "name": "Flesh Red",
+   "hex": "#E9C49D",
+   "group": "Reds",
+   "note": "Animal: Human Skin; Vegetable: Larkspur; Mineral: Heavy Spar. Limestone"
+  },
+  {
+   "name": "Rose Red",
+   "hex": "#EEDAC3",
+   "group": "Reds",
+   "note": "Vegetable: Common Garden Rose; Mineral: Figure Stone"
+  },
+  {
+   "name": "Peach Blossom Red",
+   "hex": "#EECFBF",
+   "group": "Reds",
+   "note": "Vegetable: Peach Blossom; Mineral: Red Cobolt Ore"
+  },
+  {
+   "name": "Carmine Red",
+   "hex": "#CE536B",
+   "group": "Reds",
+   "note": "Vegetable: Raspberry. Cocks Comb. Carnation Pink; Mineral: Oriental Ruby"
+  },
+  {
+   "name": "Lake Red",
+   "hex": "#B74A70",
+   "group": "Reds",
+   "note": "Vegetable: Red Tulip. Rose Officinalus; Mineral: Spinel"
+  },
+  {
+   "name": "Crimson Red",
+   "hex": "#B7757C",
+   "group": "Reds",
+   "note": "Mineral: Precious Garnet"
+  },
+  {
+   "name": "Purplish Red",
+   "hex": "#612741",
+   "group": "Reds",
+   "note": "Animal: Outside of Quills of Terico; Vegetable: Dark Crimson Officinal Garden Rose; Mineral: Precious Garnet"
+  },
+  {
+   "name": "Cochineal Red",
+   "hex": "#7A4848",
+   "group": "Reds",
+   "note": "Vegetable: Under Disk of decayed Leaves of None-so-pretty; Mineral: Dark Cinnaber"
+  },
+  {
+   "name": "Veinous Blood Red",
+   "hex": "#3F3033",
+   "group": "Reds",
+   "note": "Animal: Veinous Blood; Vegetable: Musk Flower, or dark Purple Scabious; Mineral: Pyrope"
+  },
+  {
+   "name": "Brownish Purple Red",
+   "hex": "#8D746F",
+   "group": "Reds",
+   "note": "Vegetable: Flower of deadly Nightshade; Mineral: Red Antimony Ore"
+  },
+  {
+   "name": "Chocolate Red",
+   "hex": "#4D3635",
+   "group": "Reds",
+   "note": "Animal: Breast of Bird of Paradise; Vegetable: Brown Disk of common Marigold"
+  },
+  {
+   "name": "Brownish Red",
+   "hex": "#6E3B31",
+   "group": "Reds",
+   "note": "Animal: Mark on Throat of Red-throated Diver; Mineral: Iron Flint"
+  },
+  {
+   "name": "Deep Orange-coloured Brown",
+   "hex": "#864735",
+   "group": "Browns",
+   "note": "Animal: Head of Pochard. Wing coverts of Sheldrake; Vegetable: Female Spike of Catstail Reed"
+  },
+  {
+   "name": "Deep Reddish Brown",
+   "hex": "#553D3A",
+   "group": "Browns",
+   "note": "Animal: Breast of Pochard, and Neck of Teal Drake; Vegetable: Dead Leaves of green Panic Grass; Mineral: Brown Blende"
+  },
+  {
+   "name": "Umber Brown",
+   "hex": "#613936",
+   "group": "Browns",
+   "note": "Animal: Moor Buzzard; Vegetable: Disk of Rubeckia"
+  },
+  {
+   "name": "Chestnut Brown",
+   "hex": "#7A4B3A",
+   "group": "Browns",
+   "note": "Animal: Neck and Breast of Red Grouse; Vegetable: Chestnuts; Mineral: Egyptian Jasper"
+  },
+  {
+   "name": "Yellowish Brown",
+   "hex": "#946943",
+   "group": "Browns",
+   "note": "Animal: Light Brown Spots on Guinea-Pig. Breast of a Hoopoe; Mineral: Iron Flint, and common Jasper"
+  },
+  {
+   "name": "Wood Brown",
+   "hex": "#C39E6D",
+   "group": "Browns",
+   "note": "Animal: Common Weasel. Light parts of Feathers on the Back of the Snipe; Vegetable: Hazed Nuts; Mineral: Mountain Wood"
+  },
+  {
+   "name": "Liver Brown",
+   "hex": "#513E32",
+   "group": "Browns",
+   "note": "Animal: Middle Parts of Feathers of Hen Pheasant, and Wing coverts of Gosbeak; Mineral: Semi Opal"
+  },
+  {
+   "name": "Hair Brown",
+   "hex": "#8B7859",
+   "group": "Browns",
+   "note": "Animal: Head of Pintail Duck; Mineral: Wood Tin"
+  },
+  {
+   "name": "Broccoli Brown",
+   "hex": "#9B856B",
+   "group": "Browns",
+   "note": "Animal: Head of Black headed Gull; Mineral: Zircon"
+  },
+  {
+   "name": "Clove Brown",
+   "hex": "#766051",
+   "group": "Browns",
+   "note": "Animal: Head and Neck of Male Kestril; Vegetable: Stems of Black Currant Bush; Mineral: Axinite, Rok Cristal"
+  },
+  {
+   "name": "Blackish Brown",
+   "hex": "#453B32",
+   "group": "Browns",
+   "note": "Animal: Stormy Petril. Wing Coverts of black Cock. Forehead of Foumart; Mineral: Mineral Pitch"
+  }
+ ]
+}
