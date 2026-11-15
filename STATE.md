@@ -4,7 +4,9 @@ _Updated 2026-11-15. Read this first when resuming._
 
 ## Where things stand
 
-**Planning only. No product code exists.** The design below is proposed and waiting for the owner's decisions and an independent review by ChatGPT. Implementation does not start until both have happened.
+**Planning, plus a first readable slice.** The owner's working direction (2026-11-15): Claude owns the site and writes direction; ChatGPT makes room images from it without paid API use; images come back by a route still to be tested (ChatGPT's own site as an outbox, a shared ChatGPT link, or Google Drive). The four-page site in `docs/SITE-CONCEPT.md` is not built.
+
+What exists: draft content in `studio/` (Guide v0.1, one room shell, the direction for project 001) and a small builder (`npm run build` → `dist/`) that publishes each file as a page and as plain text, with `/llms.txt` as the index for assistants. All three content files are drafts awaiting owner approval. No image has been made under this process. Not yet deployed anywhere public.
 
 | Document | Contents |
 |---|---|
@@ -81,3 +83,4 @@ Challenge the design, not the wording. In particular:
 ## Checkpoint log
 
 - **2026-11-15 — Planning.** Reference audited, design proposed, documents committed for review.
+- **2026-11-15 — First readable slice.** Guide v0.1, bay-window sitting room shell, direction for 001 (Wada #231), static builder. Checked locally at 1280 and 390 px: all pages load, no sideways scroll.
