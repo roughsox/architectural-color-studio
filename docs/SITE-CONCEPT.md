@@ -106,13 +106,20 @@ Approved work only. The cleanest page on the site.
 7. Once a version passes, Claude builds the swatch panel from the exact values and composes the side-by-side.
 8. The owner approves. The project appears in the Library.
 
-**The honest limit:** steps 3–4 and step 6 need the owner to carry direction to ChatGPT and bring the image back. Claude and ChatGPT cannot hand work to each other on their own, and Claude's reviews happen when the owner opens a session, not instantly on upload. How smooth that hand-off can be depends on the three questions below. Later, the site could request images from an image model directly and run reviews automatically; that removes the carrying, and costs a few cents to a few dollars per finished piece.
+**The hand-off: two sites, no carrying (proposed 2026-11-15, to be tested).**
+
+- **Claude's site (this one)** publishes the Guide and each direction as public text pages. ChatGPT reads its instructions there.
+- **ChatGPT's site (the existing chatgpt.site address) becomes its outbox.** ChatGPT publishes each new image there at a public address, with a small manifest file listing every image: project, version, file address, the exact prompt used, date.
+- **The owner's only job is to say "ready."** Told that a new image is ready, Claude reads the manifest, downloads the original from ChatGPT's site, stores it in the repository unaltered, measures it, runs the desks, and publishes the result and any revision direction on this site. Told that a revision direction is ready, ChatGPT reads it from this site and publishes the next version to its outbox.
+
+What is proven: on 2026-11-15 Claude read ChatGPT's site and downloaded both of its images at full size. What is not yet proven: that ChatGPT can add a new image and a manifest to its site on request without the owner handling files, and that ChatGPT can read this site's public pages. Both are tested with one image before the site is built around them. Fallback if either fails: an upload button on the project page.
+
+Reviews still happen when the owner opens a session with Claude, not instantly. Later, the site could request images from an image model directly and run reviews automatically.
 
 ## 8. Questions that shape the build
 
-1. **Can ChatGPT read the site?** A page behind sign-in is invisible to it. Proposed: the Guide, palettes and directions are public pages (they contain nothing private); uploads and decisions stay behind sign-in. Alternatively, if the owner's ChatGPT can read this GitHub repository, it can read the files directly.
-2. **How do images come back?** Proposed: an upload button on the project page. If ChatGPT can write to the repository, it could deliver them itself.
-3. **Which rooms first** for the shell library? Proposed: living room, bedroom, library or snug, kitchen, entry, bathroom.
+1. **Which rooms first** for the shell library? Proposed: living room, bedroom, library or snug, kitchen, entry, bathroom.
+2. **Public pages.** The Guide, palettes and directions must be public for ChatGPT to read them. They contain nothing private. Uploads, reviews in progress and decisions can stay behind sign-in. Agreed?
 
 ## 9. Kept from the first plan
 
