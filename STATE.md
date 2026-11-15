@@ -6,7 +6,9 @@ _Updated 2026-11-15. Read this first when resuming._
 
 **Planning, plus a first readable slice.** The owner's working direction (2026-11-15): Claude owns the site and writes direction; ChatGPT makes room images from it without paid API use; images come back by a route still to be tested (ChatGPT's own site as an outbox, a shared ChatGPT link, or Google Drive). The four-page site in `docs/SITE-CONCEPT.md` is not built.
 
-What exists: draft content in `studio/` (Guide v0.1, one room shell, the direction for project 001) and a small builder (`npm run build` → `dist/`) that publishes each file as a page and as plain text, with `/llms.txt` as the index for assistants. All three content files are drafts awaiting owner approval. No image has been made under this process. Not yet deployed anywhere public.
+What exists: draft content in `studio/` (Guide v0.1, one room shell, the direction for project 001) and a small builder (`npm run build` → `dist/`) that publishes each file as a page and as plain text, with `/llms.txt` as the index for assistants. All three content files are drafts awaiting owner approval. No image has been made under this process. 
+
+**Public site (published 2026-11-15 with the owner's go-ahead): https://architectural-color-studio.vercel.app** — assistants start at `/llms.txt`. Vercel project `architectural-color-studio`, root `apps/architectural-color-studio`, build `npm run build`, output `dist`. Its production branch setting is `main`, where this app does not exist, so a push does **not** update the public site: after pushing this branch, create a production deployment of the branch through the Vercel tools. Other branches are skipped by the project's ignore-build rule. Sign-in protection was changed for this project only so the main address is public; individual deployment addresses still need sign-in.
 
 | Document | Contents |
 |---|---|
@@ -83,4 +85,4 @@ Challenge the design, not the wording. In particular:
 ## Checkpoint log
 
 - **2026-11-15 — Planning.** Reference audited, design proposed, documents committed for review.
-- **2026-11-15 — First readable slice.** Guide v0.1, bay-window sitting room shell, direction for 001 (Wada #231), static builder. Checked locally at 1280 and 390 px: all pages load, no sideways scroll.
+- **2026-11-15 — First readable slice.** Guide v0.1, bay-window sitting room shell, direction for 001 (Wada #231), static builder. Checked locally at 1280 and 390 px: all pages load, no sideways scroll. Published; all pages and plain-text twins confirmed to load without sign-in. Not yet tested: ChatGPT reading the site, and any route for images to come back.
