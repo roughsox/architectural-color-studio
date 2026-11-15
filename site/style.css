@@ -58,3 +58,13 @@ main.wide{max-width:1180px}
 .judges{font:14px/1.5 system-ui,sans-serif;color:var(--muted);margin:.7em 0 0}.findings{margin-top:1em;padding-top:1em;border-top:1px solid var(--line);font-size:16px}
 .empty{border:1px dashed var(--line);border-radius:6px;padding:60px 24px;text-align:center;font-size:20px}.empty .note{max-width:52ch;margin:0 auto}
 @media (max-width:760px){.hero{grid-template-columns:1fr}.frame{max-width:300px}.strip{height:90px}}
+.families{display:grid;gap:22px;margin-top:34px}
+.family{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--card);padding:3px;min-height:300px}
+.strip.mini{height:auto;min-height:60px;border-radius:2px}
+.about{padding:34px 36px;align-self:center}.about h2{border:0;margin:.2em 0 .5em;padding:0;font-size:28px;line-height:1.2}.about p{max-width:56ch}
+.button{display:inline-block;margin-top:10px;font:600 15px/1 system-ui,sans-serif;padding:15px 22px;background:var(--accent);color:#fff;border-radius:99px;text-decoration:none}
+.button:hover{background:#22382f}
+.family.more{grid-template-columns:1fr;background:none;border-style:dashed}.family.more .about{padding:26px 36px}.family.more h2{font-size:21px;color:var(--muted)}.family.more p{color:var(--muted);font-family:system-ui,sans-serif;font-size:15px}
+.eyebrow a{color:inherit}a.sub{text-decoration:none}a.sub:hover{text-decoration:underline}
+@media (max-width:760px){.family{grid-template-columns:1fr}.mosaic{min-height:200px;grid-template-columns:repeat(4,1fr)}.about{padding:24px 22px}}

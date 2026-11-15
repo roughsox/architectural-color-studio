@@ -33,7 +33,7 @@ function page({ title, html, path, wide = false, twin }) {
 <meta name="description" content="Architectural Color Studio: rooms that show what a colour combination feels like to live in.">
 <style>${css}</style></head><body>
 <header><a class="brand" href="/">A<span>/</span>C <small>Architectural Color Studio</small></a>
-<nav>${nav.map(([h, t]) => `<a href="${h}"${h === path ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>
+<nav>${nav.map(([h, t]) => `<a href="${h}"${(h === path || path.startsWith(h + '/')) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>
 <main${wide ? ' class="wide"' : ''}>${html}
 ${twin ? `<p class="twin">Plain-text version of this page: <a href="${twin}">${twin}</a></p>` : ''}</main>
 <footer>Assistants: the whole project in one text file at <a href="/llms.txt">/llms.txt</a>.</footer>
@@ -44,7 +44,9 @@ const strip = (colours, cls = 'strip') => `<div class="${cls}">${colours.map(c =
 const chips = colours => `<div class="chips">${colours.map(c => `<div class="chip"><span style="background:${c.hex}"></span><b>${esc(c.name)}</b><code>${c.hex}</code></div>`).join('')}</div>`;
 
 // ---- data
-const wada = JSON.parse(readFileSync(join(src, 'palettes', 'wada.json'), 'utf8'));
+const families = readdirSync(join(src, 'palettes')).filter(f => f.endsWith('.json')).sort()
+  .map(f => JSON.parse(readFileSync(join(src, 'palettes', f), 'utf8')));
+const total = families.reduce((n, f) => n + f.combinations.length, 0);
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
 const stages = ['Queued', 'Directed', 'Requested', 'Received', 'Reviewed', 'Approved', 'In the library'];
 const guide = parse(join(src, 'guide', 'GUIDE.md'));
@@ -52,30 +54,45 @@ const guide = parse(join(src, 'guide', 'GUIDE.md'));
 const projects = readdirSync(join(src, 'projects')).sort().map(id => {
   const dir = join(src, 'projects', id);
   const p = parse(join(dir, 'project.md'));
-  const palette = wada.combinations.find(c => c.number === Number(p.meta.palette));
+  const family = families.find(f => f.id === p.meta.family);
+  const palette = family.combinations.find(c => c.number === Number(p.meta.palette));
   const deskNotes = Object.fromEntries(desks.map(d => {
     const f = join(dir, 'desks', d.id + '.md');
     return [d.id, existsSync(f) ? parse(f) : null];
   }));
-  return { id, ...p, palette, deskNotes };
+  return { id, ...p, family, palette, deskNotes };
 });
 const current = projects.filter(p => p.meta.stage !== 'In the library').pop();
 const approved = projects.filter(p => p.meta.stage === 'In the library');
-const statusOf = n => projects.find(p => p.palette?.number === n)?.meta.stage;
+const statusOf = (f, n) => projects.find(p => p.family === f && p.palette.number === n)?.meta.stage;
 
-// ---- Palettes
+// ---- Palettes: one card per family, and one page per family
 page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json', html: `
-<p class="eyebrow">The starting point</p><h1>${wada.combinations.length} colour combinations.</h1>
-<p class="lede">${esc(wada.source)}. Every project begins by choosing one.</p>
+<p class="eyebrow">The starting point</p><h1>Palette families.</h1>
+<p class="lede">Each family is a body of professional colour work with its own character. Every project begins by opening a family and choosing a combination.</p>
+<div class="families">${families.map(f => `
+<article class="family"><div class="mosaic">${f.combinations.filter((_, i) => i % Math.ceil(f.combinations.length / 12) === 0).slice(0, 12).map(c => strip(c.colours, 'strip mini')).join('')}</div>
+<div class="about"><p class="eyebrow">${f.combinations.length} combinations</p><h2>${esc(f.title)}</h2><p>${esc(f.description)}</p>
+<a class="button" href="/palettes/${f.id}">Open the ${esc(f.name)} family</a></div></article>`).join('')}
+<article class="family more"><div class="about"><p class="eyebrow">Room for more</p><h2>Further families</h2><p>Other professional palettes, looks and colour families can be added here, each with its own description and page.</p></div></article></div>` });
+write('palettes.json', JSON.stringify(families.map(({ combinations, ...f }) => ({ ...f, count: combinations.length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
+
+for (const f of families) {
+  const sizes = [...new Set(f.combinations.map(c => c.colours.length))].sort();
+  const word = { 2: 'Two colours', 3: 'Three', 4: 'Four', 5: 'Five' };
+  page({ title: f.title, path: '/palettes/' + f.id, wide: true, twin: `/palettes/${f.id}.json`, html: `
+<p class="eyebrow"><a href="/palettes">Palette families</a> / ${esc(f.name)}</p><h1>${esc(f.title)}</h1>
+<p class="lede">${esc(f.description)}</p>
 <div class="filters" role="group" aria-label="Filter by number of colours">
-<button data-n="0" aria-pressed="true">All</button><button data-n="2">Two colours</button><button data-n="3">Three</button><button data-n="4">Four</button></div>
-<div class="grid">${wada.combinations.map(c => { const st = statusOf(c.number); return `
+<button data-n="0" aria-pressed="true">All ${f.combinations.length}</button>${sizes.map(n => `<button data-n="${n}">${word[n] || n + ' colours'}</button>`).join('')}</div>
+<div class="grid">${f.combinations.map(c => { const st = statusOf(f, c.number); return `
 <article class="pal" data-n="${c.colours.length}" id="p${c.number}">${strip(c.colours)}
 <h2>No. ${c.number}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>
 <ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${esc(x.name)}<code>${x.hex}</code></li>`).join('')}</ul></article>`; }).join('')}</div>
-<p class="note">${esc(wada.note)} Data: ${esc(wada.data)}.</p>
+<p class="note">${esc(f.note)} Data: ${esc(f.data)}.</p>
 <script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('.pal').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>` });
-write('palettes.json', JSON.stringify(wada));
+  write(`palettes/${f.id}.json`, JSON.stringify(f));
+}
 
 // ---- Guide
 page({ title: 'The Guide', path: '/guide', twin: '/guide.md', html: `<p class="facts"><span>version · ${esc(guide.meta.version)}</span><span>updated · ${esc(guide.meta.updated)}</span><span>${esc(guide.meta.status)}</span></p>${md(guide.body)}` });
@@ -84,7 +101,7 @@ write('guide.md', guide.raw);
 // ---- Current project
 const deskState = n => n ? (n.meta.status || 'draft') : 'waiting';
 function projectText(p) {
-  return `# ${p.meta.title} — Wada No. ${p.palette.number}
+  return `# ${p.meta.title} — ${p.family.label} ${p.palette.number}
 
 Stage: ${p.meta.stage} (stages: ${stages.join(' → ')})
 Status: ${p.meta.status}
@@ -106,7 +123,7 @@ ${p.deskNotes[d.id] ? '\n' + p.deskNotes[d.id].body + '\n' : ''}`).join('\n')}`;
 function projectHtml(p) {
   const at = stages.indexOf(p.meta.stage);
   const phases = [...new Set(desks.map(d => d.phase))];
-  return `<p class="eyebrow">Current project</p><h1>${esc(p.meta.title)} <span class="sub">Wada No. ${p.palette.number}</span></h1>
+  return `<p class="eyebrow">Current project</p><h1>${esc(p.meta.title)} <a class="sub" href="/palettes/${p.family.id}#p${p.palette.number}">${esc(p.family.label)} ${p.palette.number}</a></h1>
 <ol class="stages">${stages.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}">${s}</li>`).join('')}</ol>
 <div class="hero"><div class="frame"><span>No image yet</span></div><div class="side">${chips(p.palette.colours)}<p class="note">${esc(p.meta.status)}</p>${md(p.body)}</div></div>
 ${phases.map(ph => `<section class="phase"><h2>${esc(ph)}</h2><div class="desks">${desks.filter(d => d.phase === ph).map(d => { const n = p.deskNotes[d.id]; const st = deskState(n); return `
@@ -126,7 +143,7 @@ page({ title: 'Library', path: '/library', wide: true, html: `<p class="eyebrow"
 // ---- Home
 page({ title: 'Studio', path: '/', html: `<p class="eyebrow">A study in colour and space</p>
 <h1>Rooms that show what a colour combination feels like to live in.</h1>
-<ul class="list"><li><a href="/palettes">Palettes</a><span>${wada.combinations.length} combinations to start from</span></li>
+<ul class="list"><li><a href="/palettes">Palettes</a><span>${families.length} ${families.length === 1 ? 'family' : 'families'} · ${total} combinations</span></li>
 <li><a href="/guide">The Guide</a><span>How the studio works</span></li>
 <li><a href="/project">Current project</a><span>${current ? `${esc(current.meta.title)} · ${esc(current.meta.stage)}` : 'None'}</span></li>
 <li><a href="/library">Library</a><span>${approved.length} approved</span></li></ul>` });
@@ -136,7 +153,7 @@ const whole = `# Architectural Color Studio — the whole project in one file
 
 This file is complete; no other page needs to be opened.
 Human pages: ${nav.map(([h]) => SITE + h).join(' · ')}
-All ${wada.combinations.length} palettes as data: ${SITE}/palettes.json
+Palette families: ${SITE}/palettes.json — ${families.map(f => `${f.title} (${f.combinations.length}): ${SITE}/palettes/${f.id}.json`).join('; ')}
 
 ================================================================
 PART 1 OF 2 — THE GUIDE (version ${guide.meta.version})

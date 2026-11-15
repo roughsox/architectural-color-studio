@@ -1,4 +1,9 @@
 {
+ "id": "wada",
+ "name": "Wada",
+ "label": "Wada No.",
+ "title": "Sanzo Wada \u2014 A Dictionary of Color Combinations",
+ "description": "348 combinations of two, three and four colours, drawn from 159 named colours, compiled in the 1930s by the Japanese artist, costume designer and teacher Sanzo Wada. The pairings are unexpected and still feel modern: soft against sharp, earthy against clear. A good family for rooms where one confident colour relationship carries everything.",
  "source": "Sanzo Wada, A Dictionary of Color Combinations",
  "data": "dictionary-of-colour-combinations 1.0.2 by Matt DesLauriers, MIT licence",
  "note": "Hex values are a modern digital transcription of the printed inks, not measurements of the original plates.",
