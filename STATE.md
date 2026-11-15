@@ -14,6 +14,7 @@ _Updated 2026-11-15. Read this first when resuming._
 | `docs/WORKFLOW.md` | Three architectures compared, the selected pipeline, the review panel, adjudication, caps |
 | `docs/ARCHITECTURE.md` | Stack, records, provider interfaces, measurement, cost, security, what is connected today |
 | `docs/ROADMAP.md` | Stages 0–4 with acceptance tests |
+| `docs/SITE-CONCEPT.md` | **Newest thinking.** Four-page site (Palettes, Guide, Current project, Library), shared file format, ChatGPT makes images and Claude owns the site and reviews. Supersedes parts of WORKFLOW and ROADMAP once agreed |
 | `research/measure_reference.py` | The script behind the measurements in DISCOVERY §3 |
 
 Branch: `architectural-color-studio`. Do not merge into `main` without the owner's approval.
@@ -35,6 +36,9 @@ Recorded in the owner's words; the planning documents have not been revised to m
 - "I want it to feel approachable but spectacular."
 - "I want the finished product to serve as eye candy on social media with a color swatch and a complete room side-by-side."
 - Claude leads on design judgment for this project; ChatGPT reviews.
+- Site should have four pages: a color palette page ("the current entire color palette could be the starting point"); "a page dedicated to ChatGPT reference for the project in general as a whole, explaining the process in an efficient and functional first principle manner"; "a current project page for the specific color palette and room… where the different expert pockets can exist and review the project at appropriate levels"; "a very clean nice Library of approved projects/images".
+- Rebuild the site "in a format that both Claude and ChatGPT can read", owned by Claude, where "ChatGPT can follow direction on image creation". "Let's flesh out the concept a bit more first."
+- Agreed to the room-shell library and to revising the plan around it.
 - Asked whether Claude can change the site once the process is settled. Answer given: not the existing chatgpt.site page (no access to its source or hosting); Claude can build and deploy a replacement from this repository.
 
 ## Open decisions for the owner
