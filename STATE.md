@@ -26,6 +26,17 @@ Branch: `architectural-color-studio`. Do not merge into `main` without the owner
 4. Reviewers work blind on different evidence, rank by comparison, are tested on known defects, and need a second model family to confirm anything blocking.
 5. A revision replaces the current best only if it wins. Three rounds, a spending cap, then escalate.
 
+## Owner direction (2026-11-15, brainstorm — not yet decisions)
+
+Recorded in the owner's words; the planning documents have not been revised to match yet.
+
+- "We should have essentially written project directions/guidelines for each color palette – room."
+- Either "a library of architect-driven designs spelled out in a format that ChatGPT can read and understand", chosen per palette, "or we could just keep the architecture a bit more neutral, which might be the better idea."
+- "I want it to feel approachable but spectacular."
+- "I want the finished product to serve as eye candy on social media with a color swatch and a complete room side-by-side."
+- Claude leads on design judgment for this project; ChatGPT reviews.
+- Asked whether Claude can change the site once the process is settled. Answer given: not the existing chatgpt.site page (no access to its source or hosting); Claude can build and deploy a replacement from this repository.
+
 ## Open decisions for the owner
 
 Nothing below has been assumed in a way that is hard to change, but 1–4 block Stage 0.
