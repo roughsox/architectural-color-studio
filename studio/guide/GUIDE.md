@@ -1,85 +1,82 @@
 ---
 title: The Guide
-version: 0.1
+version: 0.2
 updated: 2026-11-15
 status: draft, awaiting owner approval
 ---
 
 # The Guide
 
-For any assistant or person making images for Architectural Color Studio. Read this once at the start of a session, then read the project's direction.
+How Architectural Color Studio works, for any assistant or person taking part.
 
 ## 1. What we make
 
-One image for social media: **a room and its colour swatches, side by side.** The room shows what a colour combination feels like to live in. The swatches state the colours exactly.
+One image for social media: **a complete room and its colour swatches, side by side.** The room shows what a colour combination feels like to live in. The swatches state the colours exactly.
 
-The feeling to hit is **approachable but spectacular**: a room a design-minded person could plausibly own, made memorable by confident colour and one thing they covet. It should stop a scroll and survive a second look.
+The feeling to hit is **approachable but spectacular**: a room a person could plausibly own, made memorable by confident colour. Eye candy that survives a second look.
 
-## 2. Who does what
+The aim is a repeatable, professional process that can produce a large library of these, each made the same way.
 
-| Who | Does | Does not |
-|---|---|---|
-| **Image maker** (ChatGPT) | Makes the room image from the project's direction. Reports the exact prompt used | Make the swatch panel. Change the direction. Add text to the image. Judge its own work as finished |
-| **Studio lead** (Claude) | Writes the direction, measures the colours, runs the reviews, writes revision requests, builds the swatch panel and the final side-by-side | Approve the final piece |
-| **Owner** | Chooses the palette. Approves or rejects | — |
+## 2. The stages
 
-## 3. How to read a direction
+Every piece moves through the same stages, in order. Nothing is skipped.
 
-Each project has one direction page. It has these parts:
-
-- **Palette** — the colours, with names and exact values.
-- **Room shell** — the fixed architecture: size, windows, camera. Do not redesign it.
-- **Colour placement** — which colour goes on which surface, and roughly how much of the picture each takes. This is the point of the image.
-- **Light, furnishing, traces of life** — what to include.
-- **The prompt** — use it as written. If you must change it to get a good result, say what you changed.
-- **Must not** — hard limits for this image.
-
-For a revision there is also a **revision request**: at most three changes, and a list of what must stay the same. A revision is an edit of the previous image, not a new room.
-
-## 4. Rules for every image
-
-1. **Format.** Vertical 9:16. If that exact shape is unavailable, make the tallest vertical shape offered and say which.
-2. **Room image only.** No swatches, no labels, no text, no borders, no watermark, no people, no pets.
-3. **Neutral daylight.** Soft daylight from the windows the shell describes, around midday, slightly overcast. No lamps switched on, no hidden glowing strips, no golden-hour warmth. White things must look white.
-4. **A photograph, not a rendering.** Taken by a person standing in the room at about chest height with an ordinary lens. Vertical lines stay vertical.
-5. **Calm architecture.** Follow the shell. At most one memorable architectural feature. The colour is the spectacle.
-6. **The palette on the named surfaces.** Each palette colour appears where the direction puts it, as a flat, matte, clearly readable colour. Everything else stays in the quiet supporting materials the direction lists. No extra accent colours.
-7. **A home, not a showroom.** Ordinary ceiling height. Furniture a person would actually buy. Nothing blocks a door, a window or a fireplace. There is a clear way to walk in and sit down.
-8. **Not symmetrical.** No mirrored pairs of chairs, lamps or ornaments unless the direction asks.
-9. **Lived in.** Include the traces of life the direction lists. No two objects identical. Few objects, each believable.
-10. **Honest materials.** Fabric looks like fabric, plaster like plaster. Nothing glossy or plastic unless asked.
-
-## 5. What goes wrong, and the fix
-
-| Failure | Fix |
+| Stage | What it means |
 |---|---|
-| Whole image looks warm or amber; pinks turn peach, blues turn grey | Daylight only, all lamps off, white objects truly white |
-| Perfect left-right symmetry | Stand off-centre; one of each piece |
-| Hotel-lobby scale, very high ceiling | Keep to the shell's dimensions |
-| Sofa or table blocking a fireplace, door or window | Follow the shell's furniture positions |
-| Repeated cushions, vases, plants | Each object different |
-| A glow with no visible light source | Remove it |
-| Colours invented beyond the palette | Remove or neutralise them |
-| Furniture floating, legs not touching the floor | Regenerate; do not deliver |
-| Too tidy, nothing suggests a person | Add the listed traces of life |
+| **Queued** | A palette has been chosen |
+| **Directed** | The room has been decided and written down, and the pre-image desks are clear |
+| **Requested** | The image maker has been asked for the image |
+| **Received** | The original image is stored, untouched |
+| **Reviewed** | The image desks have judged it: pass, or one short revision |
+| **Approved** | The owner has signed off |
+| **In the library** | The finished side-by-side is published with its record |
 
-## 6. Handing an image back
+A revision sends a piece back from Reviewed to Requested. Three rounds at most; then the owner sees the best version and what is still wrong.
 
-Deliver the original file at full size, unedited, with:
+## 3. Who does what
 
-1. the project name and version (for example "001, V1");
-2. the exact prompt used, word for word;
-3. the image size;
-4. anything you changed from the direction, and why.
+| Who | Role |
+|---|---|
+| **Owner** | Chooses palettes. Approves or rejects. |
+| **Studio lead** (Claude) | Runs the process, keeps the site, writes direction, measures, reviews. |
+| **Image maker** (ChatGPT) | Makes the room image from the written direction. |
 
-## 7. How review works
+## 4. The room is decided per palette
 
-Each image is measured and reviewed before the owner sees it. Colour is measured on each named surface against the palette. Separate reviewers check that the room could be built and lived in, that it looks photographed, and that a newcomer sees the intended colours. The result is either a pass or one short revision request. Three rounds at most.
+There is no catalogue of rooms. For each palette the architect desk decides what kind of room and what architecture suit that combination, and writes down the reasoning. The architecture stays calm so the colour carries the image.
 
-A revision request is not a criticism of the image. It is the next instruction.
+## 5. The desks
 
-## 8. What is fixed and what is free
+Each discipline has a desk on the project page. A desk opens at the stage where it has something real to judge, works without seeing the other desks' opinions, and reports findings rather than scores.
 
-**Fixed:** the palette values, the shell, the colour placement, the rules above.
+| When | Desk | Judges |
+|---|---|---|
+| Before any image | **Architect** | Chooses the room and architecture for the palette; proportions, openings, circulation |
+| Before any image | **Builder** | Whether that room could be built. Advisory |
+| Before any image | **Interior designer** | Where each colour goes, the furnishings, the hierarchy |
+| On each image | **Colour specialist** | Measured colour on each surface against the palette; the effect of light |
+| On each image | **Stylist** | Believability and restraint |
+| On each image | **Architect and builder, second look** | Does the image show the room that was designed; anything impossible |
+| On the finished piece | **Composition editor** | The side-by-side as a social post |
+| Decision | **Synthesis** | Reconciles the desks into a pass or one short revision |
+| Decision | **Owner** | Approves into the library |
 
-**Free:** exact furniture designs, textures, small objects, the precise fall of light. Bring taste. Surprise is welcome inside the limits.
+Every finding says whether it was **measured** or is a reviewer's **judgment**. Building advice is advisory and is never a claim about any building code.
+
+## 6. Standards every image must meet
+
+1. Vertical room image, with no text, people or logos in it.
+2. Neutral daylight, so the palette colours are not shifted by warm light.
+3. Looks photographed, not rendered.
+4. Calm architecture; the colour is the spectacle.
+5. Each palette colour on a clearly readable surface; no extra accent colours.
+6. A home, not a showroom: ordinary scale, usable layout, nothing blocking doors or windows.
+7. Not symmetrical, not cloned, and with signs that someone lives there.
+
+## 7. The swatch
+
+The swatch panel is drawn from the palette's exact values, not generated as an image, so it is the one part of the piece that is exactly right.
+
+## 8. The record
+
+Nothing is overwritten. Every version of every image, every desk's findings and every decision is kept, so any piece in the library can be traced back to how it was made.

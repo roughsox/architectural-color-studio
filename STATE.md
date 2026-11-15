@@ -6,7 +6,7 @@ _Updated 2026-11-15. Read this first when resuming._
 
 **Planning, plus a first readable slice.** The owner's working direction (2026-11-15): Claude owns the site and writes direction; ChatGPT makes room images from it without paid API use; images come back by a route still to be tested (ChatGPT's own site as an outbox, a shared ChatGPT link, or Google Drive). The four-page site in `docs/SITE-CONCEPT.md` is not built.
 
-What exists: draft content in `studio/` (Guide v0.1, one room shell, the direction for project 001) and a small builder (`npm run build` → `dist/`) that publishes each file as a page and as plain text, with `/llms.txt` as the index for assistants. All three content files are drafts awaiting owner approval. No image has been made under this process. 
+What exists: a four-page site skeleton built from plain files in `studio/` (`npm run build` → `dist/`): **Palettes** (all 348 Wada combinations from `studio/palettes/wada.json`), **Guide** (v0.2, the process), **Current project** (stage tracker, image frame, and one desk per discipline from `studio/desks.json`; all desks are waiting) and **Library** (empty). `/llms.txt` is the whole project as one text file for assistants. Project 001 is a placeholder; no room has been decided and no image exists. The earlier room-shell and image-direction drafts were removed at the owner's direction and remain in git history.
 
 **Public site (published 2026-11-15 with the owner's go-ahead): https://architectural-color-studio.vercel.app** — assistants start at `/llms.txt`. Vercel project `architectural-color-studio`, root `apps/architectural-color-studio`, build `npm run build`, output `dist`. Its production branch setting is `main`, where this app does not exist, so a push does **not** update the public site: after pushing this branch, create a production deployment of the branch through the Vercel tools. Other branches are skipped by the project's ignore-build rule. Sign-in protection was changed for this project only so the main address is public; individual deployment addresses still need sign-in.
 
@@ -43,6 +43,10 @@ Recorded in the owner's words; the planning documents have not been revised to m
 - Site should have four pages: a color palette page ("the current entire color palette could be the starting point"); "a page dedicated to ChatGPT reference for the project in general as a whole, explaining the process in an efficient and functional first principle manner"; "a current project page for the specific color palette and room… where the different expert pockets can exist and review the project at appropriate levels"; "a very clean nice Library of approved projects/images".
 - Rebuild the site "in a format that both Claude and ChatGPT can read", owned by Claude, where "ChatGPT can follow direction on image creation". "Let's flesh out the concept a bit more first."
 - Agreed to the room-shell library and to revising the plan around it.
+- **No library of room designs.** "I'd rather just [the model] be able to intelligently figure out what room setting and general architecture makes sense for the image." Supersedes the shell-library idea agreed earlier the same day.
+- The goal is not one good image: "a workflow that is rock solid for creating thousands of these images with a repeatable, professional workflow and end result in Library."
+- Stay at the level of the project's skeleton; do not produce image prompts until asked.
+- No paid image API for now. How ChatGPT and Claude pass work to each other is unsettled: ChatGPT's reader could open `/llms.txt` on this site but not follow it reliably; ChatGPT's own site can only be changed with Codex usage.
 - Asked whether Claude can change the site once the process is settled. Answer given: not the existing chatgpt.site page (no access to its source or hosting); Claude can build and deploy a replacement from this repository.
 
 ## Open decisions for the owner
@@ -85,4 +89,5 @@ Challenge the design, not the wording. In particular:
 ## Checkpoint log
 
 - **2026-11-15 — Planning.** Reference audited, design proposed, documents committed for review.
-- **2026-11-15 — First readable slice.** Guide v0.1, bay-window sitting room shell, direction for 001 (Wada #231), static builder. Checked locally at 1280 and 390 px: all pages load, no sideways scroll. Published; all pages and plain-text twins confirmed to load without sign-in. Not yet tested: ChatGPT reading the site, and any route for images to come back.
+- **2026-11-15 — Site skeleton.** Four pages with palettes, desks and an empty library; room shells and image direction removed. Checked at 1280 and 390 px.
+- **2026-11-15 — First readable slice (superseded).** Guide v0.1, bay-window sitting room shell, direction for 001 (Wada #231), static builder. Checked locally at 1280 and 390 px: all pages load, no sideways scroll. Published; all pages and plain-text twins confirmed to load without sign-in. Not yet tested: ChatGPT reading the site, and any route for images to come back.

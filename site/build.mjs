@@ -1,127 +1,159 @@
-// Builds the public reading site from the plain files in studio/.
-// Every page is written twice: as HTML for people and as the original Markdown (.md) for assistants.
+// Builds the public site from the plain files in studio/.
+// Pages: Palettes, Guide, Current project (with desks), Library. Each has a plain-text or JSON twin for assistants.
 import { marked } from 'marked';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+const SITE = 'https://architectural-color-studio.vercel.app';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const src = join(root, 'studio');
 const out = join(root, 'dist');
 rmSync(out, { recursive: true, force: true });
+mkdirSync(out, { recursive: true });
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const md = t => marked.parse(t).replace(/<table>/g, '<div class="tablewrap"><table>').replace(/<\/table>/g, '</table></div>');
+const write = (path, text) => { const f = join(out, path); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, text); };
 
 function parse(file) {
   const raw = readFileSync(file, 'utf8');
   const m = raw.match(/^---\n([\s\S]*?)\n---\n/);
-  const meta = {}; const palette = [];
-  if (m) for (const line of m[1].split('\n')) {
-    const p = line.match(/name:\s*"([^"]+)",\s*hex:\s*"(#[0-9A-Fa-f]{6})",\s*role:\s*"([^"]+)"/);
-    if (p) { palette.push({ name: p[1], hex: p[2], role: p[3] }); continue; }
-    const kv = line.match(/^([a-z_]+):\s*(.+)$/);
-    if (kv) meta[kv[1]] = kv[2].replace(/^"|"$/g, '');
-  }
-  return { raw, meta, palette, body: m ? raw.slice(m[0].length) : raw };
+  const meta = {};
+  if (m) for (const line of m[1].split('\n')) { const kv = line.match(/^([a-z_]+):\s*(.+)$/); if (kv) meta[kv[1]] = kv[2].replace(/^"|"$/g, ''); }
+  return { raw, meta, body: (m ? raw.slice(m[0].length) : raw).trim() };
 }
 
 const css = readFileSync(join(root, 'site', 'style.css'), 'utf8');
-const nav = [['/', 'Studio'], ['/guide', 'Guide'], ['/project/current', 'Current project'], ['/shells', 'Room shells']];
+const nav = [['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library']];
 
-function page({ title, html, path, meta = {}, palette = [], textPath }) {
-  const strip = palette.length ? `<div class="strip">${palette.map(c =>
-    `<div class="chip"><span style="background:${c.hex}"></span><b>${esc(c.name)}</b><code>${c.hex.toUpperCase()}</code><i>${esc(c.role)}</i></div>`).join('')}</div>` : '';
-  const facts = ['version', 'updated', 'status'].filter(k => meta[k]).map(k => `<span>${k} · ${esc(meta[k])}</span>`).join('');
-  const doc = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+function page({ title, html, path, wide = false, twin }) {
+  write(path === '/' ? 'index.html' : path.slice(1) + '.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} — Architectural Color Studio</title>
-<meta name="description" content="Architectural Color Studio: written direction for rooms that show colour combinations.">
-${textPath ? `<link rel="alternate" type="text/markdown" href="${textPath}">` : ''}
+<meta name="description" content="Architectural Color Studio: rooms that show what a colour combination feels like to live in.">
 <style>${css}</style></head><body>
 <header><a class="brand" href="/">A<span>/</span>C <small>Architectural Color Studio</small></a>
 <nav>${nav.map(([h, t]) => `<a href="${h}"${h === path ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>
-<main>${facts ? `<p class="facts">${facts}</p>` : ''}${strip}${html}
-${textPath ? `<p class="twin">Plain-text version of this page: <a href="${textPath}">${textPath}</a></p>` : ''}</main>
-<footer>The files behind these pages are the source of truth. Assistants: everything for the current image is in one file, <a href="/llms.txt">/llms.txt</a>.</footer>
-</body></html>`;
-  const file = join(out, path === '/' ? 'index.html' : path.slice(1) + '.html');
-  mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, doc);
+<main${wide ? ' class="wide"' : ''}>${html}
+${twin ? `<p class="twin">Plain-text version of this page: <a href="${twin}">${twin}</a></p>` : ''}</main>
+<footer>Assistants: the whole project in one text file at <a href="/llms.txt">/llms.txt</a>.</footer>
+</body></html>`);
 }
 
-function publish(file, path) {
-  const d = parse(file);
-  const textPath = path + '.md';
-  page({ title: d.meta.title || path, html: marked.parse(d.body).replace(/<table>/g, '<div class="tablewrap"><table>').replace(/<\/table>/g, '</table></div>'), path, meta: d.meta, palette: d.palette, textPath });
-  const twin = join(out, textPath.slice(1));
-  mkdirSync(dirname(twin), { recursive: true });
-  writeFileSync(twin, d.raw);
-  return d;
-}
+const strip = (colours, cls = 'strip') => `<div class="${cls}">${colours.map(c => `<span style="background:${c.hex}"></span>`).join('')}</div>`;
+const chips = colours => `<div class="chips">${colours.map(c => `<div class="chip"><span style="background:${c.hex}"></span><b>${esc(c.name)}</b><code>${c.hex}</code></div>`).join('')}</div>`;
 
-const guide = publish(join(src, 'guide', 'GUIDE.md'), '/guide');
-
-const shells = readdirSync(join(src, 'shells')).filter(f => f.endsWith('.md')).map(f => {
-  const name = f.replace(/\.md$/, '');
-  return { name, ...publish(join(src, 'shells', f), '/shells/' + name) };
-});
-page({ title: 'Room shells', path: '/shells', html: `<h1>Room shells</h1><p>Each shell is one calm, reusable room: its size, windows, furniture positions, camera and light. A project pairs a palette with a shell.</p><ul class="list">${
-  shells.map(s => `<li><a href="/shells/${s.name}">${esc(s.meta.title)}</a><span>${esc(s.meta.status || '')}</span></li>`).join('')}</ul>` });
+// ---- data
+const wada = JSON.parse(readFileSync(join(src, 'palettes', 'wada.json'), 'utf8'));
+const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
+const stages = ['Queued', 'Directed', 'Requested', 'Received', 'Reviewed', 'Approved', 'In the library'];
+const guide = parse(join(src, 'guide', 'GUIDE.md'));
 
 const projects = readdirSync(join(src, 'projects')).sort().map(id => {
-  const f = join(src, 'projects', id, 'direction.md');
-  return existsSync(f) ? { id, ...publish(f, '/projects/' + id) } : null;
-}).filter(Boolean);
-const current = projects[projects.length - 1];
-publish(join(src, 'projects', current.id, 'direction.md'), '/project/current');
+  const dir = join(src, 'projects', id);
+  const p = parse(join(dir, 'project.md'));
+  const palette = wada.combinations.find(c => c.number === Number(p.meta.palette));
+  const deskNotes = Object.fromEntries(desks.map(d => {
+    const f = join(dir, 'desks', d.id + '.md');
+    return [d.id, existsSync(f) ? parse(f) : null];
+  }));
+  return { id, ...p, palette, deskNotes };
+});
+const current = projects.filter(p => p.meta.stage !== 'In the library').pop();
+const approved = projects.filter(p => p.meta.stage === 'In the library');
+const statusOf = n => projects.find(p => p.palette?.number === n)?.meta.stage;
 
-page({ title: 'Studio', path: '/', palette: current.palette, html: `<p class="eyebrow">A study in colour and space</p>
+// ---- Palettes
+page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json', html: `
+<p class="eyebrow">The starting point</p><h1>${wada.combinations.length} colour combinations.</h1>
+<p class="lede">${esc(wada.source)}. Every project begins by choosing one.</p>
+<div class="filters" role="group" aria-label="Filter by number of colours">
+<button data-n="0" aria-pressed="true">All</button><button data-n="2">Two colours</button><button data-n="3">Three</button><button data-n="4">Four</button></div>
+<div class="grid">${wada.combinations.map(c => { const st = statusOf(c.number); return `
+<article class="pal" data-n="${c.colours.length}" id="p${c.number}">${strip(c.colours)}
+<h2>No. ${c.number}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>
+<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${esc(x.name)}<code>${x.hex}</code></li>`).join('')}</ul></article>`; }).join('')}</div>
+<p class="note">${esc(wada.note)} Data: ${esc(wada.data)}.</p>
+<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('.pal').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>` });
+write('palettes.json', JSON.stringify(wada));
+
+// ---- Guide
+page({ title: 'The Guide', path: '/guide', twin: '/guide.md', html: `<p class="facts"><span>version · ${esc(guide.meta.version)}</span><span>updated · ${esc(guide.meta.updated)}</span><span>${esc(guide.meta.status)}</span></p>${md(guide.body)}` });
+write('guide.md', guide.raw);
+
+// ---- Current project
+const deskState = n => n ? (n.meta.status || 'draft') : 'waiting';
+function projectText(p) {
+  return `# ${p.meta.title} — Wada No. ${p.palette.number}
+
+Stage: ${p.meta.stage} (stages: ${stages.join(' → ')})
+Status: ${p.meta.status}
+Updated: ${p.meta.updated}
+
+## Palette
+${p.palette.colours.map(c => `- ${c.name} ${c.hex}`).join('\n')}
+
+${p.body}
+
+## Image
+None yet.
+
+## Desks
+${desks.map(d => `### ${d.name} — ${d.phase} — ${deskState(p.deskNotes[d.id])}
+Judges: ${d.judges}
+${p.deskNotes[d.id] ? '\n' + p.deskNotes[d.id].body + '\n' : ''}`).join('\n')}`;
+}
+function projectHtml(p) {
+  const at = stages.indexOf(p.meta.stage);
+  const phases = [...new Set(desks.map(d => d.phase))];
+  return `<p class="eyebrow">Current project</p><h1>${esc(p.meta.title)} <span class="sub">Wada No. ${p.palette.number}</span></h1>
+<ol class="stages">${stages.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}">${s}</li>`).join('')}</ol>
+<div class="hero"><div class="frame"><span>No image yet</span></div><div class="side">${chips(p.palette.colours)}<p class="note">${esc(p.meta.status)}</p>${md(p.body)}</div></div>
+${phases.map(ph => `<section class="phase"><h2>${esc(ph)}</h2><div class="desks">${desks.filter(d => d.phase === ph).map(d => { const n = p.deskNotes[d.id]; const st = deskState(n); return `
+<article class="desk"><header><h3>${esc(d.name)}</h3><span class="state ${esc(st.split(' ')[0])}">${esc(st)}</span></header>
+<p class="judges">${esc(d.judges)}</p>${n ? `<div class="findings">${md(n.body)}</div>` : ''}</article>`; }).join('')}</div></section>`).join('')}`;
+}
+if (current) {
+  page({ title: 'Current project', path: '/project', wide: true, twin: '/project.md', html: projectHtml(current) });
+  write('project.md', projectText(current));
+}
+
+// ---- Library
+page({ title: 'Library', path: '/library', wide: true, html: `<p class="eyebrow">Approved work</p><h1>Library</h1>${approved.length
+  ? `<div class="grid">${approved.map(p => `<article class="pal">${strip(p.palette.colours)}<h2>${esc(p.meta.title)}</h2></article>`).join('')}</div>`
+  : `<div class="empty"><p>Nothing has been approved yet.</p><p class="note">Finished pieces appear here once the owner signs them off: the room and its swatches side by side, with the record of how each was made one link away.</p></div>`}` });
+
+// ---- Home
+page({ title: 'Studio', path: '/', html: `<p class="eyebrow">A study in colour and space</p>
 <h1>Rooms that show what a colour combination feels like to live in.</h1>
-<p>This site holds the written direction for each image. It is read by people and by assistants alike.</p>
-<ul class="list"><li><a href="/guide">The Guide</a><span>How the project works. Read first.</span></li>
-<li><a href="/project/current">Current project</a><span>${esc(current.meta.title)}</span></li>
-<li><a href="/shells">Room shells</a><span>${shells.length} drafted</span></li></ul>
-<p class="note">No images have been made under this process yet. Palette library and the library of approved work are not built.</p>` });
+<ul class="list"><li><a href="/palettes">Palettes</a><span>${wada.combinations.length} combinations to start from</span></li>
+<li><a href="/guide">The Guide</a><span>How the studio works</span></li>
+<li><a href="/project">Current project</a><span>${current ? `${esc(current.meta.title)} · ${esc(current.meta.stage)}` : 'None'}</span></li>
+<li><a href="/library">Library</a><span>${approved.length} approved</span></li></ul>` });
 
-// One self-contained text file. An assistant's web reader may refuse to follow links it finds inside a page,
-// so everything needed to make the current image is inlined here and every address is written in full.
-const SITE = 'https://architectural-color-studio.vercel.app';
-const abs = t => t.replace(/\]\(\/(?!\/)/g, `](${SITE}/`);
-const strip = d => abs(d.body.trim());
-const shell = shells.find(s => s.name === current.meta.shell) || shells[0];
-const brief = `# Architectural Color Studio — everything needed to make the current image
+// ---- One complete text file for assistants (their readers may not follow links inside a page)
+const whole = `# Architectural Color Studio — the whole project in one file
 
-This single file is complete. You do not need to open any other page.
-Current assignment: ${current.meta.title} (${current.meta.version}). Guide version ${guide.meta.version}. Updated ${current.meta.updated}.
-
-Read all three parts in order, then make the image using "The prompt" in Part 3 and deliver it as "Hand back" says.
-
-Human-readable pages (optional): ${SITE}/guide · ${SITE}/project/current · ${SITE}/shells/${shell.name}
+This file is complete; no other page needs to be opened.
+Human pages: ${nav.map(([h]) => SITE + h).join(' · ')}
+All ${wada.combinations.length} palettes as data: ${SITE}/palettes.json
 
 ================================================================
-PART 1 OF 3 — THE GUIDE
+PART 1 OF 2 — THE GUIDE (version ${guide.meta.version})
 ================================================================
 
-${strip(guide)}
+${guide.body}
 
 ================================================================
-PART 2 OF 3 — THE ROOM SHELL
+PART 2 OF 2 — THE CURRENT PROJECT
 ================================================================
 
-${strip(shell)}
+${current ? projectText(current) : 'There is no current project.'}
 
 ================================================================
-PART 3 OF 3 — THE DIRECTION FOR THIS IMAGE
-================================================================
-
-Palette values: ${current.palette.map(c => `${c.name} ${c.hex.toUpperCase()} (${c.role})`).join('; ')}.
-
-${strip(current)}
-
-================================================================
-END. Nothing further needs to be read.
+END
 `;
-writeFileSync(join(out, 'llms.txt'), brief);
-writeFileSync(join(out, 'brief.txt'), brief);
-page({ title: 'Current brief, complete', path: '/brief', html: `<h1>Current brief, complete</h1><p>The Guide, the room shell and the direction on one page, for assistants that can only open one address. Also as plain text at <a href="/llms.txt">/llms.txt</a>.</p><pre class="brief">${esc(brief)}</pre>` });
-writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nAllow: /\n');
-console.log('built', readdirSync(out, { recursive: true }).filter(f => /\.(html|md|txt)$/.test(f)).join(', '));
+write('llms.txt', whole);
+write('brief.txt', whole);
+write('robots.txt', 'User-agent: *\nAllow: /\n');
+console.log('built:', readdirSync(out, { recursive: true }).filter(f => /\.(html|md|txt|json)$/.test(f)).join(', '));

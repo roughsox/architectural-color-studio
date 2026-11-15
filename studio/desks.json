@@ -1,0 +1,20 @@
+[
+  { "id": "architect", "name": "Architect", "phase": "Before any image",
+    "judges": "Chooses the room and its architecture for this palette, and says why. Then: proportions, openings, circulation, and whether the space makes sense." },
+  { "id": "builder", "name": "Builder", "phase": "Before any image",
+    "judges": "Whether the architect's room could actually be built: structure, junctions, windows, details. Advisory; not a building-code check." },
+  { "id": "interior-designer", "name": "Interior designer", "phase": "Before any image",
+    "judges": "Where each palette colour goes and how much of it, the furnishings, and the hierarchy of the room." },
+  { "id": "colour", "name": "Colour specialist", "phase": "On each image",
+    "judges": "Measured colour on each surface against the palette, the effect of the light, and whether the combination still reads as intended." },
+  { "id": "stylist", "name": "Stylist", "phase": "On each image",
+    "judges": "Believability and restraint: does it look photographed and lived in, or staged and generated." },
+  { "id": "architect-check", "name": "Architect and builder, second look", "phase": "On each image",
+    "judges": "Does the image show the room that was designed, and is anything in it impossible." },
+  { "id": "editor", "name": "Composition editor", "phase": "On the finished piece",
+    "judges": "The room and swatch side by side as a social post: crop, hierarchy, legibility on a phone, whether it stops a scroll." },
+  { "id": "synthesis", "name": "Synthesis", "phase": "Decision",
+    "judges": "Reconciles the desks, ranks what matters, and issues either a pass or one short revision." },
+  { "id": "owner", "name": "Owner", "phase": "Decision",
+    "judges": "Approves the piece into the library, or sends it back." }
+]
