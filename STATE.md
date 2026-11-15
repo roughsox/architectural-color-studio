@@ -1,0 +1,68 @@
+# Architectural Color Studio — state
+
+_Updated 2026-11-15. Read this first when resuming._
+
+## Where things stand
+
+**Planning only. No product code exists.** The design below is proposed and waiting for the owner's decisions and an independent review by ChatGPT. Implementation does not start until both have happened.
+
+| Document | Contents |
+|---|---|
+| `../../ARCHITECTURAL_COLOR_STUDIO_BRIEF.md` | The owner's brief |
+| `docs/DISCOVERY.md` | Audit of the reference site and its two images, with measurements; provider research |
+| `docs/VISION.md` | The product, five positions that differ from the brief, the quality bar |
+| `docs/WORKFLOW.md` | Three architectures compared, the selected pipeline, the review panel, adjudication, caps |
+| `docs/ARCHITECTURE.md` | Stack, records, provider interfaces, measurement, cost, security, what is connected today |
+| `docs/ROADMAP.md` | Stages 0–4 with acceptance tests |
+| `research/measure_reference.py` | The script behind the measurements in DISCOVERY §3 |
+
+Branch: `architectural-color-studio`. Do not merge into `main` without the owner's approval.
+
+## The design in five lines
+
+1. Swatches are drawn from the numbers, never generated. The room is generated.
+2. The room is planned and reviewed as text before any image is paid for.
+3. Light is specified neutral up front; colour is then measured by surface region, and what a viewer names is tested separately.
+4. Reviewers work blind on different evidence, rank by comparison, are tested on known defects, and need a second model family to confirm anything blocking.
+5. A revision replaces the current best only if it wins. Three rounds, a spending cap, then escalate.
+
+## Open decisions for the owner
+
+Nothing below has been assumed in a way that is hard to change, but 1–4 block Stage 0.
+
+1. **Providers and budget.** Which image providers can you supply keys for (OpenAI, Google, Black Forest Labs or a reseller)? What monthly ceiling and per-Plate cap? Proposed: two image providers, two review-model families, $5 per Plate, under $25 for the Stage 0 bake-off.
+2. **Drawn swatches.** Confirm the swatch panel is typeset from exact values with material texture, replacing the generated gold-foil cards. This changes the look of the reference's cards in exchange for accuracy.
+3. **Output format.** Confirm the Plate: a 9:16 room beside a narrow swatch column in one 4:5 image, plus room alone, swatch card alone and a carousel pair. Which platform is primary?
+4. **Palette scope.** Wada combinations only, or any palette you enter? Proposed: Wada library first, custom palettes allowed.
+5. **Colour grading.** May the studio shift a surface's colour slightly after generation, within a cap and disclosed in the proof? Proposed: yes.
+6. **Review panel.** Accept merging architect and builder into one seat and adding the cold viewer? Proposed: yes, revisit after calibration.
+7. **Autonomy default.** Approve only the final proof, or also the concept before generation? Proposed: final only, with supervised mode available.
+8. **House style.** Typeface direction, whether a name or mark appears on the Plate, how the Wada source is credited.
+9. **Where records live** once the web studio exists. Proposed: its own database and storage, separate from the Calendar Home Hub's.
+10. **Calibration photographs.** The reviewer tests need about 20 real interior photographs you have the right to use privately. Can you supply them, or should licensed stock be used?
+11. **AI disclosure.** Whether exports carry a note or metadata saying the room is generated. Platform rules vary and have not been checked.
+
+## Questions for the independent reviewer
+
+Challenge the design, not the wording. In particular:
+
+1. Is drawing the swatch panel the right call, or does it lose something the generated cards had that matters more than accuracy?
+2. Is "reads as the palette" (regions, relationships, blind read-back) a defensible standard, or a way of excusing drift? Are the proposed gates the right ones?
+3. Do the independence measures in WORKFLOW §3 actually produce independent reviews? Where would the panel still agree with itself wrongly?
+4. Is merging architect and builder a loss?
+5. Is architecture B over-built for one person's studio? What could be cut from Stage 1 without weakening the result?
+6. Is rejecting the 3D-first route premature?
+7. Which acceptance tests in ROADMAP are unmeasurable as written, or could pass while the Plate is still poor?
+8. What failure is nobody checking for?
+
+## Known limits of this planning pass
+
+- No image was generated and no provider was called. All provider statements are desk research and are flagged as such.
+- The reference site was inspected from outside only. Its source, storage and export functions were not examined.
+- Measurements of the reference images used hand-placed rectangles, not segmentation.
+- Cost figures are estimates built on third-party prices.
+- The brief asks for documents at `docs/` in the repository root. They are under `apps/architectural-color-studio/docs/` because the repository's rules keep each application self-contained. `AGENTS.md` has not been changed and does not yet mention this project; it is shared with other branches and needs the owner's say-so.
+
+## Checkpoint log
+
+- **2026-11-15 — Planning.** Reference audited, design proposed, documents committed for review.
