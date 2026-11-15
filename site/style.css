@@ -26,3 +26,4 @@ blockquote{margin:1.2em 0;padding:6px 22px;background:var(--card);border:1px sol
 .list a{font-size:20px;text-decoration:none}.list span,.note,.twin{font:14px/1.5 system-ui,sans-serif;color:var(--muted)}
 .twin{margin-top:3em;padding-top:1em;border-top:1px solid var(--line)}
 footer{max-width:760px;margin:0 auto;padding:0 24px 48px;font:13px/1.5 system-ui,sans-serif;color:var(--muted)}
+.brief{white-space:pre-wrap;font:14px/1.6 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px;overflow-wrap:anywhere}

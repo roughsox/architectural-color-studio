@@ -41,7 +41,7 @@ ${textPath ? `<link rel="alternate" type="text/markdown" href="${textPath}">` : 
 <nav>${nav.map(([h, t]) => `<a href="${h}"${h === path ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>
 <main>${facts ? `<p class="facts">${facts}</p>` : ''}${strip}${html}
 ${textPath ? `<p class="twin">Plain-text version of this page: <a href="${textPath}">${textPath}</a></p>` : ''}</main>
-<footer>The files behind these pages are the source of truth. Assistants: start at <a href="/llms.txt">/llms.txt</a>.</footer>
+<footer>The files behind these pages are the source of truth. Assistants: everything for the current image is in one file, <a href="/llms.txt">/llms.txt</a>.</footer>
 </body></html>`;
   const file = join(out, path === '/' ? 'index.html' : path.slice(1) + '.html');
   mkdirSync(dirname(file), { recursive: true });
@@ -82,16 +82,46 @@ page({ title: 'Studio', path: '/', palette: current.palette, html: `<p class="ey
 <li><a href="/shells">Room shells</a><span>${shells.length} drafted</span></li></ul>
 <p class="note">No images have been made under this process yet. Palette library and the library of approved work are not built.</p>` });
 
-writeFileSync(join(out, 'llms.txt'), `# Architectural Color Studio
+// One self-contained text file. An assistant's web reader may refuse to follow links it finds inside a page,
+// so everything needed to make the current image is inlined here and every address is written in full.
+const SITE = 'https://architectural-color-studio.vercel.app';
+const abs = t => t.replace(/\]\(\/(?!\/)/g, `](${SITE}/`);
+const strip = d => abs(d.body.trim());
+const shell = shells.find(s => s.name === current.meta.shell) || shells[0];
+const brief = `# Architectural Color Studio — everything needed to make the current image
 
-Written direction for making room images that show colour combinations. Plain-text pages for assistants:
+This single file is complete. You do not need to open any other page.
+Current assignment: ${current.meta.title} (${current.meta.version}). Guide version ${guide.meta.version}. Updated ${current.meta.updated}.
 
-- /guide.md — how the project works and the rules for every image (version ${guide.meta.version}). Read first.
-- /project/current.md — the direction for the image to make now: ${current.meta.title} (${current.meta.version}).
-${shells.map(s => `- /shells/${s.name}.md — room shell: ${s.meta.title}.`).join('\n')}
-${projects.map(p => `- /projects/${p.id}.md — ${p.meta.title}.`).join('\n')}
+Read all three parts in order, then make the image using "The prompt" in Part 3 and deliver it as "Hand back" says.
 
-To make an image: read /guide.md, then /project/current.md and the shell it names, then follow "The prompt" and "Hand back".
-`);
+Human-readable pages (optional): ${SITE}/guide · ${SITE}/project/current · ${SITE}/shells/${shell.name}
+
+================================================================
+PART 1 OF 3 — THE GUIDE
+================================================================
+
+${strip(guide)}
+
+================================================================
+PART 2 OF 3 — THE ROOM SHELL
+================================================================
+
+${strip(shell)}
+
+================================================================
+PART 3 OF 3 — THE DIRECTION FOR THIS IMAGE
+================================================================
+
+Palette values: ${current.palette.map(c => `${c.name} ${c.hex.toUpperCase()} (${c.role})`).join('; ')}.
+
+${strip(current)}
+
+================================================================
+END. Nothing further needs to be read.
+`;
+writeFileSync(join(out, 'llms.txt'), brief);
+writeFileSync(join(out, 'brief.txt'), brief);
+page({ title: 'Current brief, complete', path: '/brief', html: `<h1>Current brief, complete</h1><p>The Guide, the room shell and the direction on one page, for assistants that can only open one address. Also as plain text at <a href="/llms.txt">/llms.txt</a>.</p><pre class="brief">${esc(brief)}</pre>` });
 writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nAllow: /\n');
 console.log('built', readdirSync(out, { recursive: true }).filter(f => /\.(html|md|txt)$/.test(f)).join(', '));
