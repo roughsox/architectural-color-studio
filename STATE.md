@@ -1,6 +1,8 @@
 # Architectural Color Studio — state
 
-_Updated 2026-11-15. Read this first when resuming._
+_Updated 2026-11-16. Read this first when resuming._
+
+**Who works on this:** both of the owner's Claude accounts, directly on the `architectural-color-studio` branch (owner's direction, 2026-11-16: one place, seamless hand-over). Start each session by pulling the latest of this branch; finish by updating this file and pushing. No separate session branches, and the project stays in this repository.
 
 ## Where things stand
 
@@ -93,3 +95,4 @@ Challenge the design, not the wording. In particular:
 - **2026-11-15 — Planning.** Reference audited, design proposed, documents committed for review.
 - **2026-11-15 — Site skeleton.** Four pages with palettes, desks and an empty library; room shells and image direction removed. Checked at 1280 and 390 px.
 - **2026-11-15 — First readable slice (superseded).** Guide v0.1, bay-window sitting room shell, direction for 001 (Wada #231), static builder. Checked locally at 1280 and 390 px: all pages load, no sideways scroll. Published; all pages and plain-text twins confirmed to load without sign-in. Not yet tested: ChatGPT reading the site, and any route for images to come back.
+- **2026-11-16 — One shared branch.** Both Claude accounts now work directly on this branch; `AGENTS.md` (on `main`, `calendar-foundation` and here) points new sessions to it. A mistaken copy into `roughsox/Live-sites` was withdrawn unmerged (PR #4 closed).
