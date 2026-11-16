@@ -99,10 +99,11 @@ The references are other people's posts, so they are kept out of the site; only 
 
 ## Still to work out
 
-- Whether trios with prompt v0.5 hit the standard more often: three trios, three generations each, to get a hit rate.
-- Whether the studio's four-colour palettes should be recast as trios.
-- Generic styling it keeps reaching for without being asked: hydrangeas, candles on a tray, a landscape painting under a picture light, a trailing plant, a chunky knit throw, cove lighting. In 11 of 11 images so far.
-- How the image gets from ChatGPT to the site, and how the studio's review (measured colour, the experts) fits after it.
+- Whether the design-brief-first method (alt version 2) reaches a shareable room in fewer steps on a new palette, especially a dark or moody one.
+- Whether `audit` as a one-word command works as well as the owner's full self-audit prompt.
+- Stock styling it reaches for unasked (hydrangeas, florist arrangements, gilt landscapes, candlesticks, cove lighting): v5 and alt v2 address it; keep watching.
+- How a finished room and its card become a post in the Library.
+
 ## Earlier methods
 
 Superseded by the ChatGPT project instructions. Kept so each lesson can be traced to what was tried.

@@ -39,3 +39,4 @@ This repository holds one project and nothing else. Read `STATE.md` first, then 
 - Prompts describe things, not qualities; avoid "luxury", "magazine" and other staging words (Notebook, "What others have found").
 - Every room image attempt goes into the Notebook with its verdict, misses included.
 - Brainstorms from the owner are recorded in their own words in `docs/LOG.md`.
+- Go at the owner's pace: discuss first, build only what is agreed. Follow-up prompts you suggest should be short and in plain language; the owner's own short requests have worked best.
