@@ -50,6 +50,44 @@ const isCombos = f => f.kind === 'combinations';
 const size = f => isCombos(f) ? f.combinations.length : f.colours.length;
 const countLabel = f => isCombos(f) ? (size(f) ? `${size(f)} ${size(f) === 1 ? 'combination' : 'combinations'}` : 'none yet') : `${size(f)} single colours`;
 const total = families.filter(isCombos).reduce((n, f) => n + size(f), 0);
+
+// ---- Studio palettes: the studio's own rules (Guide §4), checked on every build. A broken palette stops the build.
+const lab = hex => {
+  const lin = c => (c /= 255) <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  const [r, g, b] = [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16)));
+  const q = t => t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116;
+  const X = q((0.4124 * r + 0.3576 * g + 0.1805 * b) / 0.95047), Y = q(0.2126 * r + 0.7152 * g + 0.0722 * b), Z = q((0.0193 * r + 0.1192 * g + 0.9505 * b) / 1.08883);
+  const L = 116 * Y - 16, A = 500 * (X - Y), B = 200 * (Y - Z);
+  return { L, a: A, b: B, C: Math.hypot(A, B) };
+};
+const RULES = { fieldWeightGap: 30, minDistance: 15, loud: 45 };
+const roleOrder = ['Field', 'Weight', 'Accent', 'Bridge'];
+const allColours = new Map(); // "family|name" -> hex, from every family
+for (const f of families) for (const c of isCombos(f) ? f.combinations.flatMap(x => x.colours) : f.colours) if (f.id !== 'studio') allColours.set(`${f.id}|${c.name}`, c.hex.toUpperCase());
+function checkStudio(c) {
+  const fail = m => { throw new Error(`Studio No. ${c.number} (${c.name}): ${m}`); };
+  if (!c.name || !c.intent) fail('needs a name and a one-sentence intent');
+  if (c.colours.length < 2 || c.colours.length > 4) fail('needs two to four colours');
+  for (const x of c.colours) {
+    if (!roleOrder.includes(x.role)) fail(`${x.name} needs a role (${roleOrder.join(', ')})`);
+    const real = allColours.get(`${x.family}|${x.name}`);
+    if (!real) fail(`${x.name} is not a colour in the ${x.family} family`);
+    if (real !== x.hex.toUpperCase()) fail(`${x.name} is ${real} in ${x.family}, not ${x.hex}`);
+  }
+  const by = r => c.colours.filter(x => x.role === r);
+  if (by('Field').length !== 1 || by('Weight').length !== 1 || by('Accent').length > 1 || by('Bridge').length > 1) fail('needs one Field, one Weight, and at most one Accent and one Bridge');
+  const m = c.colours.map(x => ({ ...x, ...lab(x.hex) }));
+  const [field, weight] = ['Field', 'Weight'].map(r => m.find(x => x.role === r));
+  if (Math.abs(field.L - weight.L) < RULES.fieldWeightGap) fail(`Field and Weight are only ${Math.round(Math.abs(field.L - weight.L))} apart in lightness (minimum ${RULES.fieldWeightGap})`);
+  for (let i = 0; i < m.length; i++) for (let j = i + 1; j < m.length; j++) {
+    const d = Math.hypot(m[i].L - m[j].L, m[i].a - m[j].a, m[i].b - m[j].b);
+    if (d < RULES.minDistance) fail(`${m[i].name} and ${m[j].name} are too alike (difference ${Math.round(d)}, minimum ${RULES.minDistance})`);
+  }
+  if (m.filter(x => x.C >= RULES.loud).length > 1) fail(`more than one loud colour (strength ${RULES.loud} or more)`);
+  c.colours.sort((a, b) => roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role));
+  c.measured = m.map(x => ({ name: x.name, lightness: Math.round(x.L), strength: Math.round(x.C) }));
+}
+families.find(f => f.id === 'studio')?.combinations.forEach(checkStudio);
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
 const stages = ['Queued', 'Directed', 'Requested', 'Received', 'Reviewed', 'Approved', 'In the library'];
 const guide = parse(join(src, 'guide', 'GUIDE.md'));
@@ -96,11 +134,12 @@ function combosHtml(f) {
   const word = { 2: 'Two colours', 3: 'Three', 4: 'Four', 5: 'Five' };
   return `<div class="filters" role="group" aria-label="Filter by number of colours">
 <button data-n="0" aria-pressed="true">All ${size(f)}</button>${sizes.map(n => `<button data-n="${n}">${word[n] || n + ' colours'}</button>`).join('')}</div>
-<div class="grid">${f.combinations.map(c => { const st = statusOf(f, c.number); return `
+${[...new Set(f.combinations.map(c => c.series || ''))].map(s => { const about = (f.series || []).find(x => x.name === s)?.about; return `${s ? `<section class="series"><h2 class="group">Series · ${esc(s)}</h2>${about ? `<p class="series-about">${esc(about)}</p>` : ''}</section>` : ''}
+<div class="grid">${f.combinations.filter(c => (c.series || '') === s).map(c => { const st = statusOf(f, c.number); return `
 <article class="pal" data-n="${c.colours.length}" id="p${c.number}">${strip(c.colours)}
-<h2>No. ${c.number}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>
+<h2>${c.name ? `${esc(c.name)} <small class="num">No. ${c.number}</small>` : `No. ${c.number}`}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>
 ${c.intent ? `<p class="intent">${esc(c.intent)}</p>` : ''}
-<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${esc(x.name)}${x.from ? ` <small>${esc(x.from)}</small>` : ''}<code>${x.hex}</code></li>`).join('')}</ul></article>`; }).join('')}</div>${filterScript}`;
+<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}</ul></article>`; }).join('')}</div>`; }).join('')}${filterScript}`;
 }
 function coloursHtml(f) {
   const groups = [...new Set(f.colours.map(c => c.group || ''))];
@@ -223,6 +262,8 @@ ${current ? `<a class="h-now" href="/project">
 <ol class="dots" aria-label="Stage ${at + 1} of ${stages.length}: ${esc(current.meta.stage)}">${stages.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}" title="${s}"></li>`).join('')}</ol>
 <p class="h-now-status">${current.turn ? `<strong>Your turn:</strong> ${esc(current.turn.meta.question)}` : `${esc(current.meta.stage)} · nothing is waiting on you`}</p></div>
 <span class="h-go" aria-hidden="true">→</span></a>` : ''}
+${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? st.combinations.slice(-6) : []; return fresh.length ? `<section class="fresh"><div class="fresh-head"><p class="eyebrow">Fresh from the studio</p><a href="/palettes/studio">All studio palettes →</a></div>
+<div class="fresh-row">${fresh.map(c => `<a class="fresh-card" href="/palettes/studio#p${c.number}">${strip(c.colours, 'strip')}<b>${esc(c.name)}</b><span>${esc(c.intent)}</span></a>`).join('')}</div></section>` : ''; })()}
 <div class="doors">
 <a class="door" href="/palettes"><div class="mosaic">${mosaicFrom}</div><div class="door-text"><h2>Palettes</h2><p>${families.length} families · ${total} ready-made combinations · ${families.filter(f => !isCombos(f)).reduce((n, f) => n + size(f), 0).toLocaleString('en')} single colours</p></div></a>
 <a class="door" href="/library"><div class="door-lib">${approved.length ? approved.slice(-2).map(p => strip(p.palette.colours, 'strip mini')).join('') : `<div class="plate mini"><div class="room"><span>First piece</span></div><div class="sw">${(current ? current.palette.colours : []).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div></div>`}</div><div class="door-text"><h2>Library</h2><p>${approved.length ? `${approved.length} finished ${approved.length === 1 ? 'piece' : 'pieces'}` : 'Finished pieces will live here: each room beside its swatches.'}</p></div></a>

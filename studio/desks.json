@@ -1,34 +1,119 @@
 [
-  { "id": "studio-lead", "name": "Studio lead", "who": "Claude", "mark": "SL", "colour": "#0F2540", "colourName": "Kon",
-    "role": "Runs the table, keeps the record, and says what happens next.",
-    "speaks": ["Queued", "Directed", "Requested", "Received", "Reviewed", "Approved", "In the library"], "phase": "Throughout",
-    "judges": "Opens each stage, reconciles the experts, and turns their findings into either a pass or one short revision." },
-  { "id": "architect", "name": "Architect", "mark": "Ar", "colour": "#0D5661", "colourName": "Ai",
-    "role": "Decides what kind of room this palette wants, and why.",
-    "speaks": ["Directed", "Reviewed"], "phase": "Before any image",
-    "judges": "Proposes two or three room ideas for the palette, then proportions, openings and circulation. On the image: is this the room that was designed?" },
-  { "id": "builder", "name": "Builder", "mark": "Bu", "colour": "#563F2E", "colourName": "Kogecha",
-    "role": "Asks whether it could actually be built.",
-    "speaks": ["Directed", "Reviewed"], "phase": "Before any image",
-    "judges": "Structure, junctions, windows and details, before and after the image. Advisory; never a building-code check." },
-  { "id": "interior-designer", "name": "Interior designer", "mark": "In", "colour": "#9A5034", "colourName": "Bengara",
-    "role": "Places every colour and every piece of furniture.",
-    "speaks": ["Directed", "Reviewed"], "phase": "Before any image",
-    "judges": "Where each palette colour goes and how much of it, the furnishings, and the hierarchy of the room." },
-  { "id": "colour", "name": "Colour specialist", "mark": "Co", "colour": "#9F353A", "colourName": "Enji",
-    "role": "Reads the palette first, and measures it last.",
-    "speaks": ["Queued", "Reviewed"], "phase": "First and on each image",
-    "judges": "How the colours relate in lightness, strength and temperature; then measured colour on each surface of the image against the palette." },
-  { "id": "photographer", "name": "Photographer", "mark": "Ph", "colour": "#707C74", "colourName": "Rikyunezumi",
-    "role": "Owns the light, the lens and the viewpoint.",
-    "speaks": ["Directed", "Reviewed"], "phase": "Before any image",
-    "judges": "Neutral daylight that keeps the colours true, camera height and lens, where the eye lands; then whether the image looks photographed." },
-  { "id": "stylist", "name": "Stylist", "mark": "St", "colour": "#6C6A2D", "colourName": "Uguisu",
-    "role": "Makes it look lived in, and takes things away.",
-    "speaks": ["Reviewed"], "phase": "On each image",
-    "judges": "Believability and restraint: signs of life, nothing staged, nothing cloned, no stray accent colours." },
-  { "id": "editor", "name": "Composition editor", "mark": "Ed", "colour": "#336774", "colourName": "Sabionando",
-    "role": "Thinks only about the finished post on a phone.",
-    "speaks": ["Reviewed", "Approved"], "phase": "On the finished piece",
-    "judges": "The room and swatches side by side as a social post: crop, hierarchy, legibility on a phone, whether it stops a scroll." }
+ {
+  "id": "studio-lead",
+  "name": "Studio lead",
+  "who": "Claude",
+  "mark": "SL",
+  "colour": "#0F2540",
+  "colourName": "Kon",
+  "role": "Runs the table, keeps the record, and says what happens next.",
+  "speaks": [
+   "Queued",
+   "Directed",
+   "Requested",
+   "Received",
+   "Reviewed",
+   "Approved",
+   "In the library"
+  ],
+  "phase": "Throughout",
+  "judges": "Opens each stage, reconciles the experts, and turns their findings into either a pass or one short revision."
+ },
+ {
+  "id": "architect",
+  "name": "Architect",
+  "mark": "Ar",
+  "colour": "#0D5661",
+  "colourName": "Ai",
+  "role": "Decides what kind of room this palette wants, and why.",
+  "speaks": [
+   "Directed",
+   "Reviewed"
+  ],
+  "phase": "Before any image",
+  "judges": "Proposes two or three room ideas for the palette, then proportions, openings and circulation. On the image: is this the room that was designed?"
+ },
+ {
+  "id": "builder",
+  "name": "Builder",
+  "mark": "Bu",
+  "colour": "#563F2E",
+  "colourName": "Kogecha",
+  "role": "Asks whether it could actually be built.",
+  "speaks": [
+   "Directed",
+   "Reviewed"
+  ],
+  "phase": "Before any image",
+  "judges": "Structure, junctions, windows and details, before and after the image. Advisory; never a building-code check."
+ },
+ {
+  "id": "interior-designer",
+  "name": "Interior designer",
+  "mark": "In",
+  "colour": "#9A5034",
+  "colourName": "Bengara",
+  "role": "Places every colour and every piece of furniture.",
+  "speaks": [
+   "Directed",
+   "Reviewed"
+  ],
+  "phase": "Before any image",
+  "judges": "Where each palette colour goes and how much of it, the furnishings, and the hierarchy of the room."
+ },
+ {
+  "id": "colour",
+  "name": "Colour specialist",
+  "mark": "Co",
+  "colour": "#9F353A",
+  "colourName": "Enji",
+  "role": "Invents the studio's palettes, reads every palette first, and measures it last.",
+  "speaks": [
+   "Queued",
+   "Reviewed"
+  ],
+  "phase": "First and on each image",
+  "judges": "Makes new studio palettes and series by the rules in Guide §4; reads how a palette's colours relate in lightness, strength and temperature; then measures colour on each surface of the image against the palette."
+ },
+ {
+  "id": "photographer",
+  "name": "Photographer",
+  "mark": "Ph",
+  "colour": "#707C74",
+  "colourName": "Rikyunezumi",
+  "role": "Owns the light, the lens and the viewpoint.",
+  "speaks": [
+   "Directed",
+   "Reviewed"
+  ],
+  "phase": "Before any image",
+  "judges": "Neutral daylight that keeps the colours true, camera height and lens, where the eye lands; then whether the image looks photographed."
+ },
+ {
+  "id": "stylist",
+  "name": "Stylist",
+  "mark": "St",
+  "colour": "#6C6A2D",
+  "colourName": "Uguisu",
+  "role": "Makes it look lived in, and takes things away.",
+  "speaks": [
+   "Reviewed"
+  ],
+  "phase": "On each image",
+  "judges": "Believability and restraint: signs of life, nothing staged, nothing cloned, no stray accent colours."
+ },
+ {
+  "id": "editor",
+  "name": "Composition editor",
+  "mark": "Ed",
+  "colour": "#336774",
+  "colourName": "Sabionando",
+  "role": "Thinks only about the finished post on a phone.",
+  "speaks": [
+   "Reviewed",
+   "Approved"
+  ],
+  "phase": "On the finished piece",
+  "judges": "The room and swatches side by side as a social post: crop, hierarchy, legibility on a phone, whether it stops a scroll."
+ }
 ]

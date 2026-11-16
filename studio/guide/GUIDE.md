@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.4
+version: 0.5
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -50,13 +50,23 @@ Colour comes from **palette families**. There are two kinds:
 - **Combinations**: ready-made sets of two to four colours, such as the Wada family. A project can start from one directly.
 - **Colour collections**: single named colours, such as Werner, Ridgway and the traditional colours of Japan. These are raw material.
 
-The studio may also **make a new combination on purpose**. The rules:
+The studio also **invents its own palettes**, unprompted: one at a time, or as a **series** with a theme (for example *Daylight hours*: one house through one day). The Colour specialist makes them. The owner does not have to describe anything.
 
-1. Every colour comes from a family and keeps that family's name and exact value. No invented colours.
-2. Two to four colours.
-3. It states in one sentence what the combination is for.
-4. It is recorded in the Studio combinations family with its date, who made it, and where each colour came from.
-5. Existing combinations are never altered. A variation is a new entry.
+**How a studio palette is made**
+
+1. **Start from a point of view**: a light, a place, a material, a moment. It becomes the palette's name and its one-sentence intent.
+2. **Give every colour a job.**
+   - **Field**: the big, quiet colour that covers most surfaces.
+   - **Weight**: the darkest colour, used in small, low, solid amounts to anchor the room.
+   - **Accent** (optional): the one colour the eye goes to.
+   - **Bridge** (optional): ties two of the others together.
+3. **Choose only real colours.** Every colour comes from one of the families and keeps that family's name and exact value. No invented colours. The same name can carry different values in different families, so each colour names its family.
+4. **Pass the measured rules.** The site checks these on every build and refuses a palette that fails:
+   - two to four colours; one Field, one Weight, at most one Accent and one Bridge;
+   - Field and Weight at least **30** apart in lightness, so the room never goes flat;
+   - every pair of colours at least **15** apart (CIE colour difference), so no two read as the same;
+   - at most **one loud colour** (strength 45 or more).
+5. **Record it** in the Studio family with its date, its maker and its series. Existing palettes are never altered; a variation is a new entry.
 
 A colour is always cited with its family, because the same name can carry different values in different families.
 

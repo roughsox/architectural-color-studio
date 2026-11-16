@@ -5,9 +5,202 @@
  "name": "Studio",
  "label": "Studio No.",
  "title": "Studio combinations",
- "description": "New combinations made on purpose by the studio. Each one draws its colours from the other families, keeps their names and exact values, and records in a sentence what it is for. This is where the studio's own colour thinking accumulates.",
+ "description": "Palettes the studio invents on purpose, one at a time or as a themed series. Every colour is a real colour from the other families, keeps its name and exact value, and has a job: Field, Weight, Accent or Bridge. Each palette says in one sentence what it is for.",
  "source": "Architectural Color Studio",
  "data": "Made in the studio; each combination names the families its colours came from",
  "note": "",
- "combinations": []
+ "combinations": [
+  {
+   "number": 1,
+   "name": "Dawn",
+   "series": "Daylight hours",
+   "intent": "First light on a cool north wall: blush plaster, night-blue still in the shadows, one warm note where the sun arrives.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Light Pinkish Lilac",
+     "hex": "#E1C8CC",
+     "family": "ridgway",
+     "from": "Ridgway",
+     "role": "Field"
+    },
+    {
+     "name": "Hortense Blue",
+     "hex": "#2F425F",
+     "family": "ridgway",
+     "from": "Ridgway",
+     "role": "Weight"
+    },
+    {
+     "name": "Shishi",
+     "hex": "#F0A986",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Accent"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "name": "Morning",
+   "series": "Daylight hours",
+   "intent": "A bright breakfast room: clean warm white, deep ink-blue joinery, and the green of new leaves at the window.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Purplish White",
+     "hex": "#ECE6D0",
+     "family": "werner",
+     "from": "Werner",
+     "role": "Field"
+    },
+    {
+     "name": "Dark Tyrian Blue",
+     "hex": "#12354E",
+     "family": "wada",
+     "from": "Wada",
+     "role": "Weight"
+    },
+    {
+     "name": "Moegi",
+     "hex": "#7BA23F",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Accent"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "name": "Noon",
+   "series": "Daylight hours",
+   "intent": "Hard midday sun: pale stone and charcoal hold still while one clear sky-blue does all the talking.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Ash Grey",
+     "hex": "#CBC8B7",
+     "family": "werner",
+     "from": "Werner",
+     "role": "Field"
+    },
+    {
+     "name": "Aisumicha",
+     "hex": "#373C38",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Weight"
+    },
+    {
+     "name": "Cerulean Blue",
+     "hex": "#0D88CD",
+     "family": "ridgway",
+     "from": "Ridgway",
+     "role": "Accent"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "name": "Afternoon",
+   "series": "Daylight hours",
+   "intent": "Low gold light across a living room: honeyed walls, deep olive wood, terracotta catching the sun.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Tonoko",
+     "hex": "#D7B98E",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Field"
+    },
+    {
+     "name": "Aikobicha",
+     "hex": "#4B4E2A",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Weight"
+    },
+    {
+     "name": "Edocha",
+     "hex": "#AF5F3C",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Accent"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "name": "Dusk",
+   "series": "Daylight hours",
+   "intent": "The hour after sunset: dusty rose walls, aubergine depth, and one amber lamp switched on early.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Light Purplish Vinaceous",
+     "hex": "#C4A3A6",
+     "family": "ridgway",
+     "from": "Ridgway",
+     "role": "Field"
+    },
+    {
+     "name": "Nasukon",
+     "hex": "#572A3F",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Weight"
+    },
+    {
+     "name": "Kuchiba",
+     "hex": "#E2943B",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Accent"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "name": "Lamplight",
+   "series": "Daylight hours",
+   "intent": "After dark: ochre walls under a low lamp, near-black wood, and an oxblood chair that glows rather than shouts.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Ohdo",
+     "hex": "#B68E55",
+     "family": "nippon",
+     "from": "Japanese traditional",
+     "role": "Field"
+    },
+    {
+     "name": "Blackish Brown",
+     "hex": "#453B32",
+     "family": "werner",
+     "from": "Werner",
+     "role": "Weight"
+    },
+    {
+     "name": "Ox-blood Red",
+     "hex": "#7A3633",
+     "family": "ridgway",
+     "from": "Ridgway",
+     "role": "Accent"
+    }
+   ]
+  }
+ ],
+ "series": [
+  {
+   "name": "Daylight hours",
+   "about": "One house through one day: six palettes, each tuned to the light of its hour, from first light on a cool wall to lamplight after dark."
+  }
+ ]
 }
