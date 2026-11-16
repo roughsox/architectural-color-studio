@@ -141,18 +141,33 @@ page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json',
 write('palettes.json', JSON.stringify(families.map(({ combinations, colours, materials, ...f }) => ({ ...f, count: (combinations || colours || materials).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
 
 const filterScript = `<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('[data-n]:not(button)').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>`;
+const colourList = c => `<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>Materials</small></span></li>`).join('')}</ul>`;
+const palTitle = (f, c) => { const st = statusOf(f, c.number); return `<h2>${c.name ? `${esc(c.name)} <small class="num">No. ${c.number}</small>` : `No. ${c.number}`}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>`; };
+// Open any folded section that holds the palette named in the address (e.g. /palettes/studio#p7).
+const openTarget = `<script>(function(){var t=location.hash&&document.getElementById(location.hash.slice(1));for(var e=t;e;e=e.parentElement)if(e.tagName==='DETAILS')e.open=true;if(t)t.scrollIntoView();})()</script>`;
 function combosHtml(f) {
   if (!size(f)) return `<div class="empty"><p>No combinations have been made yet.</p><p class="note">When the studio creates one it appears here with its colours, the families they came from, and the reason it was made. The rules are in <a href="/guide">the Guide</a>.</p></div>`;
+  if (f.series && f.series.length) {
+    // Series families: each series folds; each palette shows colours, name, sentence and score, with the details one tap away.
+    return [...new Set(f.combinations.map(c => c.series || ''))].map(s => {
+      const list = f.combinations.filter(c => (c.series || '') === s), about = (f.series || []).find(x => x.name === s)?.about;
+      return `<details class="series-box">
+<summary><div class="sb-text"><p class="eyebrow">Series · ${list.length} palettes</p><h2>${esc(s || 'Single palettes')}</h2>${about ? `<p class="series-about">${esc(about)}</p>` : ''}</div>
+<div class="sb-preview">${list.map(c => strip(c.colours, 'strip mini')).join('')}</div><span class="sb-toggle" aria-hidden="true"></span></summary>
+<div class="grid">${list.map(c => `
+<article class="pal" id="p${c.number}">${strip(c.colours)}${palTitle(f, c)}
+${c.intent ? `<p class="intent">${esc(c.intent)}</p>` : ''}
+${c.scheme ? `<p class="scheme-score" title="${esc(c.scheme.good.join('. '))}">${esc(c.scheme.verdict)} · ${c.scheme.score}</p>` : ''}
+<details class="pal-more"><summary>Colours and materials</summary>${colourList(c)}</details></article>`).join('')}</div></details>`;
+    }).join('') + openTarget;
+  }
   const sizes = [...new Set(f.combinations.map(c => c.colours.length))].sort();
   const word = { 2: 'Two colours', 3: 'Three', 4: 'Four', 5: 'Five' };
   return `<div class="filters" role="group" aria-label="Filter by number of colours">
 <button data-n="0" aria-pressed="true">All ${size(f)}</button>${sizes.map(n => `<button data-n="${n}">${word[n] || n + ' colours'}</button>`).join('')}</div>
-${[...new Set(f.combinations.map(c => c.series || ''))].map(s => { const about = (f.series || []).find(x => x.name === s)?.about; return `${s ? `<section class="series"><h2 class="group">Series · ${esc(s)}</h2>${about ? `<p class="series-about">${esc(about)}</p>` : ''}</section>` : ''}
-<div class="grid">${f.combinations.filter(c => (c.series || '') === s).map(c => { const st = statusOf(f, c.number); return `
-<article class="pal" data-n="${c.colours.length}" id="p${c.number}">${strip(c.colours)}
-<h2>${c.name ? `${esc(c.name)} <small class="num">No. ${c.number}</small>` : `No. ${c.number}`}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>
-${c.intent ? `<p class="intent">${esc(c.intent)}</p>` : ''}
-<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>Materials</small></span></li>`).join('')}</ul>${c.scheme ? `<p class="scheme-score" title="${esc(c.scheme.good.join('. '))}">${esc(c.scheme.verdict)} · ${c.scheme.score}</p>` : ''}</article>`; }).join('')}</div>`; }).join('')}${filterScript}`;
+<div class="grid">${f.combinations.map(c => `
+<article class="pal" data-n="${c.colours.length}" id="p${c.number}">${strip(c.colours)}${palTitle(f, c)}
+${c.intent ? `<p class="intent">${esc(c.intent)}</p>` : ''}${colourList(c)}</article>`).join('')}</div>${filterScript}`;
 }
 function materialsHtml(f) {
   const warmth = h => { const { a, b } = lab(h); const hue = (Math.atan2(b, a) * 180 / Math.PI + 360) % 360; return Math.hypot(a, b) < 6 ? 'neutral' : hue < 110 || hue > 330 ? 'warm' : 'cool'; };
