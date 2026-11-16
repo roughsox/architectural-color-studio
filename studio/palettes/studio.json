@@ -454,6 +454,554 @@
     "Walnut",
     "Wool, undyed"
    ]
+  },
+  {
+   "number": 13,
+   "name": "Earthy Olive",
+   "series": "Forecast 2027",
+   "intent": "Moss-olive walls, warm clay and dark wood: the grounded, analogue home.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Mossbank",
+     "hex": "#858457",
+     "role": "Field"
+    },
+    {
+     "name": "Bog Oak",
+     "hex": "#3A3226",
+     "role": "Weight"
+    },
+    {
+     "name": "Fired Clay",
+     "hex": "#C27A5A",
+     "role": "Accent"
+    },
+    {
+     "name": "Oat Milk",
+     "hex": "#E6DCC8",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Jute and sisal"
+   ]
+  },
+  {
+   "number": 14,
+   "name": "Soft Botanical",
+   "series": "Forecast 2027",
+   "intent": "Celery-pale walls, a deeper sage below the dado, and a warm white that keeps it light.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Celery Stalk",
+     "hex": "#D9DDB0",
+     "role": "Field"
+    },
+    {
+     "name": "Deep Sage",
+     "hex": "#5E6B4E",
+     "role": "Weight"
+    },
+    {
+     "name": "Greenhouse",
+     "hex": "#8FA36A",
+     "role": "Accent"
+    },
+    {
+     "name": "Warm Paper",
+     "hex": "#F2EDE0",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "White oak",
+    "Linen, natural"
+   ]
+  },
+  {
+   "number": 15,
+   "name": "Clay and Mushroom",
+   "series": "Forecast 2027",
+   "intent": "The new neutral: pink-toned clay instead of grey, with mushroom and a terracotta note.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Mushroom",
+     "hex": "#CDBFAF",
+     "role": "Field"
+    },
+    {
+     "name": "Cocoa Bean",
+     "hex": "#4A3A33",
+     "role": "Weight"
+    },
+    {
+     "name": "Terracotta Pot",
+     "hex": "#B5674A",
+     "role": "Accent"
+    },
+    {
+     "name": "Pink Clay",
+     "hex": "#D9A898",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "White oak",
+    "Tan leather"
+   ]
+  },
+  {
+   "number": 16,
+   "name": "Moody Heritage",
+   "series": "Forecast 2027",
+   "intent": "Claret panelling to the dado, parchment above, chocolate joinery and one brass-gold glint: the library after dark.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Parchment",
+     "hex": "#E8DCC4",
+     "role": "Field"
+    },
+    {
+     "name": "Dark Chocolate",
+     "hex": "#2E2120",
+     "role": "Weight"
+    },
+    {
+     "name": "Old Gold Leaf",
+     "hex": "#C9A04E",
+     "role": "Accent"
+    },
+    {
+     "name": "Claret",
+     "hex": "#6E2A35",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Cherry",
+    "Wool, undyed"
+   ]
+  },
+  {
+   "number": 17,
+   "name": "Butter and Aubergine",
+   "series": "Forecast 2027",
+   "intent": "Butter-yellow walls with aubergine upholstery: the designers' favourite surprise.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Butter",
+     "hex": "#F1DFA4",
+     "role": "Field"
+    },
+    {
+     "name": "Aubergine",
+     "hex": "#4A2740",
+     "role": "Weight"
+    },
+    {
+     "name": "Ochre Glaze",
+     "hex": "#C99A3A",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Travertine",
+    "Tan leather"
+   ]
+  },
+  {
+   "number": 18,
+   "name": "Electric Pop",
+   "series": "Forecast 2027",
+   "intent": "A playful room for a bold account: luminous blue, orange and pink on a clay base.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Soft Clay",
+     "hex": "#D8C3B4",
+     "role": "Field"
+    },
+    {
+     "name": "Ink Navy",
+     "hex": "#1E2340",
+     "role": "Weight"
+    },
+    {
+     "name": "Luminous Blue",
+     "hex": "#2F5BE0",
+     "role": "Accent"
+    },
+    {
+     "name": "Pop Pink",
+     "hex": "#EBA6C2",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Unlacquered brass"
+   ]
+  },
+  {
+   "number": 19,
+   "name": "Smoky Blue",
+   "series": "Forecast 2027",
+   "intent": "A calm bedroom in warm-smoky blue, with a cream and a quiet slate below.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Smoke Ring",
+     "hex": "#9AA6AE",
+     "role": "Field"
+    },
+    {
+     "name": "Night Slate",
+     "hex": "#2F3A44",
+     "role": "Weight"
+    },
+    {
+     "name": "Faded Denim",
+     "hex": "#5F7890",
+     "role": "Accent"
+    },
+    {
+     "name": "Cream Tea",
+     "hex": "#EFE6D3",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Slate",
+    "Wool, undyed"
+   ]
+  },
+  {
+   "number": 20,
+   "name": "Olive Drench",
+   "series": "Drenched",
+   "intent": "Walls, trim and ceiling all in olive, from pale to deep, with one rust cushion.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Olive Mist",
+     "hex": "#C5C29A",
+     "role": "Field"
+    },
+    {
+     "name": "Olive Grove",
+     "hex": "#55542F",
+     "role": "Weight"
+    },
+    {
+     "name": "Rust Cushion",
+     "hex": "#A9532E",
+     "role": "Accent"
+    },
+    {
+     "name": "Olive Leaf",
+     "hex": "#8A8758",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "White oak",
+    "Blackened steel"
+   ]
+  },
+  {
+   "number": 21,
+   "name": "Clay Drench",
+   "series": "Drenched",
+   "intent": "A whole room in clay, from blush plaster to fired brick.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Blush Plaster",
+     "hex": "#E3C2B0",
+     "role": "Field"
+    },
+    {
+     "name": "Fired Brick",
+     "hex": "#6E3B2C",
+     "role": "Weight"
+    },
+    {
+     "name": "Sunbaked",
+     "hex": "#B9785C",
+     "role": "Bridge"
+    },
+    {
+     "name": "Sage Sprig",
+     "hex": "#8C9A78",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Polished concrete",
+    "Blackened steel"
+   ]
+  },
+  {
+   "number": 22,
+   "name": "Plum Drench",
+   "series": "Drenched",
+   "intent": "Plum on every surface, light to dark, lifted by one mustard throw.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Plum Haze",
+     "hex": "#C8AAB8",
+     "role": "Field"
+    },
+    {
+     "name": "Damson",
+     "hex": "#3F2234",
+     "role": "Weight"
+    },
+    {
+     "name": "Mulberry",
+     "hex": "#7D4C66",
+     "role": "Bridge"
+    },
+    {
+     "name": "Mustard Throw",
+     "hex": "#C9962E",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Grey granite",
+    "Blackened steel"
+   ]
+  },
+  {
+   "number": 23,
+   "name": "Blue Drench",
+   "series": "Drenched",
+   "intent": "Smoky blue from skirting to ceiling, with a warm biscuit to stop it going cold.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Blue Smoke",
+     "hex": "#B4C0C8",
+     "role": "Field"
+    },
+    {
+     "name": "Deep Harbour",
+     "hex": "#2A3A4C",
+     "role": "Weight"
+    },
+    {
+     "name": "Stormy",
+     "hex": "#62788C",
+     "role": "Bridge"
+    },
+    {
+     "name": "Biscuit",
+     "hex": "#C9A47A",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Lime plaster",
+    "Blackened steel"
+   ]
+  },
+  {
+   "number": 24,
+   "name": "Chocolate Drench",
+   "series": "Drenched",
+   "intent": "Chocolate walls, cocoa and caramel: a cocoon, with a pale linen breath.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Caramel",
+     "hex": "#B98A63",
+     "role": "Field"
+    },
+    {
+     "name": "Dark Cocoa",
+     "hex": "#3A2721",
+     "role": "Weight"
+    },
+    {
+     "name": "Milk Chocolate",
+     "hex": "#7A5440",
+     "role": "Bridge"
+    },
+    {
+     "name": "Linen Breath",
+     "hex": "#E8DECD",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Wool, undyed"
+   ]
+  },
+  {
+   "number": 25,
+   "name": "Emerald Sofa",
+   "series": "One Jewel",
+   "intent": "A warm, quiet room where one emerald velvet sofa does all the talking.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Warm Plaster",
+     "hex": "#E7DED0",
+     "role": "Field"
+    },
+    {
+     "name": "Walnut Shadow",
+     "hex": "#3D3129",
+     "role": "Weight"
+    },
+    {
+     "name": "Emerald Velvet",
+     "hex": "#0F7A55",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Jute and sisal"
+   ]
+  },
+  {
+   "number": 26,
+   "name": "Sapphire Chair",
+   "series": "One Jewel",
+   "intent": "Soft greige walls and one deep sapphire chair by the window.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Greige",
+     "hex": "#D6CFC4",
+     "role": "Field"
+    },
+    {
+     "name": "Charcoal Brown",
+     "hex": "#36312D",
+     "role": "Weight"
+    },
+    {
+     "name": "Sapphire",
+     "hex": "#1F4FA0",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "White oak",
+    "Copper"
+   ]
+  },
+  {
+   "number": 27,
+   "name": "Garnet Lacquer",
+   "series": "One Jewel",
+   "intent": "Pale stone and one lacquered garnet cabinet that glows.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Pale Stone",
+     "hex": "#E3DDD2",
+     "role": "Field"
+    },
+    {
+     "name": "Iron",
+     "hex": "#2F2D2C",
+     "role": "Weight"
+    },
+    {
+     "name": "Garnet Lacquer",
+     "hex": "#8E1F2F",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Teak",
+    "Rattan and cane"
+   ]
+  },
+  {
+   "number": 28,
+   "name": "Amethyst Headboard",
+   "series": "One Jewel",
+   "intent": "A calm bedroom of cream and taupe, with an amethyst velvet headboard.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Cream Linen",
+     "hex": "#ECE5D8",
+     "role": "Field"
+    },
+    {
+     "name": "Taupe Dusk",
+     "hex": "#5A4F48",
+     "role": "Weight"
+    },
+    {
+     "name": "Amethyst",
+     "hex": "#6E3E8C",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "White oak",
+    "Copper"
+   ]
+  },
+  {
+   "number": 29,
+   "name": "Citrine Lamp",
+   "series": "One Jewel",
+   "intent": "Mushroom walls and one citrine-yellow lamp, switched on.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Mushroom Wall",
+     "hex": "#CFC3B5",
+     "role": "Field"
+    },
+    {
+     "name": "Espresso",
+     "hex": "#2F2621",
+     "role": "Weight"
+    },
+    {
+     "name": "Citrine",
+     "hex": "#E0B02A",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Unlacquered brass"
+   ]
   }
  ],
  "series": [
@@ -464,6 +1012,18 @@
   {
    "name": "Postcards",
    "about": "Six cities, each brought indoors: the colour of its walls, its light and its streets, turned into a room you could live in. Every colour chosen freely and named by the studio."
+  },
+  {
+   "name": "Forecast 2027",
+   "about": "Seven palettes, one for each colour mood the forecasters, paint makers and design press point to for 2027: earthy olive, soft botanical greens, clay instead of grey, moody heritage reds, butter with aubergine, electric pop and smoky blue. Researched November 2026; colours chosen and named by the studio."
+  },
+  {
+   "name": "Drenched",
+   "about": "Colour drenching: one colour family on walls, trim, ceiling and upholstery, from pale to deep, with one small contrast so the room breathes."
+  },
+  {
+   "name": "One Jewel",
+   "about": "A quiet, warm-neutral room where a single jewel-toned piece does all the talking: emerald, sapphire, garnet, amethyst, citrine."
   }
  ]
 }
