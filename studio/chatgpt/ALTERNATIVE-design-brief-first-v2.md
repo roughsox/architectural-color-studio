@@ -3,7 +3,7 @@ title: Design brief first, version 2
 version: alt-2
 date: 2026-11-16
 author: studio, from the owner's Blue Salon session
-status: leading method; use in its own ChatGPT project
+status: replaced by alt-3
 ---
 
 The method that produced the best room so far (the Wada 209 Blue Salon). ChatGPT designs the room in words first, makes the image only when you say "go", and is then refined with short, natural follow-ups in your own words. Paste the box into the instructions of a separate ChatGPT project that has Wada's `colors.json` as a project file.

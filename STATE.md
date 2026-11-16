@@ -9,7 +9,7 @@ A workshop for the owner to play with colour and rooms, and a source of inspirat
 ## How images are made now
 
 - In **ChatGPT projects**, with Wada's `colors.json` as a project file and instructions from **/instructions** (Copy buttons there).
-- **Leading method: "Design brief first", version 2** (`studio/chatgpt/ALTERNATIVE-design-brief-first-v2.md`, project "Architectural images alternate"). ChatGPT writes a short design brief, waits for "go", makes the image, then the owner refines it with short follow-ups in plain language. Commands: `audit` (imagine the whole room beyond the frame, check placements, improve) and `reset` (back to palette and brief, fix drift).
+- **Leading method: "Directions first", version 3** (`studio/chatgpt/ALTERNATIVE-design-brief-first-v3.md`, project "Architectural images alternate"), to test. ChatGPT researches the palette, offers three different directions (room types too) with options or a few questions; the owner chooses; it designs the house first and adds colour as two or three decisions, most of the room not palette colour. Commands: `audit`, `reset`, `new directions`, `three takes`. Version 2 (a single brief) is kept folded.
 - **Also current: instructions v5** (`INSTRUCTIONS-v5.md`, project "Architectural images"): image straight away, same standards.
 - **Best room so far:** the Wada 209 "Blue Salon" (Notebook, Wada 209 alternative group, attempt "final"), reached after about a dozen owner follow-ups ending in a self-audit prompt.
 
@@ -18,11 +18,12 @@ A workshop for the owner to play with colour and rooms, and a source of inspirat
 - Short, natural follow-ups in the owner's words beat long engineered ones. Change a little at a time.
 - Ask for things, not qualities; never name palette colours for art; say what to keep about light, not only what to remove.
 - Follow-ups can't move furniture or architecture; get the layout right in the first image.
-- Asking ChatGPT to audit its own room as a real space works best of all (lesson 27).
+- Asking ChatGPT to audit its own room as a real space helps (lesson 27), but its words run ahead of its images.
+- The first idea locks in: change the room (three directions, a different room type), don't repair it (lesson 28). A colour map gets painted on every surface (lesson 29).
 
 ## Next
 
-1. **Testing alt v2 on Wada 182** (Raw Sienna, Vandyke Brown, Deep Indigo; Notebook, Wada 182 group). Image 1 a miss, image 3 "quite impressed" after two follow-ups: grand, but the palette is still applied as a formula. The owner is now trying `audit` and `reset`. Log every image, misses included. ChatGPT keeps a Google Doc of each chat (brief + conversation) in the owner's Drive; read it with the Google Docs tool (chatgpt.com share links can't be read from here).
+1. **Test version 3**, ideally on Wada 182 again in a new chat (to compare with the Sunday Library, reached after 12 images with v2) and then a new palette. Log every image, misses included. Wada 182 images 5–11 are still to come from the owner. ChatGPT keeps a Google Doc of each chat in the owner's Drive ("Architectural Images" folder); read it with the Google Docs tool (chatgpt.com share links can't be read from here).
 2. Compare how many follow-ups each method needs to reach something shareable; fold what works into the next versions.
 3. Later, once the method is settled: the first finished piece in the Library (room + card as two slides), then decide the site's purpose.
 
