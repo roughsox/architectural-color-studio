@@ -369,6 +369,7 @@ if (existsSync(houseFile)) {
 <p class="lede">${esc(house.house)}</p>
 <div class="house-bar"><span id="house-count">No rooms chosen yet</span><span class="house-actions"><button type="button" class="button" id="house-copy">Copy my picks</button><button type="button" class="button ghost" id="house-clear">Clear</button></span></div>
 <p class="note">Pick one palette for each room; tap again to unpick. Your picks stay on this device. When you're happy, copy them and send them to the studio. To make a room, use the ChatGPT project with the <a href="/instructions">instructions</a> and ask for it by number and room, e.g. <q>#72 entrance hall</q>.</p>
+${house.favourites ? `<details class="house-favs"><summary>Your favourites · ${house.favourites.length} palettes</summary><div class="fav-grid">${house.favourites.map(n => `<a href="/palettes/wada#p${n}">${strip(byNo(n).colours, 'strip mini')}<span>Wada ${n}</span></a>`).join('')}</div></details>` : ''}
 <div class="rooms">${house.rooms.map(r => r.set ? setHtml(r) : roomHtml(r)).join('')}</div>
 <p class="note">${esc(house.ruled_out)}</p>
 <script>(function(){var K='house-picks',picks={};try{picks=JSON.parse(localStorage.getItem(K))||{}}catch(e){}

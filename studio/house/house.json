@@ -25,11 +25,11 @@
         },
         {
           "wada": 169,
-          "idea": "Pale pink, pale lemon and a warm grey."
+          "idea": "Corinthian pink, pale lemon and a warm grey."
         },
         {
-          "wada": 330,
-          "idea": "Olive buff, pale aqua, soft blue and one clear teal."
+          "wada": 81,
+          "idea": "Golden yellow and a warm grey: sun on stone."
         }
       ],
       "passed": [
@@ -43,16 +43,16 @@
       "about": "Long table, candles, dinners that run late.",
       "options": [
         {
-          "wada": 228,
-          "idea": "Carmine with pale lemon and a soft grey: the bathroom's idea, grown up for candlelight."
+          "wada": 104,
+          "idea": "Carmine red and pale sulphur: red walls, candlelight."
         },
         {
-          "wada": 261,
-          "idea": "Deep red, pale lemon, a clear aqua and warm grey."
+          "wada": 71,
+          "idea": "Pompeian red with a soft salmon."
         },
         {
-          "wada": 184,
-          "idea": "Spinel pink, ivory and a soft olive."
+          "wada": 137,
+          "idea": "Etruscan red, cinnamon buff and a pistachio green."
         }
       ],
       "passed": [
@@ -67,16 +67,12 @@
       "about": "Morning light, a big table, used every day.",
       "options": [
         {
-          "wada": 272,
-          "idea": "Pale lemon and one orange, with mint and a soft blue."
+          "wada": 14,
+          "idea": "Spinel pink and Naples yellow."
         },
         {
-          "wada": 300,
-          "idea": "Coral, cream yellow, mint and a clear aqua."
-        },
-        {
-          "wada": 150,
-          "idea": "Seashell pink, a citron yellow and a pale grey-green."
+          "wada": 59,
+          "idea": "Eosine pink with a citrine green."
         }
       ],
       "passed": [
@@ -91,16 +87,16 @@
       "about": "Books, a fire, a reading chair. It can be deeper than the rest.",
       "options": [
         {
-          "wada": 163,
-          "idea": "Bright yellow and mint with a deep clear blue."
+          "wada": 139,
+          "idea": "Salvia blue and neutral grey, with deep indigo for the books' room."
         },
         {
-          "wada": 227,
-          "idea": "Soft pink and pale blue with a strong cerulean."
+          "wada": 231,
+          "idea": "Cameo pink, russet and Olympic blue."
         },
         {
-          "wada": 302,
-          "idea": "Cream yellow, ecru and pale aqua with a deep clear blue."
+          "wada": 342,
+          "idea": "Corinthian pink and cream yellow, with orange citrine and a deep olive."
         }
       ],
       "passed": [
@@ -119,12 +115,8 @@
           "idea": "Ivory, yellow orange and a soft lavender."
         },
         {
-          "wada": 176,
-          "idea": "Two soft pinks and a clear aqua."
-        },
-        {
-          "wada": 294,
-          "idea": "Pale sulphur and cream yellow, a deep green and a soft blue."
+          "wada": 23,
+          "idea": "Cinnamon buff and a light mauve."
         }
       ],
       "passed": [
@@ -138,16 +130,12 @@
       "about": "A smaller room for work and thinking.",
       "options": [
         {
-          "wada": 159,
-          "idea": "A golden khaki, a clear aqua and a soft lavender."
+          "wada": 285,
+          "idea": "Brown drab, burnt sienna, one peach red and a pale turquoise."
         },
         {
           "wada": 180,
-          "idea": "Warm buff, a light mauve and a calm grey."
-        },
-        {
-          "wada": 287,
-          "idea": "Pink and a muted gold with two clear blues."
+          "idea": "Cinnamon buff, light mauve and a calm grey."
         }
       ],
       "passed": [
@@ -165,12 +153,8 @@
           "idea": "Seashell pink, olive, a spring green and a clear blue."
         },
         {
-          "wada": 291,
-          "idea": "Lime, sea green, mint and aqua: the garden itself."
-        },
-        {
-          "wada": 326,
-          "idea": "Pale sulphur, one peach red and two spring greens."
+          "wada": 87,
+          "idea": "Corinthian pink and citron yellow."
         }
       ],
       "passed": [
@@ -188,12 +172,12 @@
           "idea": "Dusty rose, soft salmon and a pale turquoise."
         },
         {
-          "wada": 128,
-          "idea": "Soft pink, a clear sea green and a light mauve."
+          "wada": 254,
+          "idea": "Two pinks, pale sulphur and an olive."
         },
         {
-          "wada": 206,
-          "idea": "Pink, golden yellow and a cinnamon brown."
+          "wada": 55,
+          "idea": "Old rose and white."
         }
       ],
       "passed": [
@@ -224,5 +208,22 @@
         290
       ]
     }
+  ],
+  "favourites": [
+    14,
+    23,
+    55,
+    59,
+    71,
+    81,
+    87,
+    104,
+    137,
+    139,
+    169,
+    231,
+    254,
+    285,
+    342
   ]
 }

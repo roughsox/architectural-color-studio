@@ -290,3 +290,6 @@ nav a{padding:10px 0}
 .set-pics{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:8px 0 12px;max-width:640px}.set-pics img{width:100%;border-radius:8px;display:block}
 .room-set .strip.mini{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:0 0 4px;max-width:640px}.room-set .strip.mini span{flex:1}
 .set-names{font:12px system-ui,sans-serif;color:var(--muted)}
+.house-favs{margin:14px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font:14px system-ui,sans-serif}.house-favs summary{cursor:pointer;font-weight:600}
+.fav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px;margin-top:10px}.fav-grid a{color:var(--ink);text-decoration:none;font-size:12px}
+.fav-grid .strip.mini{display:flex;height:38px;border-radius:5px;overflow:hidden;margin:0 0 3px}.fav-grid .strip.mini span{flex:1}
