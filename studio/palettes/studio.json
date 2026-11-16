@@ -96,18 +96,19 @@
    "number": 3,
    "name": "Noon",
    "series": "Daylight hours",
-   "intent": "Hard midday sun: pale stone and charcoal hold still while one clear sky-blue does all the talking.",
+   "intent": "Hard midday sun: pale walls and charcoal hold still while one clear sky-blue does all the talking.",
    "made": "2026-11-16",
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Quarry Dust",
+     "name": "Pale Dust",
      "hex": "#CBC8B7",
      "role": "Field",
      "ref": {
       "family": "werner",
       "name": "Ash Grey"
-     }
+     },
+     "formerly": "Quarry Dust"
     },
     {
      "name": "Hard Shadow",
@@ -137,7 +138,7 @@
    "number": 4,
    "name": "Afternoon",
    "series": "Daylight hours",
-   "intent": "Low gold light across a living room: honeyed walls, deep olive wood, terracotta catching the sun.",
+   "intent": "Low gold light across a living room: honeyed walls, deep olive, terracotta-orange catching the sun.",
    "made": "2026-11-16",
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
@@ -160,13 +161,14 @@
      }
     },
     {
-     "name": "Sunbaked Tile",
+     "name": "Sunbaked",
      "hex": "#AF5F3C",
      "role": "Accent",
      "ref": {
       "family": "nippon",
       "name": "Edocha"
-     }
+     },
+     "formerly": "Sunbaked Tile"
     }
    ],
    "materials": [
@@ -280,9 +282,10 @@
      "role": "Accent"
     },
     {
-     "name": "Rooftop Clay",
+     "name": "Rooftop Rose",
      "hex": "#B9775C",
-     "role": "Bridge"
+     "role": "Bridge",
+     "formerly": "Rooftop Clay"
     }
    ],
    "materials": [
@@ -294,7 +297,7 @@
    "number": 8,
    "name": "Marrakech",
    "series": "Postcards",
-   "intent": "A riad courtyard: rosy plaster, dark cedar doors, and one wall of electric blue.",
+   "intent": "A riad courtyard: rosy plaster, dark doors, and one wall of electric blue.",
    "made": "2026-11-16",
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
@@ -304,9 +307,10 @@
      "role": "Field"
     },
     {
-     "name": "Cedar Door",
+     "name": "Dark Door",
      "hex": "#4A2E22",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Cedar Door"
     },
     {
      "name": "Majorelle",
@@ -357,7 +361,7 @@
    "number": 10,
    "name": "Mexico City",
    "series": "Postcards",
-   "intent": "Pink walls in hard sun, volcanic stone underfoot, and marigolds by the door.",
+   "intent": "Pink walls in hard sun, near-black underfoot, and marigolds by the door.",
    "made": "2026-11-16",
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
@@ -367,9 +371,10 @@
      "role": "Field"
     },
     {
-     "name": "Volcanic Stone",
+     "name": "Volcanic Black",
      "hex": "#3B3533",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Volcanic Stone"
     },
     {
      "name": "Marigold",
@@ -425,7 +430,7 @@
    "number": 12,
    "name": "Edinburgh",
    "series": "Postcards",
-   "intent": "Pale sandstone under a low sky, slate roofs, and heather on the hills beyond.",
+   "intent": "Pale walls under a low northern sky, deep blue-grey shadows, and heather on the hills beyond.",
    "made": "2026-11-16",
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
@@ -435,9 +440,10 @@
      "role": "Field"
     },
     {
-     "name": "Slate Roof",
+     "name": "Highland Night",
      "hex": "#3A4047",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Slate Roof"
     },
     {
      "name": "Heather",
@@ -459,7 +465,7 @@
    "number": 13,
    "name": "Earthy Olive",
    "series": "Forecast 2027",
-   "intent": "Moss-olive walls, warm clay and dark wood: the grounded, analogue home.",
+   "intent": "Moss-olive walls, a deep forest-floor brown and one rust note: the grounded, analogue home.",
    "made": "2026-11-16",
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
@@ -469,14 +475,16 @@
      "role": "Field"
     },
     {
-     "name": "Bog Oak",
+     "name": "Forest Floor",
      "hex": "#3A3226",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Bog Oak"
     },
     {
-     "name": "Fired Clay",
+     "name": "Sunset Rust",
      "hex": "#C27A5A",
-     "role": "Accent"
+     "role": "Accent",
+     "formerly": "Fired Clay"
     },
     {
      "name": "Oat Milk",
@@ -542,14 +550,16 @@
      "role": "Weight"
     },
     {
-     "name": "Terracotta Pot",
+     "name": "Burnt Orange",
      "hex": "#B5674A",
-     "role": "Accent"
+     "role": "Accent",
+     "formerly": "Terracotta Pot"
     },
     {
-     "name": "Pink Clay",
+     "name": "Dusty Pink",
      "hex": "#D9A898",
-     "role": "Bridge"
+     "role": "Bridge",
+     "formerly": "Pink Clay"
     }
    ],
    "materials": [
@@ -629,9 +639,10 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Soft Clay",
+     "name": "Soft Blush",
      "hex": "#D8C3B4",
-     "role": "Field"
+     "role": "Field",
+     "formerly": "Soft Clay"
     },
     {
      "name": "Ink Navy",
@@ -668,9 +679,10 @@
      "role": "Field"
     },
     {
-     "name": "Night Slate",
+     "name": "Deep Dusk",
      "hex": "#2F3A44",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Night Slate"
     },
     {
      "name": "Faded Denim",
@@ -736,9 +748,10 @@
      "role": "Field"
     },
     {
-     "name": "Fired Brick",
+     "name": "Ember",
      "hex": "#6E3B2C",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Fired Brick"
     },
     {
      "name": "Sunbaked",
@@ -848,9 +861,10 @@
      "role": "Bridge"
     },
     {
-     "name": "Linen Breath",
+     "name": "Morning Milk",
      "hex": "#E8DECD",
-     "role": "Accent"
+     "role": "Accent",
+     "formerly": "Linen Breath"
     }
    ],
    "materials": [
@@ -872,9 +886,10 @@
      "role": "Field"
     },
     {
-     "name": "Walnut Shadow",
+     "name": "Late Shadow",
      "hex": "#3D3129",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Walnut Shadow"
     },
     {
      "name": "Emerald Velvet",
@@ -925,14 +940,16 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Pale Stone",
+     "name": "Pale Mist",
      "hex": "#E3DDD2",
-     "role": "Field"
+     "role": "Field",
+     "formerly": "Pale Stone"
     },
     {
-     "name": "Iron",
+     "name": "Ink Black",
      "hex": "#2F2D2C",
-     "role": "Weight"
+     "role": "Weight",
+     "formerly": "Iron"
     },
     {
      "name": "Garnet Lacquer",
@@ -954,9 +971,10 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Cream Linen",
+     "name": "Soft Cream",
      "hex": "#ECE5D8",
-     "role": "Field"
+     "role": "Field",
+     "formerly": "Cream Linen"
     },
     {
      "name": "Taupe Dusk",

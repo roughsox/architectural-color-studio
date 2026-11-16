@@ -105,6 +105,8 @@ The site scores every scheme before any image exists. The rules are established 
 4. **Two materials, two depths.** The surface and touch materials differ clearly, and ideally sit at different lightness.
 5. **A full ladder from light to dark.** Across paints and materials, lightness spans at least 50 points with no large empty step.
 
+Every material also says **how a designer would use it** (for example *walnut: in small doses, one table, frames or a single piece of furniture*), because a material with no sense of scale takes over the room. For the same reason, no paint colour may be named after a material.
+
 Rules 1, 2, 4 and 5 can cost points; the rest of the score rewards undertone affinity, an even light-to-dark ladder and depth between the materials. **85 or more: cohesive. 70–84: works with care. Below 70: fights itself.** A studio palette needs 85 to be published. On the home page the owner can swap either material or ask for other naturals, and the score updates as they play.
 
 ## 8. The sit-down: everything before the image

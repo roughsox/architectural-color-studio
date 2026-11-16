@@ -55,7 +55,7 @@ If an image is far off, start a new chat instead of correcting it.
 
 ## Lessons so far
 
-1. **Set a standard, not a list of rules.** A one-line follow-up ("more luxury and intentional, as if designed by an expert; try other room types") beat every long prompt. Long rule lists get obeyed literally: each rule is performed, none of it is designed. *Shown by attempts 5 and 7.*
+1. **Set a standard, not a list of rules.** A one-line follow-up ("more luxury and intentional, as if designed by an expert; try other room types") beat every long prompt. The more structure a prompt has, the more the image becomes a demonstration of the structure: each rule is performed, none of it is designed. A planning prompt with a 9/10 target per category produced the most box-ticked image yet. *Attempts 5 and 7; Emerald Sofa 1.*
 2. **Architecture matters more than the room type.** Letting it choose the room helped (a bedroom suited Plum Drench), but a living room worked too once it had real architecture: an arched window, arched built-ins, a beamed ceiling and one focal point. The early living rooms failed because they were furniture crops with no structure. *Attempts 6, 7 and 8.*
 3. **Things that touch must contrast.** A purple sofa on a purple rug against purple walls reads as one block. *Attempts 1 and 2.*
 4. **Respect the palette's roles.** The pale field colour was missing from the first image entirely: every surface sat in the dark half of the palette (measured lightness 18–51 against a field of 73). *Attempt 1.*
@@ -66,6 +66,11 @@ If an image is far off, start a new chat instead of correcting it.
 9. **Read the palette's own sentence.** "Lifted by one mustard throw" was ignored when the prompt described colours itself. Pointing it at the palette card as the brief fixed it. *Attempts 2 and 6.*
 10. **Expect to choose, not to get it first time.** About one in two or three attempts is good; regenerating and picking beats repairing.
 11. **Asking it to review itself helps, even loosely.** A general "review your own work and improve it" produced one of the best results; the scorecard is a stricter version to try next. *Attempt 8.*
+12. **A material without a scale becomes a feature.** Listed as one of two materials, with the dark paint colour named "Walnut Shadow", walnut became a whole bookcase and, in another attempt, a wall of planks. Palette cards now say how each material is used ("Walnut — in small doses: one table, frames or a single piece of furniture"), and paint colours may no longer be named after materials. *Emerald Sofa 1.*
+
+## Retired
+
+- **The planning prompt** (plan the room, describe a 9/10 per category, then create): retired 2026-11-16 after Emerald Sofa 1. It turned every category into a box to tick. Planning belongs in the studio's sit-down, not in the image prompt.
 
 ## Still to work out
 

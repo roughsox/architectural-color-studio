@@ -77,6 +77,9 @@ function checkStudio(c) {
     if (!roleOrder.includes(x.role)) fail(`${x.name} needs a role (${roleOrder.join(', ')})`);
     if (!/^#[0-9A-Fa-f]{6}$/.test(x.hex)) fail(`${x.name} needs a colour value like #A1B2C3`);
   }
+  // A paint colour named after a material reads as an instruction to use that material (e.g. "Walnut Shadow" → a walnut wall).
+  const materialWord = /\b(walnut|oak|slate|brick|stone|marble|granite|concrete|clay|terracotta|steel|iron|copper|brass|cedar|teak|pine|leather|linen|wool|jute|rattan|travertine|limestone|sandstone|quarry|tile|timber|wood|plank)\b/i;
+  for (const x of c.colours) if (materialWord.test(x.name)) fail(`colour "${x.name}" is named after a material; paint colour names must not suggest one`);
   const names = c.colours.map(x => x.name.toLowerCase());
   if (new Set(names).size !== names.length) fail('two colours share a name');
   const by = r => c.colours.filter(x => x.role === r);
@@ -96,7 +99,7 @@ function checkStudio(c) {
     if (mats.length !== 2 || SCHEME.kind(mats[0]) !== 'surface' || SCHEME.kind(mats[1]) !== 'touch') fail('needs two materials: a surface first, then a touch material');
     c.scheme = SCHEME.score(c.colours, mats);
     if (c.scheme.score < 85) fail(`materials score ${c.scheme.score} (minimum 85): ${c.scheme.bad.join('; ')}`);
-    c.materialRanges = mats.map(x => ({ name: x.name, light: x.light, typical: x.typical, dark: x.dark }));
+    c.materialRanges = mats.map(x => ({ name: x.name, light: x.light, typical: x.typical, dark: x.dark, use: x.use }));
   }
 }
 families.find(f => f.id === 'studio')?.combinations.forEach(checkStudio);
@@ -141,7 +144,7 @@ page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json',
 write('palettes.json', JSON.stringify(families.map(({ combinations, colours, materials, ...f }) => ({ ...f, count: (combinations || colours || materials).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
 
 const filterScript = `<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('[data-n]:not(button)').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>`;
-const colourList = c => `<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>Materials</small></span></li>`).join('')}</ul>`;
+const colourList = c => `<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>${esc(x.use ? 'Use: ' + x.use : 'Materials')}</small></span></li>`).join('')}</ul>`;
 const palTitle = (f, c) => { const st = statusOf(f, c.number); return `<h2>${c.name ? `${esc(c.name)} <small class="num">No. ${c.number}</small>` : `No. ${c.number}`}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>`; };
 // Open any folded section that holds the palette named in the address (e.g. /palettes/studio#p7).
 const openTarget = `<script>(function(){var t=location.hash&&document.getElementById(location.hash.slice(1));for(var e=t;e;e=e.parentElement)if(e.tagName==='DETAILS')e.open=true;if(t)t.scrollIntoView();})()</script>`;
@@ -175,7 +178,7 @@ function materialsHtml(f) {
   const groups = [...new Set(f.materials.map(m => m.group))];
   return `<p class="note">Each material shows a range: <b>light</b>, <b>typical</b> and <b>dark</b>. Tags say whether it belongs inside, outside, or both.</p>` + groups.map(g => `<h2 class="group">${esc(g)}</h2><div class="mats">${f.materials.filter(m => m.group === g).map(m => `
 <article class="mat-card"><div class="mat-band">${['light', 'typical', 'dark'].map(k => `<span style="background:${m[k]};color:${ink(m[k])}"><i>${k}</i><code>${m[k]}</code></span>`).join('')}</div>
-<div class="mat-text"><h3>${esc(m.name)}</h3><p class="mat-tags">${m.where.map(w => `<em>${w}</em>`).join('')}</p><p>${esc(m.texture)}.</p><p class="ages">Ageing: ${esc(m.ages)}.</p><p class="range">${range(m)}</p></div></article>`).join('')}</div>`).join('');
+<div class="mat-text"><h3>${esc(m.name)}</h3><p class="mat-tags">${m.where.map(w => `<em>${w}</em>`).join('')}</p><p>${esc(m.texture)}.</p><p class="ages">Ageing: ${esc(m.ages)}.</p>${m.use ? `<p class="use"><b>Use:</b> ${esc(m.use)}.</p>` : ''}<p class="range">${range(m)}</p></div></article>`).join('')}</div>`).join('');
 }
 function coloursHtml(f) {
   const groups = [...new Set(f.colours.map(c => c.group || ''))];
@@ -262,15 +265,16 @@ const notebook = existsSync(join(nbDir, 'NOTEBOOK.md')) ? parse(join(nbDir, 'NOT
 const attempts = existsSync(join(nbDir, 'attempts.json')) ? JSON.parse(readFileSync(join(nbDir, 'attempts.json'), 'utf8')) : null;
 if (notebook) {
   mkdirSync(join(out, 'notebook', 'img'), { recursive: true });
-  for (const a of attempts?.attempts || []) copyFileSync(join(nbDir, 'img', a.image), join(out, 'notebook', 'img', a.image));
+  const groups = attempts ? (attempts.groups || [attempts]) : [];
+  for (const g of groups) for (const a of g.attempts) copyFileSync(join(nbDir, 'img', a.image), join(out, 'notebook', 'img', a.image));
   const body = md(notebook.body.replace(/^# .*\n/, '')).replace(/<pre>/g, '<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>').replace(/<\/pre>/g, '</pre></div>');
   const verdict = { good: 'Good', closer: 'Closer', miss: 'Miss' };
-  const timeline = attempts ? `<h2>The first palette, attempt by attempt</h2><p>${esc(attempts.palette.name)} (<a href="/palettes/${attempts.palette.family}#p${attempts.palette.number}">Studio No. ${attempts.palette.number}</a>), made with ${esc(attempts.made_with)}.</p>
-<ol class="attempts">${attempts.attempts.map(a => `<li class="att ${a.verdict}"><figure><img src="/notebook/img/${a.image}" alt="Attempt ${a.n} for ${esc(attempts.palette.name)}" loading="lazy"><span class="att-tag">${a.n} · ${verdict[a.verdict] || a.verdict}</span></figure><p class="asked"><b>Asked:</b> ${esc(a.asked)}</p><p>${esc(a.note)}</p></li>`).join('')}</ol>` : '';
+  const timeline = groups.map((g, gi) => `<h2>${gi ? '' : 'Attempts, palette by palette: '}${esc(g.palette.name)}</h2><p><a href="/palettes/${g.palette.family}#p${g.palette.number}">Studio No. ${g.palette.number}</a>, made with ${esc(g.made_with)}.</p>
+<ol class="attempts">${g.attempts.map(a => `<li class="att ${a.verdict}"><figure><img src="/notebook/img/${a.image}" alt="Attempt ${a.n} for ${esc(g.palette.name)}" loading="lazy"><span class="att-tag">${a.n} · ${verdict[a.verdict] || a.verdict}</span></figure><p class="asked"><b>Asked:</b> ${esc(a.asked)}</p><p>${esc(a.note)}</p></li>`).join('')}</ol>`).join('');
   page({ title: 'Notebook', path: '/notebook', wide: true, twin: '/notebook.md', html: `<p class="eyebrow">Notebook · ${esc(notebook.meta.status)} · updated ${esc(notebook.meta.updated)}</p><h1>What the studio is learning about making images</h1>
 <div class="notebook">${body}</div>${timeline}
 <script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
-  write('notebook.md', notebook.raw + (attempts ? '\n## Attempts: ' + attempts.palette.name + '\n' + attempts.attempts.map(a => `${a.n}. [${a.verdict}] Asked: ${a.asked} Result: ${a.note}`).join('\n') + '\n' : ''));
+  write('notebook.md', notebook.raw + groups.map(g => '\n## Attempts: ' + g.palette.name + '\n' + g.attempts.map(a => `${a.n}. [${a.verdict}] Asked: ${a.asked} Result: ${a.note}`).join('\n')).join('\n') + '\n');
 }
 
 // ---- Library: finished pieces only (room beside its swatches). A project enters it at stage "In the library";
@@ -297,7 +301,7 @@ write('library.json', JSON.stringify(approved.map(p => ({ project: p.id, family:
 
 // ---- Home: the front door of the owner's workshop
 const pool = families.filter(isCombos).flatMap(f => f.combinations.map((c, i) => [f.id, f.label, c.number ?? i + 1, c.colours.map(x => [x.name, x.hex, x.role || '']), c.materials || null, c.name || '']));
-const labMaterials = MATERIALS.map(({ name, group, light, typical, dark, where }) => ({ name, group, light, typical, dark, where }));
+const labMaterials = MATERIALS.map(({ name, group, light, typical, dark, where, use }) => ({ name, group, light, typical, dark, where, use }));
 const featureHtml = ([fid, label, n, cs], tag) => `<div class="fblocks">${cs.map(([name, hex]) => `<div style="background:${hex};color:${ink(hex)}"><b>${esc(name)}</b><code>${hex}</code></div>`).join('')}</div>
 <p class="fcap"><span>${esc(tag)}</span><a href="/palettes/${fid}#p${n}">${esc(label)} ${n}</a></p>`;
 const homeFeature = current ? [current.family.id, current.family.label, current.palette.number, current.palette.colours.map(x => [x.name, x.hex])] : pool[0];
@@ -342,7 +346,7 @@ ${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? 
     const cls = sc.score >= 85 ? 'good' : sc.score >= 70 ? 'ok' : 'poor';
     const ask = label.replace(' No.', '') + ' ' + n + ' with ' + mats.map(m => m.name.toLowerCase()).join(' and ');
     fig.innerHTML = '<div class="fblocks">' + cs.map(([nm, h, role]) => '<div style="background:' + h + ';color:' + ink(h) + '">' + (role ? '<i>' + role + '</i>' : '') + '<b>' + esc(nm) + '</b><code>' + h + '</code></div>').join('') + '</div>'
-      + '<div class="lab-mats">' + mats.map((m, k) => '<div class="lab-mat"><span class="lab-sw" style="background:' + band(m) + '"></span><div><small>' + (k ? 'Touch' : 'Surface') + ' · natural</small><b>' + esc(m.name) + '</b></div><button type="button" data-slot="' + k + '">Swap</button></div>').join('') + '</div>'
+      + '<div class="lab-mats">' + mats.map((m, k) => '<div class="lab-mat"><span class="lab-sw" style="background:' + band(m) + '"></span><div><small>' + (k ? 'Touch' : 'Surface') + ' · natural</small><b>' + esc(m.name) + '</b>' + (m.use ? '<em>' + esc(m.use) + '</em>' : '') + '</div><button type="button" data-slot="' + k + '">Swap</button></div>').join('') + '</div>'
       + '<div class="lab-foot"><span class="lab-score ' + cls + '">' + sc.verdict + ' · ' + sc.score + '</span><button type="button" id="naturals">Try other naturals</button></div>'
       + '<details class="lab-why"><summary>Why this score</summary><ul>' + sc.good.map(t => '<li class="y">' + esc(t) + '</li>').join('') + sc.bad.map(t => '<li class="n">' + esc(t) + '</li>').join('') + '</ul></details>'
       + '<p class="fcap"><span>' + tag + '</span><a href="/palettes/' + fid + '#p' + n + '">' + esc(title ? title + ' · ' : '') + esc(label) + ' ' + n + '</a></p>'
