@@ -6,6 +6,8 @@ _Updated 2026-11-16. Read this first. Keep it to one screen; history is in `docs
 
 A workshop for the owner to play with colour and rooms, and a source of inspiration posts: **two slides, a room photograph, then its swatch card.** The aim is inspiration, not photographic proof. Live at https://architectural-color-studio.vercel.app.
 
+**The site shows Wada only** (other families' data kept in `studio/palettes/`; `shown` in `site/build.mjs`).
+
 ## How images are made now
 
 - In **ChatGPT projects**, with Wada's `colors.json` as a project file and instructions from **/instructions** (Copy buttons there).
@@ -23,7 +25,7 @@ A workshop for the owner to play with colour and rooms, and a source of inspirat
 
 ## Next
 
-1. **Test version 3**, ideally on Wada 182 again in a new chat (to compare with the Sunday Library, reached after 12 images with v2) and then a new palette. Log every image, misses included. Wada 182 images 5–11 are still to come from the owner. ChatGPT keeps a Google Doc of each chat in the owner's Drive ("Architectural Images" folder); read it with the Google Docs tool (chatgpt.com share links can't be read from here).
+1. **Owner tries a minimal instruction** (proposed in chat 2026-11-16: three steps, three rooms to choose from, ChatGPT writes its own prompt, one line of standard). Lesson of the day: every added rule or detail gives ChatGPT a keyword to lock onto; don't add structure (the canvas-reading idea was rejected). Put it on /instructions only once it works. Wada 182 images 5–11 still to come.
 2. Compare how many follow-ups each method needs to reach something shareable; fold what works into the next versions.
 3. Later, once the method is settled: the first finished piece in the Library (room + card as two slides), then decide the site's purpose.
 
