@@ -8,13 +8,15 @@ This repository holds one project and nothing else. Read `STATE.md` first, then 
 |---|---|
 | `studio/` | The content: palettes (`palettes/*.json`), the Guide, the Notebook, projects, the experts (`desks.json`) |
 | `site/build.mjs` | Builds the site from `studio/` into `dist/`; also checks the data and stops on errors |
-| `site/card.mjs` | The trio swatch card (one SVG for the page and the download) |
+| `site/style.css`, `site/site.js` | One stylesheet and one small script shared by every page |
+| `studio/chatgpt/` | The ChatGPT project instructions, one file per version; the newest is shown on /instructions |
+| `site/card.mjs` | The trio palette card (one SVG for the page and the download) |
 | `scripts/cards.mjs` | Renders and measures the trio cards (`npm run cards`) |
 | `docs/` | `BRIEF.md` (the owner's brief), `AUDIT-2026-11-16.md`, `LOG.md` (history), `archive/` (the first plan) |
 
 ## Build and check
 
-- `npm ci`, then `npm run build`. The build refuses broken palettes, incomplete room sheets and out-of-date cards.
+- `npm ci`, then `npm run build`. The build refuses broken palettes and out-of-date cards.
 - After changing `studio/palettes/trios.json` or `site/card.mjs`: `npm run cards` (needs Playwright with Chromium), then commit `studio/palettes/trio-cards/`.
 - Before publishing, look at the changed pages at phone (390 px) and iPad (820 px) width.
 

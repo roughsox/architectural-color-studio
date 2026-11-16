@@ -4,6 +4,7 @@ import { marked } from 'marked';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { trioCardSvg } from './card.mjs';
 import { cardSourceHash, cardFile } from '../scripts/cards.mjs';
 
@@ -26,14 +27,21 @@ function parse(file) {
   return { raw, meta, body: (m ? raw.slice(m[0].length) : raw).trim() };
 }
 
-const css = readFileSync(join(root, 'site', 'style.css'), 'utf8');
+// One stylesheet and one small script, shared by every page (cached by the browser instead of repeated in each page).
+const cssVersion = createHash('sha256').update(readFileSync(join(root, 'site', 'style.css'))).digest('hex').slice(0, 8);
+const jsVersion = createHash('sha256').update(readFileSync(join(root, 'site', 'site.js'))).digest('hex').slice(0, 8);
+copyFileSync(join(root, 'site', 'style.css'), join(out, 'style.css'));
+copyFileSync(join(root, 'site', 'site.js'), join(out, 'site.js'));
+copyFileSync(join(root, 'site', 'favicon.svg'), join(out, 'favicon.svg'));
 const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library'], ['/notebook', 'Notebook'], ['/instructions', 'Instructions']];
 
 function page({ title, html, path, wide = false, twin }) {
   write(path === '/' ? 'index.html' : path.slice(1) + '.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} — Architectural Color Studio</title>
 <meta name="description" content="Architectural Color Studio: rooms that show what a colour combination feels like to live in.">
-<style>${css}</style></head><body>
+<link rel="stylesheet" href="/style.css?v=${cssVersion}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script src="/site.js?v=${jsVersion}" defer></script></head><body>
 <header><a class="brand" href="/">A<span>/</span>C <small>Architectural Color Studio</small></a>
 <nav>${nav.map(([h, t]) => `<a href="${h}"${(h === path || path.startsWith(h + '/')) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav></header>
 <main${wide ? ' class="wide"' : ''}>${html}
@@ -55,17 +63,10 @@ const countLabel = f => isCombos(f) ? (size(f) ? `${size(f)} ${size(f) === 1 ? '
 const total = families.filter(isCombos).reduce((n, f) => n + size(f), 0);
 
 // ---- Studio palettes: the studio's own rules (Guide §4), checked on every build. A broken palette stops the build.
-const lab = hex => {
-  const lin = c => (c /= 255) <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
-  const [r, g, b] = [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16)));
-  const q = t => t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116;
-  const X = q((0.4124 * r + 0.3576 * g + 0.1805 * b) / 0.95047), Y = q(0.2126 * r + 0.7152 * g + 0.0722 * b), Z = q((0.0193 * r + 0.1192 * g + 0.9505 * b) / 1.08883);
-  const L = 116 * Y - 16, A = 500 * (X - Y), B = 200 * (Y - Z);
-  return { L, a: A, b: B, C: Math.hypot(A, B) };
-};
 const ink = hex => { const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16)); return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#22302b' : '#fff'; };
 const schemeSrc = readFileSync(join(root, 'site', 'scheme.js'), 'utf8');
 const SCHEME = new Function(schemeSrc + ';return SCHEME')();
+const lab = SCHEME.lab; // one colour-maths implementation for the build and the home page
 const MATERIALS = families.find(f => f.kind === 'materials')?.materials || [];
 const RULES = { fieldWeightGap: 30, minDistance: 15, loud: 45 };
 const roleOrder = ['Field', 'Weight', 'Accent', 'Bridge'];
@@ -131,37 +132,6 @@ if (trioFamily) {
   for (const c of trioFamily.combinations) copyFileSync(join(dir, cardFile(c)), join(out, 'trios', cardFile(c)));
   copyFileSync(join(root, 'site', 'fonts', 'bodoni-moda-500.woff2'), (mkdirSync(join(out, 'fonts'), { recursive: true }), join(out, 'fonts', 'bodoni-moda-500.woff2')));
   trioFamily.cardChecks = manifest;
-}
-// Prompt v0.8 for trios. Built from the trio's room sheet, following OpenAI's own image-prompting guide
-// (gpt-image-2 cookbook, 2026): label each attached image; scene, then subject, then details, then constraints, in short
-// labelled parts; prompt it as a real photograph captured on location, and avoid words that imply staging or polish
-// ("luxury", "magazine", "high-end"), which push it toward the glossy AI look. See the Notebook, "What others have found".
-const TRIO_LIGHT = {
-  golden: 'Warm lamplight from the lamps that are on, with soft daylight from the window.',
-  daylight: 'Soft late-afternoon daylight from the window as the main light, the lamps on low. Whites stay white.',
-};
-const SHEET_PARTS = ['room', 'architecture', 'focal', 'furniture', 'objects', 'camera'];
-const TRIO_PROMPT = c => {
-  const [h, u, n] = c.colours;
-  return `Image 1 is the colour card for this room. Top: ${h.name}, ${h.finish}, for the walls. Middle: ${u.name}, ${u.finish}, for the upholstered pieces. Bottom: ${n.name}, ${n.finish}, the soft neutral. Match these three colours exactly, in natural colour balance.
-
-Create a photorealistic photograph of a real, lived-in home, taken on location.
-
-Room: ${c.sheet.room}
-Walls and architecture: ${c.sheet.architecture}
-Focal wall: ${c.sheet.focal}
-Furniture: ${c.sheet.furniture}
-Objects: ${c.sheet.objects} Nothing else on any surface.
-Light: ${TRIO_LIGHT[c.light || 'golden']}
-Camera: ${c.sheet.camera}
-
-It should feel honest and unstaged: real textures, slight everyday wear, natural colour balance. No cinematic lighting, no colour grading, no glamorization.
-Leave out anything not described above. No people, text, logos or watermarks. Vertical 4:5.`;
-};
-for (const f of families.filter(isTrio)) for (const c of f.combinations) {
-  const missing = SHEET_PARTS.filter(k => !c.sheet || !c.sheet[k]);
-  if (missing.length) throw new Error(`Trio No. ${c.number} (${c.name}): its room sheet needs ${missing.join(', ')}`);
-  if (!TRIO_LIGHT[c.light || 'golden']) throw new Error(`Trio No. ${c.number}: light must be ${Object.keys(TRIO_LIGHT).join(' or ')}`);
 }
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
 const stages = ['Queued', 'Directed', 'Requested', 'Received', 'Reviewed', 'Approved', 'In the library'];
@@ -257,13 +227,10 @@ for (const f of families.filter(isTrio)) for (const c of f.combinations) {
   page({ title: c.name, path: '/trios/' + c.number, wide: true, html: `<div class="trio-page">${trioCard(c)}
 <div class="trio-side"><p class="eyebrow"><a href="/palettes/${f.id}">Trios</a> · No. ${c.number}</p><h1>${esc(c.name)}</h1><p class="lede">${esc(c.intent)}</p>
 <ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><code>${x.hex}</code></li>`).join('')}</ul>
-<p class="note">House style: ${esc(f.house)}. Light for this trio: ${c.light === 'daylight' ? 'soft daylight, so the cool colours stay true' : 'warm golden lamplight'}.</p>${c.changed ? `<p class="note">Changed ${esc(c.changed)}</p>` : ''}
-<h2>Make the room: first try</h2>
-<ol class="steps"><li>Download the card.</li><li>Start a <b>new</b> ChatGPT chat. Attach only the card (it is Image 1), paste the prompt, send. Add nothing.</li><li>Judge the first image with the five questions below. Bring it here either way.</li><li>If it missed, bring it here; the studio changes the room sheet and you start a new chat. A small fix in the same chat only works as a surgical edit: “Change only … Keep everything else exactly the same.” Never a general request like “make it more luxurious”.</li></ol>
-<p><a class="button" href="/trios/${cardFile(c)}" download="${cardFile(c)}">Download card</a> <span class="note">${esc(f.cardChecks.size)} image · each swatch measured within ${Math.max(...f.cardChecks.cards[c.number].swatches.map(x => x.deltaE00)).toFixed(1)} of its colour (1.0 or less is not visible)</span></p>
-<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT(c))}</pre></div>
-<h2>Is it a hit?</h2><ol class="hit"><li>The walls read as ${esc(c.colours[0].name)} on the card.</li><li>The upholstery reads as ${esc(c.colours[1].name)}.</li><li>Whites and ${esc(c.colours[2].name.toLowerCase())} look clean, not yellow or beige.</li><li>Only what the prompt describes is in the room.</li><li>You would post it as it is.</li></ol><p class="note">Five yeses is a hit. The first-try hit rate is how the studio measures the method.</p></div></div>
-<script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
+<h2>Make the room</h2>
+<p>Use the ChatGPT project with the <a href="/instructions">current instructions</a>. Download the card, attach it, and paste the line below.</p>
+<p><a class="button" href="/trios/${cardFile(c)}" download="${cardFile(c)}">Download card</a> <span class="note">${esc(f.cardChecks.size)} image · each swatch measured within ${Math.max(...f.cardChecks.cards[c.number].swatches.map(x => x.deltaE00)).toFixed(1)} of its colour</span></p>
+<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(`A room using the palette on the attached card: ${c.colours.map(x => `${x.name} ${x.hex}`).join(', ')}.`)}</pre></div></div></div>` });
 }
 
 // ---- Guide
@@ -317,7 +284,7 @@ ${p.turn ? `<section class="turn"><p class="eyebrow">Your turn</p><h2>${esc(p.tu
 <ol class="feed">${p.notes.map(n => `<li>${badge(n.expert)}<div class="said"><p class="who"><b>${esc(n.expert.name)}</b>${n.expert.who ? ` <small>${esc(n.expert.who)}</small>` : ''}<span class="tag">${esc(n.meta.stage)}</span></p>${md(n.body)}</div></li>`).join('')}
 ${p.next ? `<li class="upnext"><span class="badge ghost" style="color:${p.next.colour};border-color:${p.next.colour}" aria-hidden="true">${esc(p.next.mark)}</span><div class="said"><p class="who"><b>${esc(p.next.name)}</b><span class="tag">Up next</span></p><p>${esc(p.meta.next_note || '')}</p></div></li>` : ''}</ol>
 ${p.sitdown ? `<section class="sitdown"><h2 class="group">The sit-down</h2><div class="said">${md(p.sitdown.body)}</div></section>` : ''}
-${p.prompt ? `<section class="prompt"><div class="prompt-head"><h2 class="group">Prompt for the first image</h2><button type="button" class="copy" onclick="navigator.clipboard.writeText(this.closest('.prompt').querySelector('.prompt-body').innerText).then(()=>{this.textContent='Copied'})">Copy</button></div><div class="prompt-body">${md(p.prompt.body)}</div></section>` : ''}
+${p.prompt ? `<section class="prompt"><div class="prompt-head"><h2 class="group">Prompt for the first image</h2><button type="button" class="copy" data-copy=".prompt-body">Copy</button></div><div class="prompt-body">${md(p.prompt.body)}</div></section>` : ''}
 </div>
 <aside class="side">
 <figure class="plate"><div class="room"><span>Room image</span></div><div class="sw">${cols.map(c => `<span style="background:${c.hex}"></span>`).join('')}</div>
@@ -340,8 +307,7 @@ if (instr.length) {
   const [cur, ...older] = instr;
   page({ title: 'Instructions', path: '/instructions', twin: '/instructions.md', html: `<p class="eyebrow">ChatGPT project · version ${esc(cur.meta.version)} · ${esc(cur.meta.status)}</p><h1>Instructions</h1>
 <div class="notebook">${copyable(md(cur.body))}</div>
-${older.map(o => `<details class="older"><summary>Version ${esc(o.meta.version)} · ${esc(o.meta.date)} · ${esc(o.meta.author)}</summary><div class="notebook">${copyable(md(o.body))}</div></details>`).join('')}
-<script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
+${older.map(o => `<details class="older"><summary>Version ${esc(o.meta.version)} · ${esc(o.meta.date)} · ${esc(o.meta.author)}</summary><div class="notebook">${copyable(md(o.body))}</div></details>`).join('')}` });
   write('instructions.md', cur.raw);
 }
 
@@ -358,8 +324,7 @@ if (notebook) {
   const timeline = groups.map((g, gi) => `<h2>${gi ? '' : 'Attempts, palette by palette: '}${esc(g.palette.name)}</h2><p><a href="${g.palette.family === 'trios' ? '/trios/' + g.palette.number : '/palettes/' + g.palette.family + '#p' + g.palette.number}">${esc(g.palette.label || 'Studio No.')} ${g.palette.number}</a>, made with ${esc(g.made_with)}.</p>
 <ol class="attempts">${g.attempts.map(a => `<li class="att ${a.verdict}"><figure><img src="/notebook/img/${a.image}" alt="Attempt ${a.n} for ${esc(g.palette.name)}" loading="lazy"><span class="att-tag">${a.n} · ${verdict[a.verdict] || a.verdict}</span></figure><p class="asked"><b>Asked:</b> ${esc(a.asked)}</p><p>${esc(a.note)}</p></li>`).join('')}</ol>`).join('');
   page({ title: 'Notebook', path: '/notebook', wide: true, twin: '/notebook.md', html: `<p class="eyebrow">Notebook · ${esc(notebook.meta.status)} · updated ${esc(notebook.meta.updated)}</p><h1>What the studio is learning about making images</h1>
-<div class="notebook">${body}</div>${timeline}
-<script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
+<div class="notebook">${body}</div>${timeline}` });
   write('notebook.md', notebook.raw + groups.map(g => '\n## Attempts: ' + g.palette.name + '\n' + g.attempts.map(a => `${a.n}. [${a.verdict}] Asked: ${a.asked} Result: ${a.note}`).join('\n')).join('\n') + '\n');
 }
 
@@ -415,10 +380,10 @@ ${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? 
 </div>
 <a class="h-table" href="/project"><p class="eyebrow">The experts at the table</p><ul>${desks.map(d => `<li><span class="badge sm" style="background:${d.colour}" aria-hidden="true">${esc(d.mark)}</span>${esc(d.name)}</li>`).join('')}</ul></a>
 <p class="h-guide">How the studio works, step by step: <a href="/guide">the Guide</a>.</p>
-<script>${schemeSrc}</script>
+<script src="/scheme.js?v=${createHash('sha256').update(schemeSrc).digest('hex').slice(0, 8)}"></script>
 <script>
-(() => {
-  const P = ${JSON.stringify(pool)}, M = ${JSON.stringify(labMaterials)};
+(async () => {
+  const { P, M } = await (await fetch('/home-data.json?v=${createHash('sha256').update(JSON.stringify([pool, labMaterials])).digest('hex').slice(0, 8)}')).json();
   const fig = document.getElementById('feature'), btn = document.getElementById('surprise');
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const ink = h => { const [r, g, b] = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? '#22302b' : '#fff'; };
@@ -457,6 +422,8 @@ ${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? 
 </script>`;
 };
 page({ title: 'Studio', path: '/', wide: true, html: homeHtml() });
+write('scheme.js', schemeSrc);
+write('home-data.json', JSON.stringify({ P: pool, M: labMaterials }));
 
 // ---- One complete text file for assistants (their readers may not follow links inside a page)
 const whole = `# Architectural Color Studio — the whole project in one file
@@ -487,6 +454,5 @@ ${notebook ? notebook.body : 'No notebook yet.'}
 END
 `;
 write('llms.txt', whole);
-write('brief.txt', whole);
 write('robots.txt', 'User-agent: *\nAllow: /\n');
 console.log('built:', readdirSync(out, { recursive: true }).filter(f => /\.(html|md|txt|json)$/.test(f)).join(', '));

@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.12
+version: 0.13
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -8,6 +8,8 @@ status: draft, awaiting owner approval
 # The Guide
 
 How Architectural Color Studio works, for any assistant or person taking part.
+
+**How images are made now:** in a ChatGPT project whose instructions are on the [Instructions page](/instructions), with short commands such as `#213`. Where this Guide describes earlier methods (stages, experts, sit-downs), those are the workshop's playful side and its history, not the steps for making an image.
 
 ## 1. What we make
 
@@ -111,7 +113,7 @@ Rules 1, 2, 4 and 5 can cost points; the rest of the score rewards undertone aff
 
 ### Trios
 
-A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, classic architecture that suits the room, one centred focal wall. No colour is ever assigned to built-ins or joinery: the image maker reads that as an instruction to build them (Notebook lesson 18). Light suits the trio: warm lamplight for deep, warm heroes; soft daylight for cool or green ones, because golden light turns them olive (Notebook lesson 13). The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card, downloaded from its page as an image (1080 × 2400), given to the image maker and placed beside the finished room.
+A **trio** is three colours that belong together, chosen and named by the studio, each with a plain palette card to download. How the colours are used in a room is the image maker's design decision, guided by the instructions; no colour is ever assigned to a particular object, finish, built-in or piece of joinery (Notebook lesson 18).
 
 ## 8. The sit-down: everything before the image
 
@@ -131,19 +133,9 @@ As much work as possible happens before any image is made. Once the owner has pi
 
 The experts are one model writing in eight roles. The value of the sit-down is that every concern is forced into the open and resolved before an image is paid for, not that the voices are independent.
 
-### For trios: the room sheet
-
-For a trio the sit-down's output is its **room sheet** (`sheet` in `trios.json`): the room, walls and architecture, focal wall, furniture, objects and camera, described positively and completely, plus the trio's light. The prompt on each trio page is built from it. The build refuses a trio without a complete sheet. The prompt follows OpenAI's own guide for its image models: the card labelled as Image 1, labelled parts in the order scene, subject, details, constraints, and the language of a real photograph taken on location rather than of luxury or magazines (Notebook, "What others have found"). The owner runs it once in a new chat, judges the first image with five questions, and a miss changes the sheet (Notebook, "The first-try method").
-
 ## 9. Standards every image must meet
 
-1. Vertical room image, with no text, people or logos in it.
-2. Neutral daylight, so the palette colours are not shifted by warm light.
-3. Looks photographed, not rendered.
-4. Calm architecture; the colour is the spectacle.
-5. Each palette colour on a clearly readable surface; the scheme's two materials present; no colour beyond the scheme except plants and small signs of life.
-6. A home, not a showroom: ordinary scale, usable layout, nothing blocking doors or windows.
-7. Not symmetrical, not cloned, and with signs that someone lives there.
+The standards (colour, light, camera, scale, styling, format) are written once, in the ChatGPT project instructions on the [Instructions page](/instructions). They are not repeated here, so there is only one version to keep up to date.
 
 ## 10. The swatch
 

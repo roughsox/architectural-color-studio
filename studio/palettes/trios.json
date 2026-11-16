@@ -9,8 +9,7 @@
  "description": "Three colours that belong together. Each trio has a plain palette card to download and hand to the image maker.",
  "source": "Architectural Color Studio",
  "data": "Made in the studio; colours and names chosen by the studio",
- "note": "House style for every trio: dark wood floors, brass lighting, classic architecture that suits the room, one centred focal wall. Light suits the trio: warm lamplight for deep, warm heroes; soft daylight for cool or green ones.",
- "house": "dark wood floors, brass lighting, classic architecture that suits the room, one centred focal wall",
+ "note": "Colours chosen and named by the studio.",
  "series": [
   {
    "name": "Trios",
@@ -43,16 +42,7 @@
      "role": "Neutral",
      "finish": "linen"
     }
-   ],
-   "light": "golden",
-   "sheet": {
-    "room": "A small study in a Georgian townhouse, about 4 by 5 metres, with a 3-metre ceiling.",
-    "architecture": "The walls and doors are lacquered deep aubergine with a soft gloss, with a simple panelled dado. The ceiling and its plain cornice are bone. One tall sash window on the right with bone linen curtains.",
-    "focal": "The far wall is bare aubergine lacquer with one brass picture light over an empty space. In front of it, one saffron velvet armchair beside a slim dark wood side table.",
-    "furniture": "A bone linen sofa faces the chair across a low dark wood table, on a bone wool rug. Dark oak floorboards.",
-    "objects": "A brass reading lamp on the side table, switched on, and two books on the low table.",
-    "camera": "Eye level from the doorway, 35 mm lens, straight on, the whole far wall, the chair and the cornice in frame."
-   }
+   ]
   },
   {
    "number": 2,
@@ -79,16 +69,7 @@
      "role": "Neutral",
      "finish": "linen"
     }
-   ],
-   "light": "golden",
-   "sheet": {
-    "room": "A library in a London townhouse, about 5 by 6 metres, with a 3.2-metre ceiling.",
-    "architecture": "The walls are finished in ink-blue polished plaster. Freestanding dark wood bookcases stand on either side of the fireplace. The ceiling and its cornice are chalk white. Two tall windows on the left with chalk linen curtains.",
-    "focal": "The far wall has a fireplace with a plain chalk-coloured stone surround. The plaster above the mantel is left bare.",
-    "furniture": "Two cognac leather club chairs, worn soft, are angled toward the fire on either side of a low dark wood table, on a chalk wool rug. Dark oak floorboards.",
-    "objects": "Books on the shelves. One brass floor lamp beside a chair, switched on.",
-    "camera": "Eye level from the far end of the room, 35 mm lens, straight on, the fireplace, both chairs and the cornice in frame."
-   }
+   ]
   },
   {
    "number": 3,
@@ -117,16 +98,7 @@
      "finish": "boucle"
     }
    ],
-   "light": "daylight",
-   "changed": "2026-11-16: sage deepened from #8E9A7E (lightness 62) to #646F58 (45), so the walls sit clearly darker than the rose bed (Notebook lesson 16).",
-   "sheet": {
-    "room": "A bedroom in an older townhouse, about 4.5 metres wide, with a 3-metre ceiling.",
-    "architecture": "The walls are lined with simple full-height square panelling painted sage. The ceiling and its plain cornice are ivory. One tall window on the left with ivory linen curtains.",
-    "focal": "The bed is centred on the far wall against bare panelling: a tall rose velvet headboard with a softly arched top, ivory linen bedding and one rose velvet bolster.",
-    "furniture": "A dark wood nightstand on each side, each with a small brass swing-arm wall light above it. An ivory boucle bench at the foot of the bed. A pale ivory wool rug on dark oak floorboards.",
-    "objects": "Two books and a glass of water on the left nightstand.",
-    "camera": "Eye level from the doorway, 35 mm lens, straight on, the whole bed, both nightstands and the cornice in frame."
-   }
+   "changed": "2026-11-16: sage deepened from #8E9A7E (lightness 62) to #646F58 (45), so the walls sit clearly darker than the rose bed (Notebook lesson 16)."
   }
  ]
 }
