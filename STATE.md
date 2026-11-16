@@ -53,6 +53,15 @@ Recorded in the owner's words; the planning documents have not been revised to m
 - "I'm OK with building all of these" (the further palette families suggested) "and it might also be relevant to give the agent the ability to select/create new color combinations intentionally."
 - Asked whether Claude can change the site once the process is settled. Answer given: not the existing chatgpt.site page (no access to its source or hosting); Claude can build and deploy a replacement from this repository.
 
+## Owner direction (2026-11-16) — purpose, in the owner's words
+
+- "The intention is for the Owner – Me to have a fun workshop to play around with, but I also want it to extend to the capabilities of possibly using it to create thousands of professional level color, focused, architectural room, images to share on social media."
+- The shared result should be "simplistic yet absurdly intentional and impressively, pleasing", potentially on "a dedicated social media account". Only the finished images are shared; the site itself is a workshop.
+- "A fun workshop for the Owner with input in the right areas and automated in other areas."
+- "A slightly excessive workflow, such as different expert buckets, such as architect – builder – design expert… maybe seven or eight 'experts' that can follow and add to an appropriate structure. I don't want the process to feel cumbersome either. It should be a very fun project for the Owner."
+- ChatGPT: to be worked out later, when Codex usage resets. Likely the easy option: something Codex can read and make an image from, then the owner uploads the image here in chat or directly to the site. Not the main focus now.
+- Main focus now: fleshing out the site itself and how it should function. The palette families are a concept the owner loves.
+
 ## Open decisions for the owner
 
 Nothing below has been assumed in a way that is hard to change, but 1–4 block Stage 0.
