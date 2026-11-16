@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.8
+version: 0.9
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -111,7 +111,7 @@ Rules 1, 2, 4 and 5 can cost points; the rest of the score rewards undertone aff
 
 ### Trios
 
-A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and the built-in joinery and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, panelling or arched built-ins, one centred focal wall, warm lamplight. The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card made to be screenshotted for the image maker and placed beside the finished room.
+A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and the built-in joinery and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, panelling or arched built-ins, one centred focal wall, warm lamplight. The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card, downloaded from its page as an image (1080 × 2400), given to the image maker and placed beside the finished room.
 
 ## 8. The sit-down: everything before the image
 
@@ -143,7 +143,9 @@ The experts are one model writing in eight roles. The value of the sit-down is t
 
 ## 10. The swatch
 
-The swatch panel is drawn from the palette's exact values, not generated as an image, so it is the one part of the piece that is exactly right.
+The swatch card is drawn from the palette's exact values, not generated as an image, so it is the one part of the piece that is exactly right. Its textures (plaster, leather, velvet, lacquer, linen, boucle) are pairs of lighter and darker layers that cancel out, so each swatch still averages to its stated colour. Lettering is gold foil, deepened or paled only as far as it needs to be read: 3:1 contrast for names, 4.5:1 for the small finish labels. The typeface (Bodoni Moda) ships with the site, so the card looks the same on every device.
+
+`npm run cards` renders every card to its download image and measures it: each swatch within 1.0 (CIEDE2000) of its value, with visible texture and legible lettering. The build refuses to publish if the cards are out of date.
 
 ## 11. The record
 

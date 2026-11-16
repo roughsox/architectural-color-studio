@@ -9,6 +9,10 @@ Each family is one JSON file in this folder. Adding a file adds a family to the 
 | `ridgway.json` | Robert Ridgway, Color Standards and Color Nomenclature, 1912 | npm `color-standards-and-color-nomenclature` 1.1.0 (Davo Galavotti) | MIT; the book is public domain in the USA |
 | `nippon.json` | Traditional Japanese colour names | npm `nippon-colors` 1.0.0 (Alex Sun) | MIT |
 | `studio.json` | Combinations made in this studio | — | — |
+| `trios.json` | Trios made in this studio; their cards are rendered to `trio-cards/` by `npm run cards` | — | — |
+| `materials.json` | Natural materials, studio estimates | — | — |
+
+The card typeface is Bodoni Moda (npm `@fontsource/bodoni-moda` 5.3.0), SIL Open Font License 1.1; see `site/fonts/OFL-bodoni-moda.txt`.
 
 Licences are as declared by each package on 2026-11-15; they were read from the package metadata and files, not independently verified. All values are modern digital approximations, not measurements of the original books or dyes.
 

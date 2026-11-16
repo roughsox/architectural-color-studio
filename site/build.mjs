@@ -4,6 +4,8 @@ import { marked } from 'marked';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { trioCardSvg } from './card.mjs';
+import { cardSourceHash, cardFile } from '../scripts/cards.mjs';
 
 const SITE = 'https://architectural-color-studio.vercel.app';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -117,9 +119,19 @@ function checkTrio(c) {
   if (d(h, u) < 20 || d(u, n) < 20 || d(h, n) < 20) fail('every pair of colours must differ by at least 20');
 }
 families.filter(isTrio).forEach(f => f.combinations.forEach(checkTrio));
-const textureOf = finish => ({ lacquer: 'lacquer', plaster: 'plaster', limewash: 'plaster', leather: 'leather', velvet: 'velvet', linen: 'linen', boucle: 'linen', paint: 'plaster' }[finish] || 'plaster');
-// The swatch card: stacked textured finishes with engraved names, made to be screenshotted.
-const trioCard = (c, cls = '') => `<div class="tcard${cls}">${c.colours.map(x => { const L = lab(x.hex).L, tone = L > 70 ? ' light' : L > 45 ? ' mid' : ''; return `<div class="tsw t-${textureOf(x.finish)}${tone}" style="--c:${x.hex}"><span class="tname">${esc(x.name)}</span><span class="tfinish">${esc(x.finish)}</span></div>`; }).join('')}</div>`;
+// The swatch card is one SVG (site/card.mjs), shown inline and rendered to a downloadable image by `npm run cards`,
+// which also measures it. The build stops if the rendered cards no longer match the trios or the card design.
+const trioCard = (c, cls = '') => trioCardSvg(c, { id: 'c' + c.number + (cls ? 's' : ''), cls: 'tcard' + cls });
+const trioFamily = families.find(isTrio);
+if (trioFamily) {
+  const dir = join(src, 'palettes', 'trio-cards'), mf = join(dir, 'manifest.json');
+  const manifest = existsSync(mf) ? JSON.parse(readFileSync(mf, 'utf8')) : null;
+  if (!manifest || manifest.source !== cardSourceHash(trioFamily)) throw new Error('Trio cards are out of date with the trios or the card design. Run `npm run cards` (it renders, measures and saves them), then build again.');
+  mkdirSync(join(out, 'trios'), { recursive: true });
+  for (const c of trioFamily.combinations) copyFileSync(join(dir, cardFile(c)), join(out, 'trios', cardFile(c)));
+  copyFileSync(join(root, 'site', 'fonts', 'bodoni-moda-500.woff2'), (mkdirSync(join(out, 'fonts'), { recursive: true }), join(out, 'fonts', 'bodoni-moda-500.woff2')));
+  trioFamily.cardChecks = manifest;
+}
 const TRIO_PROMPT = `Design and photograph the room this palette card describes (image attached).
 
 Use the three colours as their finishes: the top colour on the walls and the built-in joinery, the middle colour for the main upholstered pieces, and the bottom colour as the soft neutral for the sofa or bed, curtains and ceiling.
@@ -224,7 +236,8 @@ for (const f of families.filter(isTrio)) for (const c of f.combinations) {
 <div class="trio-side"><p class="eyebrow"><a href="/palettes/${f.id}">Trios</a> · No. ${c.number}</p><h1>${esc(c.name)}</h1><p class="lede">${esc(c.intent)}</p>
 <ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><span>${esc({ Hero: 'Walls and built-in joinery', Upholstery: 'Upholstery', Neutral: 'Soft neutral' }[x.role])} · ${esc(x.finish)}</span><code>${x.hex}</code></li>`).join('')}</ul>
 <p class="note">House style: ${esc(f.house)}.</p>
-<h2>Make the room</h2><p>Screenshot the card, start a new ChatGPT chat, attach it, and paste:</p>
+<h2>Make the room</h2><p class="steps">1. Download the card. 2. Start a new ChatGPT chat and attach it. 3. Paste the prompt below.</p>
+<p><a class="button" href="/trios/${cardFile(c)}" download="${cardFile(c)}">Download card</a> <span class="note">${esc(f.cardChecks.size)} image · each swatch measured within ${Math.max(...f.cardChecks.cards[c.number].swatches.map(x => x.deltaE00)).toFixed(1)} of its colour (1.0 or less is not visible)</span></p>
 <div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT)}</pre></div></div></div>
 <script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
 }

@@ -2,6 +2,6 @@
   "name": "architectural-color-studio",
   "private": true,
   "type": "module",
-  "scripts": { "build": "node site/build.mjs" },
+  "scripts": { "build": "node site/build.mjs", "cards": "node scripts/cards.mjs" },
   "devDependencies": { "marked": "^14.1.4" }
 }

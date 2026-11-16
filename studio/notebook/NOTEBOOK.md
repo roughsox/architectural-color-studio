@@ -7,7 +7,7 @@ prompt_version: 0.5
 
 # What the studio is learning about making images
 
-Working notes from making room images in ChatGPT with a screenshot of a palette card. The prompt below is the current best attempt, not the final one. Each lesson says what showed it.
+Working notes from making room images in ChatGPT with a palette card attached. The prompt below is the current best attempt, not the final one. Each lesson says what showed it.
 
 ## Taste notes (from the owner's references, 2026-11-16)
 
@@ -24,7 +24,7 @@ The references are other people's posts, so they are kept out of the site; only 
 
 ## The working prompt for trios (v0.5)
 
-Open a trio from **Palettes → Trios**, screenshot its card, start a new chat, attach it, then paste (each trio page has this with a Copy button):
+Open a trio from **Palettes → Trios**, tap **Download card**, start a new chat, attach the card, then paste (each trio page has this with a Copy button). Before 16 November the cards were screenshots and their textures shifted some colours (Sage, Cognac and Ink most); attempts from then on use the measured download.
 
 ```
 Design and photograph the room this palette card describes (image attached).
