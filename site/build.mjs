@@ -59,11 +59,16 @@ const projects = readdirSync(join(src, 'projects')).sort().map(id => {
   const p = parse(join(dir, 'project.md'));
   const family = families.find(f => f.id === p.meta.family);
   const palette = family.combinations.find(c => c.number === Number(p.meta.palette));
-  const deskNotes = Object.fromEntries(desks.map(d => {
-    const f = join(dir, 'desks', d.id + '.md');
-    return [d.id, existsSync(f) ? parse(f) : null];
-  }));
-  return { id, ...p, family, palette, deskNotes };
+  const nd = join(dir, 'notes');
+  const notes = existsSync(nd) ? readdirSync(nd).filter(f => f.endsWith('.md')).sort().map(f => {
+    const n = parse(join(nd, f));
+    const expert = desks.find(d => d.id === n.meta.expert);
+    if (!expert) throw new Error(`${id}/notes/${f}: unknown expert "${n.meta.expert}"`);
+    return { ...n, expert };
+  }) : [];
+  const turnFile = join(dir, 'your-turn.md');
+  const turn = existsSync(turnFile) ? parse(turnFile) : null;
+  return { id, ...p, family, palette, notes, turn, next: desks.find(d => d.id === p.meta.next) };
 });
 const current = projects.filter(p => p.meta.stage !== 'In the library').pop();
 const approved = projects.filter(p => p.meta.stage === 'In the library');
@@ -116,36 +121,59 @@ page({ title: 'The Guide', path: '/guide', twin: '/guide.md', html: `<p class="f
 write('guide.md', guide.raw);
 
 // ---- Current project
-const deskState = n => n ? (n.meta.status || 'draft') : 'waiting';
+// The owner's three moments; everything else the studio does on its own.
+const ownerMoments = { Queued: 'Choose the palette', Directed: 'Pick a room idea', Approved: 'Approve the piece' };
+const ink = hex => { const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16)); return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#22302b' : '#fff'; };
+const rosterState = (p, d) => p.notes.some(n => n.expert.id === d.id) ? ['spoken', 'Has spoken'] : p.next?.id === d.id ? ['next', 'Up next'] : ['later', 'Joins at ' + d.speaks.filter(s => stages.indexOf(s) >= stages.indexOf(p.meta.stage))[0]];
+const expertName = d => d.name + (d.who ? ` (${d.who})` : '');
 function projectText(p) {
   return `# ${p.meta.title} — ${p.family.label} ${p.palette.number}
 
 Stage: ${p.meta.stage} (stages: ${stages.join(' → ')})
-Status: ${p.meta.status}
+The owner decides at three moments: ${Object.entries(ownerMoments).map(([s, m]) => `${m} (${s})`).join('; ')}. Everything else is the studio's job.
 Updated: ${p.meta.updated}
 
 ## Palette
 ${p.palette.colours.map(c => `- ${c.name} ${c.hex}`).join('\n')}
 
 ${p.body}
+${p.turn ? `
+## Waiting on the owner: ${p.turn.meta.question}
+${p.turn.body}
+` : ''}
+## At the table (in order)
+${p.notes.map(n => `### ${expertName(n.expert)} — ${n.meta.stage} — ${n.meta.date}
+${n.body}
+`).join('\n')}${p.next ? `
+### Up next: ${expertName(p.next)}
+${p.meta.next_note || ''}
+` : ''}
+## The experts
+${desks.map(d => `- ${expertName(d)}: ${d.role} Speaks at: ${d.speaks.join(', ')}. Judges: ${d.judges}`).join('\n')}
 
 ## Image
-None yet.
-
-## Desks
-${desks.map(d => `### ${d.name} — ${d.phase} — ${deskState(p.deskNotes[d.id])}
-Judges: ${d.judges}
-${p.deskNotes[d.id] ? '\n' + p.deskNotes[d.id].body + '\n' : ''}`).join('\n')}`;
+None yet.`;
 }
 function projectHtml(p) {
   const at = stages.indexOf(p.meta.stage);
-  const phases = [...new Set(desks.map(d => d.phase))];
-  return `<p class="eyebrow">Current project</p><h1>${esc(p.meta.title)} <a class="sub" href="/palettes/${p.family.id}#p${p.palette.number}">${esc(p.family.label)} ${p.palette.number}</a></h1>
-<ol class="stages">${stages.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}">${s}</li>`).join('')}</ol>
-<div class="hero"><div class="frame"><span>No image yet</span></div><div class="side">${chips(p.palette.colours)}<p class="note">${esc(p.meta.status)}</p>${md(p.body)}</div></div>
-${phases.map(ph => `<section class="phase"><h2>${esc(ph)}</h2><div class="desks">${desks.filter(d => d.phase === ph).map(d => { const n = p.deskNotes[d.id]; const st = deskState(n); return `
-<article class="desk"><header><h3>${esc(d.name)}</h3><span class="state ${esc(st.split(' ')[0])}">${esc(st)}</span></header>
-<p class="judges">${esc(d.judges)}</p>${n ? `<div class="findings">${md(n.body)}</div>` : ''}</article>`; }).join('')}</div></section>`).join('')}`;
+  const cols = p.palette.colours;
+  const badge = (d, cls = '') => `<span class="badge${cls}" style="background:${d.colour}" title="${esc(d.name)} · badge colour ${esc(d.colourName)}" aria-hidden="true">${esc(d.mark)}</span>`;
+  return `<p class="eyebrow">Current project · <a href="/palettes/${p.family.id}#p${p.palette.number}">${esc(p.family.label)} ${p.palette.number}</a></p>
+<h1 class="pj-title">${esc(p.meta.title)}</h1>
+<div class="band">${cols.map(c => `<div style="background:${c.hex};color:${ink(c.hex)}"><b>${esc(c.name)}</b><code>${c.hex}</code></div>`).join('')}</div>
+<ol class="journey">${stages.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}${ownerMoments[s] ? ' yours' : ''}"><span>${s}</span>${ownerMoments[s] ? `<em>You: ${ownerMoments[s].toLowerCase()}</em>` : ''}</li>`).join('')}</ol>
+<div class="studio"><div class="table">
+${p.turn ? `<section class="turn"><p class="eyebrow">Your turn</p><h2>${esc(p.turn.meta.question)}</h2>${md(p.turn.body)}</section>` : `<p class="note quiet">Nothing is waiting on you. The studio is working.</p>`}
+<h2 class="group">At the table</h2>
+<ol class="feed">${p.notes.map(n => `<li>${badge(n.expert)}<div class="said"><p class="who"><b>${esc(n.expert.name)}</b>${n.expert.who ? ` <small>${esc(n.expert.who)}</small>` : ''}<span class="tag">${esc(n.meta.stage)}</span></p>${md(n.body)}</div></li>`).join('')}
+${p.next ? `<li class="upnext"><span class="badge ghost" style="color:${p.next.colour};border-color:${p.next.colour}" aria-hidden="true">${esc(p.next.mark)}</span><div class="said"><p class="who"><b>${esc(p.next.name)}</b><span class="tag">Up next</span></p><p>${esc(p.meta.next_note || '')}</p></div></li>` : ''}</ol>
+</div>
+<aside class="side">
+<figure class="plate"><div class="room"><span>Room image</span></div><div class="sw">${cols.map(c => `<span style="background:${c.hex}"></span>`).join('')}</div>
+<figcaption>What gets shared: the room beside its exact swatches.</figcaption></figure>
+<h2 class="group">The experts</h2>
+<ul class="roster">${desks.map(d => { const [cls, label] = rosterState(p, d); return `<li class="${cls}">${badge(d, ' sm')}<div><b>${esc(d.name)}${d.who ? ` <small>${esc(d.who)}</small>` : ''}</b><span>${esc(d.role)}</span></div><em>${esc(label)}</em></li>`; }).join('')}</ul>
+</aside></div>`;
 }
 if (current) {
   page({ title: 'Current project', path: '/project', wide: true, twin: '/project.md', html: projectHtml(current) });
