@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.10
+version: 0.11
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -130,6 +130,10 @@ As much work as possible happens before any image is made. Once the owner has pi
 4. **The prompt.** One prompt, built only from what was agreed, in fixed parts: *Subject* (one sentence), *Architecture*, *Colour placement* (each colour by name and exact value, its surface and share), *Materials*, *Light*, *Camera*, *Styling*, *Leave out*, *Format*. Plain language, about 250 words at most.
 
 The experts are one model writing in eight roles. The value of the sit-down is that every concern is forced into the open and resolved before an image is paid for, not that the voices are independent.
+
+### For trios: the room sheet
+
+For a trio the sit-down's output is its **room sheet** (`sheet` in `trios.json`): the room, walls and architecture, focal wall, furniture, objects and camera, described positively and completely, plus the trio's light. The prompt on each trio page is built from it. The build refuses a trio without a complete sheet. The owner runs the prompt once in a new chat, judges the first image with five questions, and a miss changes the sheet, never the chat (Notebook, "The first-try method").
 
 ## 9. Standards every image must meet
 

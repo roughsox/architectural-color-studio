@@ -2,7 +2,7 @@
 title: Notebook
 updated: 2026-11-16
 status: working notes, not final
-prompt_version: 0.6
+prompt_version: 0.7
 ---
 
 # What the studio is learning about making images
@@ -22,9 +22,42 @@ Seven rooms the owner loves, mostly posts pairing a three-colour swatch card wit
 
 The references are other people's posts, so they are kept out of the site; only these notes are recorded.
 
-## The working prompt for trios (v0.6)
+## The first-try method (from 16 November)
 
-Open a trio from **Palettes → Trios**, tap **Download card**, start a new chat, attach the card, then paste the prompt from that trio's page (Copy button). v0.6 changes two things from v0.5, each answering a lesson: **architecture suits the room** (lesson 14) and **light suits the trio** (lesson 13). Each trio page shows its own version; this one is for a cool or green hero such as Sage, Rose, Ivory:
+The goal is a 10/10 room on the **first** image of a new chat. Changes made inside a chat redraw the whole room and invent new things each time (lesson 17), so the work moves to before the image:
+
+1. **The studio writes a room sheet for each trio.** It describes, positively and completely, what is in the room: the room and its size, walls and architecture, the focal wall, the furniture, the few objects, the light and the camera. Everything not described is left out. This is the experts' sit-down, done once, in writing, where it can be checked.
+2. **The prompt is built from the sheet** (v0.7 below). Each trio page shows its own, with a Copy button.
+3. **The owner runs it once, cleanly**: download the card, new chat, attach only the card, paste the prompt, send, add nothing.
+4. **Judge the first image** with the five questions on the trio page (walls read as the hero; upholstery reads as its colour; whites are clean; only what was described is there; you'd post it). Five yeses is a hit.
+5. **A miss changes the sheet, never the chat.** Bring the image back; the studio finds which line of the sheet failed, changes that line, and the next try is a new chat.
+6. **The measure is the first-try hit rate**, per trio and overall. Run each sheet three times in three new chats so luck can be told from method.
+
+Why describing the room should work where long prompts failed (lesson 1): the failed prompts listed *qualities* to show (luxury, contrast, 9/10 per category), and the image maker performed them. A room sheet lists *things* and where they go. Describing things completely also leaves no gaps for its stock props to fill. This is a hypothesis until the hit rate says so.
+
+## The working prompt for trios (v0.7)
+
+Built from each trio's room sheet. This is Sage, Rose, Ivory's:
+
+```
+Photograph this room for a high-end interiors magazine. The attached card gives its three colours and their finishes: match them exactly.
+
+A bedroom in an older townhouse, about 4.5 metres wide, with a 3-metre ceiling. Every wall is lined with simple full-height square panelling painted sage, with matching sage door and window trim. The ceiling and its plain cornice are ivory. One tall window on the left with ivory linen curtains.
+
+The bed is centred on the far wall against bare panelling: a tall rose velvet headboard with a softly arched top, ivory linen bedding and one rose velvet bolster. A dark wood nightstand on each side, each with a small brass swing-arm wall light above it. An ivory boucle bench at the foot of the bed. A pale ivory wool rug on dark oak floorboards.
+
+Two books and a glass of water on the left nightstand. Nothing else on any surface: the panelling is the only decoration.
+
+Soft late-afternoon daylight from the window as the main light, with the lamps on low. The walls match the colour on the card exactly, and whites stay white. Shot straight on from the doorway, camera at chest height, 35 mm lens, the whole bed, both nightstands and the cornice in frame.
+
+Anything not described here is left out. A real photograph, not a rendering: true colours, natural imperfections. Vertical 4:5. No people or text.
+```
+
+## The previous prompt for trios (v0.6)
+
+Replaced by v0.7 the same day, before it was tried. Its two changes (light suits the trio, architecture suits the room) are carried into the room sheets.
+
+v0.6 changes two things from v0.5, each answering a lesson: **architecture suits the room** (lesson 14) and **light suits the trio** (lesson 13). Each trio page shows its own version; this one is for a cool or green hero such as Sage, Rose, Ivory:
 
 ```
 Design and photograph the room this palette card describes (image attached).
@@ -121,14 +154,15 @@ If an image is far off, start a new chat instead of correcting it.
 14. **A house-style checklist gets built whether it fits or not.** The v0.5 prompt lists "panelling or arched built-ins with softly lit shelves", so a bedroom got two library walls. Same lesson as 1: a list is performed literally. The house style should describe a feeling and let the room choose its architecture. *Sage, Rose, Ivory 1.*
 15. **"More luxurious" summons the AI's idea of luxury.** Crystal chandelier, cove lighting, tufting, candles on a gold tray, darker and browner: every generic luxury cue at once, and the image became obviously generated. Compare Plum Drench 7, where "more luxury and intentional, as if designed by an expert" worked: *intentional* and *expert* ask for judgment; *luxurious* asks for props. *Sage, Rose, Ivory 2.*
 16. **This trio has no depth to work with.** Sage and Rose sit at the same lightness (62 and 63), so the walls and the bed merge into one mid-tone; only the floor is dark. The owner's references have a deep hero. Part of the blandness is the palette, not the image maker. *Sage, Rose, Ivory 1; trio data.*
+17. **Every follow-up in the same chat redraws the room and invents.** Asked only to make it "more luxurious", ChatGPT also replaced the chandelier, retufted the bench, swapped the vase and flowers, added a candle and cove lighting, and darkened every colour: things that were right got changed and new things appeared. A follow-up is a new image, not an edit. So the first image has to be right, and fixes belong in the prompt, in a new chat. *Sage, Rose, Ivory 2; Plum Drench 5.*
 
-## To try next (proposed after Sage, Rose, Ivory)
+## Ideas after Sage, Rose, Ivory
 
-Each change answers one lesson above. Three are now in v0.6 and the trio data, and the next Sage, Rose, Ivory run tests them together against attempt 1.
+Each answered a lesson. Three went into v0.6, and from there into the room sheets of v0.7.
 
 - **Done in v0.6 — Light by trio** (lesson 13). For cool or pale heroes: *"soft late-afternoon daylight from a tall window as the main light, a few lamps on low; the walls must match the card colour and whites must stay white."* Keep golden lamplight for deep, warm heroes.
 - **Done in v0.6 — Architecture suits the room** (lesson 14). Replace the built-ins line with *"classic architecture that suits the room: panelled walls and a tall window for a bedroom; arched built-ins for a library or living room."*
-- **A better follow-up than "more luxurious"** (lesson 15): *"Make it feel like a room by a top interior designer: more intentional and restrained, real craft, fewer things. Keep the colours exactly as the card."*
+- **Superseded by lesson 17 — a better follow-up than "more luxurious"** (lesson 15). Kept for play, not for finished pieces: *"Make it feel like a room by a top interior designer: more intentional and restrained, real craft, fewer things. Keep the colours exactly as the card."*
 - **Done — A deeper Sage, Rose, Ivory** (lesson 16): the sage is now `#646F58` (lightness 45, was `#8E9A7E` at 62), so the walls sit clearly darker than the rose bed. Owner agreed 2026-11-16.
 - **Attach the downloaded card** (1080 × 2400) rather than screenshots of the page, so the colour list and page around it don't compete with the card.
 

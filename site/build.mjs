@@ -132,20 +132,29 @@ if (trioFamily) {
   copyFileSync(join(root, 'site', 'fonts', 'bodoni-moda-500.woff2'), (mkdirSync(join(out, 'fonts'), { recursive: true }), join(out, 'fonts', 'bodoni-moda-500.woff2')));
   trioFamily.cardChecks = manifest;
 }
-// Prompt v0.6 for trios. Light suits the trio (Notebook lesson 13); architecture suits the room (lesson 14).
+// Prompt v0.7 for trios: a room sheet per trio, written by the studio before any image (Notebook, "The first-try method").
+// It describes what is in the room, positively and completely, so the image maker has nothing left to invent.
 const TRIO_LIGHT = {
-  golden: 'Light: warm, golden lamplight with soft daylight from a tall window.',
-  daylight: 'Light: soft late-afternoon daylight from a tall window as the main light, with a few lamps on low. The walls must match the colour on the card, and whites must stay white.',
+  golden: 'Warm, golden lamplight with soft daylight from the window.',
+  daylight: 'Soft late-afternoon daylight from the window as the main light, with the lamps on low. The walls match the colour on the card exactly, and whites stay white.',
 };
-const TRIO_PROMPT = c => `Design and photograph the room this palette card describes (image attached).
+const SHEET_PARTS = ['room', 'architecture', 'focal', 'furniture', 'objects', 'camera'];
+const TRIO_PROMPT = c => `Photograph this room for a high-end interiors magazine. The attached card gives its three colours and their finishes: match them exactly.
 
-Use the three colours as their finishes: the top colour on the walls and the built-in joinery, the middle colour for the main upholstered pieces, and the bottom colour as the soft neutral for the sofa or bed, curtains and ceiling.
+${c.sheet.room} ${c.sheet.architecture}
 
-House style: dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic architecture that suits the room (panelled walls and a tall window for a bedroom; arched built-ins with softly lit shelves for a library, study or living room), and one centred focal wall. Restrained, timeless luxury: few accessories, nothing over-matched.
+${c.sheet.focal} ${c.sheet.furniture}
 
-${TRIO_LIGHT[c.light || 'golden']}
+${c.sheet.objects}
 
-A photorealistic photograph for a high-end interiors magazine, shot straight on. Vertical 4:5. No people or text.`;
+${TRIO_LIGHT[c.light || 'golden']} ${c.sheet.camera}
+
+Anything not described here is left out. A real photograph, not a rendering: true colours, natural imperfections. Vertical 4:5. No people or text.`;
+for (const f of families.filter(isTrio)) for (const c of f.combinations) {
+  const missing = SHEET_PARTS.filter(k => !c.sheet || !c.sheet[k]);
+  if (missing.length) throw new Error(`Trio No. ${c.number} (${c.name}): its room sheet needs ${missing.join(', ')}`);
+  if (!TRIO_LIGHT[c.light || 'golden']) throw new Error(`Trio No. ${c.number}: light must be ${Object.keys(TRIO_LIGHT).join(' or ')}`);
+}
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
 const stages = ['Queued', 'Directed', 'Requested', 'Received', 'Reviewed', 'Approved', 'In the library'];
 const guide = parse(join(src, 'guide', 'GUIDE.md'));
@@ -241,9 +250,11 @@ for (const f of families.filter(isTrio)) for (const c of f.combinations) {
 <div class="trio-side"><p class="eyebrow"><a href="/palettes/${f.id}">Trios</a> · No. ${c.number}</p><h1>${esc(c.name)}</h1><p class="lede">${esc(c.intent)}</p>
 <ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><span>${esc({ Hero: 'Walls and built-in joinery', Upholstery: 'Upholstery', Neutral: 'Soft neutral' }[x.role])} · ${esc(x.finish)}</span><code>${x.hex}</code></li>`).join('')}</ul>
 <p class="note">House style: ${esc(f.house)}. Light for this trio: ${c.light === 'daylight' ? 'soft daylight, so the cool colours stay true' : 'warm golden lamplight'}.</p>${c.changed ? `<p class="note">Changed ${esc(c.changed)}</p>` : ''}
-<h2>Make the room</h2><p class="steps">1. Download the card. 2. Start a new ChatGPT chat and attach it. 3. Paste the prompt below.</p>
+<h2>Make the room: first try</h2>
+<ol class="steps"><li>Download the card.</li><li>Start a <b>new</b> ChatGPT chat. Attach only the card, paste the prompt, send. Add nothing.</li><li>Judge the first image with the five questions below. Bring it here either way.</li><li>Never ask for changes in the same chat: it redraws the whole room and invents things. If it missed, the studio changes the prompt and you start a new chat.</li></ol>
 <p><a class="button" href="/trios/${cardFile(c)}" download="${cardFile(c)}">Download card</a> <span class="note">${esc(f.cardChecks.size)} image · each swatch measured within ${Math.max(...f.cardChecks.cards[c.number].swatches.map(x => x.deltaE00)).toFixed(1)} of its colour (1.0 or less is not visible)</span></p>
-<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT(c))}</pre></div></div></div>
+<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT(c))}</pre></div>
+<h2>Is it a hit?</h2><ol class="hit"><li>The walls read as ${esc(c.colours[0].name)} on the card.</li><li>The upholstery reads as ${esc(c.colours[1].name)}.</li><li>Whites and ${esc(c.colours[2].name.toLowerCase())} look clean, not yellow or beige.</li><li>Only what the prompt describes is in the room.</li><li>You would post it as it is.</li></ol><p class="note">Five yeses is a hit. The first-try hit rate is how the studio measures the method.</p></div></div>
 <script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
 }
 
