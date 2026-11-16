@@ -25,7 +25,7 @@ function parse(file) {
 }
 
 const css = readFileSync(join(root, 'site', 'style.css'), 'utf8');
-const nav = [['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library']];
+const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library']];
 
 function page({ title, html, path, wide = false, twin }) {
   write(path === '/' ? 'index.html' : path.slice(1) + '.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
