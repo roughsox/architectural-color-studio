@@ -1,9 +1,9 @@
 ---
-title: Alternative approach, design brief first
+title: Design brief first, version 1
 version: alt-1
 date: 2026-11-16
 author: studio, from the owner's idea
-status: to try, alongside v5
+status: replaced by alt-2
 ---
 
 The owner's idea: before any image, ChatGPT researches and writes how it will design the room, the owner reads it and changes anything, and only on "go" does it create the image. Use it in a **separate ChatGPT project** (with `colors.json`), so it can be compared with v5 on the same palettes.
