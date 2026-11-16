@@ -27,7 +27,7 @@ function parse(file) {
 }
 
 const css = readFileSync(join(root, 'site', 'style.css'), 'utf8');
-const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library'], ['/notebook', 'Notebook']];
+const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library'], ['/notebook', 'Notebook'], ['/instructions', 'Instructions']];
 
 function page({ title, html, path, wide = false, twin }) {
   write(path === '/' ? 'index.html' : path.slice(1) + '.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -329,6 +329,20 @@ ${p.prompt ? `<section class="prompt"><div class="prompt-head"><h2 class="group"
 if (current) {
   page({ title: 'Current project', path: '/project', wide: true, twin: '/project.md', html: projectHtml(current) });
   write('project.md', projectText(current));
+}
+
+// ---- Instructions: the ChatGPT project instructions, newest first, each with a Copy button
+const chatDir = join(src, 'chatgpt');
+const instr = existsSync(chatDir) ? readdirSync(chatDir).filter(f => /^INSTRUCTIONS-v\d+\.md$/.test(f)).map(f => parse(join(chatDir, f)))
+  .sort((a, b) => Number(b.meta.version) - Number(a.meta.version)) : [];
+if (instr.length) {
+  const copyable = h => h.replace(/<pre>/g, '<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>').replace(/<\/pre>/g, '</pre></div>');
+  const [cur, ...older] = instr;
+  page({ title: 'Instructions', path: '/instructions', twin: '/instructions.md', html: `<p class="eyebrow">ChatGPT project · version ${esc(cur.meta.version)} · ${esc(cur.meta.status)}</p><h1>Instructions</h1>
+<div class="notebook">${copyable(md(cur.body))}</div>
+${older.map(o => `<details class="older"><summary>Version ${esc(o.meta.version)} · ${esc(o.meta.date)} · ${esc(o.meta.author)}</summary><div class="notebook">${copyable(md(o.body))}</div></details>`).join('')}
+<script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
+  write('instructions.md', cur.raw);
 }
 
 // ---- Notebook: what the studio is learning about making images (working notes; prompts get a Copy button)
