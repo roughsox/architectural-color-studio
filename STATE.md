@@ -1,34 +1,38 @@
 # Architectural Color Studio — state
 
-_Updated 2026-11-16. Read this first. Keep it to one screen; history goes in `docs/LOG.md`._
+_Updated 2026-11-16 (end of a long session). Read this first. Keep it to one screen; history is in `docs/LOG.md`._
 
 ## What it is
 
-A workshop for the owner to play with colour and rooms, and a production line for social posts: **two slides, a room photograph, then its swatch card.** Live at https://architectural-color-studio.vercel.app (assistants read `/llms.txt`).
+A workshop for the owner to play with colour and rooms, and a source of inspiration posts: **two slides, a room photograph, then its swatch card.** The aim is inspiration, not photographic proof. Live at https://architectural-color-studio.vercel.app.
 
-## How it works now
+## How images are made now
 
-- **Palettes**: seven families (Wada, Studio, Trios, Werner, Ridgway, Japanese, Materials). **Trios** are the current format: three colours, each a finish (hero on the walls, upholstery, soft neutral).
-- **Each trio has** a plain palette card (4:5, same paper grain on every swatch, names only), measured and downloadable from its page, and a one-line request to paste into the ChatGPT project.
-- **The owner makes images in a ChatGPT project** using the instructions on /instructions (current: v2) and short commands such as `#213`.
-- **The Notebook** (`studio/notebook/`) records every attempt with its verdict and the lessons (18 so far). It is the most important record in the project.
+- In **ChatGPT projects**, with Wada's `colors.json` as a project file and instructions from **/instructions** (Copy buttons there).
+- **Leading method: "Design brief first", version 2** (`studio/chatgpt/ALTERNATIVE-design-brief-first-v2.md`, project "Architectural images alternate"). ChatGPT writes a short design brief, waits for "go", makes the image, then the owner refines it with short follow-ups in plain language. Commands: `audit` (imagine the whole room beyond the frame, check placements, improve) and `reset` (back to palette and brief, fix drift).
+- **Also current: instructions v5** (`INSTRUCTIONS-v5.md`, project "Architectural images"): image straight away, same standards.
+- **Best room so far:** the Wada 209 "Blue Salon" (Notebook, Wada 209 alternative group, attempt "final"), reached after about a dozen owner follow-ups ending in a self-audit prompt.
 
-## Where things stand
+## What has been learned (details: Notebook lessons 1–27, `studio/chatgpt/OBSERVATIONS.md`)
 
-- No finished piece yet; the Library is empty.
-- Sage, Rose, Ivory: attempt 1 *closer*, attempt 2 *miss*. 
-- **Current method (owner, 2026-11-16): a ChatGPT project with instructions (`studio/chatgpt/INSTRUCTIONS-v1.md`) and short commands (`#213`, `card #213`).** First results are the best so far (Notebook: Wada 213, 254). v5 is current on /instructions (shorter, from the Wada 209 session), with the alternative approach (design brief first; now version 2, the leading method, with `audit` and `reset` commands) shown open below it, then v4–v1. Best result so far: the Wada 209 Blue Salon from the alternative approach, refined by the owner's own natural-language follow-ups and a self-audit prompt (Notebook lesson 27). The owner's aim is inspiration, not photographic proof. Observations keep collecting in `studio/chatgpt/OBSERVATIONS.md`. The per-trio prompts on the site are superseded by this.
-- **Owner direction (2026-11-16): one main prompt that works for any palette**, not a prompt per palette. The per-trio room sheets and prompts on the site (v0.8) are the wrong direction; replace them with one main prompt once the owner has agreed its wording. Go at the owner's pace: play first, build only what has been agreed.
-- The audit (`docs/AUDIT-2026-11-16.md`) lists what else to improve, in order.
+- Short, natural follow-ups in the owner's words beat long engineered ones. Change a little at a time.
+- Ask for things, not qualities; never name palette colours for art; say what to keep about light, not only what to remove.
+- Follow-ups can't move furniture or architecture; get the layout right in the first image.
+- Asking ChatGPT to audit its own room as a real space works best of all (lesson 27).
+
+## Next
+
+1. The owner pastes alt version 2 into the "alternate" project and tries a **new palette, ideally dark or moody**. Log every image in the Notebook (`studio/notebook/attempts.json` + `img/`), misses included, with a verdict and note.
+2. Compare how many follow-ups each method needs to reach something shareable; fold what works into the next versions.
+3. Later, once the method is settled: the first finished piece in the Library (room + card as two slides), then decide the site's purpose.
 
 ## Open decisions
 
-1. **The priority is great images from ChatGPT.** The site's purpose, the Guide, and any restructuring wait until that is settled (owner, 2026-11-16).
-2. Studio palettes: adjust once the image method is settled; possibly a brief per-palette note that supplements the instructions, never competes with them. The materials score stays for now; whether the natural materials earn their place is open.
+1. The site's purpose, the Guide and any restructuring wait until the image method is settled (owner).
+2. Studio palettes: adjust later; a short per-palette note may supplement the instructions, never compete. Materials score stays for now.
 3. The Current project page stays as a playground.
-4. AI disclosure on posts (platform rules not yet checked).
-5. Where images live once the Library grows past a few dozen pieces.
+4. AI disclosure on posts; where images live once the Library grows.
 
-## Working rules
+## How to work with the owner
 
-See `AGENTS.md`. In short: `main` is the live site; checks run on every build; both accounts pull before starting and before pushing; never force-push.
+Go at the owner's pace: discuss, then build only what is agreed. Be concise. Measure images when useful, but the owner's eye decides. Record the owner's ideas in their words in `docs/LOG.md`. See `AGENTS.md` for building and publishing (`main` publishes automatically; never deploy by hand).
