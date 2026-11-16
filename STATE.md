@@ -66,6 +66,11 @@ Recorded in the owner's words; the planning documents have not been revised to m
 - ChatGPT: to be worked out later, when Codex usage resets. Likely the easy option: something Codex can read and make an image from, then the owner uploads the image here in chat or directly to the site. Not the main focus now.
 - Main focus now: fleshing out the site itself and how it should function. The palette families are a concept the owner loves.
 
+## Owner decisions (2026-11-16, after the audit)
+
+- **The post is two slides:** the room at full 4:5, then its swatch card. A single combined image can be a second export. (Owner agreed with the audit's recommendation.)
+- **The site is also for fun.** "This site is also intended for me to just simply have fun with as someone that enjoys playing with colors and design, designing rooms." The audit's advice to stop adding families and pages is about producing pieces, not about removing the playful parts.
+
 ## Open decisions for the owner
 
 Nothing below has been assumed in a way that is hard to change, but 1–4 block Stage 0.
