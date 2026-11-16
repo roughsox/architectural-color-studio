@@ -3,6 +3,38 @@
     {
       "palette": {
         "family": "wada",
+        "number": 182,
+        "name": "Wada 182: Raw Sienna, Vandyke Brown, Deep Indigo (design brief first, v2)",
+        "label": "Wada No."
+      },
+      "made_with": "Separate ChatGPT project with design brief first, version 2, and Wada's colors.json; request \"Following the instructions, please start the process for WADA number 182\". The first dark palette tested. Chat record (written by ChatGPT): a Google Doc in the owner's Drive",
+      "attempts": [
+        {
+          "n": 1,
+          "image": "wada-182-library-1.jpg",
+          "asked": "ChatGPT wrote a brief, \"The Indigo Library\": a library and music room in a renovated 1930s London townhouse; tall sash windows, white cornices, an opening to a lighter room; one monumental curved Deep Indigo velvet sofa against a long Raw Sienna plaster wall; oak parquet, walnut, pale limestone fireplace, antique brass; a worn Vandyke Brown leather chair; an indigo rug patterned with sienna and brown; cool late-afternoon daylight and one warm reading lamp. Owner: \"Design brief is approved\".",
+          "verdict": "miss",
+          "note": "Owner: \"Not at all happy with this result. It looks like a random dungeon from a random double wide trailer room.\" A low, flat ceiling, a freestanding bookcase against the wall, a piano squeezed into the corner by the window, a stock glass pendant, an amber cast. The palette as a formula: sienna walls, indigo velvet, brown wood and leather. The brief was sound; the image didn't deliver its \"tall\" architecture or its cool daylight. The best part: the doorway to the dining room."
+        },
+        {
+          "n": 2,
+          "image": "wada-182-library-2.jpg",
+          "asked": "The owner's verdict above, nothing more. ChatGPT agreed (\"the ingredients of an expensive room, but none of the conviction\"), proposed a substantial redesign (taller ceilings, plasterwork, a wider room arranged for conversation, reading and music, luminous plaster, one extraordinary sofa, no matching cushions and throw, no amber cast, drop the blue-and-orange rug). Owner: \"Please proceed\".",
+          "verdict": "closer",
+          "note": "Much grander: a fireplace with a fire, a bay of arched windows with an autumn view, a deep cornice, a curved velvet sofa. Old habits back: lit shelves in an arched built-in, a crystal tiered chandelier (hotel), a florist-style berry arrangement on the table and another on the mantel, strong golden sunbeams despite \"no amber cast\". ChatGPT's own later verdict: \"closer to a luxury furniture catalogue\"; \"the palette has become a decorating formula\"."
+        },
+        {
+          "n": 3,
+          "image": "wada-182-library-3.jpg",
+          "asked": "\"Try again. Is this how a stylist would actually incorporate this color palette? And please imagine the entire room before you choose your placement of items and framing\"",
+          "verdict": "closer",
+          "note": "Owner: \"with only two follow up directions I'm actually quite impressed with the third result\"; it \"finally reached kind of the grand nature of the intention\", but is \"still kind of missing how to apply the actual color palette in a way that feels real\". A large drawing room: coffered ceiling, panelled sienna walls, a candle chandelier, tall arched windows, a library seen through a doorway (part of a house). ChatGPT said it would use one indigo piece and weave the rest into textiles, yet the curtains, sofa and ottoman are all indigo; the rug went pale. Three leather chairs, a sofa and an ottoman: edging towards a hotel lounge. Berries and sunbeams remain. Navy velvet, leather and a brass dome lamp in all three images: the idea barely changed while the quality rose."
+        }
+      ]
+    },
+    {
+      "palette": {
+        "family": "wada",
         "number": 209,
         "name": "Wada 209, alternative approach (design brief first)",
         "label": "Wada No."

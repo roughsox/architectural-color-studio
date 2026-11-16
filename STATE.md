@@ -1,6 +1,6 @@
 # Architectural Color Studio — state
 
-_Updated 2026-11-16 (end of a long session). Read this first. Keep it to one screen; history is in `docs/LOG.md`._
+_Updated 2026-11-16. Read this first. Keep it to one screen; history is in `docs/LOG.md`._
 
 ## What it is
 
@@ -22,7 +22,7 @@ A workshop for the owner to play with colour and rooms, and a source of inspirat
 
 ## Next
 
-1. The owner pastes alt version 2 into the "alternate" project and tries a **new palette, ideally dark or moody**. Log every image in the Notebook (`studio/notebook/attempts.json` + `img/`), misses included, with a verdict and note.
+1. **Testing alt v2 on Wada 182** (Raw Sienna, Vandyke Brown, Deep Indigo; Notebook, Wada 182 group). Image 1 a miss, image 3 "quite impressed" after two follow-ups: grand, but the palette is still applied as a formula. The owner is now trying `audit` and `reset`. Log every image, misses included. ChatGPT keeps a Google Doc of each chat (brief + conversation) in the owner's Drive; read it with the Google Docs tool (chatgpt.com share links can't be read from here).
 2. Compare how many follow-ups each method needs to reach something shareable; fold what works into the next versions.
 3. Later, once the method is settled: the first finished piece in the Library (room + card as two slides), then decide the site's purpose.
 
