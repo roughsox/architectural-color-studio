@@ -25,7 +25,7 @@ function parse(file) {
 }
 
 const css = readFileSync(join(root, 'site', 'style.css'), 'utf8');
-const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library']];
+const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library'], ['/notebook', 'Notebook']];
 
 function page({ title, html, path, wide = false, twin }) {
   write(path === '/' ? 'index.html' : path.slice(1) + '.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -256,6 +256,23 @@ if (current) {
   write('project.md', projectText(current));
 }
 
+// ---- Notebook: what the studio is learning about making images (working notes; prompts get a Copy button)
+const nbDir = join(src, 'notebook');
+const notebook = existsSync(join(nbDir, 'NOTEBOOK.md')) ? parse(join(nbDir, 'NOTEBOOK.md')) : null;
+const attempts = existsSync(join(nbDir, 'attempts.json')) ? JSON.parse(readFileSync(join(nbDir, 'attempts.json'), 'utf8')) : null;
+if (notebook) {
+  mkdirSync(join(out, 'notebook', 'img'), { recursive: true });
+  for (const a of attempts?.attempts || []) copyFileSync(join(nbDir, 'img', a.image), join(out, 'notebook', 'img', a.image));
+  const body = md(notebook.body.replace(/^# .*\n/, '')).replace(/<pre>/g, '<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>').replace(/<\/pre>/g, '</pre></div>');
+  const verdict = { good: 'Good', closer: 'Closer', miss: 'Miss' };
+  const timeline = attempts ? `<h2>The first palette, attempt by attempt</h2><p>${esc(attempts.palette.name)} (<a href="/palettes/${attempts.palette.family}#p${attempts.palette.number}">Studio No. ${attempts.palette.number}</a>), made with ${esc(attempts.made_with)}.</p>
+<ol class="attempts">${attempts.attempts.map(a => `<li class="att ${a.verdict}"><figure><img src="/notebook/img/${a.image}" alt="Attempt ${a.n} for ${esc(attempts.palette.name)}" loading="lazy"><span class="att-tag">${a.n} · ${verdict[a.verdict] || a.verdict}</span></figure><p class="asked"><b>Asked:</b> ${esc(a.asked)}</p><p>${esc(a.note)}</p></li>`).join('')}</ol>` : '';
+  page({ title: 'Notebook', path: '/notebook', wide: true, twin: '/notebook.md', html: `<p class="eyebrow">Notebook · ${esc(notebook.meta.status)} · updated ${esc(notebook.meta.updated)}</p><h1>What the studio is learning about making images</h1>
+<div class="notebook">${body}</div>${timeline}
+<script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
+  write('notebook.md', notebook.raw + (attempts ? '\n## Attempts: ' + attempts.palette.name + '\n' + attempts.attempts.map(a => `${a.n}. [${a.verdict}] Asked: ${a.asked} Result: ${a.note}`).join('\n') + '\n' : ''));
+}
+
 // ---- Library: finished pieces only (room beside its swatches). A project enters it at stage "In the library";
 // its finished image is the file named in the project's `image:` field, copied to /library/.
 const pieceImage = p => {
@@ -359,16 +376,22 @@ Human pages: ${nav.map(([h]) => SITE + h).join(' · ')}
 Palette families: ${SITE}/palettes.json — ${families.map(f => `${f.title} (${countLabel(f)}): ${SITE}/palettes/${f.id}.json`).join('; ')}
 
 ================================================================
-PART 1 OF 2 — THE GUIDE (version ${guide.meta.version})
+PART 1 OF 3 — THE GUIDE (version ${guide.meta.version})
 ================================================================
 
 ${guide.body}
 
 ================================================================
-PART 2 OF 2 — THE CURRENT PROJECT
+PART 2 OF 3 — THE CURRENT PROJECT
 ================================================================
 
 ${current ? projectText(current) : 'There is no current project.'}
+
+================================================================
+PART 3 OF 3 — THE NOTEBOOK (making images; working notes)
+================================================================
+
+${notebook ? notebook.body : 'No notebook yet.'}
 
 ================================================================
 END
