@@ -127,7 +127,7 @@ page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json',
 <div class="about"><p class="eyebrow">${isCombos(f) ? (size(f) ? countLabel(f) : 'Combinations · none yet') : isMat(f) ? 'Natural materials · ' + countLabel(f) + ' as colour ranges' : 'Colour collection · ' + countLabel(f)}</p><h2>${esc(f.title)}</h2><p>${esc(f.description)}</p>
 <a class="button" href="/palettes/${f.id}">Open the ${esc(f.name)} family</a></div></article>`).join('')}
 <article class="family more"><div class="about"><p class="eyebrow">Room for more</p><h2>Further families</h2><p>Other professional palettes, looks and colour families can be added here, each with its own description and page.</p></div></article></div>` });
-write('palettes.json', JSON.stringify(families.map(({ combinations, colours, ...f }) => ({ ...f, count: (combinations || colours || f.materials).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
+write('palettes.json', JSON.stringify(families.map(({ combinations, colours, materials, ...f }) => ({ ...f, count: (combinations || colours || materials).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
 
 const filterScript = `<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('[data-n]:not(button)').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>`;
 function combosHtml(f) {
