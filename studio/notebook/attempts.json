@@ -57,6 +57,13 @@
           "asked": "Same chat: one framed painting on the right wall, \"a loose, modern still life or abstract in ivory buff, yellow orange and soft salvia blue\"; a quieter, softer view outside with a stone terrace, a clipped hedge and a potted orange tree.",
           "verdict": "closer",
           "note": "Owner: \"this room is actually starting to excite me\". The view outside is calmer and the potted orange tree echoes the palette naturally. But the painting looks unnatural: it is squeezed in so the whole frame fits inside the picture, rather than hung where it would hang in the real room. And it is too on the nose: a still life in exactly the palette colours, because the studio's prompt asked for exactly that."
+        },
+        {
+          "n": 8,
+          "image": "wada-209-breakfast-8.jpg",
+          "asked": "Same chat: change only the artwork; imagine the real room first, hang one piece where a designer would, let the photograph crop it; complementary, \"collected rather than matched\", no need to repeat the palette.",
+          "verdict": "closer",
+          "note": "The art now hangs naturally and is cropped by the edge, but without direction it fell back to its default: a generic landscape in a gilt frame, \"off the shelf from Goodwill\". The bench still reads off-centre: measured, it is centred on the window, but the window and bench together sit slightly left of the back wall's centre, so the panels either side differ. Follow-ups have not moved it: once the composition is set, edits keep its geometry."
         }
       ]
     },
