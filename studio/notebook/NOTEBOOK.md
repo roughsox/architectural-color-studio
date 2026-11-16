@@ -56,7 +56,7 @@ If an image is far off, start a new chat instead of correcting it.
 ## Lessons so far
 
 1. **Set a standard, not a list of rules.** A one-line follow-up ("more luxury and intentional, as if designed by an expert; try other room types") beat every long prompt. Long rule lists get obeyed literally: each rule is performed, none of it is designed. *Shown by attempts 5 and 7.*
-2. **Let the room type float.** Plum Drench belongs in a bedroom, not a living room. Choosing the room did more than any wording about colour or light. *Attempt 7.*
+2. **Architecture matters more than the room type.** Letting it choose the room helped (a bedroom suited Plum Drench), but a living room worked too once it had real architecture: an arched window, arched built-ins, a beamed ceiling and one focal point. The early living rooms failed because they were furniture crops with no structure. *Attempts 6, 7 and 8.*
 3. **Things that touch must contrast.** A purple sofa on a purple rug against purple walls reads as one block. *Attempts 1 and 2.*
 4. **Respect the palette's roles.** The pale field colour was missing from the first image entirely: every surface sat in the dark half of the palette (measured lightness 18–51 against a field of 73). *Attempt 1.*
 5. **Don't over-correct.** Taking colour away from the big pieces turned the palette into a few accessories in a grey room. *Attempt 3.*
@@ -65,6 +65,7 @@ If an image is far off, start a new chat instead of correcting it.
 8. **Edit for taste, restart for technique.** Same-chat follow-ups about taste improved the image; same-chat fixes to lighting just laid a filter over it. *Attempt 5.*
 9. **Read the palette's own sentence.** "Lifted by one mustard throw" was ignored when the prompt described colours itself. Pointing it at the palette card as the brief fixed it. *Attempts 2 and 6.*
 10. **Expect to choose, not to get it first time.** About one in two or three attempts is good; regenerating and picking beats repairing.
+11. **Asking it to review itself helps, even loosely.** A general "review your own work and improve it" produced one of the best results; the scorecard is a stricter version to try next. *Attempt 8.*
 
 ## Still to work out
 

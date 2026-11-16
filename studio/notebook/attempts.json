@@ -1,13 +1,66 @@
 {
-  "palette": { "family": "studio", "number": 22, "name": "Plum Drench" },
+  "palette": {
+    "family": "studio",
+    "number": 22,
+    "name": "Plum Drench"
+  },
   "made_with": "ChatGPT, from a screenshot of the palette card",
   "attempts": [
-    { "n": 1, "image": "plum-drench-1.jpg", "asked": "First short prompt: photorealistic room from this palette, soft ambient lighting.", "verdict": "miss", "note": "Everything in the dark half of the palette; the pale field colour is missing. Amber light browns the mustard and the steel." },
-    { "n": 2, "image": "plum-drench-2.jpg", "asked": "Revision: lilac walls, keep the plum sofa, mulberry rug.", "verdict": "miss", "note": "Walls fixed, but a purple sofa on a purple rug. The mustard ended up on a chair, not the throw the palette asks for." },
-    { "n": 3, "image": "plum-drench-3.jpg", "asked": "New chat: item-by-item placement plan with a contrast rule.", "verdict": "miss", "note": "Over-corrected: grey sofa, pale rug, the palette reduced to a few pieces. Light too white and neutral." },
-    { "n": 4, "image": "plum-drench-4.jpg", "asked": "General prompt: the palette card is the brief, use your own judgment.", "verdict": "closer", "note": "The palette commits again and the pale rug separates the sofa. Light flat and clinical." },
-    { "n": 5, "image": "plum-drench-5.jpg", "asked": "Same chat: warmer, early-evening light.", "verdict": "miss", "note": "A warm filter over the whole image: salmon walls, over-processed, the cove glow looks forced." },
-    { "n": 6, "image": "plum-drench-6.jpg", "asked": "Shorter prompt: light as a moment, colours true, never filtered.", "verdict": "closer", "note": "Competent but generic: a tight crop of furniture, stock styling, no architecture." },
-    { "n": 7, "image": "plum-drench-7.jpg", "asked": "Same chat, one line: more luxury and intentional, as if designed by an expert; try other room types.", "verdict": "good", "note": "A bedroom. Real architecture, one focal point, the palette used with intention, natural light. Still some stock styling." }
+    {
+      "n": 1,
+      "image": "plum-drench-1.jpg",
+      "asked": "First short prompt: photorealistic room from this palette, soft ambient lighting.",
+      "verdict": "miss",
+      "note": "Everything in the dark half of the palette; the pale field colour is missing. Amber light browns the mustard and the steel."
+    },
+    {
+      "n": 2,
+      "image": "plum-drench-2.jpg",
+      "asked": "Revision: lilac walls, keep the plum sofa, mulberry rug.",
+      "verdict": "miss",
+      "note": "Walls fixed, but a purple sofa on a purple rug. The mustard ended up on a chair, not the throw the palette asks for."
+    },
+    {
+      "n": 3,
+      "image": "plum-drench-3.jpg",
+      "asked": "New chat: item-by-item placement plan with a contrast rule.",
+      "verdict": "miss",
+      "note": "Over-corrected: grey sofa, pale rug, the palette reduced to a few pieces. Light too white and neutral."
+    },
+    {
+      "n": 4,
+      "image": "plum-drench-4.jpg",
+      "asked": "General prompt: the palette card is the brief, use your own judgment.",
+      "verdict": "closer",
+      "note": "The palette commits again and the pale rug separates the sofa. Light flat and clinical."
+    },
+    {
+      "n": 5,
+      "image": "plum-drench-5.jpg",
+      "asked": "Same chat: warmer, early-evening light.",
+      "verdict": "miss",
+      "note": "A warm filter over the whole image: salmon walls, over-processed, the cove glow looks forced."
+    },
+    {
+      "n": 6,
+      "image": "plum-drench-6.jpg",
+      "asked": "Shorter prompt: light as a moment, colours true, never filtered.",
+      "verdict": "closer",
+      "note": "Competent but generic: a tight crop of furniture, stock styling, no architecture."
+    },
+    {
+      "n": 7,
+      "image": "plum-drench-7.jpg",
+      "asked": "Same chat, one line: more luxury and intentional, as if designed by an expert; try other room types.",
+      "verdict": "good",
+      "note": "A bedroom. Real architecture, one focal point, the palette used with intention, natural light. Still some stock styling."
+    },
+    {
+      "n": 8,
+      "image": "plum-drench-8.jpg",
+      "asked": "Same chat: asked it to review its own work (in the owner's own general words, not the scorecard).",
+      "verdict": "good",
+      "note": "Back to a living room, but with architecture: arched window, arched built-in bookcases, beamed ceiling, fireplace as the focal point. Pale walls, deep plum built-ins, plum seating on a pale rug, one mustard throw. Natural low sun and lamps. Still candles; the sun patch leans golden."
+    }
   ]
 }
