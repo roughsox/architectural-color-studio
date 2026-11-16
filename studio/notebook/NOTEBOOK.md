@@ -97,6 +97,15 @@ Seven rooms the owner loves, mostly posts pairing a three-colour swatch card wit
 - **Restrained, classic luxury.** Few accessories, nothing over-matched.
 - **The swatch card is half the post.** Textured finishes (plaster, leather) with engraved serif names.
 
+
+**Second look (eleven posts from the account that started the project, 2026-11-16).** What makes them work, beyond their palettes:
+
+- **Each colour gets one big place, in one material.** Walls in one colour (often textured plaster or panelling, trim painted the same), one hero piece of upholstery in the second (leather, velvet, bouclé), the third on the rug, bedding or floor. Not scattered: no colour repeats on curtains, cushions, throws and art as well. Wada 182 failed by scattering, not by colouring big surfaces.
+- **Their palettes are already room palettes.** Almost every one has a neutral (cream, sand, ivory, linen) and a material (walnut, blonde wood, cognac leather, chocolate). Wada's palettes rarely do, so ours must translate: decide which Wada colour can be the walls, which is a material, and what neutral foundation it needs.
+- **The swatch card shows each colour as its material** (plaster, leather, linen, wood), so the card already tells you how the room is built.
+- **One clear, calm picture.** Often straight on and symmetrical around one focal wall (a fireplace, a bed, a desk); one or two pieces of furniture; few objects; tidy rather than lived-in; soft, even light with no sunbeams, the same muted grade in every post. You read palette to room in a second, which is what lets a viewer imagine their own room.
+- **Not to copy:** cove lighting, crystal chandeliers, lit built-ins and stock art appear here too.
+
 The references are other people's posts, so they are kept out of the site; only these notes are recorded.
 
 ## Still to work out
