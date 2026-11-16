@@ -3,7 +3,7 @@ title: ChatGPT project instructions, v1
 version: 1
 date: 2026-11-16
 author: owner
-status: in use; the first method that has worked well
+status: replaced by v2
 ---
 
 Written by the owner and used as the instructions of a ChatGPT project, with Wada's `colors.json` uploaded as a project file. Images are then made with short commands such as `#213` or `card #213`. Kept verbatim.

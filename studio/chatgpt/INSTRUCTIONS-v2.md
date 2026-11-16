@@ -3,7 +3,7 @@ title: ChatGPT project instructions, v2
 version: 2
 date: 2026-11-16
 author: studio, from the owner's v1
-status: current; to be tested against v1 on Wada 213 and 254
+status: replaced by v3
 ---
 
 Paste everything in the box into the instructions of a ChatGPT project that has Wada's `colors.json` as a project file. Then use the short commands.

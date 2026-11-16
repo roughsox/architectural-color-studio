@@ -1,7 +1,7 @@
 ---
 title: What to change in the next instructions
 updated: 2026-11-16
-status: collecting; v3 is written only when the owner says the list is ready
+status: items 1–7 went into v3 (2026-11-16); item 8 is a site change still to do
 ---
 
 Observations from images made with the current instructions, each with the change it suggests. The owner decides when there are enough to write the next version. Images and verdicts are in the Notebook.
