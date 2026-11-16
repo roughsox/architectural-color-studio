@@ -103,6 +103,32 @@ function checkStudio(c) {
   }
 }
 families.find(f => f.id === 'studio')?.combinations.forEach(checkStudio);
+
+// ---- Trios: three colours, each a finish (Hero on walls and joinery, Upholstery, Neutral). Checked on every build.
+const TRIO_ROLES = ['Hero', 'Upholstery', 'Neutral'];
+const isTrio = f => f.format === 'trio';
+function checkTrio(c) {
+  const fail = m => { throw new Error(`Trio No. ${c.number} (${c.name}): ${m}`); };
+  if (c.colours.length !== 3 || TRIO_ROLES.some((r, i) => c.colours[i].role !== r)) fail('needs exactly three colours in order: Hero, Upholstery, Neutral');
+  for (const x of c.colours) if (!/^#[0-9A-Fa-f]{6}$/.test(x.hex) || !x.finish) fail(`${x.name} needs a colour value and a finish`);
+  const [h, u, n] = c.colours.map(x => lab(x.hex));
+  if (Math.abs(h.L - n.L) < 25) fail('hero and neutral need at least 25 points of lightness between them');
+  const d = (p, q) => Math.hypot(p.L - q.L, p.a - q.a, p.b - q.b);
+  if (d(h, u) < 20 || d(u, n) < 20 || d(h, n) < 20) fail('every pair of colours must differ by at least 20');
+}
+families.filter(isTrio).forEach(f => f.combinations.forEach(checkTrio));
+const textureOf = finish => ({ lacquer: 'lacquer', plaster: 'plaster', limewash: 'plaster', leather: 'leather', velvet: 'velvet', linen: 'linen', boucle: 'linen', paint: 'plaster' }[finish] || 'plaster');
+// The swatch card: stacked textured finishes with engraved names, made to be screenshotted.
+const trioCard = (c, cls = '') => `<div class="tcard${cls}">${c.colours.map(x => { const L = lab(x.hex).L, tone = L > 70 ? ' light' : L > 45 ? ' mid' : ''; return `<div class="tsw t-${textureOf(x.finish)}${tone}" style="--c:${x.hex}"><span class="tname">${esc(x.name)}</span><span class="tfinish">${esc(x.finish)}</span></div>`; }).join('')}</div>`;
+const TRIO_PROMPT = `Design and photograph the room this palette card describes (image attached).
+
+Use the three colours as their finishes: the top colour on the walls and the built-in joinery, the middle colour for the main upholstered pieces, and the bottom colour as the soft neutral for the sofa or bed, curtains and ceiling.
+
+House style: dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic panelling or arched built-ins with softly lit shelves, and one centred focal wall. Restrained, timeless luxury: few accessories, nothing over-matched.
+
+Light: warm, golden lamplight with soft daylight from a tall window.
+
+A photorealistic photograph for a high-end interiors magazine, shot straight on. Vertical 4:5. No people or text.`;
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
 const stages = ['Queued', 'Directed', 'Requested', 'Received', 'Reviewed', 'Approved', 'In the library'];
 const guide = parse(join(src, 'guide', 'GUIDE.md'));
@@ -144,7 +170,7 @@ page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json',
 write('palettes.json', JSON.stringify(families.map(({ combinations, colours, materials, ...f }) => ({ ...f, count: (combinations || colours || materials).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
 
 const filterScript = `<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('[data-n]:not(button)').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>`;
-const colourList = c => `<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>${esc(x.use ? 'Use: ' + x.use : 'Materials')}</small></span></li>`).join('')}</ul>`;
+const colourList = c => `<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>Materials</small></span></li>`).join('')}</ul>`;
 const palTitle = (f, c) => { const st = statusOf(f, c.number); return `<h2>${c.name ? `${esc(c.name)} <small class="num">No. ${c.number}</small>` : `No. ${c.number}`}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>`; };
 // Open any folded section that holds the palette named in the address (e.g. /palettes/studio#p7).
 const openTarget = `<script>(function(){var t=location.hash&&document.getElementById(location.hash.slice(1));for(var e=t;e;e=e.parentElement)if(e.tagName==='DETAILS')e.open=true;if(t)t.scrollIntoView();})()</script>`;
@@ -189,9 +215,18 @@ for (const f of families) {
   page({ title: f.title, path: '/palettes/' + f.id, wide: true, twin: `/palettes/${f.id}.json`, html: `
 <p class="eyebrow"><a href="/palettes">Palette families</a> / ${esc(f.name)}</p><h1>${esc(f.title)}</h1>
 <p class="lede">${esc(f.description)}</p>
-${isCombos(f) ? combosHtml(f) : isMat(f) ? materialsHtml(f) : coloursHtml(f)}
+${isTrio(f) ? `<div class="tgrid">${f.combinations.map(c => `<a class="tlink" id="p${c.number}" href="/trios/${c.number}">${trioCard(c, ' small')}<b>${esc(c.name)}</b><span>${esc(c.intent)}</span></a>`).join('')}</div>` : isCombos(f) ? combosHtml(f) : isMat(f) ? materialsHtml(f) : coloursHtml(f)}
 <p class="note">${esc(f.note)} Data: ${esc(f.data)}.</p>` });
   write(`palettes/${f.id}.json`, JSON.stringify(f));
+}
+for (const f of families.filter(isTrio)) for (const c of f.combinations) {
+  page({ title: c.name, path: '/trios/' + c.number, wide: true, html: `<div class="trio-page">${trioCard(c)}
+<div class="trio-side"><p class="eyebrow"><a href="/palettes/${f.id}">Trios</a> · No. ${c.number}</p><h1>${esc(c.name)}</h1><p class="lede">${esc(c.intent)}</p>
+<ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><span>${esc({ Hero: 'Walls and built-in joinery', Upholstery: 'Upholstery', Neutral: 'Soft neutral' }[x.role])} · ${esc(x.finish)}</span><code>${x.hex}</code></li>`).join('')}</ul>
+<p class="note">House style: ${esc(f.house)}.</p>
+<h2>Make the room</h2><p>Screenshot the card, start a new ChatGPT chat, attach it, and paste:</p>
+<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT)}</pre></div></div></div>
+<script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
 }
 
 // ---- Guide
@@ -339,7 +374,7 @@ ${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? 
   const byName = n => M.find(m => m.name === n);
   const band = m => 'linear-gradient(90deg,' + m.light + ',' + m.typical + ' 50%,' + m.dark + ')';
   let at = Math.floor(Date.now() / 864e5) % P.length, tag = '', paints, mats, ranked, rAt, swapAt;
-  const paintsOf = i => P[i][3].map(([name, hex, role]) => role ? { name, hex, role } : { name, hex });
+  const paintsOf = i => P[i][3].map(([name, hex, role]) => ['Field', 'Weight', 'Accent', 'Bridge'].includes(role) ? { name, hex, role } : { name, hex });
   const render = (pop) => {
     const [fid, label, n, cs, , title] = P[at];
     const sc = SCHEME.score(paints, mats);

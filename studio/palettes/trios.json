@@ -1,0 +1,103 @@
+{
+ "order": 2.5,
+ "id": "trios",
+ "kind": "combinations",
+ "format": "trio",
+ "name": "Trios",
+ "label": "Trio No.",
+ "title": "Trios",
+ "description": "Three colours, each a finish: one hero colour drenched over the walls and built-in joinery, one for the upholstery, and one soft neutral to breathe. Each trio has its own card, made to be screenshotted and handed to the image maker, and to sit beside the finished room.",
+ "source": "Architectural Color Studio",
+ "data": "Made in the studio; colours and names chosen by the studio",
+ "note": "House style for every trio: dark wood floors, brass lighting, classic panelling or arched built-ins, one centred focal wall, warm lamplight.",
+ "house": "dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic panelling or arched built-ins with softly lit shelves, one centred focal wall",
+ "series": [
+  {
+   "name": "Trios",
+   "about": "Three colours, three finishes, one room."
+  }
+ ],
+ "combinations": [
+  {
+   "number": 1,
+   "name": "Aubergine, Saffron, Bone",
+   "series": "Trios",
+   "intent": "A lacquered aubergine study with one saffron velvet chair, and bone linen to let it breathe.",
+   "made": "2026-11-16",
+   "colours": [
+    {
+     "name": "Aubergine",
+     "hex": "#4A2A3E",
+     "role": "Hero",
+     "finish": "lacquer"
+    },
+    {
+     "name": "Saffron",
+     "hex": "#C8902E",
+     "role": "Upholstery",
+     "finish": "velvet"
+    },
+    {
+     "name": "Bone",
+     "hex": "#E8DFD0",
+     "role": "Neutral",
+     "finish": "linen"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "name": "Ink, Cognac, Chalk",
+   "series": "Trios",
+   "intent": "An ink-blue library with cognac leather worn soft, and chalk-white linen and ceiling.",
+   "made": "2026-11-16",
+   "colours": [
+    {
+     "name": "Ink",
+     "hex": "#1F2E3F",
+     "role": "Hero",
+     "finish": "plaster"
+    },
+    {
+     "name": "Cognac",
+     "hex": "#9A5A2E",
+     "role": "Upholstery",
+     "finish": "leather"
+    },
+    {
+     "name": "Chalk",
+     "hex": "#ECE6DA",
+     "role": "Neutral",
+     "finish": "linen"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "name": "Sage, Rose, Ivory",
+   "series": "Trios",
+   "intent": "A sage limewashed bedroom with a rose velvet headboard, and ivory for everything else.",
+   "made": "2026-11-16",
+   "colours": [
+    {
+     "name": "Sage",
+     "hex": "#8E9A7E",
+     "role": "Hero",
+     "finish": "plaster"
+    },
+    {
+     "name": "Rose",
+     "hex": "#C08A86",
+     "role": "Upholstery",
+     "finish": "velvet"
+    },
+    {
+     "name": "Ivory",
+     "hex": "#F0EADC",
+     "role": "Neutral",
+     "finish": "boucle"
+    }
+   ]
+  }
+ ]
+}

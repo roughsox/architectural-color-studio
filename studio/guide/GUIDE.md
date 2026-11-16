@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.7
+version: 0.8
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -108,6 +108,10 @@ The site scores every scheme before any image exists. The rules are established 
 Every material also says **how a designer would use it** (for example *walnut: in small doses, one table, frames or a single piece of furniture*), because a material with no sense of scale takes over the room. For the same reason, no paint colour may be named after a material.
 
 Rules 1, 2, 4 and 5 can cost points; the rest of the score rewards undertone affinity, an even light-to-dark ladder and depth between the materials. **85 or more: cohesive. 70–84: works with care. Below 70: fights itself.** A studio palette needs 85 to be published. On the home page the owner can swap either material or ask for other naturals, and the score updates as they play.
+
+### Trios
+
+A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and the built-in joinery and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, panelling or arched built-ins, one centred focal wall, warm lamplight. The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card made to be screenshotted for the image maker and placed beside the finished room.
 
 ## 8. The sit-down: everything before the image
 

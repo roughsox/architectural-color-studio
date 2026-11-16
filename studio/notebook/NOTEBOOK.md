@@ -2,14 +2,43 @@
 title: Notebook
 updated: 2026-11-16
 status: working notes, not final
-prompt_version: 0.4
+prompt_version: 0.5
 ---
 
 # What the studio is learning about making images
 
 Working notes from making room images in ChatGPT with a screenshot of a palette card. The prompt below is the current best attempt, not the final one. Each lesson says what showed it.
 
-## The working prompt (v0.4)
+## Taste notes (from the owner's references, 2026-11-16)
+
+Seven rooms the owner loves, mostly posts pairing a three-colour swatch card with a room. What they share:
+
+- **Three colours, each a finish.** One hero colour drenched over the walls and the built-in joinery (emerald plaster, peacock panelling, graphite cabinetry), one upholstery colour (amber or tobacco leather, rose velvet), one soft neutral (cream, parchment, putty).
+- **The hero colour is usually deep and saturated, and it dominates.** The opposite of the studio's earlier assumption that the lightest colour covers most of the room.
+- **The same house style every time.** Dark wood floors; brass lighting (sconces, picture lights, a chandelier); panelling or arched built-ins with softly lit shelves; one centred focal wall, shot straight on; a light sofa or bed against the coloured walls.
+- **Warm, golden lamplight.** What the owner dislikes is a filter over the whole image, not warm light.
+- **Restrained, classic luxury.** Few accessories, nothing over-matched.
+- **The swatch card is half the post.** Textured finishes (plaster, leather) with engraved serif names.
+
+The references are other people's posts, so they are kept out of the site; only these notes are recorded.
+
+## The working prompt for trios (v0.5)
+
+Open a trio from **Palettes → Trios**, screenshot its card, start a new chat, attach it, then paste (each trio page has this with a Copy button):
+
+```
+Design and photograph the room this palette card describes (image attached).
+
+Use the three colours as their finishes: the top colour on the walls and the built-in joinery, the middle colour for the main upholstered pieces, and the bottom colour as the soft neutral for the sofa or bed, curtains and ceiling.
+
+House style: dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic panelling or arched built-ins with softly lit shelves, and one centred focal wall. Restrained, timeless luxury: few accessories, nothing over-matched.
+
+Light: warm, golden lamplight with soft daylight from a tall window.
+
+A photorealistic photograph for a high-end interiors magazine, shot straight on. Vertical 4:5. No people or text.
+```
+
+## The earlier prompt for four-colour studio palettes (v0.4)
 
 Start a new chat, attach a screenshot of the palette card, then paste:
 
@@ -61,7 +90,7 @@ If an image is far off, start a new chat instead of correcting it.
 4. **Respect the palette's roles.** The pale field colour was missing from the first image entirely: every surface sat in the dark half of the palette (measured lightness 18–51 against a field of 73). *Attempt 1.*
 5. **Don't over-correct.** Taking colour away from the big pieces turned the palette into a few accessories in a grey room. *Attempt 3.*
 6. **Describe light as a moment, not as fixtures.** Listing "cove lighting, lamps, fire" made it show each one off; the ceiling glow looked forced. "Soft daylight and a few lamps already on" reads as natural. *Attempts 5 and 7.*
-7. **Warm, but not orange.** Pure neutral white looked clinical; amber light browned the mustard and turned the walls salmon. Ask for warm and inviting with true colours. *Attempts 4 and 5.*
+7. **Warm, but not filtered.** Pure neutral white looked clinical; a warm filter over the whole image turned the walls salmon. The owner's references show warm, golden lamplight is wanted: the problem is a filter, not warmth. *Attempts 4 and 5; taste notes.*
 8. **Edit for taste, restart for technique.** Same-chat follow-ups about taste improved the image; same-chat fixes to lighting just laid a filter over it. *Attempt 5.*
 9. **Read the palette's own sentence.** "Lifted by one mustard throw" was ignored when the prompt described colours itself. Pointing it at the palette card as the brief fixed it. *Attempts 2 and 6.*
 10. **Expect to choose, not to get it first time.** About one in two or three attempts is good; regenerating and picking beats repairing.
@@ -74,6 +103,7 @@ If an image is far off, start a new chat instead of correcting it.
 
 ## Still to work out
 
-- Whether v0.4 works first time across very different palettes (try Lisbon, Citrine Lamp, Smoky Blue).
+- Whether trios with prompt v0.5 hit the standard more often: three trios, three generations each, to get a hit rate.
+- Whether the studio's four-colour palettes should be recast as trios.
 - Generic styling it keeps reaching for (hydrangeas, candles on a tray, landscape paintings) without naming them in the prompt.
 - How the image gets from ChatGPT to the site, and how the studio's review (measured colour, the experts) fits after it.
