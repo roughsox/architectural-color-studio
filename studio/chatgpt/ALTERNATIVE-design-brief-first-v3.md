@@ -3,7 +3,7 @@ title: Directions first (design brief first, version 3)
 version: alt-3
 date: 2026-11-16
 author: studio, from the owner's Wada 182 session
-status: leading method, to test; use in its own ChatGPT project
+status: set aside for version 6
 ---
 
 Rebuilt from the Wada 182 session rather than added to. ChatGPT researches the palette and offers three real directions to choose from (different rooms, not variations of one); you pick, or answer a few questions; it designs the house first and adds colour as a few deliberate decisions. Paste the box into the instructions of a separate ChatGPT project that has Wada's `colors.json` as a project file.

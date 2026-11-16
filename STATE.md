@@ -10,10 +10,8 @@ A workshop for the owner to play with colour and rooms, and a source of inspirat
 
 ## How images are made now
 
-- In **ChatGPT projects**, with Wada's `colors.json` as a project file and instructions from **/instructions** (Copy buttons there).
-- **Leading method: "Directions first", version 3** (`studio/chatgpt/ALTERNATIVE-design-brief-first-v3.md`, project "Architectural images alternate"), to test. ChatGPT researches the palette, offers three different directions (room types too) with options or a few questions; the owner chooses; it designs the house first and adds colour as two or three decisions, most of the room not palette colour. Commands: `audit`, `reset`, `new directions`, `three takes`. Version 2 (a single brief) is kept folded.
-- **Also current: instructions v5** (`INSTRUCTIONS-v5.md`, project "Architectural images"): image straight away, same standards.
-- **Best room so far:** the Wada 209 "Blue Salon" (Notebook, Wada 209 alternative group, attempt "final"), reached after about a dozen owner follow-ups ending in a self-audit prompt.
+- **Instructions v6** (`studio/chatgpt/INSTRUCTIONS-v6.md`, on /instructions): the owner's own v1, which made the Wada 213 living room first try, plus a short House paragraph and a `#123 dining room` command. Later versions (v2–v5, the alternatives) removed what made v1 work; kept for reference only. Don't add rules.
+- Swatch cards: still open. The v1 card style is a starting point, not settled.
 
 ## What has been learned (details: Notebook lessons 1–27, `studio/chatgpt/OBSERVATIONS.md`)
 

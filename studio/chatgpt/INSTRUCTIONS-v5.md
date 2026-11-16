@@ -3,7 +3,7 @@ title: ChatGPT project instructions, v5
 version: 5
 date: 2026-11-16
 author: studio, from the Wada 209 session
-status: current
+status: replaced by v6
 ---
 
 Paste everything in the box into the instructions of a ChatGPT project that has Wada's `colors.json` as a project file. Ask with short commands (`#209`) or a card and a short sentence. Follow-ups work best short and general, in your own words.
