@@ -2,7 +2,7 @@
 title: Notebook
 updated: 2026-11-16
 status: working notes, not final
-prompt_version: 0.7
+prompt_version: 0.8
 ---
 
 # What the studio is learning about making images
@@ -13,7 +13,7 @@ Working notes from making room images in ChatGPT with a palette card attached. T
 
 Seven rooms the owner loves, mostly posts pairing a three-colour swatch card with a room. What they share:
 
-- **Three colours, each a finish.** One hero colour drenched over the walls and the built-in joinery (emerald plaster, peacock panelling, graphite cabinetry), one upholstery colour (amber or tobacco leather, rose velvet), one soft neutral (cream, parchment, putty).
+- **Three colours, each a finish.** One hero colour drenched over the walls (emerald plaster, peacock panelling, graphite cabinetry), one upholstery colour (amber or tobacco leather, rose velvet), one soft neutral (cream, parchment, putty).
 - **The hero colour is usually deep and saturated, and it dominates.** The opposite of the studio's earlier assumption that the lightest colour covers most of the room.
 - **The same house style every time.** Dark wood floors; brass lighting (sconces, picture lights, a chandelier); panelling or arched built-ins with softly lit shelves; one centred focal wall, shot straight on; a light sofa or bed against the coloured walls.
 - **Warm, golden lamplight.** What the owner dislikes is a filter over the whole image, not warm light.
@@ -30,12 +30,54 @@ The goal is a 10/10 room on the **first** image of a new chat. Changes made insi
 2. **The prompt is built from the sheet** (v0.7 below). Each trio page shows its own, with a Copy button.
 3. **The owner runs it once, cleanly**: download the card, new chat, attach only the card, paste the prompt, send, add nothing.
 4. **Judge the first image** with the five questions on the trio page (walls read as the hero; upholstery reads as its colour; whites are clean; only what was described is there; you'd post it). Five yeses is a hit.
-5. **A miss changes the sheet, never the chat.** Bring the image back; the studio finds which line of the sheet failed, changes that line, and the next try is a new chat.
+5. **A miss changes the sheet, not the chat.** Bring the image back; the studio finds which line of the sheet failed, changes that line, and the next try is a new chat. The one exception is a surgical edit in OpenAI's form: *"Change only the bench to a plain upholstered one. Keep everything else exactly the same."*
 6. **The measure is the first-try hit rate**, per trio and overall. Run each sheet three times in three new chats so luck can be told from method.
 
 Why describing the room should work where long prompts failed (lesson 1): the failed prompts listed *qualities* to show (luxury, contrast, 9/10 per category), and the image maker performed them. A room sheet lists *things* and where they go. Describing things completely also leaves no gaps for its stock props to fill. This is a hypothesis until the hit rate says so.
 
-## The working prompt for trios (v0.7)
+## What others have found (researched 16 November)
+
+The owner asked to stop reinventing the wheel. The most authoritative source is **OpenAI's own prompting guide for its image models** (the gpt-image-2 cookbook, April 2026, which is the model behind ChatGPT images). What it says, and what we were doing against it:
+
+| OpenAI's guide | What our prompts did |
+|---|---|
+| For photorealism, prompt it "as if a real photo is being captured in the moment"; use photography language (lens, framing, light); ask for real texture and wear. "Avoid words that imply studio polish or staging." Its realistic examples end with "No glamorization", "Avoid cinematic lighting, dramatic color grading, or stylized composition". | Asked for "a high-end interiors magazine" and "restrained, timeless luxury": words that imply staging and polish, the glossy AI look the owner keeps seeing. |
+| Include the word "photorealistic". | Said "photorealistic photograph" in v0.5; dropped in v0.7. |
+| With several images, "reference each input by index and description" and say how they relate. | Attached a card with no label; in the first trio test, two screenshots, one of which said "Walls and built-in joinery". |
+| Order: scene, then subject, then key details, then constraints; short labelled segments for complex requests. | Mixed order; in v0.7 one block of prose. |
+| State exclusions and invariants explicitly. | Partly. |
+| Edits: "change only X" and "keep everything else the same", repeating the preserve list each time, to reduce drift. | "Make it look more luxurious": a general request with nothing preserved, so it redrew everything. |
+
+Practitioners writing about interiors (vendor blogs and prompt collections, less reliable) add: give real dimensions; say where the light comes from; eye-level, ordinary lens; state how many things there are and exclude the rest, "because the model fills unspecified gaps with its own defaults"; a second image can serve as a style reference if it is labelled as one.
+
+Sources: OpenAI cookbook, [image models prompting guide](https://github.com/openai/openai-cookbook/blob/main/examples/multimodal/image-gen-models-prompting-guide.ipynb) and [gpt-image-1.5 guide](https://github.com/openai/openai-cookbook/blob/main/examples/multimodal/image-gen-1.5-prompting_guide.ipynb); practitioner write-ups such as [founderz](https://founderz.com/blog/ai-prompts-interior-design/), [Will Francis](https://willfrancis.com/chatgpt-interior-design-prompts/), [NoteGPT](https://notegpt.io/blog/gpt-image-2-prompt-guide-use-cases) and [Cuty](https://www.cuty.ai/article/models/gpt-image-2-prompting-guide). Several practitioner pages could not be opened from the studio's network and are known only from search summaries.
+
+## The working prompt for trios (v0.8)
+
+Built from each trio's room sheet, in OpenAI's order and wording. The card is labelled as Image 1 and its three colours are named with their jobs. It asks for a real photograph of a lived-in home, taken on location, with no glamorization, instead of "luxury magazine". The luxury has to come from what the room sheet describes. No colour is tied to built-ins or joinery. This is Sage, Rose, Ivory's:
+
+```
+Image 1 is the colour card for this room. Top: Sage, plaster, for the walls. Middle: Rose, velvet, for the upholstered pieces. Bottom: Ivory, boucle, the soft neutral. Match these three colours exactly, in natural colour balance.
+
+Create a photorealistic photograph of a real, lived-in home, taken on location.
+
+Room: A bedroom in an older townhouse, about 4.5 metres wide, with a 3-metre ceiling.
+Walls and architecture: The walls are lined with simple full-height square panelling painted sage. The ceiling and its plain cornice are ivory. One tall window on the left with ivory linen curtains.
+Focal wall: The bed is centred on the far wall against bare panelling: a tall rose velvet headboard with a softly arched top, ivory linen bedding and one rose velvet bolster.
+Furniture: A dark wood nightstand on each side, each with a small brass swing-arm wall light above it. An ivory boucle bench at the foot of the bed. A pale ivory wool rug on dark oak floorboards.
+Objects: Two books and a glass of water on the left nightstand. Nothing else on any surface.
+Light: Soft late-afternoon daylight from the window as the main light, the lamps on low. Whites stay white.
+Camera: Eye level from the doorway, 35 mm lens, straight on, the whole bed, both nightstands and the cornice in frame.
+
+It should feel honest and unstaged: real textures, slight everyday wear, natural colour balance. No cinematic lighting, no colour grading, no glamorization.
+Leave out anything not described above. No people, text, logos or watermarks. Vertical 4:5.
+```
+
+The open question it tests: does dropping "luxury" make the room more believable without making it plainer? If it comes back plain, the next change is in the room sheet (richer architecture and materials), not a return to luxury words.
+
+## The previous prompt for trios (v0.7)
+
+Replaced by v0.8 the same day, before it was tried. Its room sheet idea is kept.
 
 Built from each trio's room sheet. This is Sage, Rose, Ivory's:
 
@@ -154,7 +196,8 @@ If an image is far off, start a new chat instead of correcting it.
 14. **A house-style checklist gets built whether it fits or not.** The v0.5 prompt lists "panelling or arched built-ins with softly lit shelves", so a bedroom got two library walls. Same lesson as 1: a list is performed literally. The house style should describe a feeling and let the room choose its architecture. *Sage, Rose, Ivory 1.*
 15. **"More luxurious" summons the AI's idea of luxury.** Crystal chandelier, cove lighting, tufting, candles on a gold tray, darker and browner: every generic luxury cue at once, and the image became obviously generated. Compare Plum Drench 7, where "more luxury and intentional, as if designed by an expert" worked: *intentional* and *expert* ask for judgment; *luxurious* asks for props. *Sage, Rose, Ivory 2.*
 16. **This trio has no depth to work with.** Sage and Rose sit at the same lightness (62 and 63), so the walls and the bed merge into one mid-tone; only the floor is dark. The owner's references have a deep hero. Part of the blandness is the palette, not the image maker. *Sage, Rose, Ivory 1; trio data.*
-17. **Every follow-up in the same chat redraws the room and invents.** Asked only to make it "more luxurious", ChatGPT also replaced the chandelier, retufted the bench, swapped the vase and flowers, added a candle and cove lighting, and darkened every colour: things that were right got changed and new things appeared. A follow-up is a new image, not an edit. So the first image has to be right, and fixes belong in the prompt, in a new chat. *Sage, Rose, Ivory 2; Plum Drench 5.*
+17. **A general follow-up redraws the room and invents.** Asked only to make it "more luxurious", ChatGPT also replaced the chandelier, retufted the bench, swapped the flowers, added a candle and cove lighting, and darkened every colour. OpenAI's guide says why: edits hold only when they say *change only X, keep everything else the same*. A vague follow-up is a new image. So the first image has to be right; fixes go in the room sheet, or in a surgical edit at most. *Sage, Rose, Ivory 2; Plum Drench 5.*
+18. **Our own page told it to build the built-ins.** The trio page listed the hero colour as "Walls and built-in joinery", and the v0.5 and v0.6 prompts said "the top colour on the walls and the built-in joinery". ChatGPT read a colour assigned to joinery as an instruction to build joinery, and the owner's screenshot of the page carried the same words. The audit missed it, and so did the first diagnosis of Sage, Rose, Ivory 1, which blamed only the house-style line. No colour is now tied to joinery anywhere. *Sage, Rose, Ivory 1.*
 
 ## Ideas after Sage, Rose, Ivory
 

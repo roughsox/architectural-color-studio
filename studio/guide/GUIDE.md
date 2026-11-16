@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.11
+version: 0.12
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -111,7 +111,7 @@ Rules 1, 2, 4 and 5 can cost points; the rest of the score rewards undertone aff
 
 ### Trios
 
-A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and the built-in joinery and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, classic architecture that suits the room (panelling and a tall window for a bedroom, arched built-ins for a library or living room), one centred focal wall. Light suits the trio: warm lamplight for deep, warm heroes; soft daylight for cool or green ones, because golden light turns them olive (Notebook lesson 13). The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card, downloaded from its page as an image (1080 × 2400), given to the image maker and placed beside the finished room.
+A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, classic architecture that suits the room, one centred focal wall. No colour is ever assigned to built-ins or joinery: the image maker reads that as an instruction to build them (Notebook lesson 18). Light suits the trio: warm lamplight for deep, warm heroes; soft daylight for cool or green ones, because golden light turns them olive (Notebook lesson 13). The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card, downloaded from its page as an image (1080 × 2400), given to the image maker and placed beside the finished room.
 
 ## 8. The sit-down: everything before the image
 
@@ -133,7 +133,7 @@ The experts are one model writing in eight roles. The value of the sit-down is t
 
 ### For trios: the room sheet
 
-For a trio the sit-down's output is its **room sheet** (`sheet` in `trios.json`): the room, walls and architecture, focal wall, furniture, objects and camera, described positively and completely, plus the trio's light. The prompt on each trio page is built from it. The build refuses a trio without a complete sheet. The owner runs the prompt once in a new chat, judges the first image with five questions, and a miss changes the sheet, never the chat (Notebook, "The first-try method").
+For a trio the sit-down's output is its **room sheet** (`sheet` in `trios.json`): the room, walls and architecture, focal wall, furniture, objects and camera, described positively and completely, plus the trio's light. The prompt on each trio page is built from it. The build refuses a trio without a complete sheet. The prompt follows OpenAI's own guide for its image models: the card labelled as Image 1, labelled parts in the order scene, subject, details, constraints, and the language of a real photograph taken on location rather than of luxury or magazines (Notebook, "What others have found"). The owner runs it once in a new chat, judges the first image with five questions, and a miss changes the sheet (Notebook, "The first-try method").
 
 ## 9. Standards every image must meet
 
