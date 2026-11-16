@@ -1,7 +1,7 @@
 // Builds the public site from the plain files in studio/.
 // Pages: Palettes, Guide, Current project (with desks), Library. Each has a plain-text or JSON twin for assistants.
 import { marked } from 'marked';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, existsSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -180,10 +180,27 @@ if (current) {
   write('project.md', projectText(current));
 }
 
-// ---- Library
-page({ title: 'Library', path: '/library', wide: true, html: `<p class="eyebrow">Approved work</p><h1>Library</h1>${approved.length
-  ? `<div class="grid">${approved.map(p => `<article class="pal">${strip(p.palette.colours)}<h2>${esc(p.meta.title)}</h2></article>`).join('')}</div>`
-  : `<div class="empty"><p>Nothing has been approved yet.</p><p class="note">Finished pieces appear here once the owner signs them off: the room and its swatches side by side, with the record of how each was made one link away.</p></div>`}` });
+// ---- Library: finished pieces only (room beside its swatches). A project enters it at stage "In the library";
+// its finished image is the file named in the project's `image:` field, copied to /library/.
+const pieceImage = p => {
+  if (!p.meta.image) return null;
+  const from = join(src, 'projects', p.id, p.meta.image);
+  if (!existsSync(from)) throw new Error(`${p.id}: image ${p.meta.image} not found`);
+  const to = `library/${p.id}-${p.meta.image}`; mkdirSync(join(out, 'library'), { recursive: true }); copyFileSync(from, join(out, to));
+  return '/' + to;
+};
+const pieceCard = p => { const img = pieceImage(p); return `<article class="piece">
+<figure class="plate">${img ? `<img class="room" src="${img}" alt="${esc(p.meta.room || 'Room')} in ${esc(p.palette.colours.map(c => c.name).join(', '))}" loading="lazy">` : `<div class="room"><span>Room image</span></div>`}<div class="sw">${p.palette.colours.map(c => `<span style="background:${c.hex}" title="${esc(c.name)} ${c.hex}"></span>`).join('')}</div></figure>
+<div class="piece-text"><h2>${esc(p.family.label)} ${p.palette.number}${p.meta.room ? ` <small>${esc(p.meta.room)}</small>` : ''}</h2>
+<p>${p.palette.colours.map(c => esc(c.name)).join(' · ')}</p>${p.meta.approved ? `<p class="when">Finished ${esc(p.meta.approved)}</p>` : ''}</div></article>`; };
+const libraryHtml = () => `<p class="eyebrow">Finished work</p><h1>Library</h1>
+<p class="lede">Every piece the studio has finished: a room beside its exact swatches. These are the images that get shared.</p>
+<p class="facts"><span>${approved.length} ${approved.length === 1 ? 'piece' : 'pieces'}</span>${approved.length ? `<span>${new Set(approved.map(p => p.family.id)).size} palette ${new Set(approved.map(p => p.family.id)).size === 1 ? 'family' : 'families'}</span>` : ''}</p>
+<div class="gallery">${approved.length ? approved.slice().reverse().map(pieceCard).join('') : `<article class="piece ghost">
+<figure class="plate"><div class="room"><span>Your first piece</span></div><div class="sw">${(current ? current.palette.colours : []).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div></figure>
+<div class="piece-text"><h2>Nothing finished yet</h2><p>When you approve a piece it lands here, newest first, as it will be posted: the room on the left, its swatches on the right.</p></div></article>`}</div>`;
+page({ title: 'Library', path: '/library', wide: true, twin: '/library.json', html: libraryHtml() });
+write('library.json', JSON.stringify(approved.map(p => ({ project: p.id, family: p.family.id, palette: p.palette.number, colours: p.palette.colours, room: p.meta.room || null, finished: p.meta.approved || null, image: p.meta.image ? `${SITE}/library/${p.id}-${p.meta.image}` : null })), null, 1));
 
 // ---- Home: the front door of the owner's workshop
 const pool = families.filter(isCombos).flatMap(f => f.combinations.map((c, i) => [f.id, f.label, c.number ?? i + 1, c.colours.map(x => [x.name, x.hex])]));
