@@ -31,12 +31,11 @@ This repository holds one project and nothing else. Read `STATE.md` first, then 
 
 - The owner uses more than one Claude account. Pull `main` at the start of a session and again before pushing; if it moved, merge it in. Never force-push, never rewrite history.
 - Small checked changes go straight to `main`. Larger or experimental work goes on a short branch, is checked on its preview link, then merged into `main` and the branch deleted.
-- Update `STATE.md` (one screen) before you finish; add a line to `docs/LOG.md` for anything meaningful.
+- Update `STATE.md` (one screen) before you finish; add a line to `docs/LOG.md` only for decisions.
 
 ## Content rules that came from mistakes
 
 - Never assign a colour to built-ins or joinery in a prompt or on a page: the image maker builds them (Notebook lesson 18).
 - Prompts describe things, not qualities; avoid "luxury", "magazine" and other staging words (Notebook, "What others have found").
-- Every room image attempt goes into the Notebook with its verdict, misses included.
-- Brainstorms from the owner are recorded in their own words in `docs/LOG.md`.
+- We are brainstorming until a method sticks (owner, 2026-11-16: "stop trying to save an archive of literally everything"). Don't log every image or remark; record only what works or is decided, briefly.
 - Go at the owner's pace: discuss first, build only what is agreed. Follow-up prompts you suggest should be short and in plain language; the owner's own short requests have worked best.
