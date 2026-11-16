@@ -185,13 +185,52 @@ page({ title: 'Library', path: '/library', wide: true, html: `<p class="eyebrow"
   ? `<div class="grid">${approved.map(p => `<article class="pal">${strip(p.palette.colours)}<h2>${esc(p.meta.title)}</h2></article>`).join('')}</div>`
   : `<div class="empty"><p>Nothing has been approved yet.</p><p class="note">Finished pieces appear here once the owner signs them off: the room and its swatches side by side, with the record of how each was made one link away.</p></div>`}` });
 
-// ---- Home
-page({ title: 'Studio', path: '/', html: `<p class="eyebrow">A study in colour and space</p>
-<h1>Rooms that show what a colour combination feels like to live in.</h1>
-<ul class="list"><li><a href="/palettes">Palettes</a><span>${families.length} families · ${total} combinations</span></li>
-<li><a href="/guide">The Guide</a><span>How the studio works</span></li>
-<li><a href="/project">Current project</a><span>${current ? `${esc(current.meta.title)} · ${esc(current.meta.stage)}` : 'None'}</span></li>
-<li><a href="/library">Library</a><span>${approved.length} approved</span></li></ul>` });
+// ---- Home: the front door of the owner's workshop
+const pool = families.filter(isCombos).flatMap(f => f.combinations.map((c, i) => [f.id, f.label, c.number ?? i + 1, c.colours.map(x => [x.name, x.hex])]));
+const featureHtml = ([fid, label, n, cs], tag) => `<div class="fblocks">${cs.map(([name, hex]) => `<div style="background:${hex};color:${ink(hex)}"><b>${esc(name)}</b><code>${hex}</code></div>`).join('')}</div>
+<p class="fcap"><span>${esc(tag)}</span><a href="/palettes/${fid}#p${n}">${esc(label)} ${n}</a></p>`;
+const homeFeature = current ? [current.family.id, current.family.label, current.palette.number, current.palette.colours.map(x => [x.name, x.hex])] : pool[0];
+const homeHtml = () => {
+  const at = current ? stages.indexOf(current.meta.stage) : -1;
+  const mosaicFrom = pick(families.find(f => f.id === 'wada').combinations, 12).map(c => strip(c.colours, 'strip mini')).join('');
+  return `<section class="h-hero">
+<div class="h-intro"><p class="eyebrow">A workshop for colour</p>
+<h1>Pick a palette. A studio of experts turns it into a room you'd want to live in.</h1>
+<p class="lede">Architect, builder, interior designer, colour specialist, photographer, stylist and editor each have their say. What comes out is one image: the room beside its exact swatches.</p>
+<div class="h-actions"><button type="button" class="button" id="surprise">Surprise me</button><a class="button ghost" href="/palettes">Browse palettes</a></div></div>
+<figure class="feature" id="feature" aria-live="polite">${featureHtml(homeFeature, 'Featured')}</figure>
+</section>
+${current ? `<a class="h-now" href="/project">
+<div class="h-now-strip">${current.palette.colours.map(c => `<span style="background:${c.hex}"></span>`).join('')}</div>
+<div class="h-now-text"><p class="eyebrow">On the table now</p><h2>${esc(current.meta.title)} <small>${esc(current.family.label)} ${current.palette.number}</small></h2>
+<ol class="dots" aria-label="Stage ${at + 1} of ${stages.length}: ${esc(current.meta.stage)}">${stages.map((s, i) => `<li class="${i < at ? 'done' : i === at ? 'now' : ''}" title="${s}"></li>`).join('')}</ol>
+<p class="h-now-status">${current.turn ? `<strong>Your turn:</strong> ${esc(current.turn.meta.question)}` : `${esc(current.meta.stage)} · nothing is waiting on you`}</p></div>
+<span class="h-go" aria-hidden="true">→</span></a>` : ''}
+<div class="doors">
+<a class="door" href="/palettes"><div class="mosaic">${mosaicFrom}</div><div class="door-text"><h2>Palettes</h2><p>${families.length} families · ${total} ready-made combinations · ${families.filter(f => !isCombos(f)).reduce((n, f) => n + size(f), 0).toLocaleString('en')} single colours</p></div></a>
+<a class="door" href="/library"><div class="door-lib">${approved.length ? approved.slice(-2).map(p => strip(p.palette.colours, 'strip mini')).join('') : `<div class="plate mini"><div class="room"><span>First piece</span></div><div class="sw">${(current ? current.palette.colours : []).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div></div>`}</div><div class="door-text"><h2>Library</h2><p>${approved.length ? `${approved.length} finished ${approved.length === 1 ? 'piece' : 'pieces'}` : 'Finished pieces will live here: each room beside its swatches.'}</p></div></a>
+</div>
+<a class="h-table" href="/project"><p class="eyebrow">The experts at the table</p><ul>${desks.map(d => `<li><span class="badge sm" style="background:${d.colour}" aria-hidden="true">${esc(d.mark)}</span>${esc(d.name)}</li>`).join('')}</ul></a>
+<p class="h-guide">How the studio works, step by step: <a href="/guide">the Guide</a>.</p>
+<script>
+(() => {
+  const P = ${JSON.stringify(pool)};
+  const fig = document.getElementById('feature'), btn = document.getElementById('surprise');
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const ink = h => { const [r, g, b] = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? '#22302b' : '#fff'; };
+  let at = Math.floor(Date.now() / 864e5) % P.length;
+  const show = (i, tag) => {
+    const [fid, label, n, cs] = P[i];
+    fig.innerHTML = '<div class="fblocks">' + cs.map(([nm, h]) => '<div style="background:' + h + ';color:' + ink(h) + '"><b>' + esc(nm) + '</b><code>' + h + '</code></div>').join('') + '</div>'
+      + '<p class="fcap"><span>' + tag + '</span><a href="/palettes/' + fid + '#p' + n + '">' + esc(label) + ' ' + n + '</a></p>';
+    fig.classList.remove('pop'); void fig.offsetWidth; fig.classList.add('pop');
+  };
+  show(at, 'Today’s combination');
+  btn.addEventListener('click', () => { let i; do { i = Math.floor(Math.random() * P.length); } while (i === at && P.length > 1); at = i; show(at, 'Surprise'); });
+})();
+</script>`;
+};
+page({ title: 'Studio', path: '/', wide: true, html: homeHtml() });
 
 // ---- One complete text file for assistants (their readers may not follow links inside a page)
 const whole = `# Architectural Color Studio — the whole project in one file
