@@ -3,61 +3,226 @@
   "house": "A classical house about a hundred years old, renovated with light by one woman who adores Sanzo Wada's book: tall arched French windows, panelled walls, white coffered ceilings, pale stone floors, warm brass. Bright, symmetrical and generous, with one palette in each room. Her best friend, an architectural photographer, shoots every room straight on, in its best light.",
   "ruled_out": "Left out: combinations that read as a graphic rather than a room, and pairs of two loud colours with nothing soft to rest on.",
   "rooms": [
-    { "id": "living", "name": "Living room", "about": "The room that sets the house: pale blue panelling, a cinnamon velvet sofa, two yellow chairs, morning light through arched windows.",
-      "set": { "wada": 213, "image": "living-213.jpg", "card": "living-213-card.jpg" },
-      "options": [] },
-    { "id": "hall", "name": "Entrance hall", "about": "Seen from the living room. Stone floor, a staircase, the first impression.",
+    {
+      "id": "living",
+      "name": "Living room",
+      "about": "The room that sets the house: pale blue panelling, a cinnamon velvet sofa, two yellow chairs, morning light through arched windows.",
+      "set": {
+        "wada": 213,
+        "image": "living-213.jpg",
+        "card": "living-213-card.jpg"
+      },
+      "options": []
+    },
+    {
+      "id": "hall",
+      "name": "Entrance hall",
+      "about": "Seen from the living room. Stone floor, a staircase, the first impression.",
       "options": [
-        { "wada": 72, "idea": "Pale sulphur and the same pale blue: the living room's quieter neighbour." },
-        { "wada": 239, "idea": "Dusty rose, a muted gold and a pale grey-green." },
-        { "wada": 11, "idea": "Ivory and a soft mineral grey; calm, so every room off it can shine." }
-      ] },
-    { "id": "dining", "name": "Dining room", "about": "Long table, candles, dinners that run late.",
+        {
+          "wada": 11,
+          "idea": "Ivory and a soft mineral grey; calm, so every room off it can shine."
+        },
+        {
+          "wada": 169,
+          "idea": "Pale pink, pale lemon and a warm grey."
+        },
+        {
+          "wada": 330,
+          "idea": "Olive buff, pale aqua, soft blue and one clear teal."
+        }
+      ],
+      "passed": [
+        72,
+        239
+      ]
+    },
+    {
+      "id": "dining",
+      "name": "Dining room",
+      "about": "Long table, candles, dinners that run late.",
       "options": [
-        { "wada": 230, "idea": "Grenadine pink with two cool greens." },
-        { "wada": 225, "idea": "Carmine and a deep green: the house's one dramatic evening room." },
-        { "wada": 237, "idea": "Two reds, one bright and one brown, with a soft blue." }
-      ] },
-    { "id": "kitchen", "name": "Kitchen", "about": "Morning light, a big table, used every day.",
+        {
+          "wada": 228,
+          "idea": "Carmine with pale lemon and a soft grey: the bathroom's idea, grown up for candlelight."
+        },
+        {
+          "wada": 261,
+          "idea": "Deep red, pale lemon, a clear aqua and warm grey."
+        },
+        {
+          "wada": 184,
+          "idea": "Spinel pink, ivory and a soft olive."
+        }
+      ],
+      "passed": [
+        225,
+        230,
+        237
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "about": "Morning light, a big table, used every day.",
       "options": [
-        { "wada": 320, "idea": "Coral, pale sulphur, oil green and a pale blue." },
-        { "wada": 296, "idea": "Pale sulphur, soft salmon, umber and slate." },
-        { "wada": 229, "idea": "Golden yellow with a very dark olive and a calm grey." }
-      ] },
-    { "id": "library", "name": "Library", "about": "Books, a fire, a reading chair. It can be deeper than the rest.",
+        {
+          "wada": 272,
+          "idea": "Pale lemon and one orange, with mint and a soft blue."
+        },
+        {
+          "wada": 300,
+          "idea": "Coral, cream yellow, mint and a clear aqua."
+        },
+        {
+          "wada": 150,
+          "idea": "Seashell pink, a citron yellow and a pale grey-green."
+        }
+      ],
+      "passed": [
+        229,
+        296,
+        320
+      ]
+    },
+    {
+      "id": "library",
+      "name": "Library",
+      "about": "Books, a fire, a reading chair. It can be deeper than the rest.",
       "options": [
-        { "wada": 182, "idea": "Raw sienna, Vandyke brown and almost-black indigo." },
-        { "wada": 167, "idea": "Ecru with a pale blue and a deep sea blue." },
-        { "wada": 318, "idea": "Four greens from olive to almost black." }
-      ] },
-    { "id": "morning", "name": "Morning room", "about": "Breakfast and letters in east light. Fresh and gentle.",
+        {
+          "wada": 163,
+          "idea": "Bright yellow and mint with a deep clear blue."
+        },
+        {
+          "wada": 227,
+          "idea": "Soft pink and pale blue with a strong cerulean."
+        },
+        {
+          "wada": 302,
+          "idea": "Cream yellow, ecru and pale aqua with a deep clear blue."
+        }
+      ],
+      "passed": [
+        167,
+        182,
+        318
+      ]
+    },
+    {
+      "id": "morning",
+      "name": "Morning room",
+      "about": "Breakfast and letters in east light. Fresh and gentle.",
       "options": [
-        { "wada": 209, "idea": "Ivory, a soft blue and one orange: a cousin of the living room." },
-        { "wada": 178, "idea": "Ivory, pale blue and a clear sea-green." },
-        { "wada": 235, "idea": "Ivory, yellow orange and a soft lavender." }
-      ] },
-    { "id": "study", "name": "Study", "about": "A smaller room for work and thinking.",
+        {
+          "wada": 235,
+          "idea": "Ivory, yellow orange and a soft lavender."
+        },
+        {
+          "wada": 176,
+          "idea": "Two soft pinks and a clear aqua."
+        },
+        {
+          "wada": 294,
+          "idea": "Pale sulphur and cream yellow, a deep green and a soft blue."
+        }
+      ],
+      "passed": [
+        178,
+        209
+      ]
+    },
+    {
+      "id": "study",
+      "name": "Study",
+      "about": "A smaller room for work and thinking.",
       "options": [
-        { "wada": 207, "idea": "Sudan brown and a pale grey-green, with black." },
-        { "wada": 343, "idea": "Burnt sienna, ivory, dark olive and a deep teal blue." }
-      ] },
-    { "id": "garden", "name": "Garden room", "about": "Glass on two sides, plants, the garden coming in.",
+        {
+          "wada": 159,
+          "idea": "A golden khaki, a clear aqua and a soft lavender."
+        },
+        {
+          "wada": 180,
+          "idea": "Warm buff, a light mauve and a calm grey."
+        },
+        {
+          "wada": 287,
+          "idea": "Pink and a muted gold with two clear blues."
+        }
+      ],
+      "passed": [
+        207,
+        343
+      ]
+    },
+    {
+      "id": "garden",
+      "name": "Garden room",
+      "about": "Glass on two sides, plants, the garden coming in.",
       "options": [
-        { "wada": 334, "idea": "Seashell pink, olive, a spring green and a clear blue." },
-        { "wada": 293, "idea": "Raw sienna with three garden greens." },
-        { "wada": 341, "idea": "Coral pink, green and near-black olive with a pale blue." }
-      ] },
-    { "id": "bedroom", "name": "Main bedroom", "about": "Quiet, soft, personal. Morning light through linen.",
+        {
+          "wada": 334,
+          "idea": "Seashell pink, olive, a spring green and a clear blue."
+        },
+        {
+          "wada": 291,
+          "idea": "Lime, sea green, mint and aqua: the garden itself."
+        },
+        {
+          "wada": 326,
+          "idea": "Pale sulphur, one peach red and two spring greens."
+        }
+      ],
+      "passed": [
+        293,
+        341
+      ]
+    },
+    {
+      "id": "bedroom",
+      "name": "Main bedroom",
+      "about": "Quiet, soft, personal. Morning light through linen.",
       "options": [
-        { "wada": 223, "idea": "Dusty rose, soft salmon and a pale turquoise." },
-        { "wada": 214, "idea": "Ivory and a soft brown, with one violet." },
-        { "wada": 292, "idea": "Pale lemon, cinnamon pink and two warm sands." }
-      ] },
-    { "id": "bathroom", "name": "Bathroom", "about": "A roll-top bath under a window. Small enough to be bold.",
+        {
+          "wada": 223,
+          "idea": "Dusty rose, soft salmon and a pale turquoise."
+        },
+        {
+          "wada": 128,
+          "idea": "Soft pink, a clear sea green and a light mauve."
+        },
+        {
+          "wada": 206,
+          "idea": "Pink, golden yellow and a cinnamon brown."
+        }
+      ],
+      "passed": [
+        214,
+        292
+      ]
+    },
+    {
+      "id": "bathroom",
+      "name": "Bathroom",
+      "about": "A roll-top bath under a window. Small enough to be bold.",
       "options": [
-        { "wada": 195, "idea": "Spinel pink, pale lemon and a soft grey." },
-        { "wada": 290, "idea": "Plum-brown, pale lemon, dark olive and a mint green." },
-        { "wada": 188, "idea": "Three soft greens and blues." }
-      ] }
+        {
+          "wada": 195,
+          "idea": "Spinel pink, pale lemon and a soft grey."
+        },
+        {
+          "wada": 260,
+          "idea": "Old rose and soft cinnamon with sage and a sea green."
+        },
+        {
+          "wada": 193,
+          "idea": "Coral pink, Naples yellow and a porcelain green."
+        }
+      ],
+      "passed": [
+        188,
+        290
+      ]
+    }
   ]
 }
