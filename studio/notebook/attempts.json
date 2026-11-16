@@ -7,7 +7,7 @@
         "name": "Wada 209: Ivory Buff, Yellow Orange, Salvia Blue",
         "label": "Wada No."
       },
-      "made_with": "ChatGPT project with instructions v3; attached the palette strip",
+      "made_with": "ChatGPT project; attempt 1 with instructions v3, attempt 2 believed to be v4; attached the palette strip",
       "attempts": [
         {
           "n": 1,
@@ -15,6 +15,13 @@
           "asked": "\"Using the instructions, please create an appropriate room that showcases this color palette\"",
           "verdict": "closer",
           "note": "v3's corrections held: white ceiling, no lit built-ins, no token objects, calm detail, a believable breakfast room. But it is basic and uninspiring, and the colour is still assigned object by object: walls buff, bench orange, chairs and curtains blue. The gaps between a strong orange and a muted blue are not bridged. Measured, the walls read tan and the blues grey (difference 11-13 on lit areas); the orange is closest. The patterned cushions and blue-and-white jug are the only places the colours meet. Hydrangeas again."
+        },
+        {
+          "n": 2,
+          "image": "wada-209-breakfast-2.jpg",
+          "asked": "\"Using the instructions... Please create a room using this color palette\"",
+          "verdict": "closer",
+          "note": "Owner: \"much better\", but not something to stop scrolling for. Brighter and more resolved: steel-framed arched windows, a striped bench cushion that finally bridges the orange and blue, light oak and stone foundation, white-ish ceiling. Still: blue chairs and blue cabinets (one colour per category), blue hydrangeas and a landscape painting again, and no clear memorable move. The line after the image does not name an idea, which v4 asks for: check that v4 is the version pasted in the project."
         }
       ]
     },
