@@ -255,12 +255,215 @@
     "Walnut",
     "Linen, natural"
    ]
+  },
+  {
+   "number": 7,
+   "name": "Lisbon",
+   "series": "Postcards",
+   "intent": "Limewashed walls, blue-and-white tile, and the yellow of a passing tram.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Limewash",
+     "hex": "#F1ECE2",
+     "role": "Field"
+    },
+    {
+     "name": "Azulejo",
+     "hex": "#234E8A",
+     "role": "Weight"
+    },
+    {
+     "name": "Tram Yellow",
+     "hex": "#EDB82E",
+     "role": "Accent"
+    },
+    {
+     "name": "Rooftop Clay",
+     "hex": "#B9775C",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Glazed tile, white",
+    "Blackened steel"
+   ]
+  },
+  {
+   "number": 8,
+   "name": "Marrakech",
+   "series": "Postcards",
+   "intent": "A riad courtyard: rosy plaster, dark cedar doors, and one wall of electric blue.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Riad Plaster",
+     "hex": "#E8C9AE",
+     "role": "Field"
+    },
+    {
+     "name": "Cedar Door",
+     "hex": "#4A2E22",
+     "role": "Weight"
+    },
+    {
+     "name": "Majorelle",
+     "hex": "#3B4FB8",
+     "role": "Accent"
+    }
+   ],
+   "materials": [
+    "Terracotta tile",
+    "Unlacquered brass"
+   ]
+  },
+  {
+   "number": 9,
+   "name": "Copenhagen",
+   "series": "Postcards",
+   "intent": "Harbour fog, black canal water, and the ochre of a painted gable catching the light.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Harbour Fog",
+     "hex": "#DCDDD8",
+     "role": "Field"
+    },
+    {
+     "name": "Canal Black",
+     "hex": "#23292E",
+     "role": "Weight"
+    },
+    {
+     "name": "Gable Ochre",
+     "hex": "#D9A23D",
+     "role": "Accent"
+    },
+    {
+     "name": "Sea Glass",
+     "hex": "#9DB7B0",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Ash",
+    "Tan leather"
+   ]
+  },
+  {
+   "number": 10,
+   "name": "Mexico City",
+   "series": "Postcards",
+   "intent": "Pink walls in hard sun, volcanic stone underfoot, and marigolds by the door.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Casa Pink",
+     "hex": "#E8A7B8",
+     "role": "Field"
+    },
+    {
+     "name": "Volcanic Stone",
+     "hex": "#3B3533",
+     "role": "Weight"
+    },
+    {
+     "name": "Marigold",
+     "hex": "#F2A007",
+     "role": "Accent"
+    },
+    {
+     "name": "Jacaranda",
+     "hex": "#8E7CC3",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Red brick",
+    "Zinc and stainless"
+   ]
+  },
+  {
+   "number": 11,
+   "name": "Palm Springs",
+   "series": "Postcards",
+   "intent": "Desert-bone walls, palm shade, a turquoise pool and a peach sunset on the glass.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Desert Bone",
+     "hex": "#EDE3D1",
+     "role": "Field"
+    },
+    {
+     "name": "Palm Shade",
+     "hex": "#3F4A33",
+     "role": "Weight"
+    },
+    {
+     "name": "Pool Turquoise",
+     "hex": "#2BB3B1",
+     "role": "Accent"
+    },
+    {
+     "name": "Sunset Peach",
+     "hex": "#F2B48C",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Cotton canvas, undyed"
+   ]
+  },
+  {
+   "number": 12,
+   "name": "Edinburgh",
+   "series": "Postcards",
+   "intent": "Pale sandstone under a low sky, slate roofs, and heather on the hills beyond.",
+   "made": "2026-11-16",
+   "maker": "Studio (Claude, as Colour specialist)",
+   "colours": [
+    {
+     "name": "Haar",
+     "hex": "#D8D2C4",
+     "role": "Field"
+    },
+    {
+     "name": "Slate Roof",
+     "hex": "#3A4047",
+     "role": "Weight"
+    },
+    {
+     "name": "Heather",
+     "hex": "#8B5A8C",
+     "role": "Accent"
+    },
+    {
+     "name": "Moss Wall",
+     "hex": "#7E8A5A",
+     "role": "Bridge"
+    }
+   ],
+   "materials": [
+    "Walnut",
+    "Wool, undyed"
+   ]
   }
  ],
  "series": [
   {
    "name": "Daylight hours",
    "about": "One house through one day: six palettes, each tuned to the light of its hour, from first light on a cool wall to lamplight after dark."
+  },
+  {
+   "name": "Postcards",
+   "about": "Six cities, each brought indoors: the colour of its walls, its light and its streets, turned into a room you could live in. Every colour chosen freely and named by the studio."
   }
  ]
 }
