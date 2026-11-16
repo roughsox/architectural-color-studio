@@ -1,6 +1,6 @@
 # Audit scripts, 2026-11-16
 
-One-off scripts behind the measurements in `docs/AUDIT-2026-11-16.md`. Run from `apps/architectural-color-studio` after `npm run build`. They need Node with Playwright, and Python with Pillow and numpy.
+One-off scripts behind the measurements in `docs/AUDIT-2026-11-16.md`. Run from the repository root after `npm run build`. They need Node with Playwright, and Python with Pillow and numpy.
 
 | Script | What it does | Run |
 |---|---|---|

@@ -1,0 +1,39 @@
+# Architectural Color Studio — instructions for assistants
+
+This repository holds one project and nothing else. Read `STATE.md` first, then the part of the project you are working on.
+
+## Layout
+
+| Path | What |
+|---|---|
+| `studio/` | The content: palettes (`palettes/*.json`), the Guide, the Notebook, projects, the experts (`desks.json`) |
+| `site/build.mjs` | Builds the site from `studio/` into `dist/`; also checks the data and stops on errors |
+| `site/card.mjs` | The trio swatch card (one SVG for the page and the download) |
+| `scripts/cards.mjs` | Renders and measures the trio cards (`npm run cards`) |
+| `docs/` | `BRIEF.md` (the owner's brief), `AUDIT-2026-11-16.md`, `LOG.md` (history), `archive/` (the first plan) |
+
+## Build and check
+
+- `npm ci`, then `npm run build`. The build refuses broken palettes, incomplete room sheets and out-of-date cards.
+- After changing `studio/palettes/trios.json` or `site/card.mjs`: `npm run cards` (needs Playwright with Chromium), then commit `studio/palettes/trio-cards/`.
+- Before publishing, look at the changed pages at phone (390 px) and iPad (820 px) width.
+
+## Publishing
+
+- **`main` is the live site.** Vercel builds every push to `main` and publishes it. Pushes to other branches get a preview link.
+- Do not create deployments by hand. The free plan allows 100 deployments a day.
+- Group changes: one push per piece of work, not per edit.
+- The owner's standing instruction: publish checked changes without asking first.
+
+## Working together
+
+- The owner uses more than one Claude account. Pull `main` at the start of a session and again before pushing; if it moved, merge it in. Never force-push, never rewrite history.
+- Small checked changes go straight to `main`. Larger or experimental work goes on a short branch, is checked on its preview link, then merged into `main` and the branch deleted.
+- Update `STATE.md` (one screen) before you finish; add a line to `docs/LOG.md` for anything meaningful.
+
+## Content rules that came from mistakes
+
+- Never assign a colour to built-ins or joinery in a prompt or on a page: the image maker builds them (Notebook lesson 18).
+- Prompts describe things, not qualities; avoid "luxury", "magazine" and other staging words (Notebook, "What others have found").
+- Every room image attempt goes into the Notebook with its verdict, misses included.
+- Brainstorms from the owner are recorded in their own words in `docs/LOG.md`.
