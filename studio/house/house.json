@@ -20,24 +20,27 @@
       "about": "Seen from the living room. Stone floor, a staircase, the first impression.",
       "options": [
         {
-          "wada": 139,
-          "idea": "Salvia blue and grey, with deep indigo on the stair: a calm blue lead-in to the living room."
+          "wada": 76,
+          "idea": "Pale lemon and a warm grey: quiet and sunny."
         },
         {
-          "wada": 342,
-          "idea": "Corinthian pink and cream yellow, grounded by orange citrine and a deep olive."
+          "wada": 105,
+          "idea": "Cameo pink and a soft chromium green."
         },
         {
-          "wada": 23,
-          "idea": "Cinnamon buff and a light mauve."
+          "wada": 135,
+          "idea": "Pale sulphur, a deep green and salvia blue."
         }
       ],
       "passed": [
         11,
+        23,
         72,
         81,
+        139,
         169,
-        239
+        239,
+        342
       ]
     },
     {
@@ -50,20 +53,22 @@
           "idea": "Pompeian red with a soft salmon."
         },
         {
-          "wada": 14,
-          "idea": "Spinel pink and Naples yellow: a pink dining room."
+          "wada": 120,
+          "idea": "Cameo pink and Pompeian red: pink walls, red velvet."
         },
         {
-          "wada": 285,
-          "idea": "Brown drab, burnt sienna, one peach red and a pale turquoise."
+          "wada": 35,
+          "idea": "A brown-rose with carmine red."
         }
       ],
       "passed": [
+        14,
         104,
         137,
         225,
         230,
-        237
+        237,
+        285
       ]
     },
     {
@@ -72,21 +77,24 @@
       "about": "Morning light, a big table, used every day.",
       "options": [
         {
-          "wada": 81,
-          "idea": "Golden yellow and a warm grey."
+          "wada": 25,
+          "idea": "Etruscan red and a pale Nile blue."
         },
         {
-          "wada": 104,
-          "idea": "Carmine red and pale sulphur: a red-and-cream kitchen."
+          "wada": 115,
+          "idea": "Naples yellow and one peach red."
         },
         {
-          "wada": 137,
-          "idea": "Etruscan red, cinnamon buff and pistachio green."
+          "wada": 30,
+          "idea": "Pompeian red and a soft mineral grey."
         }
       ],
       "passed": [
         14,
         59,
+        81,
+        104,
+        137,
         229,
         296,
         320
@@ -102,18 +110,20 @@
           "idea": "Cameo pink, russet and Olympic blue."
         },
         {
-          "wada": 285,
-          "idea": "Burnt sienna and peach red against brown drab and pale turquoise."
+          "wada": 186,
+          "idea": "Russet, a soft salmon and a clear blue: a cousin of 231."
         },
         {
-          "wada": 254,
-          "idea": "Two pinks, pale sulphur and an olive."
+          "wada": 157,
+          "idea": "Pansy purple, olive ochre and Olympic blue."
         }
       ],
       "passed": [
         139,
         167,
         182,
+        254,
+        285,
         318,
         342
       ]
@@ -128,16 +138,18 @@
           "idea": "Ivory, yellow orange and a soft lavender."
         },
         {
-          "wada": 14,
-          "idea": "Spinel pink and Naples yellow for breakfast."
+          "wada": 80,
+          "idea": "Pale sulphur and a light mauve."
         },
         {
-          "wada": 169,
-          "idea": "Corinthian pink, pale lemon and a warm grey."
+          "wada": 43,
+          "idea": "Corinthian pink and a violet."
         }
       ],
       "passed": [
+        14,
         23,
+        169,
         178,
         209
       ]
@@ -148,22 +160,25 @@
       "about": "A smaller room for work and thinking.",
       "options": [
         {
-          "wada": 139,
-          "idea": "Salvia blue, neutral grey and deep indigo."
+          "wada": 324,
+          "idea": "Pompeian red, Olympic blue, a violet and a calm grey."
         },
         {
-          "wada": 342,
-          "idea": "Pink and cream yellow with orange citrine and a deep olive."
+          "wada": 127,
+          "idea": "Cinnamon buff, pistachio green and a soft violet."
         },
         {
-          "wada": 23,
-          "idea": "Cinnamon buff and a light mauve."
+          "wada": 192,
+          "idea": "Cream yellow, Vandyke brown and a plumbeous grey."
         }
       ],
       "passed": [
+        23,
+        139,
         180,
         207,
         285,
+        342,
         343
       ]
     },
@@ -177,15 +192,17 @@
           "idea": "Corinthian pink and citron yellow."
         },
         {
-          "wada": 59,
-          "idea": "Eosine pink with a citrine green."
+          "wada": 153,
+          "idea": "Eosine pink, orange yellow and citron."
         },
         {
-          "wada": 254,
-          "idea": "Two pinks, pale sulphur and an olive."
+          "wada": 305,
+          "idea": "Cinnamon pink, apricot yellow, citron and a pale turquoise."
         }
       ],
       "passed": [
+        59,
+        254,
         293,
         334,
         341
@@ -197,20 +214,23 @@
       "about": "Quiet, soft, personal. Morning light through linen.",
       "options": [
         {
-          "wada": 169,
-          "idea": "Corinthian pink, pale lemon and a warm grey."
+          "wada": 97,
+          "idea": "Corinthian pink and Etruscan red."
         },
         {
-          "wada": 23,
-          "idea": "Cinnamon buff and a light mauve."
+          "wada": 327,
+          "idea": "Eosine pink, raw sienna, ecru and a soft lavender."
         },
         {
-          "wada": 139,
-          "idea": "Salvia blue and grey, deep indigo in small doses."
+          "wada": 47,
+          "idea": "Etruscan red and a greyish lavender."
         }
       ],
       "passed": [
+        23,
         55,
+        139,
+        169,
         214,
         223,
         254,
@@ -223,19 +243,22 @@
       "about": "A roll-top bath under a window. Small enough to be bold.",
       "options": [
         {
-          "wada": 55,
-          "idea": "Old rose and white."
+          "wada": 7,
+          "idea": "Orange and a pale glaucous green."
         },
         {
-          "wada": 104,
-          "idea": "Carmine red and pale sulphur: bold in a small room."
+          "wada": 185,
+          "idea": "Brown drab, Etruscan red and pale lemon."
         },
         {
-          "wada": 169,
-          "idea": "Corinthian pink, pale lemon and a warm grey."
+          "wada": 315,
+          "idea": "Grenadine pink, pale sulphur, golden yellow and a purple."
         }
       ],
       "passed": [
+        55,
+        104,
+        169,
         188,
         193,
         195,
