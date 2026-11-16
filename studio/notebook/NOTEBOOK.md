@@ -93,9 +93,24 @@ If an image is far off, start a new chat instead of correcting it.
 7. **Warm, but not filtered.** Pure neutral white looked clinical; a warm filter over the whole image turned the walls salmon. The owner's references show warm, golden lamplight is wanted: the problem is a filter, not warmth. *Attempts 4 and 5; taste notes.*
 8. **Edit for taste, restart for technique.** Same-chat follow-ups about taste improved the image; same-chat fixes to lighting just laid a filter over it. *Attempt 5.*
 9. **Read the palette's own sentence.** "Lifted by one mustard throw" was ignored when the prompt described colours itself. Pointing it at the palette card as the brief fixed it. *Attempts 2 and 6.*
-10. **Expect to choose, not to get it first time.** About one in two or three attempts is good; regenerating and picking beats repairing.
+10. **Expect to choose, not to get it first time.** So far 2 good out of 11 attempts; regenerating and picking beats repairing.
 11. **Asking it to review itself helps, even loosely.** A general "review your own work and improve it" produced one of the best results; the scorecard is a stricter version to try next. *Attempt 8.*
 12. **A material without a scale becomes a feature.** Listed as one of two materials, with the dark paint colour named "Walnut Shadow", walnut became a whole bookcase and, in another attempt, a wall of planks. Palette cards now say how each material is used ("Walnut — in small doses: one table, frames or a single piece of furniture"), and paint colours may no longer be named after materials. *Emerald Sofa 1.*
+
+13. **Golden light changes the colours, and the cooler the colour the worse.** Asked for "warm, golden lamplight", ChatGPT turned the sage walls olive-khaki (measured hue 41° too warm, twice as strong) and the ivory beige, with a strong yellow cast over everything. Warm light flatters aubergine, ink and cognac; it ruins sage and ivory. Light should suit the trio, not be one house rule. *Sage, Rose, Ivory 1.*
+14. **A house-style checklist gets built whether it fits or not.** The v0.5 prompt lists "panelling or arched built-ins with softly lit shelves", so a bedroom got two library walls. Same lesson as 1: a list is performed literally. The house style should describe a feeling and let the room choose its architecture. *Sage, Rose, Ivory 1.*
+15. **"More luxurious" summons the AI's idea of luxury.** Crystal chandelier, cove lighting, tufting, candles on a gold tray, darker and browner: every generic luxury cue at once, and the image became obviously generated. Compare Plum Drench 7, where "more luxury and intentional, as if designed by an expert" worked: *intentional* and *expert* ask for judgment; *luxurious* asks for props. *Sage, Rose, Ivory 2.*
+16. **This trio has no depth to work with.** Sage and Rose sit at the same lightness (62 and 63), so the walls and the bed merge into one mid-tone; only the floor is dark. The owner's references have a deep hero. Part of the blandness is the palette, not the image maker. *Sage, Rose, Ivory 1; trio data.*
+
+## To try next (proposed after Sage, Rose, Ivory)
+
+Not yet tested. Each change answers one lesson above; try them one at a time so the result can be traced.
+
+- **Light by trio** (lesson 13). For cool or pale heroes: *"soft late-afternoon daylight from a tall window as the main light, a few lamps on low; the walls must match the card colour and whites must stay white."* Keep golden lamplight for deep, warm heroes.
+- **Architecture suits the room** (lesson 14). Replace the built-ins line with *"classic architecture that suits the room: panelled walls and a tall window for a bedroom; arched built-ins for a library or living room."*
+- **A better follow-up than "more luxurious"** (lesson 15): *"Make it feel like a room by a top interior designer: more intentional and restrained, real craft, fewer things. Keep the colours exactly as the card."*
+- **A deeper Sage, Rose, Ivory** (lesson 16): the same trio with the sage taken down to about lightness 45, so the walls are clearly darker than the rose bed. Needs the owner's yes before the trio changes.
+- **Attach the downloaded card** (1080 × 2400) rather than screenshots of the page, so the colour list and page around it don't compete with the card.
 
 ## Retired
 
@@ -105,5 +120,5 @@ If an image is far off, start a new chat instead of correcting it.
 
 - Whether trios with prompt v0.5 hit the standard more often: three trios, three generations each, to get a hit rate.
 - Whether the studio's four-colour palettes should be recast as trios.
-- Generic styling it keeps reaching for (hydrangeas, candles on a tray, landscape paintings) without naming them in the prompt.
+- Generic styling it keeps reaching for without being asked: hydrangeas, candles on a tray, a landscape painting under a picture light, a trailing plant, a chunky knit throw, cove lighting. In 11 of 11 images so far.
 - How the image gets from ChatGPT to the site, and how the studio's review (measured colour, the experts) fits after it.

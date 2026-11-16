@@ -2,6 +2,31 @@
   "groups": [
     {
       "palette": {
+        "family": "trios",
+        "number": 3,
+        "name": "Sage, Rose, Ivory",
+        "label": "Trio No."
+      },
+      "made_with": "ChatGPT, from two phone screenshots of the trio page (the new measured card and the colour list) and the full v0.5 prompt",
+      "attempts": [
+        {
+          "n": 1,
+          "image": "sage-rose-ivory-1.jpg",
+          "asked": "The two screenshots plus the trio page's v0.5 prompt, pasted in full.",
+          "verdict": "closer",
+          "note": "The placement is right: sage panelling, a rose velvet channel-tufted bed, ivory bedding and boucle bench, brass, dark floor, centred and straight on. But it is bland, and measured off-colour: the golden light turns the sage walls olive-khaki (hue 41 degrees too warm, twice the strength; difference 15-18) and the ivory beige (14-22); the whole image carries a strong yellow cast. Massive arched library built-ins in a bedroom because the house style lists them. Stock props: hydrangeas, landscape painting, candles, trailing plant."
+        },
+        {
+          "n": 2,
+          "image": "sage-rose-ivory-2.jpg",
+          "asked": "Same chat: \"Make it look more luxurious.\"",
+          "verdict": "miss",
+          "note": "Generic luxury tropes take over: crystal tiered chandelier, cove lighting, tufted bench, candle on a gold tray. The room darkens and the walls go brown-olive (difference 23-29 from sage); the ivory bedding turns tan. Reads as an obvious AI image. Stored from a screenshot of the chat, so slightly lower quality."
+        }
+      ]
+    },
+    {
+      "palette": {
         "family": "studio",
         "number": 22,
         "name": "Plum Drench"

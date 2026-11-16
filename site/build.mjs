@@ -317,7 +317,7 @@ if (notebook) {
   for (const g of groups) for (const a of g.attempts) copyFileSync(join(nbDir, 'img', a.image), join(out, 'notebook', 'img', a.image));
   const body = md(notebook.body.replace(/^# .*\n/, '')).replace(/<pre>/g, '<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>').replace(/<\/pre>/g, '</pre></div>');
   const verdict = { good: 'Good', closer: 'Closer', miss: 'Miss' };
-  const timeline = groups.map((g, gi) => `<h2>${gi ? '' : 'Attempts, palette by palette: '}${esc(g.palette.name)}</h2><p><a href="/palettes/${g.palette.family}#p${g.palette.number}">Studio No. ${g.palette.number}</a>, made with ${esc(g.made_with)}.</p>
+  const timeline = groups.map((g, gi) => `<h2>${gi ? '' : 'Attempts, palette by palette: '}${esc(g.palette.name)}</h2><p><a href="${g.palette.family === 'trios' ? '/trios/' + g.palette.number : '/palettes/' + g.palette.family + '#p' + g.palette.number}">${esc(g.palette.label || 'Studio No.')} ${g.palette.number}</a>, made with ${esc(g.made_with)}.</p>
 <ol class="attempts">${g.attempts.map(a => `<li class="att ${a.verdict}"><figure><img src="/notebook/img/${a.image}" alt="Attempt ${a.n} for ${esc(g.palette.name)}" loading="lazy"><span class="att-tag">${a.n} · ${verdict[a.verdict] || a.verdict}</span></figure><p class="asked"><b>Asked:</b> ${esc(a.asked)}</p><p>${esc(a.note)}</p></li>`).join('')}</ol>`).join('');
   page({ title: 'Notebook', path: '/notebook', wide: true, twin: '/notebook.md', html: `<p class="eyebrow">Notebook · ${esc(notebook.meta.status)} · updated ${esc(notebook.meta.updated)}</p><h1>What the studio is learning about making images</h1>
 <div class="notebook">${body}</div>${timeline}
