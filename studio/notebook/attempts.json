@@ -78,6 +78,13 @@
           "asked": "The original chat (after attempt 8): replace the framed painting with a hand-painted mural on the whole right wall, \"a loose, airy garden scene (trees, a distant terrace, open sky) in soft, faded tones like an old fresco\".",
           "verdict": "miss",
           "note": "It painted a literal scenic picture: a tree, cypresses, a balustraded terrace and roses, framed like a painting on the wall. Distracting rather than complementary. The studio's words \"mural\" and \"garden scene\" asked for a picture. The owner wants an all-over wallpaper that complements the room and recedes."
+        },
+        {
+          "n": 11,
+          "image": "wada-209-breakfast-11.jpg",
+          "asked": "The new chat (after attempt 9): chairs back to Salvia Blue, bench in \"a warm, clear Yellow Orange #F99D1B, not mustard\", and a hand-painted treillage on the ceiling in fine salvia blue lines.",
+          "verdict": "closer",
+          "note": "A bit better. The bench now measures much closer to its colour (difference 7-9, was 18), but the owner finds it neon: Wada's Yellow Orange is a very saturated colour, and a large flat block of it at full strength looks unnatural. The trellis ceiling reads as a printed graphic, too bold and flat. The arched window's size and placement feel wrong; that is a spatial change, which follow-ups rarely make."
         }
       ]
     },
