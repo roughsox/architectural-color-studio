@@ -27,6 +27,8 @@ Thirteen images across two chats, with instructions v3 and v4, ended in attempt 
 - **Saturated colours** (Yellow Orange) look neon on large pieces even when accurate.
 - **A fresh render from one full description** recreated the layout faithfully but lost the life.
 
+**Update after the alternative approach (same day):** the design-brief-first project produced a stronger first image, and about a dozen short natural-language follow-ups by the owner, ending with a self-audit prompt (lesson 27), produced the best room of the project so far. That is now the leading method.
+
 **How to approach the next palette**
 1. Start a new chat with the instructions and the card, and a short request.
 2. Judge the first image for its **layout** first (room type, centring, architecture): that cannot be fixed later, so regenerate until the layout is right.
@@ -63,6 +65,7 @@ Thirteen images across two chats, with instructions v3 and v4, ended in attempt 
 24. **The owner's short, general requests beat the studio's long, restrictive ones.** "What about just slightly more intricate paneling on that wall?" produced the best image of the session; the studio's numbered keep-lists and corrections increasingly produced rendered, over-tidy results. Remind it what matters, briefly, and let it work. *Wada 209 breakfast rooms 12 and 13.*
 25. **Correct colours together, never one while freezing another.** Telling it to shift the walls and chairs while holding the bench exactly as it was made the three look unrelated, as if edited separately. Colours in a room are judged against each other under one light. *Wada 209 breakfast room 13.*
 26. **Say what to keep about the light, not only what to remove.** "No golden cast" was read as "no warm light anywhere", and the pendant's glow on the ceiling, one of the best things in the image, disappeared. Name the good effect to keep (a lamp's warm glow) and the fault to fix (a warm tint over the whole picture, the walls and the whites). And abstract requests ("weave the palette through the room") are ignored in follow-ups; concrete, located ones ("an orange-and-blue patterned rug") are done. *Wada 209 alternative salon 2.*
+27. **Ask it to audit its own room as a real space.** The prompt that brought the salon home did not describe changes: it asked ChatGPT to imagine the whole room beyond the frame, question whether things were placed where they would really be or squeezed into the picture, audit the room from that perspective, and suggest its own improvements (plus one open question: a little interest on the ceiling). It added a doorway to the next room, moved pieces to where people would use them, and made the room believable. Natural-language follow-ups in the owner's words, small and steady, worked better than the studio's engineered ones. *Wada 209 alternative salon, final.*
 
 ## What others have found (researched 16 November)
 
