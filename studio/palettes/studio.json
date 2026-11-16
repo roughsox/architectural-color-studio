@@ -5,9 +5,9 @@
  "name": "Studio",
  "label": "Studio No.",
  "title": "Studio combinations",
- "description": "Palettes the studio invents on purpose, one at a time or as a themed series. Each is a scheme: paint colours from the other families, each with a job (Field, Weight, Accent or Bridge), plus two natural materials chosen to live with them. Each says in one sentence what it is for.",
+ "description": "Palettes the studio invents on purpose, one at a time or as a themed series. Any colour is allowed and every colour gets the studio's own name; the other families are inspiration, not a limit. Each palette is a scheme: paint colours, each with a job (Field, Weight, Accent or Bridge), plus two natural materials chosen to live with them, and one sentence on what it is for.",
  "source": "Architectural Color Studio",
- "data": "Made in the studio; each combination names the families its colours came from",
+ "data": "Made in the studio; colours named by the studio, with a private note of any reference colour they started from",
  "note": "",
  "combinations": [
   {
@@ -19,25 +19,31 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Light Pinkish Lilac",
+     "name": "First Blush",
      "hex": "#E1C8CC",
-     "family": "ridgway",
-     "from": "Ridgway",
-     "role": "Field"
+     "role": "Field",
+     "ref": {
+      "family": "ridgway",
+      "name": "Light Pinkish Lilac"
+     }
     },
     {
-     "name": "Hortense Blue",
+     "name": "Night Still",
      "hex": "#2F425F",
-     "family": "ridgway",
-     "from": "Ridgway",
-     "role": "Weight"
+     "role": "Weight",
+     "ref": {
+      "family": "ridgway",
+      "name": "Hortense Blue"
+     }
     },
     {
-     "name": "Shishi",
+     "name": "Sun on the Sill",
      "hex": "#F0A986",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Accent"
+     "role": "Accent",
+     "ref": {
+      "family": "nippon",
+      "name": "Shishi"
+     }
     }
    ],
    "materials": [
@@ -54,25 +60,31 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Purplish White",
+     "name": "Breakfast White",
      "hex": "#ECE6D0",
-     "family": "werner",
-     "from": "Werner",
-     "role": "Field"
+     "role": "Field",
+     "ref": {
+      "family": "werner",
+      "name": "Purplish White"
+     }
     },
     {
-     "name": "Dark Tyrian Blue",
+     "name": "Ink Pot",
      "hex": "#12354E",
-     "family": "wada",
-     "from": "Wada",
-     "role": "Weight"
+     "role": "Weight",
+     "ref": {
+      "family": "wada",
+      "name": "Dark Tyrian Blue"
+     }
     },
     {
-     "name": "Moegi",
+     "name": "New Leaf",
      "hex": "#7BA23F",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Accent"
+     "role": "Accent",
+     "ref": {
+      "family": "nippon",
+      "name": "Moegi"
+     }
     }
    ],
    "materials": [
@@ -89,25 +101,31 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Ash Grey",
+     "name": "Quarry Dust",
      "hex": "#CBC8B7",
-     "family": "werner",
-     "from": "Werner",
-     "role": "Field"
+     "role": "Field",
+     "ref": {
+      "family": "werner",
+      "name": "Ash Grey"
+     }
     },
     {
-     "name": "Aisumicha",
+     "name": "Hard Shadow",
      "hex": "#373C38",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Weight"
+     "role": "Weight",
+     "ref": {
+      "family": "nippon",
+      "name": "Aisumicha"
+     }
     },
     {
-     "name": "Cerulean Blue",
+     "name": "High Sky",
      "hex": "#0D88CD",
-     "family": "ridgway",
-     "from": "Ridgway",
-     "role": "Accent"
+     "role": "Accent",
+     "ref": {
+      "family": "ridgway",
+      "name": "Cerulean Blue"
+     }
     }
    ],
    "materials": [
@@ -124,25 +142,31 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Tonoko",
+     "name": "Honey Plaster",
      "hex": "#D7B98E",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Field"
+     "role": "Field",
+     "ref": {
+      "family": "nippon",
+      "name": "Tonoko"
+     }
     },
     {
-     "name": "Aikobicha",
+     "name": "Old Olive",
      "hex": "#4B4E2A",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Weight"
+     "role": "Weight",
+     "ref": {
+      "family": "nippon",
+      "name": "Aikobicha"
+     }
     },
     {
-     "name": "Edocha",
+     "name": "Sunbaked Tile",
      "hex": "#AF5F3C",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Accent"
+     "role": "Accent",
+     "ref": {
+      "family": "nippon",
+      "name": "Edocha"
+     }
     }
    ],
    "materials": [
@@ -159,25 +183,31 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Light Purplish Vinaceous",
+     "name": "Faded Rose",
      "hex": "#C4A3A6",
-     "family": "ridgway",
-     "from": "Ridgway",
-     "role": "Field"
+     "role": "Field",
+     "ref": {
+      "family": "ridgway",
+      "name": "Light Purplish Vinaceous"
+     }
     },
     {
-     "name": "Nasukon",
+     "name": "Aubergine Night",
      "hex": "#572A3F",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Weight"
+     "role": "Weight",
+     "ref": {
+      "family": "nippon",
+      "name": "Nasukon"
+     }
     },
     {
-     "name": "Kuchiba",
+     "name": "First Lamp",
      "hex": "#E2943B",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Accent"
+     "role": "Accent",
+     "ref": {
+      "family": "nippon",
+      "name": "Kuchiba"
+     }
     }
    ],
    "materials": [
@@ -194,25 +224,31 @@
    "maker": "Studio (Claude, as Colour specialist)",
    "colours": [
     {
-     "name": "Ohdo",
+     "name": "Lamplit Wall",
      "hex": "#B68E55",
-     "family": "nippon",
-     "from": "Japanese traditional",
-     "role": "Field"
+     "role": "Field",
+     "ref": {
+      "family": "nippon",
+      "name": "Ohdo"
+     }
     },
     {
-     "name": "Blackish Brown",
+     "name": "Peat Smoke",
      "hex": "#453B32",
-     "family": "werner",
-     "from": "Werner",
-     "role": "Weight"
+     "role": "Weight",
+     "ref": {
+      "family": "werner",
+      "name": "Blackish Brown"
+     }
     },
     {
-     "name": "Ox-blood Red",
+     "name": "Oxblood Chair",
      "hex": "#7A3633",
-     "family": "ridgway",
-     "from": "Ridgway",
-     "role": "Accent"
+     "role": "Accent",
+     "ref": {
+      "family": "ridgway",
+      "name": "Ox-blood Red"
+     }
     }
    ],
    "materials": [

@@ -75,10 +75,10 @@ function checkStudio(c) {
   if (c.colours.length < 2 || c.colours.length > 4) fail('needs two to four colours');
   for (const x of c.colours) {
     if (!roleOrder.includes(x.role)) fail(`${x.name} needs a role (${roleOrder.join(', ')})`);
-    const real = allColours.get(`${x.family}|${x.name}`);
-    if (!real) fail(`${x.name} is not a colour in the ${x.family} family`);
-    if (real !== x.hex.toUpperCase()) fail(`${x.name} is ${real} in ${x.family}, not ${x.hex}`);
+    if (!/^#[0-9A-Fa-f]{6}$/.test(x.hex)) fail(`${x.name} needs a colour value like #A1B2C3`);
   }
+  const names = c.colours.map(x => x.name.toLowerCase());
+  if (new Set(names).size !== names.length) fail('two colours share a name');
   const by = r => c.colours.filter(x => x.role === r);
   if (by('Field').length !== 1 || by('Weight').length !== 1 || by('Accent').length > 1 || by('Bridge').length > 1) fail('needs one Field, one Weight, and at most one Accent and one Bridge');
   const m = c.colours.map(x => ({ ...x, ...lab(x.hex) }));

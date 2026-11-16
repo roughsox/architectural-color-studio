@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.6
+version: 0.7
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -62,13 +62,13 @@ The studio also **invents its own palettes**, unprompted: one at a time, or as a
    - **Weight**: the darkest colour, used in small, low, solid amounts to anchor the room.
    - **Accent** (optional): the one colour the eye goes to.
    - **Bridge** (optional): ties two of the others together.
-3. **Choose only real colours.** Every colour comes from one of the families and keeps that family's name and exact value. No invented colours. The same name can carry different values in different families, so each colour names its family.
+3. **Any colour, with the studio's own name.** The studio may use any colour at all. The families on the Palettes page are inspiration and reference, not a limit. Every studio colour gets the studio's own name, and that name is all that appears publicly; the data may keep a private note of a reference colour it started from.
 4. **Pass the measured rules.** The site checks these on every build and refuses a palette that fails:
    - two to four colours; one Field, one Weight, at most one Accent and one Bridge;
    - Field and Weight at least **30** apart in lightness, so the room never goes flat;
    - every pair of colours at least **15** apart (CIE colour difference), so no two read as the same;
    - at most **one loud colour** (strength 45 or more).
-5. **Record it** in the Studio family with its date, its maker and its series. Existing palettes are never altered; a variation is a new entry.
+5. **Record it** in the Studio family with its date, its maker and its series. Two colours in one palette never share a name. Existing palettes are never altered; a variation is a new entry.
 
 A colour is always cited with its family, because the same name can carry different values in different families.
 
