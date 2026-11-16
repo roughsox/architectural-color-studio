@@ -92,6 +92,20 @@
           "asked": "The original chat, after the studio's wallpaper follow-up did not please: the owner's own short request, \"What about just slightly more intricate paneling on that wall?\"",
           "verdict": "good",
           "note": "Owner: \"getting really, really close to something I would actually share\". The right wall now has refined, arched-top raised panels: the room's architecture carries the interest, nothing competes. Measured: the bench is within 3.5 of Yellow Orange and the ceiling is white; the walls lean slightly peach (hue 71-73 against 87, difference about 7) and the chairs slightly lavender-grey (difference 6-10). A short request from the owner beat the studio's longer ones. Next: a final colour and light check without changing the design."
+        },
+        {
+          "n": "13a",
+          "image": "wada-209-breakfast-13a.jpg",
+          "asked": "A \"final check\" written by the studio: re-attached card, keep everything, walls less peach, chairs less lavender, the bench's colour left as it is, \"subtle corrections only, like a careful photo edit\". ChatGPT returned two options; this is the first.",
+          "verdict": "miss",
+          "note": "It reintroduced a generic gilt landscape painting and changed the panelling and window details; colours brighter and more rendered. Owner prefers attempt 12: that one \"looks less like a rendering and more like an actual room\"; its slight colour cast is its only flaw. The studio's prompt was too long and restrictive, and asking to correct the chairs while holding the bench's colour fixed made the colours look unnatural together."
+        },
+        {
+          "n": "13b",
+          "image": "wada-209-breakfast-13b.jpg",
+          "asked": "Same final check; the second option.",
+          "verdict": "miss",
+          "note": "Cleaner colour, but flatter and more like a rendering; the window view and table styling changed. Owner prefers attempt 12: that one \"looks less like a rendering and more like an actual room\"; its slight colour cast is its only flaw. The studio's prompt was too long and restrictive, and asking to correct the chairs while holding the bench's colour fixed made the colours look unnatural together."
         }
       ]
     },

@@ -305,8 +305,11 @@ const instr = existsSync(chatDir) ? readdirSync(chatDir).filter(f => /^INSTRUCTI
 if (instr.length) {
   const copyable = h => h.replace(/<pre>/g, '<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>').replace(/<\/pre>/g, '</pre></div>');
   const [cur, ...older] = instr;
+  // Alternative approaches (ALTERNATIVE-*.md) sit between the current version and the history, folded, each with a Copy button.
+  const alts = readdirSync(chatDir).filter(f => /^ALTERNATIVE-.+\.md$/.test(f)).sort().map(f => parse(join(chatDir, f)));
   page({ title: 'Instructions', path: '/instructions', twin: '/instructions.md', html: `<p class="eyebrow">ChatGPT project · version ${esc(cur.meta.version)} · ${esc(cur.meta.status)}</p><h1>Instructions</h1>
 <div class="notebook">${copyable(md(cur.body))}</div>
+${alts.length ? '<h2>Alternative approach</h2>' : ''}${alts.map(o => `<details class="older alt"><summary>${esc(o.meta.title)} · ${esc(o.meta.status)}</summary><div class="notebook">${copyable(md(o.body))}</div></details>`).join('')}
 ${older.length ? '<h2>Earlier versions</h2>' : ''}${older.map(o => `<details class="older"><summary>Version ${esc(o.meta.version)} · ${esc(o.meta.date)} · ${esc(o.meta.author)}</summary><div class="notebook">${copyable(md(o.body))}</div></details>`).join('')}` });
   write('instructions.md', cur.raw);
 }

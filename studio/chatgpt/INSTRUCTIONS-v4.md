@@ -3,7 +3,7 @@ title: ChatGPT project instructions, v4
 version: 4
 date: 2026-11-16
 author: studio, from the owner's observations on v3
-status: current
+status: replaced by v5
 ---
 
 Paste everything in the box into the instructions of a ChatGPT project that has Wada's `colors.json` as a project file. Then use short commands such as `#254`, or attach a palette card and ask for "a room with this palette". Keep requests that short: the instructions carry the standard.

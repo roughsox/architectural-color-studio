@@ -9,6 +9,31 @@ method: ChatGPT project instructions (see /instructions)
 
 Working notes from making room images in ChatGPT. **The current method is a ChatGPT project with standing instructions and short commands such as `#213`; the instructions are on the [Instructions page](/instructions).** What follows is what has been learned, attempt by attempt, and the earlier methods for the record.
 
+## Retrospective: Wada 209, one palette from first image to nearly shareable (16 November)
+
+Thirteen images across two chats, with instructions v3 and v4, ended in attempt 12: a sunny breakfast room the owner would nearly share.
+
+**What worked**
+- **The ChatGPT project with standing instructions.** A long chat stayed on track through a dozen follow-ups.
+- **Instructions that removed habits**: white ceilings, no lit built-ins, no token objects. These held in every image after v3.
+- **Follow-ups that change a few things precisely and say what to keep.** The checkerboard floor, the chair piping, the clearer sun and the panelled wall all arrived this way.
+- **A reset** (re-attach the card, restate colour and light, remove clutter, "settle everything naturally") brought a drifting chat back in one step.
+- **The owner's own short requests**, which gave the best result.
+
+**What did not**
+- **The first image was safe and generic.** Every inspired element (floor, panelling, light) came from follow-ups. The instructions still do not get it there on the first try.
+- **Spatial changes do not happen in follow-ups.** The bench and window could not be moved once set.
+- **Long, studio-written follow-ups**: describing an object in detail got a literal or reworked version (pendant, painting, mural); naming palette colours for art got the palette painted; restrictive final corrections looked rendered.
+- **Saturated colours** (Yellow Orange) look neon on large pieces even when accurate.
+- **A fresh render from one full description** recreated the layout faithfully but lost the life.
+
+**How to approach the next palette**
+1. Start a new chat with the instructions and the card, and a short request.
+2. Judge the first image for its **layout** first (room type, centring, architecture): that cannot be fixed later, so regenerate until the layout is right.
+3. Then refine with **short, general requests**, one or two at a time, in the owner's own words.
+4. When it drifts, **reset**. When it is close, stop: a final colour check tends to make it look more rendered.
+5. Try the **alternative approach** (a written design brief first, the image only on "go") on the same palette, and compare.
+
 ## Lessons so far
 
 1. **Set a standard, not a list of rules.** A one-line follow-up ("more luxury and intentional, as if designed by an expert; try other room types") beat every long prompt. The more structure a prompt has, the more the image becomes a demonstration of the structure: each rule is performed, none of it is designed. A planning prompt with a 9/10 target per category produced the most box-ticked image yet. *Attempts 5 and 7; Emerald Sofa 1.*
@@ -35,6 +60,8 @@ Working notes from making room images in ChatGPT. **The current method is a Chat
 21. **A reset brings a drifting chat back.** After several follow-ups the room got crowded and the colours wandered. Re-attaching the palette card, restating the colours and light, removing what crowded the room, and ending with "settle everything naturally; do not add anything or restyle the room" fixed all of it in one step. *Wada 209 breakfast room 6.*
 22. **Imagine the room, not the picture; art complements, it does not repeat the palette.** Asked for a painting, it squeezed the whole frame inside the image instead of hanging it where it belongs on the wall and letting the edge of the photograph crop it. And because the prompt named the palette colours for the painting, it painted the palette. A designer chooses art that complements the room, and a photographer lets things run off the edge. *Wada 209 breakfast room 7.*
 23. **Art needs a kind, not colours; and edits cannot move things.** With palette colours named it painted the palette; with no direction it hung its default gilt landscape. Name the kind of piece and its character, not its colours. Separately: once a composition is set, follow-ups keep its geometry, so moving furniture or architecture does not work in the same chat. Spatial changes need a fresh image from a full description. *Wada 209 breakfast rooms 7 and 8.*
+24. **The owner's short, general requests beat the studio's long, restrictive ones.** "What about just slightly more intricate paneling on that wall?" produced the best image of the session; the studio's numbered keep-lists and corrections increasingly produced rendered, over-tidy results. Remind it what matters, briefly, and let it work. *Wada 209 breakfast rooms 12 and 13.*
+25. **Correct colours together, never one while freezing another.** Telling it to shift the walls and chairs while holding the bench exactly as it was made the three look unrelated, as if edited separately. Colours in a room are judged against each other under one light. *Wada 209 breakfast room 13.*
 
 ## What others have found (researched 16 November)
 
