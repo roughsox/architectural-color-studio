@@ -44,9 +44,11 @@ export const LEGIBLE = { name: 3, label: 4.5 };
 const FOIL = { deep: '#2E2010', gold: '#C9A45C', pale: '#F6EBCB' };
 const mix = (a, b, t) => hexOf(rgbOf(a).map((v, i) => v + (rgbOf(b)[i] - v) * t));
 export function foilFor(bg, min = 4.5) {
-  const ramp = t => t < 0 ? mix(FOIL.gold, FOIL.deep, -t) : mix(FOIL.gold, FOIL.pale, t); // t from -1 (deep) to 1 (pale)
+  // t from -1 (deep bronze) through 0 (gold) to 1 (pale gold), then on to 2 (near white) only if pale gold is still not legible.
+  const ramp = t => t < 0 ? mix(FOIL.gold, FOIL.deep, -t) : t <= 1 ? mix(FOIL.gold, FOIL.pale, t) : mix(FOIL.pale, '#FFFDF6', t - 1);
   let best = null;
-  search: for (let k = 0; k <= 100; k++) for (const s of [1, -1]) { // step outward from gold; the first hit is the nearest
+  search: for (let k = 0; k <= 200; k++) for (const s of [1, -1]) { // step outward from gold; the first hit is the nearest
+    if (s < 0 && k > 100) continue;
     const c = ramp(s * k / 100);
     if (contrast(c, bg) >= min) { best = c; break search; }
   }

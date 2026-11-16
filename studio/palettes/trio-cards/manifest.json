@@ -1,5 +1,5 @@
 {
- "source": "f1ad7132f3443471",
+ "source": "10ccf70049b55058",
  "size": "1080×2400",
  "checked": "2026-11-16",
  "cards": {
@@ -91,14 +91,14 @@
     {
      "name": "Sage",
      "finish": "plaster",
-     "stated": "#8E9A7E",
-     "rendered": "#8C997D",
-     "deltaE00": 0.58,
-     "texture": 4.62,
-     "lettering": "#5B4626",
+     "stated": "#646F58",
+     "rendered": "#626D56",
+     "deltaE00": 0.77,
+     "texture": 4.91,
+     "lettering": "#DBC087",
      "contrast": 3.01,
-     "label": "#3C2C17",
-     "labelContrast": 4.52
+     "label": "#F7ECCE",
+     "labelContrast": 4.51
     },
     {
      "name": "Rose",

@@ -132,13 +132,18 @@ if (trioFamily) {
   copyFileSync(join(root, 'site', 'fonts', 'bodoni-moda-500.woff2'), (mkdirSync(join(out, 'fonts'), { recursive: true }), join(out, 'fonts', 'bodoni-moda-500.woff2')));
   trioFamily.cardChecks = manifest;
 }
-const TRIO_PROMPT = `Design and photograph the room this palette card describes (image attached).
+// Prompt v0.6 for trios. Light suits the trio (Notebook lesson 13); architecture suits the room (lesson 14).
+const TRIO_LIGHT = {
+  golden: 'Light: warm, golden lamplight with soft daylight from a tall window.',
+  daylight: 'Light: soft late-afternoon daylight from a tall window as the main light, with a few lamps on low. The walls must match the colour on the card, and whites must stay white.',
+};
+const TRIO_PROMPT = c => `Design and photograph the room this palette card describes (image attached).
 
 Use the three colours as their finishes: the top colour on the walls and the built-in joinery, the middle colour for the main upholstered pieces, and the bottom colour as the soft neutral for the sofa or bed, curtains and ceiling.
 
-House style: dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic panelling or arched built-ins with softly lit shelves, and one centred focal wall. Restrained, timeless luxury: few accessories, nothing over-matched.
+House style: dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic architecture that suits the room (panelled walls and a tall window for a bedroom; arched built-ins with softly lit shelves for a library, study or living room), and one centred focal wall. Restrained, timeless luxury: few accessories, nothing over-matched.
 
-Light: warm, golden lamplight with soft daylight from a tall window.
+${TRIO_LIGHT[c.light || 'golden']}
 
 A photorealistic photograph for a high-end interiors magazine, shot straight on. Vertical 4:5. No people or text.`;
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
@@ -235,10 +240,10 @@ for (const f of families.filter(isTrio)) for (const c of f.combinations) {
   page({ title: c.name, path: '/trios/' + c.number, wide: true, html: `<div class="trio-page">${trioCard(c)}
 <div class="trio-side"><p class="eyebrow"><a href="/palettes/${f.id}">Trios</a> · No. ${c.number}</p><h1>${esc(c.name)}</h1><p class="lede">${esc(c.intent)}</p>
 <ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><span>${esc({ Hero: 'Walls and built-in joinery', Upholstery: 'Upholstery', Neutral: 'Soft neutral' }[x.role])} · ${esc(x.finish)}</span><code>${x.hex}</code></li>`).join('')}</ul>
-<p class="note">House style: ${esc(f.house)}.</p>
+<p class="note">House style: ${esc(f.house)}. Light for this trio: ${c.light === 'daylight' ? 'soft daylight, so the cool colours stay true' : 'warm golden lamplight'}.</p>${c.changed ? `<p class="note">Changed ${esc(c.changed)}</p>` : ''}
 <h2>Make the room</h2><p class="steps">1. Download the card. 2. Start a new ChatGPT chat and attach it. 3. Paste the prompt below.</p>
 <p><a class="button" href="/trios/${cardFile(c)}" download="${cardFile(c)}">Download card</a> <span class="note">${esc(f.cardChecks.size)} image · each swatch measured within ${Math.max(...f.cardChecks.cards[c.number].swatches.map(x => x.deltaE00)).toFixed(1)} of its colour (1.0 or less is not visible)</span></p>
-<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT)}</pre></div></div></div>
+<div class="prompt-copy"><button type="button" class="copy">Copy</button><pre>${esc(TRIO_PROMPT(c))}</pre></div></div></div>
 <script>document.querySelectorAll('.prompt-copy .copy').forEach(b=>b.onclick=()=>navigator.clipboard.writeText(b.nextElementSibling.innerText).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1500)}))</script>` });
 }
 

@@ -9,8 +9,8 @@
  "description": "Three colours, each a finish: one hero colour drenched over the walls and built-in joinery, one for the upholstery, and one soft neutral to breathe. Each trio has its own swatch card, downloaded as an image, handed to the image maker and set beside the finished room. Every card is measured: each swatch shows its stated colour.",
  "source": "Architectural Color Studio",
  "data": "Made in the studio; colours and names chosen by the studio",
- "note": "House style for every trio: dark wood floors, brass lighting, classic panelling or arched built-ins, one centred focal wall, warm lamplight.",
- "house": "dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic panelling or arched built-ins with softly lit shelves, one centred focal wall",
+ "note": "House style for every trio: dark wood floors, brass lighting, classic architecture that suits the room, one centred focal wall. Light suits the trio: warm lamplight for deep, warm heroes; soft daylight for cool or green ones.",
+ "house": "dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic architecture that suits the room (panelled walls and a tall window for a bedroom; arched built-ins with softly lit shelves for a library, study or living room), one centred focal wall",
  "series": [
   {
    "name": "Trios",
@@ -43,7 +43,8 @@
      "role": "Neutral",
      "finish": "linen"
     }
-   ]
+   ],
+   "light": "golden"
   },
   {
    "number": 2,
@@ -70,7 +71,8 @@
      "role": "Neutral",
      "finish": "linen"
     }
-   ]
+   ],
+   "light": "golden"
   },
   {
    "number": 3,
@@ -81,9 +83,10 @@
    "colours": [
     {
      "name": "Sage",
-     "hex": "#8E9A7E",
+     "hex": "#646F58",
      "role": "Hero",
-     "finish": "plaster"
+     "finish": "plaster",
+     "formerly": "#8E9A7E"
     },
     {
      "name": "Rose",
@@ -97,7 +100,9 @@
      "role": "Neutral",
      "finish": "boucle"
     }
-   ]
+   ],
+   "light": "daylight",
+   "changed": "2026-11-16: sage deepened from #8E9A7E (lightness 62) to #646F58 (45), so the walls sit clearly darker than the rose bed (Notebook lesson 16)."
   }
  ]
 }

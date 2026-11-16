@@ -1,6 +1,6 @@
 ---
 title: The Guide
-version: 0.9
+version: 0.10
 updated: 2026-11-16
 status: draft, awaiting owner approval
 ---
@@ -111,7 +111,7 @@ Rules 1, 2, 4 and 5 can cost points; the rest of the score rewards undertone aff
 
 ### Trios
 
-A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and the built-in joinery and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, panelling or arched built-ins, one centred focal wall, warm lamplight. The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card, downloaded from its page as an image (1080 × 2400), given to the image maker and placed beside the finished room.
+A **trio** is the studio's newer format, taken from the owner's reference posts: three colours, each a finish. The **hero** colour covers the walls and the built-in joinery and may be deep and saturated; the **upholstery** colour is leather or velvet; the **neutral** is the soft colour for the sofa or bed, curtains and ceiling. Every trio shares one house style: dark wood floors, brass lighting, classic architecture that suits the room (panelling and a tall window for a bedroom, arched built-ins for a library or living room), one centred focal wall. Light suits the trio: warm lamplight for deep, warm heroes; soft daylight for cool or green ones, because golden light turns them olive (Notebook lesson 13). The build checks that hero and neutral are at least 25 apart in lightness and that every pair differs by at least 20. Each trio has a swatch card, downloaded from its page as an image (1080 × 2400), given to the image maker and placed beside the finished room.
 
 ## 8. The sit-down: everything before the image
 

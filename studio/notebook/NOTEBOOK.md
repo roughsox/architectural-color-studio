@@ -2,7 +2,7 @@
 title: Notebook
 updated: 2026-11-16
 status: working notes, not final
-prompt_version: 0.5
+prompt_version: 0.6
 ---
 
 # What the studio is learning about making images
@@ -22,9 +22,29 @@ Seven rooms the owner loves, mostly posts pairing a three-colour swatch card wit
 
 The references are other people's posts, so they are kept out of the site; only these notes are recorded.
 
-## The working prompt for trios (v0.5)
+## The working prompt for trios (v0.6)
 
-Open a trio from **Palettes → Trios**, tap **Download card**, start a new chat, attach the card, then paste (each trio page has this with a Copy button). Before 16 November the cards were screenshots and their textures shifted some colours (Sage, Cognac and Ink most); attempts from then on use the measured download.
+Open a trio from **Palettes → Trios**, tap **Download card**, start a new chat, attach the card, then paste the prompt from that trio's page (Copy button). v0.6 changes two things from v0.5, each answering a lesson: **architecture suits the room** (lesson 14) and **light suits the trio** (lesson 13). Each trio page shows its own version; this one is for a cool or green hero such as Sage, Rose, Ivory:
+
+```
+Design and photograph the room this palette card describes (image attached).
+
+Use the three colours as their finishes: the top colour on the walls and the built-in joinery, the middle colour for the main upholstered pieces, and the bottom colour as the soft neutral for the sofa or bed, curtains and ceiling.
+
+House style: dark wood floors, brass lighting (wall sconces, a picture light or a chandelier), classic architecture that suits the room (panelled walls and a tall window for a bedroom; arched built-ins with softly lit shelves for a library, study or living room), and one centred focal wall. Restrained, timeless luxury: few accessories, nothing over-matched.
+
+Light: soft late-afternoon daylight from a tall window as the main light, with a few lamps on low. The walls must match the colour on the card, and whites must stay white.
+
+A photorealistic photograph for a high-end interiors magazine, shot straight on. Vertical 4:5. No people or text.
+```
+
+For deep, warm heroes (Aubergine, Ink) the light line stays as in v0.5: *"Light: warm, golden lamplight with soft daylight from a tall window."*
+
+## The previous prompt for trios (v0.5)
+
+Used for Sage, Rose, Ivory attempts 1 and 2.
+
+Before 16 November the cards were screenshots and their textures shifted some colours (Sage, Cognac and Ink most); attempts from then on use the measured download.
 
 ```
 Design and photograph the room this palette card describes (image attached).
@@ -104,12 +124,12 @@ If an image is far off, start a new chat instead of correcting it.
 
 ## To try next (proposed after Sage, Rose, Ivory)
 
-Not yet tested. Each change answers one lesson above; try them one at a time so the result can be traced.
+Each change answers one lesson above. Three are now in v0.6 and the trio data, and the next Sage, Rose, Ivory run tests them together against attempt 1.
 
-- **Light by trio** (lesson 13). For cool or pale heroes: *"soft late-afternoon daylight from a tall window as the main light, a few lamps on low; the walls must match the card colour and whites must stay white."* Keep golden lamplight for deep, warm heroes.
-- **Architecture suits the room** (lesson 14). Replace the built-ins line with *"classic architecture that suits the room: panelled walls and a tall window for a bedroom; arched built-ins for a library or living room."*
+- **Done in v0.6 — Light by trio** (lesson 13). For cool or pale heroes: *"soft late-afternoon daylight from a tall window as the main light, a few lamps on low; the walls must match the card colour and whites must stay white."* Keep golden lamplight for deep, warm heroes.
+- **Done in v0.6 — Architecture suits the room** (lesson 14). Replace the built-ins line with *"classic architecture that suits the room: panelled walls and a tall window for a bedroom; arched built-ins for a library or living room."*
 - **A better follow-up than "more luxurious"** (lesson 15): *"Make it feel like a room by a top interior designer: more intentional and restrained, real craft, fewer things. Keep the colours exactly as the card."*
-- **A deeper Sage, Rose, Ivory** (lesson 16): the same trio with the sage taken down to about lightness 45, so the walls are clearly darker than the rose bed. Needs the owner's yes before the trio changes.
+- **Done — A deeper Sage, Rose, Ivory** (lesson 16): the sage is now `#646F58` (lightness 45, was `#8E9A7E` at 62), so the walls sit clearly darker than the rose bed. Owner agreed 2026-11-16.
 - **Attach the downloaded card** (1080 × 2400) rather than screenshots of the page, so the colour list and page around it don't compete with the card.
 
 ## Retired
