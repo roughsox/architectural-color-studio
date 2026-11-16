@@ -286,3 +286,7 @@ nav a{padding:10px 0}
 .house-bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:2;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);font:15px system-ui,sans-serif}
 .house-actions{display:flex;gap:8px}
 @media (max-width:420px){.rooms{grid-template-columns:1fr}.room-opt{grid-template-columns:72px minmax(0,1fr)}}
+.room-set{grid-column:1/-1}
+.set-pics{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:8px 0 12px;max-width:640px}.set-pics img{width:100%;border-radius:8px;display:block}
+.room-set .strip.mini{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:0 0 4px;max-width:640px}.room-set .strip.mini span{flex:1}
+.set-names{font:12px system-ui,sans-serif;color:var(--muted)}

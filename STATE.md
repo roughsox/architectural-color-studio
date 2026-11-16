@@ -25,7 +25,7 @@ A workshop for the owner to play with colour and rooms, and a source of inspirat
 
 ## Next
 
-1. **The House** (/house, data in `studio/house.json`): one Edwardian English country house, renovated by a woman who loves Wada's book; her friend is the photographer. 10 rooms, 25 candidate palettes (2–3 per room) picked by the studio; the owner picks one per room on the page (kept on their device, "Copy my picks"). Next: the owner's picks, then how to make each room (two voices, a short image prompt). Brainstorming: don't add rules or detail; don't archive everything.
+1. **The House** (/house, data and images in `studio/house/`): a bright classical house set by the owner's favourite room (Wada 213 living room: pale blue panelling, cinnamon sofa, yellow chairs, shot straight on), renovated by a woman who loves Wada's book; her friend is the photographer. 10 rooms, 26 more candidate palettes (2–3 per room) picked by the studio; the owner picks one per room on the page (kept on their device, "Copy my picks"). Next: the owner's picks, then how to make each room (two voices, a short image prompt). Brainstorming: don't add rules or detail; don't archive everything.
 2. Compare how many follow-ups each method needs to reach something shareable; fold what works into the next versions.
 3. Later, once the method is settled: the first finished piece in the Library (room + card as two slides), then decide the site's purpose.
 

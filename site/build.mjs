@@ -353,26 +353,31 @@ const libraryHtml = () => `<p class="eyebrow">Finished work</p><h1>Library</h1>
 <figure class="plate"><div class="room"><span>Your first piece</span></div><div class="sw">${(current ? current.palette.colours : []).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div></figure>
 <div class="piece-text"><h2>Nothing finished yet</h2><p>When you approve a piece it lands here, newest first, as it will be posted: the room on the left, its swatches on the right.</p></div></article>`}</div>`;
 // ---- The House: one Edwardian house, one Wada palette per room; the owner picks (picks are kept on their device)
-const houseFile = join(src, 'house.json');
+const houseDir = join(src, 'house'), houseFile = join(houseDir, 'house.json');
 if (existsSync(houseFile)) {
   const house = JSON.parse(readFileSync(houseFile, 'utf8'));
   const wada = families.find(f => f.id === 'wada');
   const byNo = n => { const c = wada.combinations.find(x => x.number === n); if (!c) throw new Error(`house.json: no Wada ${n}`); return c; };
+  mkdirSync(join(out, 'house'), { recursive: true });
+  const setHtml = r => { const c = byNo(r.set.wada); for (const f of [r.set.image, r.set.card].filter(Boolean)) copyFileSync(join(houseDir, f), join(out, 'house', f));
+    return `<article class="room-card room-set" data-room="${esc(r.id)}" data-name="${esc(r.name)}" data-set="${r.set.wada}"><p class="eyebrow">Done · sets the house</p><h2>${esc(r.name)} · Wada ${r.set.wada}</h2>
+<div class="set-pics"><img src="/house/${r.set.image}" alt="${esc(r.name)} in Wada ${r.set.wada}" loading="lazy">${r.set.card ? `<img src="/house/${r.set.card}" alt="Swatch card: ${c.colours.map(x => esc(x.name)).join(', ')}" loading="lazy">` : ''}</div>
+<p class="room-about">${esc(r.about)}</p>${strip(c.colours, 'strip mini')}<small class="set-names">${c.colours.map(x => `${esc(x.name)} ${x.hex}`).join(' · ')}</small></article>`; };
   const roomHtml = r => `<article class="room-card" data-room="${esc(r.id)}" data-name="${esc(r.name)}"><h2>${esc(r.name)}</h2><p class="room-about">${esc(r.about)}</p>
 <div class="room-opts">${r.options.map(o => { const c = byNo(o.wada); return `<button type="button" class="room-opt" data-wada="${o.wada}" aria-pressed="false">${strip(c.colours, 'strip mini')}<span class="ro-text"><b>Wada ${o.wada}</b><small>${c.colours.map(x => esc(x.name)).join(' · ')}</small><span>${esc(o.idea)}</span></span></button>`; }).join('')}</div></article>`;
   page({ title: house.title, path: '/house', wide: true, html: `<p class="eyebrow">The House · ${house.rooms.length} rooms</p><h1>One house, one palette in each room.</h1>
 <p class="lede">${esc(house.house)}</p>
 <div class="house-bar"><span id="house-count">No rooms chosen yet</span><span class="house-actions"><button type="button" class="button" id="house-copy">Copy my picks</button><button type="button" class="button ghost" id="house-clear">Clear</button></span></div>
 <p class="note">Pick one palette for each room; tap again to unpick. Your picks stay on this device. When you're happy, copy them and send them to the studio.</p>
-<div class="rooms">${house.rooms.map(roomHtml).join('')}</div>
+<div class="rooms">${house.rooms.map(r => r.set ? setHtml(r) : roomHtml(r)).join('')}</div>
 <p class="note">${esc(house.ruled_out)}</p>
 <script>(function(){var K='house-picks',picks={};try{picks=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
-var cards=[].slice.call(document.querySelectorAll('.room-card')),count=document.getElementById('house-count');
+var cards=[].slice.call(document.querySelectorAll('.room-card:not(.room-set)')),all=[].slice.call(document.querySelectorAll('.room-card')),count=document.getElementById('house-count');
 function save(){try{localStorage.setItem(K,JSON.stringify(picks))}catch(e){}}
-function draw(){var n=0;cards.forEach(function(c){var p=picks[c.dataset.room];if(p)n++;c.classList.toggle('chosen',!!p);c.querySelectorAll('.room-opt').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.wada===String(p)))})});count.textContent=n?n+' of '+cards.length+' rooms chosen':'No rooms chosen yet'}
+function draw(){var n=0;cards.forEach(function(c){var p=picks[c.dataset.room];if(p)n++;c.classList.toggle('chosen',!!p);c.querySelectorAll('.room-opt').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.wada===String(p)))})});count.textContent=(n+all.length-cards.length)+' of '+all.length+' rooms chosen'}
 cards.forEach(function(c){c.querySelectorAll('.room-opt').forEach(function(b){b.onclick=function(){var r=c.dataset.room;picks[r]=picks[r]===b.dataset.wada?null:b.dataset.wada;if(!picks[r])delete picks[r];save();draw()}})});
 document.getElementById('house-clear').onclick=function(){picks={};save();draw()};
-document.getElementById('house-copy').onclick=function(){var t='My picks for the House:\\n'+cards.map(function(c){return c.dataset.name+': '+(picks[c.dataset.room]?'Wada '+picks[c.dataset.room]:'not chosen')}).join('\\n');var b=this;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy your picks:',t)}).then(function(){setTimeout(function(){b.textContent='Copy my picks'},1500)})};
+document.getElementById('house-copy').onclick=function(){var t='My picks for the House:\\n'+all.map(function(c){var w=c.dataset.set||picks[c.dataset.room];return c.dataset.name+': '+(w?'Wada '+w:'not chosen')}).join('\\n');var b=this;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy your picks:',t)}).then(function(){setTimeout(function(){b.textContent='Copy my picks'},1500)})};
 draw()})()</script>` });
 }
 
