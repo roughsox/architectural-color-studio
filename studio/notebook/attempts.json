@@ -15,6 +15,13 @@
           "asked": "\"#209\"-style request; ChatGPT wrote a brief (\"The Blue Salon\": a London townhouse drawing room, a blue room interrupted by one extraordinary orange chair, smoked oak parquet, limestone fireplace, walnut, aged nickel, late-morning daylight). Owner replied \"Please continue\".",
           "verdict": "closer",
           "note": "A solid first image, stronger than any first image in the v3-v5 chats: a real drawing room with a fireplace, a believable sofa, a decisive orange chair. But it did not fully follow its own brief: lit built-in niches came back, the light is golden rather than late-morning daylight, the pendant is a generic drum shade, and stock hydrangeas returned. The colours cluster (blue on the left, orange on the right, the art carrying both). The window trim and frames are painted the wall colour, which few designers would do."
+        },
+        {
+          "n": 2,
+          "image": "wada-209-alt-salon-2.jpg",
+          "asked": "Same chat, a short follow-up pointing back to its own brief: late-morning daylight with no golden cast; white window trim; replace the lit niches with plain panelling; weave the palette through the room; hand-picked pendant, art and objects.",
+          "verdict": "closer",
+          "note": "Done: white window trim and sashes; the lit niches became plain blue panels; the light is clearer; hydrangeas gone. Owner: \"pretty dang close to something worth sharing\". Not done or made worse: \"no golden cast\" was read as \"no warm light at all\", so the warm glow of the pendant on the ceiling was lost; the palette was not woven through the room (orange still only the chair, the cushions and the art); the drum pendant was kept. The art still restates the palette."
         }
       ]
     },
