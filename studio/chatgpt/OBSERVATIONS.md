@@ -1,0 +1,18 @@
+---
+title: What to change in the next instructions
+updated: 2026-11-16
+status: collecting; v3 is written only when the owner says the list is ready
+---
+
+Observations from images made with the current instructions, each with the change it suggests. The owner decides when there are enough to write the next version. Images and verdicts are in the Notebook.
+
+| # | Seen | Image | Owner or studio | Candidate change |
+|---|---|---|---|---|
+| 1 | The ceiling is painted the same colour as the walls in every room | Wada 254 salon; Studio 10 drawing room | Owner: "That's not very common. Ceiling colors should be kept to only specific situations." | Ceilings are white or a soft warm white, with the walls' colour only in a deliberately colour-drenched room. |
+| 2 | Over-ornamented ceiling: rosettes, swags, a large oval moulding | Wada 254 salon | Owner | Refined, restrained classical detail; at most one decorative ceiling feature; colour, not ornament, is the spectacle. |
+| 3 | Colour zoned, not designed: one colour's furniture on the left, another's on the right, with token crossovers | Wada 254 salon | Owner: "it kind of feels like it's just checking off boxes" | Weave colours through the room; tie them together with one element that carries several palette colours at once (a rug, a printed fabric, a painting). |
+| 4 | Token styling: a coloured vase or box placed to show a palette colour | Studio 10 drawing room | Owner: "an amateur attempt at styling a room" | Palette colours live mainly in architecture, furniture and textiles. Accessories are few and chosen for the room, not to display a colour. Note: v2's "repeat each colour at several scales (… an object)" probably caused this. |
+| 5 | A large sculptural statement piece on the focal wall; the room reads as a model room | Studio 10 drawing room | Owner: "less of a model room and more of a lived-in luxurious room feeling, but still approachable for a social media audience where they could imagine their own room with this color palette" | Describe the feel: a real home a design-minded person lives in, aspirational but attainable; art and objects look collected over time; things a person uses (books that are read, a lamp by a chair). No statement pieces made for the photograph. |
+| 6 | Colours drift warm and dusty; pale walls go tan, pinks go dusty rose | Wada 254 salon (measured) | Studio | Keep 4000 K / CRI; add that the brightest walls match the card exactly and large stone or wood surfaces stay light and quiet. |
+| 7 | The word "luxurious" in the request adds ornament and props | Wada 254 salon; earlier Sage, Rose, Ivory 2 | Studio (Notebook lesson 15) | Keep requests minimal: `#254`, or "a room with this palette". |
+| 8 | The palette image attached labels colours Field, Weight, Accent, Bridge | Studio 10 drawing room | Studio | A "Field" label may push that colour onto every large surface, ceiling included. Attach a card with names only (the trio cards are already plain; the studio palettes' strip is not). |

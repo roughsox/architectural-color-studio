@@ -17,7 +17,7 @@ A workshop for the owner to play with colour and rooms, and a production line fo
 
 - No finished piece yet; the Library is empty.
 - Sage, Rose, Ivory: attempt 1 *closer*, attempt 2 *miss*. 
-- **Current method (owner, 2026-11-16): a ChatGPT project with instructions (`studio/chatgpt/INSTRUCTIONS-v1.md`) and short commands (`#213`, `card #213`).** First results are the best so far (Notebook: Wada 213, 254). v2 (`INSTRUCTIONS-v2.md`: creative decisions vs fixed specifications, 4000 K / CRI 95+ light, camera, scale) is on the site at /instructions with a Copy button; test it against v1 on Wada 213 and 254. The per-trio prompts on the site are superseded by this.
+- **Current method (owner, 2026-11-16): a ChatGPT project with instructions (`studio/chatgpt/INSTRUCTIONS-v1.md`) and short commands (`#213`, `card #213`).** First results are the best so far (Notebook: Wada 213, 254). v2 is on /instructions. The owner is testing v2 on different palettes; observations and candidate changes collect in `studio/chatgpt/OBSERVATIONS.md`. v3 is written only when the owner says the list is ready. The per-trio prompts on the site are superseded by this.
 - **Owner direction (2026-11-16): one main prompt that works for any palette**, not a prompt per palette. The per-trio room sheets and prompts on the site (v0.8) are the wrong direction; replace them with one main prompt once the owner has agreed its wording. Go at the owner's pace: play first, build only what has been agreed.
 - The audit (`docs/AUDIT-2026-11-16.md`) lists what else to improve, in order.
 

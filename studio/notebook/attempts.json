@@ -2,6 +2,24 @@
   "groups": [
     {
       "palette": {
+        "family": "studio",
+        "number": 10,
+        "name": "Studio 10: Mexico City (Casa Pink, Volcanic Black, Marigold, Jacaranda)",
+        "label": "Studio No."
+      },
+      "made_with": "ChatGPT project with instructions v2; attached the site's palette strip (which labels the colours Field, Weight, Accent, Bridge)",
+      "attempts": [
+        {
+          "n": 1,
+          "image": "studio-10-drawing-room-1.jpg",
+          "asked": "\"Using the instructions... Please create a high-quality image of a room with this color palette\" (no \"luxurious\")",
+          "verdict": "closer",
+          "note": "Strong colour commitment and a calmer ceiling than the salon; all four colours clearly present; 9:16. But the ceiling is painted the same pink as the walls, as in every room so far; the styling is token (a purple vase and a purple box placed to tick the colour off); a large abstract wall sculpture reads as a model room, not a home. Owner: it should feel lived-in and luxurious but approachable, a room a social-media audience can imagine as their own."
+        }
+      ]
+    },
+    {
+      "palette": {
         "family": "wada",
         "number": 213,
         "name": "Wada 213: Vinaceous Cinnamon, Apricot Yellow, Pale King's Blue",
