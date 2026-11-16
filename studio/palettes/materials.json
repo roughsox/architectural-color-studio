@@ -1,0 +1,512 @@
+{
+ "order": 6,
+ "id": "materials",
+ "kind": "materials",
+ "name": "Materials",
+ "label": "Material",
+ "title": "Natural materials",
+ "description": "The colours a room brings with it: wood, stone, clay, plaster, fibre, metal, and the living things and sky around a house. A material is never one colour, so each is a range: light, typical and dark. Palettes are chosen to live with these, and exteriors start here.",
+ "source": "Architectural Color Studio",
+ "data": "Studio estimates of typical colour ranges, not measurements",
+ "note": "Values are studio estimates of typical finishes under neutral daylight, to be replaced by measurements from real photographs. Real materials vary from piece to piece, with finish, and with age.",
+ "materials": [
+  {
+   "group": "Wood",
+   "name": "White oak",
+   "light": "#E0C9A6",
+   "typical": "#C8A97E",
+   "dark": "#A88560",
+   "texture": "Open, straight grain with flecks of ray",
+   "ages": "Ambers and deepens slightly in sun",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Walnut",
+   "light": "#8A6A4F",
+   "typical": "#6B4A33",
+   "dark": "#4A3222",
+   "texture": "Fine, wavy grain; chocolate with purple-grey streaks",
+   "ages": "Lightens and warms towards honey-brown in sun",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Ash",
+   "light": "#E6D7BC",
+   "typical": "#D2BC98",
+   "dark": "#B79E78",
+   "texture": "Pale, strong grain, close to oak but cleaner",
+   "ages": "Yellows gently",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Pine",
+   "light": "#EBCF9C",
+   "typical": "#D9B47A",
+   "dark": "#B88A52",
+   "texture": "Soft, knotty, resinous",
+   "ages": "Turns orange-yellow quickly unless treated",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Teak",
+   "light": "#B98B5B",
+   "typical": "#9A6B3F",
+   "dark": "#74502E",
+   "texture": "Oily, tight grain, golden-brown",
+   "ages": "Weathers to silver-grey outdoors if left unoiled",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Cherry",
+   "light": "#C08A62",
+   "typical": "#A0623E",
+   "dark": "#7A462B",
+   "texture": "Smooth, fine grain, pinkish when new",
+   "ages": "Darkens markedly to red-brown within months",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Weathered timber",
+   "light": "#B3ADA3",
+   "typical": "#918B82",
+   "dark": "#6E6961",
+   "texture": "Silvered, raised grain, slightly furred",
+   "ages": "Already aged: silver-grey from sun and rain",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Wood",
+   "name": "Cedar cladding",
+   "light": "#D2A47A",
+   "typical": "#B07E55",
+   "dark": "#8A5E3C",
+   "texture": "Coarse, aromatic, pink-to-brown boards",
+   "ages": "Silvers within a year or two unless sealed",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Stone",
+   "name": "Limestone",
+   "light": "#E9E2D3",
+   "typical": "#D8CDB8",
+   "dark": "#BFB29A",
+   "texture": "Fine, chalky, softly fossil-flecked",
+   "ages": "Softens and darkens slightly where touched",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Stone",
+   "name": "Travertine",
+   "light": "#EADBC2",
+   "typical": "#D9C3A1",
+   "dark": "#BFA27B",
+   "texture": "Pitted, banded, honey-cream",
+   "ages": "Holes fill and edges soften with wear",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Stone",
+   "name": "Carrara marble",
+   "light": "#F1F0EC",
+   "typical": "#E4E3DF",
+   "dark": "#C9CAC8",
+   "texture": "White ground with soft grey veining",
+   "ages": "Etches and dulls where acids touch it",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Stone",
+   "name": "Slate",
+   "light": "#6E7377",
+   "typical": "#50565B",
+   "dark": "#363B40",
+   "texture": "Riven, layered, blue-grey to charcoal",
+   "ages": "Lightens and dulls when dry; darkens when wet",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Stone",
+   "name": "Grey granite",
+   "light": "#B5B2AD",
+   "typical": "#8F8C87",
+   "dark": "#66635F",
+   "texture": "Speckled, crystalline, hard",
+   "ages": "Barely changes",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Stone",
+   "name": "Sandstone",
+   "light": "#E2C9A0",
+   "typical": "#CDA977",
+   "dark": "#A9834F",
+   "texture": "Granular, warm, often banded",
+   "ages": "Weathers darker and greener outdoors",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Clay",
+   "name": "Terracotta tile",
+   "light": "#D9906A",
+   "typical": "#C0714A",
+   "dark": "#9C5536",
+   "texture": "Matte, hand-made, uneven edges",
+   "ages": "Patinas and darkens with sealing and use",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Clay",
+   "name": "Red brick",
+   "light": "#B0624A",
+   "typical": "#934A36",
+   "dark": "#6F3627",
+   "texture": "Rough faces with mortar joints; tone varies brick to brick",
+   "ages": "Darkens with soot and moss outdoors",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Clay",
+   "name": "Yellow stock brick",
+   "light": "#D9C39A",
+   "typical": "#C2A574",
+   "dark": "#9C8256",
+   "texture": "Sandy, soft-edged, mottled",
+   "ages": "Greys and darkens in cities",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Clay",
+   "name": "Glazed tile, white",
+   "light": "#F3F1EA",
+   "typical": "#E6E2D6",
+   "dark": "#CFC9B9",
+   "texture": "Shiny, slightly wavy surface; light catches the glaze",
+   "ages": "Grout darkens before the tile does",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Plaster and concrete",
+   "name": "Lime plaster",
+   "light": "#F0EADF",
+   "typical": "#E3DACA",
+   "dark": "#CFC4B0",
+   "texture": "Soft, cloudy, hand-trowelled",
+   "ages": "Mellows; picks up a faint warmth",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Plaster and concrete",
+   "name": "Clay plaster",
+   "light": "#E2C9AD",
+   "typical": "#C9A98A",
+   "dark": "#A88868",
+   "texture": "Earthy, matte, slightly sandy",
+   "ages": "Stable; marks easily",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Plaster and concrete",
+   "name": "Polished concrete",
+   "light": "#C9C7C2",
+   "typical": "#A9A7A2",
+   "dark": "#85837E",
+   "texture": "Cool grey with aggregate flecks and clouding",
+   "ages": "Darkens with sealer; scuffs lighten",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Plaster and concrete",
+   "name": "Board-marked concrete",
+   "light": "#BFBCB5",
+   "typical": "#9E9B94",
+   "dark": "#7A7771",
+   "texture": "Timber grain cast into the surface",
+   "ages": "Streaks and darkens outdoors",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Plaster and concrete",
+   "name": "Lime render",
+   "light": "#ECE4D4",
+   "typical": "#DCD1BC",
+   "dark": "#C2B59D",
+   "texture": "Breathable, soft-edged façade finish",
+   "ages": "Streaks below sills; greens in shade",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Fibre and textile",
+   "name": "Linen, natural",
+   "light": "#E6DCCB",
+   "typical": "#D6C8B0",
+   "dark": "#BBAB90",
+   "texture": "Slubby, crumpled, matte",
+   "ages": "Softens and pales with washing",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Fibre and textile",
+   "name": "Wool, undyed",
+   "light": "#EFE8DA",
+   "typical": "#E1D7C4",
+   "dark": "#C9BCA4",
+   "texture": "Thick, soft, slightly hairy",
+   "ages": "Yellows a little with age",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Fibre and textile",
+   "name": "Rattan and cane",
+   "light": "#E2C48F",
+   "typical": "#CDA868",
+   "dark": "#A9834A",
+   "texture": "Woven, glossy strands",
+   "ages": "Deepens to honey-brown",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Fibre and textile",
+   "name": "Jute and sisal",
+   "light": "#D6BE92",
+   "typical": "#BFA373",
+   "dark": "#9E8354",
+   "texture": "Coarse, ribbed weave",
+   "ages": "Fades and frays at edges",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Fibre and textile",
+   "name": "Tan leather",
+   "light": "#B07A4E",
+   "typical": "#8E5B36",
+   "dark": "#6B4126",
+   "texture": "Smooth with a soft sheen",
+   "ages": "Darkens and polishes where used",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Fibre and textile",
+   "name": "Cotton canvas, undyed",
+   "light": "#ECE6D8",
+   "typical": "#DDD5C3",
+   "dark": "#C4BAA4",
+   "texture": "Tight, matte, flat weave",
+   "ages": "Creases; greys with dust",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Metal",
+   "name": "Unlacquered brass",
+   "light": "#D9B66E",
+   "typical": "#B8954E",
+   "dark": "#8C6E36",
+   "texture": "Warm gold; mirror to brushed",
+   "ages": "Tarnishes to soft brown-gold where untouched",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Metal",
+   "name": "Copper",
+   "light": "#D08C68",
+   "typical": "#B06C48",
+   "dark": "#7E5A44",
+   "texture": "Pink-orange when new",
+   "ages": "Browns, then greens (verdigris) outdoors",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Metal",
+   "name": "Blackened steel",
+   "light": "#5A5856",
+   "typical": "#3E3D3C",
+   "dark": "#2A2A2A",
+   "texture": "Dark, slightly blue, mottled",
+   "ages": "Rubs to grey at edges; rusts if uncoated",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Metal",
+   "name": "Zinc and stainless",
+   "light": "#C8CACB",
+   "typical": "#A6A9AB",
+   "dark": "#7F8285",
+   "texture": "Cool grey, brushed or matte",
+   "ages": "Zinc dulls to blue-grey patina outdoors",
+   "where": [
+    "inside",
+    "outside"
+   ]
+  },
+  {
+   "group": "Metal",
+   "name": "Weathering steel",
+   "light": "#B0623A",
+   "typical": "#8E4A2B",
+   "dark": "#6A3420",
+   "texture": "Rusted, velvety orange-brown",
+   "ages": "Darkens and stabilises over years; stains below",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Living and outdoor context",
+   "name": "Houseplant foliage",
+   "light": "#8BA36A",
+   "typical": "#5E7D45",
+   "dark": "#3D5A30",
+   "texture": "Glossy or matte leaves, mixed greens",
+   "ages": "Always present; changes with the plant",
+   "where": [
+    "inside"
+   ]
+  },
+  {
+   "group": "Living and outdoor context",
+   "name": "Garden planting",
+   "light": "#A4B477",
+   "typical": "#6F8A4B",
+   "dark": "#40552E",
+   "texture": "Mixed greens, seasonal flowers",
+   "ages": "Seasonal: fresh in spring, bronze in autumn",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Living and outdoor context",
+   "name": "Lawn",
+   "light": "#9DB56A",
+   "typical": "#76934A",
+   "dark": "#536B33",
+   "texture": "Fine, even green",
+   "ages": "Browns in drought and winter",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Living and outdoor context",
+   "name": "Sky",
+   "light": "#E3E8EC",
+   "typical": "#AFC6DB",
+   "dark": "#6F95BD",
+   "texture": "Overcast white to clear blue",
+   "ages": "Changes by hour, weather and season",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Living and outdoor context",
+   "name": "Gravel and paving",
+   "light": "#D2CBBD",
+   "typical": "#B3AA98",
+   "dark": "#8C8473",
+   "texture": "Loose or set; mixed stones",
+   "ages": "Darkens when wet; greens in shade",
+   "where": [
+    "outside"
+   ]
+  },
+  {
+   "group": "Living and outdoor context",
+   "name": "Water",
+   "light": "#B8CBCB",
+   "typical": "#7FA0A3",
+   "dark": "#4C6B70",
+   "texture": "Reflective; takes the colour of the sky and banks",
+   "ages": "Changes with light and weather",
+   "where": [
+    "outside"
+   ]
+  }
+ ]
+}

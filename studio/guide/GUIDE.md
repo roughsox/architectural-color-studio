@@ -50,6 +50,8 @@ Colour comes from **palette families**. There are two kinds:
 - **Combinations**: ready-made sets of two to four colours, such as the Wada family. A project can start from one directly.
 - **Colour collections**: single named colours, such as Werner, Ridgway and the traditional colours of Japan. These are raw material.
 
+A third kind, **Natural materials**, holds the colours a room brings with it: wood, stone, clay, plaster, fibre, metal, planting and sky. A material is never one colour, so each is a range (light, typical, dark) with notes on texture and ageing, and is tagged inside, outside or both. The values are studio estimates until they are measured from real photographs. Materials are not palette colours; palettes are chosen to live with them.
+
 The studio also **invents its own palettes**, unprompted: one at a time, or as a **series** with a theme (for example *Daylight hours*: one house through one day). The Colour specialist makes them. The owner does not have to describe anything.
 
 **How a studio palette is made**

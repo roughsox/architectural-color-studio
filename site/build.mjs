@@ -47,8 +47,9 @@ const chips = colours => `<div class="chips">${colours.map(c => `<div class="chi
 const families = readdirSync(join(src, 'palettes')).filter(f => f.endsWith('.json')).sort()
   .map(f => JSON.parse(readFileSync(join(src, 'palettes', f), 'utf8'))).sort((a, b) => a.order - b.order);
 const isCombos = f => f.kind === 'combinations';
-const size = f => isCombos(f) ? f.combinations.length : f.colours.length;
-const countLabel = f => isCombos(f) ? (size(f) ? `${size(f)} ${size(f) === 1 ? 'combination' : 'combinations'}` : 'none yet') : `${size(f)} single colours`;
+const isMat = f => f.kind === 'materials';
+const size = f => isCombos(f) ? f.combinations.length : isMat(f) ? f.materials.length : f.colours.length;
+const countLabel = f => isCombos(f) ? (size(f) ? `${size(f)} ${size(f) === 1 ? 'combination' : 'combinations'}` : 'none yet') : isMat(f) ? `${size(f)} materials` : `${size(f)} single colours`;
 const total = families.filter(isCombos).reduce((n, f) => n + size(f), 0);
 
 // ---- Studio palettes: the studio's own rules (Guide §4), checked on every build. A broken palette stops the build.
@@ -60,10 +61,11 @@ const lab = hex => {
   const L = 116 * Y - 16, A = 500 * (X - Y), B = 200 * (Y - Z);
   return { L, a: A, b: B, C: Math.hypot(A, B) };
 };
+const ink = hex => { const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16)); return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#22302b' : '#fff'; };
 const RULES = { fieldWeightGap: 30, minDistance: 15, loud: 45 };
 const roleOrder = ['Field', 'Weight', 'Accent', 'Bridge'];
 const allColours = new Map(); // "family|name" -> hex, from every family
-for (const f of families) for (const c of isCombos(f) ? f.combinations.flatMap(x => x.colours) : f.colours) if (f.id !== 'studio') allColours.set(`${f.id}|${c.name}`, c.hex.toUpperCase());
+for (const f of families) for (const c of isCombos(f) ? f.combinations.flatMap(x => x.colours) : f.colours || []) if (f.id !== 'studio') allColours.set(`${f.id}|${c.name}`, c.hex.toUpperCase());
 function checkStudio(c) {
   const fail = m => { throw new Error(`Studio No. ${c.number} (${c.name}): ${m}`); };
   if (!c.name || !c.intent) fail('needs a name and a one-sentence intent');
@@ -114,7 +116,7 @@ const statusOf = (f, n) => projects.find(p => p.family === f && p.palette.number
 
 // ---- Palettes: one card per family, and one page per family
 const pick = (arr, n) => arr.length <= n ? arr : Array.from({ length: n }, (_, i) => arr[Math.floor(i * arr.length / n)]);
-const mosaic = f => isCombos(f)
+const mosaic = f => isMat(f) ? `<div class="mosaic mat">${pick(f.materials, 24).map(m => `<span style="background:linear-gradient(${m.light},${m.typical} 50%,${m.dark})"></span>`).join('')}</div>` : isCombos(f)
   ? (size(f) ? `<div class="mosaic">${pick(f.combinations, 12).map(c => strip(c.colours, 'strip mini')).join('')}</div>` : `<div class="mosaic blank"><span>None made yet</span></div>`)
   : `<div class="mosaic dots">${pick(f.colours, 40).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div>`;
 page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json', html: `
@@ -122,10 +124,10 @@ page({ title: 'Palettes', path: '/palettes', wide: true, twin: '/palettes.json',
 <p class="lede">Each family is a body of colour work with its own character. Some are ready-made combinations; others are collections of single colours for the studio to combine. Every project begins here.</p>
 <div class="families">${families.map(f => `
 <article class="family">${mosaic(f)}
-<div class="about"><p class="eyebrow">${isCombos(f) ? (size(f) ? countLabel(f) : 'Combinations · none yet') : 'Colour collection · ' + countLabel(f)}</p><h2>${esc(f.title)}</h2><p>${esc(f.description)}</p>
+<div class="about"><p class="eyebrow">${isCombos(f) ? (size(f) ? countLabel(f) : 'Combinations · none yet') : isMat(f) ? 'Natural materials · ' + countLabel(f) + ' as colour ranges' : 'Colour collection · ' + countLabel(f)}</p><h2>${esc(f.title)}</h2><p>${esc(f.description)}</p>
 <a class="button" href="/palettes/${f.id}">Open the ${esc(f.name)} family</a></div></article>`).join('')}
 <article class="family more"><div class="about"><p class="eyebrow">Room for more</p><h2>Further families</h2><p>Other professional palettes, looks and colour families can be added here, each with its own description and page.</p></div></article></div>` });
-write('palettes.json', JSON.stringify(families.map(({ combinations, colours, ...f }) => ({ ...f, count: (combinations || colours).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
+write('palettes.json', JSON.stringify(families.map(({ combinations, colours, ...f }) => ({ ...f, count: (combinations || colours || f.materials).length, page: `${SITE}/palettes/${f.id}`, data_file: `${SITE}/palettes/${f.id}.json` }))));
 
 const filterScript = `<script>document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('[data-n]:not(button)').forEach(p=>p.hidden=b.dataset.n!=='0'&&p.dataset.n!==b.dataset.n)})</script>`;
 function combosHtml(f) {
@@ -141,6 +143,14 @@ ${[...new Set(f.combinations.map(c => c.series || ''))].map(s => { const about =
 ${c.intent ? `<p class="intent">${esc(c.intent)}</p>` : ''}
 <ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}</ul></article>`; }).join('')}</div>`; }).join('')}${filterScript}`;
 }
+function materialsHtml(f) {
+  const warmth = h => { const { a, b } = lab(h); const hue = (Math.atan2(b, a) * 180 / Math.PI + 360) % 360; return Math.hypot(a, b) < 6 ? 'neutral' : hue < 110 || hue > 330 ? 'warm' : 'cool'; };
+  const range = m => { const v = [m.light, m.typical, m.dark].map(lab); const r = k => `${Math.round(Math.min(...v.map(x => x[k])))}–${Math.round(Math.max(...v.map(x => x[k])))}`; return `Lightness ${r('L')} · strength ${r('C')} · ${warmth(m.typical)}`; };
+  const groups = [...new Set(f.materials.map(m => m.group))];
+  return `<p class="note">Each material shows a range: <b>light</b>, <b>typical</b> and <b>dark</b>. Tags say whether it belongs inside, outside, or both.</p>` + groups.map(g => `<h2 class="group">${esc(g)}</h2><div class="mats">${f.materials.filter(m => m.group === g).map(m => `
+<article class="mat-card"><div class="mat-band">${['light', 'typical', 'dark'].map(k => `<span style="background:${m[k]};color:${ink(m[k])}"><i>${k}</i><code>${m[k]}</code></span>`).join('')}</div>
+<div class="mat-text"><h3>${esc(m.name)}</h3><p class="mat-tags">${m.where.map(w => `<em>${w}</em>`).join('')}</p><p>${esc(m.texture)}.</p><p class="ages">Ageing: ${esc(m.ages)}.</p><p class="range">${range(m)}</p></div></article>`).join('')}</div>`).join('');
+}
 function coloursHtml(f) {
   const groups = [...new Set(f.colours.map(c => c.group || ''))];
   const tile = c => `<div class="tile" title="${esc(c.note || c.name)}"><span style="background:${c.hex}"></span><b>${esc(c.name)}</b><code>${c.hex}</code>${c.note ? `<small>${esc(c.note)}</small>` : ''}</div>`;
@@ -150,7 +160,7 @@ for (const f of families) {
   page({ title: f.title, path: '/palettes/' + f.id, wide: true, twin: `/palettes/${f.id}.json`, html: `
 <p class="eyebrow"><a href="/palettes">Palette families</a> / ${esc(f.name)}</p><h1>${esc(f.title)}</h1>
 <p class="lede">${esc(f.description)}</p>
-${isCombos(f) ? combosHtml(f) : coloursHtml(f)}
+${isCombos(f) ? combosHtml(f) : isMat(f) ? materialsHtml(f) : coloursHtml(f)}
 <p class="note">${esc(f.note)} Data: ${esc(f.data)}.</p>` });
   write(`palettes/${f.id}.json`, JSON.stringify(f));
 }
@@ -162,7 +172,6 @@ write('guide.md', guide.raw);
 // ---- Current project
 // The owner's three moments; everything else the studio does on its own.
 const ownerMoments = { Queued: 'Choose the palette', Directed: 'Pick a room idea', Approved: 'Approve the piece' };
-const ink = hex => { const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16)); return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#22302b' : '#fff'; };
 const rosterState = (p, d) => p.notes.some(n => n.expert.id === d.id) ? ['spoken', 'Has spoken'] : p.next?.id === d.id ? ['next', 'Up next'] : ['later', 'Joins at ' + d.speaks.filter(s => stages.indexOf(s) >= stages.indexOf(p.meta.stage))[0]];
 const expertName = d => d.name + (d.who ? ` (${d.who})` : '');
 function projectText(p) {
@@ -265,7 +274,7 @@ ${current ? `<a class="h-now" href="/project">
 ${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? st.combinations.slice(-6) : []; return fresh.length ? `<section class="fresh"><div class="fresh-head"><p class="eyebrow">Fresh from the studio</p><a href="/palettes/studio">All studio palettes →</a></div>
 <div class="fresh-row">${fresh.map(c => `<a class="fresh-card" href="/palettes/studio#p${c.number}">${strip(c.colours, 'strip')}<b>${esc(c.name)}</b><span>${esc(c.intent)}</span></a>`).join('')}</div></section>` : ''; })()}
 <div class="doors">
-<a class="door" href="/palettes"><div class="mosaic">${mosaicFrom}</div><div class="door-text"><h2>Palettes</h2><p>${families.length} families · ${total} ready-made combinations · ${families.filter(f => !isCombos(f)).reduce((n, f) => n + size(f), 0).toLocaleString('en')} single colours</p></div></a>
+<a class="door" href="/palettes"><div class="mosaic">${mosaicFrom}</div><div class="door-text"><h2>Palettes</h2><p>${families.length} families · ${total} ready-made combinations · ${families.filter(f => f.kind === 'colours').reduce((n, f) => n + size(f), 0).toLocaleString('en')} single colours · ${families.filter(isMat).reduce((n, f) => n + size(f), 0)} materials</p></div></a>
 <a class="door" href="/library"><div class="door-lib">${approved.length ? approved.slice(-2).map(p => strip(p.palette.colours, 'strip mini')).join('') : `<div class="plate mini"><div class="room"><span>First piece</span></div><div class="sw">${(current ? current.palette.colours : []).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div></div>`}</div><div class="door-text"><h2>Library</h2><p>${approved.length ? `${approved.length} finished ${approved.length === 1 ? 'piece' : 'pieces'}` : 'Finished pieces will live here: each room beside its swatches.'}</p></div></a>
 </div>
 <a class="h-table" href="/project"><p class="eyebrow">The experts at the table</p><ul>${desks.map(d => `<li><span class="badge sm" style="background:${d.colour}" aria-hidden="true">${esc(d.mark)}</span>${esc(d.name)}</li>`).join('')}</ul></a>
