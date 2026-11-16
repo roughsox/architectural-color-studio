@@ -17,7 +17,7 @@ A workshop for the owner to play with colour and rooms, and a production line fo
 
 - No finished piece yet; the Library is empty.
 - Sage, Rose, Ivory: attempt 1 *closer*, attempt 2 *miss*. Prompt v0.8, the deeper sage and the room sheet are untested.
-- **Next:** the owner runs Sage, Rose, Ivory with v0.8 in three new chats and brings back all three first images. Measure the first-try hit rate.
+- **Owner direction (2026-11-16): one main prompt that works for any palette**, not a prompt per palette. The per-trio room sheets and prompts on the site (v0.8) are the wrong direction; replace them with one main prompt once the owner has agreed its wording. Go at the owner's pace: play first, build only what has been agreed.
 - The audit (`docs/AUDIT-2026-11-16.md`) lists what else to improve, in order.
 
 ## Open decisions
