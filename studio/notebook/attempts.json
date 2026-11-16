@@ -4,6 +4,24 @@
       "palette": {
         "family": "wada",
         "number": 209,
+        "name": "Wada 209, alternative approach (design brief first)",
+        "label": "Wada No."
+      },
+      "made_with": "Separate ChatGPT project with the alternative instructions: a written design brief, then the image on \"go\"",
+      "attempts": [
+        {
+          "n": 1,
+          "image": "wada-209-alt-salon-1.jpg",
+          "asked": "\"#209\"-style request; ChatGPT wrote a brief (\"The Blue Salon\": a London townhouse drawing room, a blue room interrupted by one extraordinary orange chair, smoked oak parquet, limestone fireplace, walnut, aged nickel, late-morning daylight). Owner replied \"Please continue\".",
+          "verdict": "closer",
+          "note": "A solid first image, stronger than any first image in the v3-v5 chats: a real drawing room with a fireplace, a believable sofa, a decisive orange chair. But it did not fully follow its own brief: lit built-in niches came back, the light is golden rather than late-morning daylight, the pendant is a generic drum shade, and stock hydrangeas returned. The colours cluster (blue on the left, orange on the right, the art carrying both). The window trim and frames are painted the wall colour, which few designers would do."
+        }
+      ]
+    },
+    {
+      "palette": {
+        "family": "wada",
+        "number": 209,
         "name": "Wada 209: Ivory Buff, Yellow Orange, Salvia Blue",
         "label": "Wada No."
       },
