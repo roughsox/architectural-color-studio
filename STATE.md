@@ -23,9 +23,11 @@ A workshop for the owner to play with colour and rooms, and a production line fo
 
 ## Open decisions
 
-1. Whether the four-colour Studio palettes are kept, recast as trios, or retired.
-2. AI disclosure on posts (platform rules not yet checked).
-3. Where images live once the Library grows past a few dozen pieces.
+1. **The priority is great images from ChatGPT.** The site's purpose, the Guide, and any restructuring wait until that is settled (owner, 2026-11-16).
+2. Studio palettes: adjust once the image method is settled; possibly a brief per-palette note that supplements the instructions, never competes with them. The materials score stays for now; whether the natural materials earn their place is open.
+3. The Current project page stays as a playground.
+4. AI disclosure on posts (platform rules not yet checked).
+5. Where images live once the Library grows past a few dozen pieces.
 
 ## Working rules
 
