@@ -1,6 +1,6 @@
 {
- "source": "10ccf70049b55058",
- "size": "1080×2400",
+ "source": "746e7b79424bac0c",
+ "size": "1080×1350",
  "checked": "2026-11-16",
  "cards": {
   "1": {
@@ -8,39 +8,30 @@
    "swatches": [
     {
      "name": "Aubergine",
-     "finish": "lacquer",
      "stated": "#4A2A3E",
-     "rendered": "#49293D",
-     "deltaE00": 0.39,
-     "texture": 3.99,
+     "rendered": "#49293E",
+     "deltaE00": 0.49,
+     "grain": 1.55,
      "lettering": "#C9A45C",
-     "contrast": 5.29,
-     "label": "#C9A45C",
-     "labelContrast": 5.29
+     "contrast": 5.29
     },
     {
      "name": "Saffron",
-     "finish": "velvet",
      "stated": "#C8902E",
      "rendered": "#C78F2E",
-     "deltaE00": 0.45,
-     "texture": 3.59,
+     "deltaE00": 0.36,
+     "grain": 1.26,
      "lettering": "#5E4928",
-     "contrast": 3.04,
-     "label": "#413019",
-     "labelContrast": 4.5
+     "contrast": 3.04
     },
     {
      "name": "Bone",
-     "finish": "linen",
      "stated": "#E8DFD0",
      "rendered": "#E7DECF",
-     "deltaE00": 0.2,
-     "texture": 2.29,
+     "deltaE00": 0.15,
+     "grain": 1.22,
      "lettering": "#997B44",
-     "contrast": 3.02,
-     "label": "#785F34",
-     "labelContrast": 4.56
+     "contrast": 3.02
     }
    ]
   },
@@ -49,39 +40,30 @@
    "swatches": [
     {
      "name": "Ink",
-     "finish": "plaster",
      "stated": "#1F2E3F",
      "rendered": "#1D2D3D",
-     "deltaE00": 0.94,
-     "texture": 5.14,
+     "deltaE00": 0.89,
+     "grain": 1.61,
      "lettering": "#C9A45C",
-     "contrast": 5.88,
-     "label": "#C9A45C",
-     "labelContrast": 5.88
+     "contrast": 5.88
     },
     {
      "name": "Cognac",
-     "finish": "leather",
      "stated": "#9A5A2E",
      "rendered": "#99592D",
-     "deltaE00": 0.53,
-     "texture": 3.42,
+     "deltaE00": 0.27,
+     "grain": 1.34,
      "lettering": "#D9BE84",
-     "contrast": 3.01,
-     "label": "#F5EAC9",
-     "labelContrast": 4.51
+     "contrast": 3.01
     },
     {
      "name": "Chalk",
-     "finish": "linen",
      "stated": "#ECE6DA",
      "rendered": "#ECE6DA",
-     "deltaE00": 0.11,
-     "texture": 1.87,
+     "deltaE00": 0.07,
+     "grain": 1.22,
      "lettering": "#9E7F47",
-     "contrast": 3.03,
-     "label": "#7D6337",
-     "labelContrast": 4.55
+     "contrast": 3.03
     }
    ]
   },
@@ -90,39 +72,30 @@
    "swatches": [
     {
      "name": "Sage",
-     "finish": "plaster",
      "stated": "#646F58",
-     "rendered": "#626D56",
-     "deltaE00": 0.77,
-     "texture": 4.91,
+     "rendered": "#626E56",
+     "deltaE00": 0.65,
+     "grain": 1.41,
      "lettering": "#DBC087",
-     "contrast": 3.01,
-     "label": "#F7ECCE",
-     "labelContrast": 4.51
+     "contrast": 3.01
     },
     {
      "name": "Rose",
-     "finish": "velvet",
      "stated": "#C08A86",
      "rendered": "#BF8A86",
-     "deltaE00": 0.28,
-     "texture": 3.66,
+     "deltaE00": 0.24,
+     "grain": 1.29,
      "lettering": "#5B4626",
-     "contrast": 3.07,
-     "label": "#3E2D18",
-     "labelContrast": 4.53
+     "contrast": 3.07
     },
     {
      "name": "Ivory",
-     "finish": "boucle",
      "stated": "#F0EADC",
      "rendered": "#EFE9DB",
-     "deltaE00": 0.25,
-     "texture": 1.31,
+     "deltaE00": 0.11,
+     "grain": 1.22,
      "lettering": "#A18248",
-     "contrast": 3.02,
-     "label": "#806638",
-     "labelContrast": 4.52
+     "contrast": 3.02
     }
    ]
   }

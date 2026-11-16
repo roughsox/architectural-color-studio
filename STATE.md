@@ -18,6 +18,7 @@ A workshop for the owner to play with colour and rooms, and a production line fo
 - No finished piece yet; the Library is empty.
 - Sage, Rose, Ivory: attempt 1 *closer*, attempt 2 *miss*. Prompt v0.8, the deeper sage and the room sheet are untested.
 - **Owner direction (2026-11-16): one main prompt that works for any palette**, not a prompt per palette. The per-trio room sheets and prompts on the site (v0.8) are the wrong direction; replace them with one main prompt once the owner has agreed its wording. Go at the owner's pace: play first, build only what has been agreed.
+- **Branch `plain-swatches` (not merged, not published):** the trio card redrawn as the owner's option B: 4:5, flat colour with the same paper grain on every swatch, names only, no finishes or roles; trio pages list only names and values. Waiting for the owner to see it, and for Vercel's daily limit to reset. The per-trio prompt on those pages still assigns colours to objects and is to be replaced by the one main prompt once agreed.
 - The audit (`docs/AUDIT-2026-11-16.md`) lists what else to improve, in order.
 
 ## Open decisions

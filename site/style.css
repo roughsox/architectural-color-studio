@@ -258,7 +258,7 @@ footer{text-align:center}
 
 /* ---- Trios: the swatch card (one SVG from site/card.mjs; textures and lettering are inside it) */
 @font-face{font-family:'ACS Bodoni';src:url(/fonts/bodoni-moda-500.woff2) format('woff2');font-weight:500;font-display:block}
-.tcard{display:block;width:100%;max-width:400px;height:auto;aspect-ratio:9/20;border-radius:14px;box-shadow:0 24px 50px -28px rgba(20,20,20,.6)}
+.tcard{display:block;width:100%;max-width:400px;height:auto;aspect-ratio:4/5;border-radius:14px;box-shadow:0 24px 50px -28px rgba(20,20,20,.6)}
 .tcard.small{max-width:none;border-radius:10px}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:26px;margin-top:28px}
 .tlink{color:var(--ink);text-decoration:none;display:grid;gap:8px}.tlink>b{font:500 19px/1.2 "Iowan Old Style",Georgia,serif;margin-top:6px}.tlink>span{font:13.5px/1.45 system-ui,sans-serif;color:var(--muted)}

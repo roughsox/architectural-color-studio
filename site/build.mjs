@@ -106,7 +106,7 @@ function checkStudio(c) {
 }
 families.find(f => f.id === 'studio')?.combinations.forEach(checkStudio);
 
-// ---- Trios: three colours, each a finish (Hero on the walls, Upholstery, Neutral). Checked on every build.
+// ---- Trios: three colours. Roles and finishes stay in the data for the checks below; pages and cards show only names and values.
 const TRIO_ROLES = ['Hero', 'Upholstery', 'Neutral'];
 const isTrio = f => f.format === 'trio';
 function checkTrio(c) {
@@ -256,7 +256,7 @@ ${isTrio(f) ? `<div class="tgrid">${f.combinations.map(c => `<a class="tlink" id
 for (const f of families.filter(isTrio)) for (const c of f.combinations) {
   page({ title: c.name, path: '/trios/' + c.number, wide: true, html: `<div class="trio-page">${trioCard(c)}
 <div class="trio-side"><p class="eyebrow"><a href="/palettes/${f.id}">Trios</a> · No. ${c.number}</p><h1>${esc(c.name)}</h1><p class="lede">${esc(c.intent)}</p>
-<ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><span>${esc({ Hero: 'Walls', Upholstery: 'Upholstery', Neutral: 'Soft neutral' }[x.role])} · ${esc(x.finish)}</span><code>${x.hex}</code></li>`).join('')}</ul>
+<ul class="trio-roles">${c.colours.map(x => `<li><i style="background:${x.hex}"></i><b>${esc(x.name)}</b><code>${x.hex}</code></li>`).join('')}</ul>
 <p class="note">House style: ${esc(f.house)}. Light for this trio: ${c.light === 'daylight' ? 'soft daylight, so the cool colours stay true' : 'warm golden lamplight'}.</p>${c.changed ? `<p class="note">Changed ${esc(c.changed)}</p>` : ''}
 <h2>Make the room: first try</h2>
 <ol class="steps"><li>Download the card.</li><li>Start a <b>new</b> ChatGPT chat. Attach only the card (it is Image 1), paste the prompt, send. Add nothing.</li><li>Judge the first image with the five questions below. Bring it here either way.</li><li>If it missed, bring it here; the studio changes the room sheet and you start a new chat. A small fix in the same chat only works as a surgical edit: “Change only … Keep everything else exactly the same.” Never a general request like “make it more luxurious”.</li></ol>
