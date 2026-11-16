@@ -200,3 +200,27 @@ footer{text-align:center}
 .mat-text h3{font:500 19px/1.2 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink);margin:0 0 6px}
 .mat-text p{margin:0 0 6px}.mat-text .range{font-size:12px;margin:8px 0 0;padding-top:8px;border-top:1px solid var(--line)}
 .mat-tags{display:flex;gap:6px}.mat-tags em{font:600 9.5px/1 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;font-style:normal;padding:4px 6px;border-radius:3px;background:#ebe8df;color:var(--muted)}
+/* ---- Scheme lab (home) */
+.fblocks div i{font-style:normal;font:600 9.5px/1 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:4px}
+.lab-mats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.lab-mat{display:grid;grid-template-columns:54px minmax(0,1fr) auto;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
+.lab-sw{height:46px;border-radius:6px}
+.lab-mat small{display:block;font:600 9.5px/1.2 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lab-mat b{font:500 15px/1.25 system-ui,sans-serif}
+.lab-mat button,#naturals{font:600 13px/1 system-ui,sans-serif;padding:9px 12px;border-radius:99px;border:1.5px solid var(--accent);background:none;color:var(--accent);cursor:pointer}
+.lab-mat button:hover,#naturals:hover{background:#e6e9e2}
+.lab-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:10px}
+.lab-score{font:600 13px/1 system-ui,sans-serif;padding:8px 11px;border-radius:99px}
+.lab-score.good{background:#dfe9df;color:#2f5a3a}.lab-score.ok{background:#ece4cf;color:#6b5516}.lab-score.poor{background:#f1ddd4;color:#8a3a1e}
+.lab-why{margin-top:8px;font:13px/1.45 system-ui,sans-serif;color:var(--muted)}.lab-why summary{cursor:pointer;color:var(--accent);font-weight:600}
+.lab-why ul{margin:6px 0 0;padding-left:18px}.lab-why li.n{color:#8a3a1e}
+.lab-ask{font:13px/1.45 system-ui,sans-serif;color:var(--muted);margin:6px 2px 0}.lab-ask q{color:var(--ink)}
+.matdot{background-size:cover}.scheme-score{font:600 11px/1 system-ui,sans-serif;color:#2f5a3a;padding:0 16px 14px;margin:0}
+.fblocks{height:min(40vh,330px)}
+@media (max-width:640px){.lab-mats{grid-template-columns:1fr}}
+/* ---- Sit-down and prompt */
+.sitdown{margin-top:34px}.sitdown h3{font-size:18px;margin:1.4em 0 .4em}
+.prompt{margin-top:30px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:18px 22px}
+.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.prompt-head .group{margin:0}
+.prompt .copy{font:600 13px/1 system-ui,sans-serif;padding:8px 12px;border-radius:99px;border:1.5px solid var(--accent);background:none;color:var(--accent);cursor:pointer}
+.prompt-body{font:15px/1.55 system-ui,sans-serif;margin-top:10px}.prompt-body p{margin:.5em 0}

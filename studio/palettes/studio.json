@@ -5,7 +5,7 @@
  "name": "Studio",
  "label": "Studio No.",
  "title": "Studio combinations",
- "description": "Palettes the studio invents on purpose, one at a time or as a themed series. Every colour is a real colour from the other families, keeps its name and exact value, and has a job: Field, Weight, Accent or Bridge. Each palette says in one sentence what it is for.",
+ "description": "Palettes the studio invents on purpose, one at a time or as a themed series. Each is a scheme: paint colours from the other families, each with a job (Field, Weight, Accent or Bridge), plus two natural materials chosen to live with them. Each says in one sentence what it is for.",
  "source": "Architectural Color Studio",
  "data": "Made in the studio; each combination names the families its colours came from",
  "note": "",
@@ -39,6 +39,10 @@
      "from": "Japanese traditional",
      "role": "Accent"
     }
+   ],
+   "materials": [
+    "Grey granite",
+    "Blackened steel"
    ]
   },
   {
@@ -70,6 +74,10 @@
      "from": "Japanese traditional",
      "role": "Accent"
     }
+   ],
+   "materials": [
+    "White oak",
+    "Tan leather"
    ]
   },
   {
@@ -101,6 +109,10 @@
      "from": "Ridgway",
      "role": "Accent"
     }
+   ],
+   "materials": [
+    "Walnut",
+    "Rattan and cane"
    ]
   },
   {
@@ -132,6 +144,10 @@
      "from": "Japanese traditional",
      "role": "Accent"
     }
+   ],
+   "materials": [
+    "Teak",
+    "Wool, undyed"
    ]
   },
   {
@@ -163,6 +179,10 @@
      "from": "Japanese traditional",
      "role": "Accent"
     }
+   ],
+   "materials": [
+    "Lime plaster",
+    "Copper"
    ]
   },
   {
@@ -194,6 +214,10 @@
      "from": "Ridgway",
      "role": "Accent"
     }
+   ],
+   "materials": [
+    "Walnut",
+    "Linen, natural"
    ]
   }
  ],

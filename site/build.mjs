@@ -62,6 +62,9 @@ const lab = hex => {
   return { L, a: A, b: B, C: Math.hypot(A, B) };
 };
 const ink = hex => { const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16)); return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? '#22302b' : '#fff'; };
+const schemeSrc = readFileSync(join(root, 'site', 'scheme.js'), 'utf8');
+const SCHEME = new Function(schemeSrc + ';return SCHEME')();
+const MATERIALS = families.find(f => f.kind === 'materials')?.materials || [];
 const RULES = { fieldWeightGap: 30, minDistance: 15, loud: 45 };
 const roleOrder = ['Field', 'Weight', 'Accent', 'Bridge'];
 const allColours = new Map(); // "family|name" -> hex, from every family
@@ -88,6 +91,13 @@ function checkStudio(c) {
   if (m.filter(x => x.C >= RULES.loud).length > 1) fail(`more than one loud colour (strength ${RULES.loud} or more)`);
   c.colours.sort((a, b) => roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role));
   c.measured = m.map(x => ({ name: x.name, lightness: Math.round(x.L), strength: Math.round(x.C) }));
+  if (c.materials) {
+    const mats = c.materials.map(n => MATERIALS.find(x => x.name === n) || fail(`material "${n}" is not in the Materials family`));
+    if (mats.length !== 2 || SCHEME.kind(mats[0]) !== 'surface' || SCHEME.kind(mats[1]) !== 'touch') fail('needs two materials: a surface first, then a touch material');
+    c.scheme = SCHEME.score(c.colours, mats);
+    if (c.scheme.score < 85) fail(`materials score ${c.scheme.score} (minimum 85): ${c.scheme.bad.join('; ')}`);
+    c.materialRanges = mats.map(x => ({ name: x.name, light: x.light, typical: x.typical, dark: x.dark }));
+  }
 }
 families.find(f => f.id === 'studio')?.combinations.forEach(checkStudio);
 const desks = JSON.parse(readFileSync(join(src, 'desks.json'), 'utf8'));
@@ -108,7 +118,8 @@ const projects = readdirSync(join(src, 'projects')).sort().map(id => {
   }) : [];
   const turnFile = join(dir, 'your-turn.md');
   const turn = existsSync(turnFile) ? parse(turnFile) : null;
-  return { id, ...p, family, palette, notes, turn, next: desks.find(d => d.id === p.meta.next) };
+  const opt = f => existsSync(join(dir, f)) ? parse(join(dir, f)) : null;
+  return { id, ...p, family, palette, notes, turn, sitdown: opt('sit-down.md'), prompt: opt('prompt.md'), next: desks.find(d => d.id === p.meta.next) };
 });
 const current = projects.filter(p => p.meta.stage !== 'In the library').pop();
 const approved = projects.filter(p => p.meta.stage === 'In the library');
@@ -141,7 +152,7 @@ ${[...new Set(f.combinations.map(c => c.series || ''))].map(s => { const about =
 <article class="pal" data-n="${c.colours.length}" id="p${c.number}">${strip(c.colours)}
 <h2>${c.name ? `${esc(c.name)} <small class="num">No. ${c.number}</small>` : `No. ${c.number}`}${st ? `<em>${esc(st === 'In the library' ? 'Approved' : 'In progress')}</em>` : ''}</h2>
 ${c.intent ? `<p class="intent">${esc(c.intent)}</p>` : ''}
-<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}</ul></article>`; }).join('')}</div>`; }).join('')}${filterScript}`;
+<ul>${c.colours.map(x => `<li><i style="background:${x.hex}"></i>${x.role ? `<span class="role">${esc(x.role)}</span>` : ''}<span class="nm">${esc(x.name)}${x.from ? `<small>${esc(x.from)}</small>` : ''}</span><code>${x.hex}</code></li>`).join('')}${(c.materialRanges || []).map(x => `<li><i class="matdot" style="background:linear-gradient(${x.light},${x.typical},${x.dark})"></i><span class="role">Natural</span><span class="nm">${esc(x.name)}<small>Materials</small></span></li>`).join('')}</ul>${c.scheme ? `<p class="scheme-score" title="${esc(c.scheme.good.join('. '))}">${esc(c.scheme.verdict)} · ${c.scheme.score}</p>` : ''}</article>`; }).join('')}</div>`; }).join('')}${filterScript}`;
 }
 function materialsHtml(f) {
   const warmth = h => { const { a, b } = lab(h); const hue = (Math.atan2(b, a) * 180 / Math.PI + 360) % 360; return Math.hypot(a, b) < 6 ? 'neutral' : hue < 110 || hue > 330 ? 'warm' : 'cool'; };
@@ -196,7 +207,7 @@ ${n.body}
 ### Up next: ${expertName(p.next)}
 ${p.meta.next_note || ''}
 ` : ''}
-## The experts
+${p.sitdown ? `## The sit-down\n${p.sitdown.body}\n\n` : ''}${p.prompt ? `## Prompt for the first image\n${p.prompt.body}\n\n` : ''}## The experts
 ${desks.map(d => `- ${expertName(d)}: ${d.role} Speaks at: ${d.speaks.join(', ')}. Judges: ${d.judges}`).join('\n')}
 
 ## Image
@@ -215,6 +226,8 @@ ${p.turn ? `<section class="turn"><p class="eyebrow">Your turn</p><h2>${esc(p.tu
 <h2 class="group">At the table</h2>
 <ol class="feed">${p.notes.map(n => `<li>${badge(n.expert)}<div class="said"><p class="who"><b>${esc(n.expert.name)}</b>${n.expert.who ? ` <small>${esc(n.expert.who)}</small>` : ''}<span class="tag">${esc(n.meta.stage)}</span></p>${md(n.body)}</div></li>`).join('')}
 ${p.next ? `<li class="upnext"><span class="badge ghost" style="color:${p.next.colour};border-color:${p.next.colour}" aria-hidden="true">${esc(p.next.mark)}</span><div class="said"><p class="who"><b>${esc(p.next.name)}</b><span class="tag">Up next</span></p><p>${esc(p.meta.next_note || '')}</p></div></li>` : ''}</ol>
+${p.sitdown ? `<section class="sitdown"><h2 class="group">The sit-down</h2><div class="said">${md(p.sitdown.body)}</div></section>` : ''}
+${p.prompt ? `<section class="prompt"><div class="prompt-head"><h2 class="group">Prompt for the first image</h2><button type="button" class="copy" onclick="navigator.clipboard.writeText(this.closest('.prompt').querySelector('.prompt-body').innerText).then(()=>{this.textContent='Copied'})">Copy</button></div><div class="prompt-body">${md(p.prompt.body)}</div></section>` : ''}
 </div>
 <aside class="side">
 <figure class="plate"><div class="room"><span>Room image</span></div><div class="sw">${cols.map(c => `<span style="background:${c.hex}"></span>`).join('')}</div>
@@ -251,7 +264,8 @@ page({ title: 'Library', path: '/library', wide: true, twin: '/library.json', ht
 write('library.json', JSON.stringify(approved.map(p => ({ project: p.id, family: p.family.id, palette: p.palette.number, colours: p.palette.colours, room: p.meta.room || null, finished: p.meta.approved || null, image: p.meta.image ? `${SITE}/library/${p.id}-${p.meta.image}` : null })), null, 1));
 
 // ---- Home: the front door of the owner's workshop
-const pool = families.filter(isCombos).flatMap(f => f.combinations.map((c, i) => [f.id, f.label, c.number ?? i + 1, c.colours.map(x => [x.name, x.hex])]));
+const pool = families.filter(isCombos).flatMap(f => f.combinations.map((c, i) => [f.id, f.label, c.number ?? i + 1, c.colours.map(x => [x.name, x.hex, x.role || '']), c.materials || null, c.name || '']));
+const labMaterials = MATERIALS.map(({ name, group, light, typical, dark, where }) => ({ name, group, light, typical, dark, where }));
 const featureHtml = ([fid, label, n, cs], tag) => `<div class="fblocks">${cs.map(([name, hex]) => `<div style="background:${hex};color:${ink(hex)}"><b>${esc(name)}</b><code>${hex}</code></div>`).join('')}</div>
 <p class="fcap"><span>${esc(tag)}</span><a href="/palettes/${fid}#p${n}">${esc(label)} ${n}</a></p>`;
 const homeFeature = current ? [current.family.id, current.family.label, current.palette.number, current.palette.colours.map(x => [x.name, x.hex])] : pool[0];
@@ -279,21 +293,44 @@ ${(() => { const st = families.find(f => f.id === 'studio'); const fresh = st ? 
 </div>
 <a class="h-table" href="/project"><p class="eyebrow">The experts at the table</p><ul>${desks.map(d => `<li><span class="badge sm" style="background:${d.colour}" aria-hidden="true">${esc(d.mark)}</span>${esc(d.name)}</li>`).join('')}</ul></a>
 <p class="h-guide">How the studio works, step by step: <a href="/guide">the Guide</a>.</p>
+<script>${schemeSrc}</script>
 <script>
 (() => {
-  const P = ${JSON.stringify(pool)};
+  const P = ${JSON.stringify(pool)}, M = ${JSON.stringify(labMaterials)};
   const fig = document.getElementById('feature'), btn = document.getElementById('surprise');
-  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const ink = h => { const [r, g, b] = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? '#22302b' : '#fff'; };
-  let at = Math.floor(Date.now() / 864e5) % P.length;
-  const show = (i, tag) => {
-    const [fid, label, n, cs] = P[i];
-    fig.innerHTML = '<div class="fblocks">' + cs.map(([nm, h]) => '<div style="background:' + h + ';color:' + ink(h) + '"><b>' + esc(nm) + '</b><code>' + h + '</code></div>').join('') + '</div>'
-      + '<p class="fcap"><span>' + tag + '</span><a href="/palettes/' + fid + '#p' + n + '">' + esc(label) + ' ' + n + '</a></p>';
-    fig.classList.remove('pop'); void fig.offsetWidth; fig.classList.add('pop');
+  const byName = n => M.find(m => m.name === n);
+  const band = m => 'linear-gradient(90deg,' + m.light + ',' + m.typical + ' 50%,' + m.dark + ')';
+  let at = Math.floor(Date.now() / 864e5) % P.length, tag = '', paints, mats, ranked, rAt, swapAt;
+  const paintsOf = i => P[i][3].map(([name, hex, role]) => role ? { name, hex, role } : { name, hex });
+  const render = (pop) => {
+    const [fid, label, n, cs, , title] = P[at];
+    const sc = SCHEME.score(paints, mats);
+    const cls = sc.score >= 85 ? 'good' : sc.score >= 70 ? 'ok' : 'poor';
+    const ask = label.replace(' No.', '') + ' ' + n + ' with ' + mats.map(m => m.name.toLowerCase()).join(' and ');
+    fig.innerHTML = '<div class="fblocks">' + cs.map(([nm, h, role]) => '<div style="background:' + h + ';color:' + ink(h) + '">' + (role ? '<i>' + role + '</i>' : '') + '<b>' + esc(nm) + '</b><code>' + h + '</code></div>').join('') + '</div>'
+      + '<div class="lab-mats">' + mats.map((m, k) => '<div class="lab-mat"><span class="lab-sw" style="background:' + band(m) + '"></span><div><small>' + (k ? 'Touch' : 'Surface') + ' · natural</small><b>' + esc(m.name) + '</b></div><button type="button" data-slot="' + k + '">Swap</button></div>').join('') + '</div>'
+      + '<div class="lab-foot"><span class="lab-score ' + cls + '">' + sc.verdict + ' · ' + sc.score + '</span><button type="button" id="naturals">Try other naturals</button></div>'
+      + '<details class="lab-why"><summary>Why this score</summary><ul>' + sc.good.map(t => '<li class="y">' + esc(t) + '</li>').join('') + sc.bad.map(t => '<li class="n">' + esc(t) + '</li>').join('') + '</ul></details>'
+      + '<p class="fcap"><span>' + tag + '</span><a href="/palettes/' + fid + '#p' + n + '">' + esc(title ? title + ' · ' : '') + esc(label) + ' ' + n + '</a></p>'
+      + '<p class="lab-ask">Like it? Tell the studio in chat: <q>' + esc(ask) + '</q></p>';
+    fig.querySelectorAll('[data-slot]').forEach(b => b.onclick = () => {
+      const k = +b.dataset.slot, list = SCHEME.swaps(paints, M, mats[1 - k], mats[k]).filter(x => x.s.score >= 70);
+      if (!list.length) return; swapAt[k] = (swapAt[k] + 1) % list.length; mats[k] = list[swapAt[k] % list.length].m; render();
+    });
+    fig.querySelector('#naturals').onclick = () => { rAt = (rAt + 1) % ranked.length; mats = ranked[rAt].pair.slice(); render(); };
+    if (pop) { fig.classList.remove('pop'); void fig.offsetWidth; fig.classList.add('pop'); }
+  };
+  const show = (i, t) => {
+    at = i; tag = t; paints = paintsOf(i);
+    ranked = SCHEME.rank(paints, M).filter(x => x.s.score >= 70).slice(0, 25); rAt = 0; swapAt = [0, 0];
+    const chosen = P[i][4];
+    mats = chosen ? chosen.map(byName) : (ranked[0] ? ranked[0].pair.slice() : SCHEME.rank(paints, M)[0].pair.slice());
+    render(true);
   };
   show(at, 'Today’s combination');
-  btn.addEventListener('click', () => { let i; do { i = Math.floor(Math.random() * P.length); } while (i === at && P.length > 1); at = i; show(at, 'Surprise'); });
+  btn.addEventListener('click', () => { let i; do { i = Math.floor(Math.random() * P.length); } while (i === at && P.length > 1); show(i, 'Surprise'); });
 })();
 </script>`;
 };
