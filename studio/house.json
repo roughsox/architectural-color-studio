@@ -1,0 +1,62 @@
+{
+  "title": "The House",
+  "house": "An Edwardian house in the English countryside, about 1910: tall sash windows, deep mouldings, old floorboards, fireplaces, light from every side. One woman has renovated it lovingly and carefully over many years. She adores Sanzo Wada's book, and each room is built around one of its combinations. Her best friend, an architectural photographer, cares about capturing her work in the best possible light.",
+  "ruled_out": "Left out of this house: the near-fluorescent colours (lemon and canary yellows, hot pinks, electric blues), pairs of two loud colours with nothing quiet to rest on, and combinations that read as a 1980s graphic rather than a room.",
+  "rooms": [
+    { "id": "hall", "name": "Entrance hall", "about": "The first impression. North light, a staircase, a long view through the house; it has to welcome you and get along with every room off it.",
+      "options": [
+        { "wada": 243, "idea": "Warm earth and slate: sienna and olive with a dark slate floor." },
+        { "wada": 199, "idea": "Old red and brownish olive, with a deep blue that leads you on." },
+        { "wada": 160, "idea": "Ochre and umber, cooled by a grey-blue." }
+      ] },
+    { "id": "drawing", "name": "Drawing room", "about": "South light, the room for guests and long afternoons. The showpiece, but still somewhere to sit.",
+      "options": [
+        { "wada": 209, "idea": "The Blue Salon palette: soft blue, ivory and one orange piece." },
+        { "wada": 279, "idea": "Sienna and soft cinnamon pink, steadied by a very deep blue." },
+        { "wada": 321, "idea": "Dusty rose and pale yellow with near-black olive and a soft blue." }
+      ] },
+    { "id": "library", "name": "Library", "about": "An evening room. Books, a fire, a reading chair. It can be deep.",
+      "options": [
+        { "wada": 182, "idea": "Raw sienna, Vandyke brown and almost-black indigo." },
+        { "wada": 318, "idea": "Four greens from olive to almost black." },
+        { "wada": 249, "idea": "Russet and ecru with olive ochre and a grey-blue." }
+      ] },
+    { "id": "dining", "name": "Dining room", "about": "Lamplight and candles, dinners that run late. The room that can be dramatic.",
+      "options": [
+        { "wada": 225, "idea": "Carmine against a deep green, with a plum-grey between." },
+        { "wada": 237, "idea": "Two reds, one bright and one brown, with a soft blue to breathe." },
+        { "wada": 275, "idea": "Etruscan red, ecru, madder brown and a mauve-brown." }
+      ] },
+    { "id": "kitchen", "name": "Kitchen", "about": "Morning light, a big table, used every day. Practical and warm.",
+      "options": [
+        { "wada": 296, "idea": "Pale sulphur, soft salmon, umber and slate." },
+        { "wada": 229, "idea": "Golden yellow with a very dark olive and a calm grey." }
+      ] },
+    { "id": "morning", "name": "Morning room", "about": "East light for breakfast and letters. Fresh and gentle.",
+      "options": [
+        { "wada": 178, "idea": "Ivory, pale blue and a clear sea-green." },
+        { "wada": 188, "idea": "Three soft greens and blues, like a garden in the morning." },
+        { "wada": 234, "idea": "Warm buff and umber with a pale sky blue." }
+      ] },
+    { "id": "study", "name": "Study", "about": "A small room for work and thinking. Focused, a little serious.",
+      "options": [
+        { "wada": 207, "idea": "Sudan brown and a pale grey-green, with black." },
+        { "wada": 343, "idea": "Burnt sienna, ivory, dark olive and a deep teal blue." }
+      ] },
+    { "id": "garden", "name": "Garden room", "about": "Glass on two sides, plants, the garden coming in. The brightest room.",
+      "options": [
+        { "wada": 293, "idea": "Raw sienna with three garden greens." },
+        { "wada": 341, "idea": "Coral pink, green and near-black olive with a pale blue." }
+      ] },
+    { "id": "bedroom", "name": "Main bedroom", "about": "Quiet, soft, personal. Morning light through linen.",
+      "options": [
+        { "wada": 214, "idea": "Ivory and a soft brown, with one violet." },
+        { "wada": 239, "idea": "Dusty rose, a muted gold and a pale grey-green." }
+      ] },
+    { "id": "bathroom", "name": "Bathroom", "about": "A roll-top bath under a window. Small enough to be bold.",
+      "options": [
+        { "wada": 290, "idea": "Plum-brown, pale lemon, dark olive and a mint green." },
+        { "wada": 167, "idea": "Ecru with a pale blue and a deep sea blue." }
+      ] }
+  ]
+}

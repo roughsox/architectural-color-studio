@@ -33,7 +33,7 @@ const jsVersion = createHash('sha256').update(readFileSync(join(root, 'site', 's
 copyFileSync(join(root, 'site', 'style.css'), join(out, 'style.css'));
 copyFileSync(join(root, 'site', 'site.js'), join(out, 'site.js'));
 copyFileSync(join(root, 'site', 'favicon.svg'), join(out, 'favicon.svg'));
-const nav = [['/', 'Home'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library'], ['/notebook', 'Notebook'], ['/instructions', 'Instructions']];
+const nav = [['/', 'Home'], ['/house', 'The House'], ['/palettes', 'Palettes'], ['/guide', 'Guide'], ['/project', 'Current project'], ['/library', 'Library'], ['/notebook', 'Notebook'], ['/instructions', 'Instructions']];
 
 function page({ title, html, path, wide = false, twin }) {
   write(path === '/' ? 'index.html' : path.slice(1) + '.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -352,6 +352,30 @@ const libraryHtml = () => `<p class="eyebrow">Finished work</p><h1>Library</h1>
 <div class="gallery">${approved.length ? approved.slice().reverse().map(pieceCard).join('') : `<article class="piece ghost">
 <figure class="plate"><div class="room"><span>Your first piece</span></div><div class="sw">${(current ? current.palette.colours : []).map(c => `<span style="background:${c.hex}"></span>`).join('')}</div></figure>
 <div class="piece-text"><h2>Nothing finished yet</h2><p>When you approve a piece it lands here, newest first, as it will be posted: the room on the left, its swatches on the right.</p></div></article>`}</div>`;
+// ---- The House: one Edwardian house, one Wada palette per room; the owner picks (picks are kept on their device)
+const houseFile = join(src, 'house.json');
+if (existsSync(houseFile)) {
+  const house = JSON.parse(readFileSync(houseFile, 'utf8'));
+  const wada = families.find(f => f.id === 'wada');
+  const byNo = n => { const c = wada.combinations.find(x => x.number === n); if (!c) throw new Error(`house.json: no Wada ${n}`); return c; };
+  const roomHtml = r => `<article class="room-card" data-room="${esc(r.id)}" data-name="${esc(r.name)}"><h2>${esc(r.name)}</h2><p class="room-about">${esc(r.about)}</p>
+<div class="room-opts">${r.options.map(o => { const c = byNo(o.wada); return `<button type="button" class="room-opt" data-wada="${o.wada}" aria-pressed="false">${strip(c.colours, 'strip mini')}<span class="ro-text"><b>Wada ${o.wada}</b><small>${c.colours.map(x => esc(x.name)).join(' · ')}</small><span>${esc(o.idea)}</span></span></button>`; }).join('')}</div></article>`;
+  page({ title: house.title, path: '/house', wide: true, html: `<p class="eyebrow">The House · ${house.rooms.length} rooms</p><h1>One house, one palette in each room.</h1>
+<p class="lede">${esc(house.house)}</p>
+<div class="house-bar"><span id="house-count">No rooms chosen yet</span><span class="house-actions"><button type="button" class="button" id="house-copy">Copy my picks</button><button type="button" class="button ghost" id="house-clear">Clear</button></span></div>
+<p class="note">Pick one palette for each room; tap again to unpick. Your picks stay on this device. When you're happy, copy them and send them to the studio.</p>
+<div class="rooms">${house.rooms.map(roomHtml).join('')}</div>
+<p class="note">${esc(house.ruled_out)}</p>
+<script>(function(){var K='house-picks',picks={};try{picks=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
+var cards=[].slice.call(document.querySelectorAll('.room-card')),count=document.getElementById('house-count');
+function save(){try{localStorage.setItem(K,JSON.stringify(picks))}catch(e){}}
+function draw(){var n=0;cards.forEach(function(c){var p=picks[c.dataset.room];if(p)n++;c.classList.toggle('chosen',!!p);c.querySelectorAll('.room-opt').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.wada===String(p)))})});count.textContent=n?n+' of '+cards.length+' rooms chosen':'No rooms chosen yet'}
+cards.forEach(function(c){c.querySelectorAll('.room-opt').forEach(function(b){b.onclick=function(){var r=c.dataset.room;picks[r]=picks[r]===b.dataset.wada?null:b.dataset.wada;if(!picks[r])delete picks[r];save();draw()}})});
+document.getElementById('house-clear').onclick=function(){picks={};save();draw()};
+document.getElementById('house-copy').onclick=function(){var t='My picks for the House:\\n'+cards.map(function(c){return c.dataset.name+': '+(picks[c.dataset.room]?'Wada '+picks[c.dataset.room]:'not chosen')}).join('\\n');var b=this;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied'},function(){window.prompt('Copy your picks:',t)}).then(function(){setTimeout(function(){b.textContent='Copy my picks'},1500)})};
+draw()})()</script>` });
+}
+
 page({ title: 'Library', path: '/library', wide: true, twin: '/library.json', html: libraryHtml() });
 write('library.json', JSON.stringify(approved.map(p => ({ project: p.id, family: p.family.id, palette: p.palette.number, colours: p.palette.colours, room: p.meta.room || null, finished: p.meta.approved || null, image: p.meta.image ? `${SITE}/library/${p.id}-${p.meta.image}` : null })), null, 1));
 
