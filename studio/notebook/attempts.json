@@ -2,6 +2,49 @@
   "groups": [
     {
       "palette": {
+        "family": "wada",
+        "number": 213,
+        "name": "Wada 213: Vinaceous Cinnamon, Apricot Yellow, Pale King's Blue",
+        "label": "Wada No."
+      },
+      "made_with": "ChatGPT project with the owner's instructions v1 and Wada's colors.json; commands \"#213\" and \"card #213\"",
+      "attempts": [
+        {
+          "n": 1,
+          "image": "wada-213-living-1.jpg",
+          "asked": "#213",
+          "verdict": "good",
+          "note": "The owner's favourite so far: coffered and lit ceiling, panelled pale walls, a peach velvet sofa, two yellow chairs, each colour repeated at several scales (cushions, vase, rug), symmetrical and calm. Exactly 9:16. Measured, the palette is muted and warmed: the sky blue walls read grey-blue (difference 10-16), the lemon yellow reads golden-mustard (17), the peach sofa darker. Stock elements again: landscape painting under a picture light, tiered drum chandelier, olive tree, cream throw."
+        },
+        {
+          "n": 2,
+          "image": "wada-213-card-1.jpg",
+          "asked": "card #213",
+          "verdict": "good",
+          "note": "A gold-foil, letterpress-style paper card, one swatch per colour with its name. Close to the real values: blue within 0.8, peach and yellow about 5 (visibly a little warmer). Exactly 9:16."
+        }
+      ]
+    },
+    {
+      "palette": {
+        "family": "wada",
+        "number": 254,
+        "name": "Wada 254: Corinthian Pink, Sulpher Yellow, Olive, Laelia Pink",
+        "label": "Wada No."
+      },
+      "made_with": "ChatGPT project with the owner's instructions v1 and Wada's colors.json; command \"#254\"",
+      "attempts": [
+        {
+          "n": 1,
+          "image": "wada-254-bedroom-1.jpg",
+          "asked": "#254",
+          "verdict": "closer",
+          "note": "Bold and on-palette: pink walls match almost exactly (difference 1.6-2.1); olive velvet headboard and bench, pale yellow quilt, pink throw. But the olive goes golden and the yellow peachy (about 7-8), it reads glossy and rendered rather than photographed, and it is 3:4, not 9:16. Stock elements: crystal drum chandelier, cove glow, landscape painting under a picture light, candles."
+        }
+      ]
+    },
+    {
+      "palette": {
         "family": "trios",
         "number": 3,
         "name": "Sage, Rose, Ivory",
