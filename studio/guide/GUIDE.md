@@ -147,9 +147,9 @@ For a trio the sit-down's output is its **room sheet** (`sheet` in `trios.json`)
 
 ## 10. The swatch
 
-The swatch card is drawn from the palette's exact values, not generated as an image, so it is the one part of the piece that is exactly right. Its textures (plaster, leather, velvet, lacquer, linen, boucle) are pairs of lighter and darker layers that cancel out, so each swatch still averages to its stated colour. Lettering is gold foil, deepened or paled only as far as it needs to be read: 3:1 contrast for names, 4.5:1 for the small finish labels. The typeface (Bodoni Moda) ships with the site, so the card looks the same on every device.
+On the site, each trio has a plain palette card: three flat swatches with the same fine paper grain and the colour names, nothing else. No finishes and no roles, because the card shows a palette, not which object gets which colour. The grain is balanced so each swatch still averages to its exact value, and `npm run cards` measures every card (each swatch within 1.0 CIEDE2000) before it can be published.
 
-`npm run cards` renders every card to its download image and measures it: each swatch within 1.0 (CIEDE2000) of its value, with visible texture and legible lettering. The build refuses to publish if the cards are out of date.
+The swatch in a social post is made separately, in ChatGPT, to be more interesting than a flat palette. Generated swatches drift from the real colours, so each one is measured against the palette before posting.
 
 ## 11. The record
 

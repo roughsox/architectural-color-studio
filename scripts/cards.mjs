@@ -1,11 +1,11 @@
-// Renders every Trio swatch card to the image people download, measures it, and refuses any card that
+// Renders every trio's palette card (1080 × 1350) to the image people download, measures it, and refuses any card that
 // does not show its stated colours. Run with `npm run cards` after changing a trio or site/card.mjs;
 // the build stops until the cards match the current data.
 //
 // Checks on the delivered JPEG, per swatch (text area excluded):
 //   - average colour within 1.0 CIEDE2000 of the stated value (about the smallest difference a person can see);
-//   - visible texture (lightness varies by at least 1 standard deviation), so the fix is not "remove the texture";
-//   - the name at least 3:1 against the swatch (large lettering), the finish label at least 4.5:1.
+//   - a visible paper grain (lightness varies by at least 0.5 standard deviation);
+//   - the name at least 3:1 against the swatch (large lettering).
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
@@ -15,7 +15,7 @@ import { CARD, trioCardSvg, bandOf, textBox, lab, deltaE00, hexOf, foilFor, cont
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-export const SCALE = 2.4; // 450 × 1000 drawing → 1080 × 2400 image
+export const SCALE = 3; // 360 × 450 drawing → 1080 × 1350 image (4:5)
 export function cardSourceHash(trios) {
   const h = createHash('sha256');
   h.update(JSON.stringify(trios.combinations.map(c => ({ number: c.number, name: c.name, colours: c.colours }))));
@@ -48,7 +48,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const cv = document.createElement('canvas'); cv.width = img.width; cv.height = img.height;
       const g = cv.getContext('2d', { colorSpace: 'srgb' }); g.drawImage(img, 0, 0);
       return bands.map(b => {
-        const m = 8 * scale, x0 = Math.round(m), x1 = Math.round(img.width - m), rows = [];
+        const m = 4 * scale, x0 = Math.round(m), x1 = Math.round(img.width - m), rows = [];
         for (let y = Math.round(b.y * scale + m); y < Math.round((b.y + b.h) * scale - m); y++) if (y < b.y0 * scale || y > b.y1 * scale) rows.push(y);
         let r = 0, gg = 0, bl = 0, n = 0; const lum = [];
         for (const y of rows) { const d = g.getImageData(x0, y, x1 - x0, 1).data; for (let i = 0; i < d.length; i += 4) { r += d[i]; gg += d[i + 1]; bl += d[i + 2]; n++; if ((i >> 2) % 7 === 0) lum.push([d[i], d[i + 1], d[i + 2]]); } }
@@ -58,14 +58,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     manifest.cards[c.number] = { file: cardFile(c), swatches: c.colours.map((x, i) => {
       const L = stats[i].sample.map(p => lab(p)[0]), avg = L.reduce((a, v) => a + v, 0) / L.length;
       const sd = Math.sqrt(L.reduce((a, v) => a + (v - avg) ** 2, 0) / L.length);
-      const rendered = hexOf(stats[i].mean), dE = deltaE00(lab(x.hex), lab(stats[i].mean)), foil = foilFor(x.hex, LEGIBLE.name), cr = contrast(foil, x.hex), lfoil = foilFor(x.hex, LEGIBLE.label), lcr = contrast(lfoil, x.hex);
+      const rendered = hexOf(stats[i].mean), dE = deltaE00(lab(x.hex), lab(stats[i].mean)), foil = foilFor(x.hex, LEGIBLE.name), cr = contrast(foil, x.hex);
       if (dE > 1.0) failures.push(`Trio ${c.number} ${x.name}: renders ${rendered}, ${dE.toFixed(2)} from ${x.hex} (limit 1.0)`);
-      if (sd < 1.0) failures.push(`Trio ${c.number} ${x.name}: texture too faint (lightness spread ${sd.toFixed(2)}, minimum 1.0)`);
+      if (sd < 0.5) failures.push(`Trio ${c.number} ${x.name}: grain too faint (lightness spread ${sd.toFixed(2)}, minimum 0.5)`);
       if (cr < LEGIBLE.name) failures.push(`Trio ${c.number} ${x.name}: name contrast ${cr.toFixed(2)}:1 (minimum ${LEGIBLE.name})`);
-      if (lcr < LEGIBLE.label) failures.push(`Trio ${c.number} ${x.name}: finish label contrast ${lcr.toFixed(2)}:1 (minimum ${LEGIBLE.label})`);
-      return { name: x.name, finish: x.finish, stated: x.hex, rendered, deltaE00: +dE.toFixed(2), texture: +sd.toFixed(2), lettering: foil, contrast: +cr.toFixed(2), label: lfoil, labelContrast: +lcr.toFixed(2) };
+      return { name: x.name, stated: x.hex, rendered, deltaE00: +dE.toFixed(2), grain: +sd.toFixed(2), lettering: foil, contrast: +cr.toFixed(2) };
     }) };
-    for (const s of manifest.cards[c.number].swatches) console.log(`Trio ${c.number} ${s.name.padEnd(10)} ${s.finish.padEnd(8)} stated ${s.stated} rendered ${s.rendered}  ΔE00 ${s.deltaE00.toFixed(2)}  texture ${s.texture.toFixed(2)}  name ${s.lettering} ${s.contrast.toFixed(1)}:1  label ${s.label} ${s.labelContrast.toFixed(1)}:1`);
+    for (const s of manifest.cards[c.number].swatches) console.log(`Trio ${c.number} ${s.name.padEnd(10)} stated ${s.stated} rendered ${s.rendered}  ΔE00 ${s.deltaE00.toFixed(2)}  grain ${s.grain.toFixed(2)}  name ${s.lettering} ${s.contrast.toFixed(1)}:1`);
   }
   await browser.close();
   if (failures.length) { console.error('\nCards refused:\n  ' + failures.join('\n  ')); process.exit(1); }
