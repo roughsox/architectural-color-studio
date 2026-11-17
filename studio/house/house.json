@@ -59,6 +59,14 @@
         {
           "wada": 35,
           "idea": "A brown-rose with carmine red."
+        },
+        {
+          "wada": 69,
+          "idea": "Warm grey and black: formal and stately."
+        },
+        {
+          "wada": 221,
+          "idea": "Carmine red with neutral grey and black: stately, one red."
         }
       ],
       "passed": [
@@ -87,6 +95,10 @@
         {
           "wada": 30,
           "idea": "Pompeian red and a soft mineral grey."
+        },
+        {
+          "wada": 7,
+          "idea": "Orange and a pale glaucous green."
         }
       ],
       "passed": [
@@ -170,6 +182,18 @@
         {
           "wada": 192,
           "idea": "Cream yellow, Vandyke brown and a plumbeous grey."
+        },
+        {
+          "wada": 185,
+          "idea": "Brown drab, Etruscan red and pale lemon."
+        },
+        {
+          "wada": 11,
+          "idea": "Ivory and a soft mineral grey: calm and neutral."
+        },
+        {
+          "wada": 57,
+          "idea": "Taupe brown and slate: quiet and grown-up."
         }
       ],
       "passed": [
@@ -224,6 +248,10 @@
         {
           "wada": 47,
           "idea": "Etruscan red and a greyish lavender."
+        },
+        {
+          "wada": 87,
+          "idea": "Corinthian pink and citron yellow."
         }
       ],
       "passed": [
