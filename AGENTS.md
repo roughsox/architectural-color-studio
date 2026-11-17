@@ -25,6 +25,7 @@ This repository holds one project and nothing else. Read `STATE.md` first, then 
 - **`main` is the live site.** Vercel builds every push to `main` and publishes it. Pushes to other branches get a preview link.
 - Do not create deployments by hand. The free plan allows 100 deployments a day.
 - Group changes: one push per piece of work, not per edit.
+- Each push to any branch is one deployment; on 2026-11-16 the 100-a-day limit was reached and Vercel silently skipped pushes. Push to `main` only (not also to a working branch), and after pushing check that the production deployment for that commit is READY before saying it is live.
 - The owner's standing instruction: publish checked changes without asking first.
 
 ## Working together
